@@ -13,17 +13,15 @@ app.get('/health', function (req, res) {
   res.send('OK\n')
 })
 
-//DB connection
-const db = require('../db')
-app.get('/db', function (req, res) {
-  let ret = "No connection to db"
-  client
-    .query('SELECT $1::text as message', ['Hello world from Postgre!'])
-    .then(res => {
-      console.log(res.rows[0].message)
+//Database connection
+const db = require('./db')
+
+//db sanity check
+app.get('/db', (req, res, next) => {
+  db.query('SELECT $1::text as message', ['Hello world from Postgre!'], (err, res) => {
+    if (err) {return next(err)}
+      console.log(res.rows[0])
     })
-    .catch(e => console.error(e.stack))
-  res.send('OK')
 })
 
 app.listen(3000, function () {
