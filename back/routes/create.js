@@ -23,13 +23,12 @@ router.get('/JSONtable/:name', async (req, res) => {
     res.send(ret === undefined ? 'OK' : ret)
 })
 
-const test = {type:"Fiat", model:"500", color:"white"}
-
 //Add a new data into the JSONTable
 router.post('/json', async (req, res) => {
+    const json_data = req.body.data
     const query = {
         text: `INSERT INTO ${JSON_table}(data) VALUES ($1)`,
-        values: [test]
+        values: [json_data]
     }
     const { ret } = await db.query(query)
     res.send(ret === undefined ? 'OK' : ret)

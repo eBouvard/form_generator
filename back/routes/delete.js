@@ -13,3 +13,16 @@ router.get('/table/:name', async (req, res) => {
     const { ret } = await db.query(query)
     res.send(ret === undefined ? 'OK' : ret)
 })
+
+//Define the JSONTable
+const JSON_table = 'json'
+
+//Delete a specific JSONobject
+router.get('/json/:id', async (req, res) => {
+    const query = {
+        text: `DELETE FROM ${JSON_table} WHERE ${JSON_table}.id = $1`,
+        values: [req.params.id]
+    }
+    const { ret } = await db.query(query)
+    res.send('OK')
+})

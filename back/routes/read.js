@@ -20,5 +20,5 @@ router.get('/:id', async (req, res) => {
     values: [req.params.id],
   }
   const { rows } = await db.query(query)
-  res.send(rows)
+  res.send(rows[0] === undefined ? 'NULL' : rows)
 })
