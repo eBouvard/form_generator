@@ -1,0 +1,96 @@
+{
+	"situation": {
+		"a_area_of_interest": {},
+		"b_area_of_operations": {
+			"1_terrain": {},
+			"2_weather": {}
+		},
+		"c_enemy_forces": {
+			"1_compositi,on,_disposition,_and_strength": {},
+			"2_recent_activities": {},
+			"3_locations_and_capabilities": {},
+			"4_enemy_coas_courses_of_action": {}
+		},
+		"d_friendly_forces": {
+			"1_higher_hq_mission_and_intent": {},
+			"2_mission_of_adjacent_units": {}
+		},
+		"e_attachments_and_detachments": {}
+	},
+	"2_mission_a_concise_statement_that_includes_the_who,_what,_where,_when,_and_why_of_the_operation_to_be_conducted": {},
+	"3_execution": {
+		"a_commander's_intent": {},
+		"b_concept_of_operations": {
+			"1_maneuver": {},
+			"2_fires": {},
+			"3_reconnaissance_and_surveillance": {},
+			"4_intelligence": {},
+			"5_engineer": {},
+			"6_air_defense": {},
+			"7_information_operations": {}
+		},
+		"c_scheme_of_movement_and_maneuver": {},
+		"d_scheme_of_fires": {},
+		"e_casualty_evacuation": {},
+		"f_tasks_to_subordinate_units": {},
+		"g_tasks_to_combat_support": {
+			"1_intelligence": {},
+			"2_engineer": {},
+			"3_fire_support": {},
+			"4_air_defense": {},
+			"5_signal": {},
+			"6_cbrne_chemical,_biological,_radiological,_nuclear,_and_explosive_weapons": {},
+			"7_provost_marshal": {},
+			"8_miso_military_information_support_operations,_formerly_psychological_operations_or_psyop": {},
+			"9_civil_military": {}
+		},
+		"h_coordinating_instructions": {
+			"1_time_or_condition_when_the_plan_or_order_becomes_effective": {},
+			"2_ccir_commander's_critical_information_requirements": {},
+			"3_eefi_essential_elements_of_friendly_information": {},
+			"4_risk_reduction_control_measures": {},
+			"5_rules_of_engagement": {},
+			"6_environmental_considerations": {},
+			"7_force_protection": {}
+		}
+	},
+	"4_sustainment": {
+		"a_logistics": {
+			"1_sustainment_overlay": {},
+			"2_maintenance": {},
+			"3_transportation": {},
+			"4_supply": {},
+			"5_field_services": {}
+		},
+		"b_personnel_services_support": {
+			"1_method_of_marking_and_handling_epws": {},
+			"2_religious_services": {}
+		},
+		"c_army_health_system_support": {
+			"1_medical_command_and_control": {},
+			"2_medical_treatment": {},
+			"3_medical_evacuation": {},
+			"4_preventive_medicine": {}
+		}
+	},
+	"5_command_and_control": {
+		"a_command": {
+			"1_location_of_commander": {},
+			"2_succession_of_command": {}
+		},
+		"b_control": {
+			"1_command_posts": {},
+			"2_reports": {}
+		},
+		"c_signal": {
+			"1_soi_index_in_effect": {},
+			"2_methods_of_communication_by_priority": {},
+			"3_pyrotechnics_and_signals": {},
+			"4_code_words": {},
+			"5_challenge_and_password": {},
+			"6_number_combination": {},
+			"7_running_password": {},
+			"8_recognition_signals": {}
+		}
+	}
+}
