@@ -25,11 +25,15 @@ router.get('/JSONtable/:name', async (req, res) => {
 
 //Add a new data into the JSONTable
 router.post('/json', async (req, res) => {
-    const json_data = req.body.data
-    const query = {
-        text: `INSERT INTO ${JSON_table}(data) VALUES ($1)`,
-        values: [json_data]
+    const json_data = req.body
+    if (json_data != undefined) {
+        const query = {
+            text: `INSERT INTO ${JSON_table}(data) VALUES ($1)`,
+            values: [json_data]
+        }
+        const { ret } = await db.query(query)
+        res.send(ret === undefined ? 'OK' : ret)
+    } else {
+        res.send('Wrong request: no JSON data')
     }
-    const { ret } = await db.query(query)
-    res.send(ret === undefined ? 'OK' : ret)
 })

@@ -14,7 +14,8 @@
 <script>
 	import VFormBase from 'vuetify-form-base';  
 	import template from '../assets/opord_template.json';  
-	import data from '../assets/opord.json';  
+  import data from '../assets/opord.json';
+  import api from '@/service/api';
 
   export default {	
     name: 'Form',
@@ -28,6 +29,12 @@
     methods: {
       submitForm () {
         console.log(JSON.stringify(data));
+        sendForm(data);
+      },
+      sendForm (data) {
+        api().post('/create/json', data).then((ret) => {
+          console.log(ret);
+        }).catch((e) => {console.log(e)});
       }
     }
   }
