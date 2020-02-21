@@ -5,6 +5,7 @@
         <v-form id="to_send">
           <v-form-base :value="myValue" :schema="mySchema" />
         </v-form>
+        <v-btn block color="primary" @click="submitForm" dark>Submit</v-btn>
       </v-container>   
     </v-content>
   </v-app>
@@ -22,6 +23,11 @@
       return {
         myValue: data,   
         mySchema: template
+      }
+    },
+    methods: {
+      submitForm () {
+        console.log(JSON.stringify(data));
       }
     }
   }
