@@ -1,4 +1,5 @@
 const express = require('express')
+const bodyParser = require('body-parser')
 const cors = require('cors')
 const mountRoutes = require('./routes')
 
@@ -9,6 +10,8 @@ if (process.env.NODE_ENV !== 'production') {
 
 //Express setup and sanity route
 const app = express()
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(cors())
 mountRoutes(app)
 app.get('/check', function (req, res) {
