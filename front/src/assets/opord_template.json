@@ -1,33 +1,33 @@
 {
 	"1_situation": {
-		"a_area_of_interest": {"type": "text", "label": ""},
+		"a_area_of_interest": {"type": "text", "label": "Lieu d'intérêt"},
 		"b_area_of_operations": {
-			"1_terrain": {"type": "text", "label": ""},
-			"2_weather": {"type": "text", "label": ""}
+			"1_terrain": {"type": "text", "label": "Terrain"},
+			"2_weather": {"type": "text", "label": "Météo"}
 		},
 		"c_enemy_forces": {
-			"1_compositi,on,_disposition,_and_strength": {"type": "text", "label": ""},
-			"2_recent_activities": {"type": "text", "label": ""},
-			"3_locations_and_capabilities": {"type": "text", "label": ""},
-			"4_enemy_coas_courses_of_action": {"type": "text", "label": ""}
+			"1_composition_disposition_and_strength": {"type": "text", "label": "Composition, disposition et forces"},
+			"2_recent_activities": {"type": "text", "label": "Activités récentes"},
+			"3_locations_and_capabilities": {"type": "text", "label": "Emplacement et capacités"},
+			"4_enemy_coas_courses_of_action": {"type": "text", "label": "Plan d'action ennemi"}
 		},
 		"d_friendly_forces": {
-			"1_higher_hq_mission_and_intent": {"type": "text", "label": ""},
-			"2_mission_of_adjacent_units": {"type": "text", "label": ""}
+			"1_higher_hq_mission_and_intent": {"type": "text", "label": "EM supérieur, mission et intention"},
+			"2_mission_of_adjacent_units": {"type": "text", "label": "Mission des unités adjacentes"}
 		},
-		"e_attachments_and_detachments": {"type": "text", "label": ""}
+		"e_attachments_and_detachments": {"type": "text", "label": "Renforcement - Prélevement"}
 	},
-	"2_mission_a_concise_statement_that_includes_the_who,_what,_where,_when,_and_why_of_the_operation_to_be_conducted": {"type": "text", "label": ""},
+	"2_mission_a_concise_statement_that_includes_the_who,_what,_where,_when,_and_why_of_the_operation_to_be_conducted": {"type": "text", "label": "Mission - But"},
 	"3_execution": {
-		"a_commander's_intent": {"type": "text", "label": ""},
+		"a_commander's_intent": {"type": "text", "label": "Intention du chef"},
 		"b_concept_of_operations": {
-			"1_maneuver": {"type": "text", "label": ""},
-			"2_fires": {"type": "text", "label": ""},
-			"3_reconnaissance_and_surveillance": {"type": "text", "label": ""},
-			"4_intelligence": {"type": "text", "label": ""},
-			"5_engineer": {"type": "text", "label": ""},
-			"6_air_defense": {"type": "text", "label": ""},
-			"7_information_operations": {"type": "text", "label": ""}
+			"1_maneuver": {"type": "text", "label": "Idée de manoeuvre"},
+			"2_fires": {"type": "text", "label": "Feux"},
+			"3_reconnaissance_and_surveillance": {"type": "text", "label": "Reconnaissance et surveillance"},
+			"4_intelligence": {"type": "text", "label": "Renseignement"},
+			"5_engineer": {"type": "text", "label": "Génie"},
+			"6_air_defense": {"type": "text", "label": "ALAT"},
+			"7_information_operations": {"type": "text", "label": "Instruction de Coordination"}
 		},
 		"c_scheme_of_movement_and_maneuver": {"type": "text", "label": ""},
 		"d_scheme_of_fires": {"type": "text", "label": ""},

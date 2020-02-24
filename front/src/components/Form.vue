@@ -29,9 +29,6 @@
     methods: {
       submitForm () {
         console.log(JSON.stringify(data));
-        sendForm(data);
-      },
-      sendForm (data) {
         api().post('/create/json', data).then((ret) => {
           console.log(ret);
         }).catch((e) => {console.log(e)});
@@ -39,3 +36,15 @@
     }
   }
 </script>
+
+<style>
+  #form-base { 
+    padding:2rem;
+  }
+  
+  /* CSS Item --- set all items  */
+  #form-base .item { 
+    padding:1rem;
+    width:100%; 
+  }
+</style>
