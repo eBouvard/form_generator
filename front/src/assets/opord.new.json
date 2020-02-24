@@ -1,0 +1,114 @@
+{
+    "0_header": {
+        "security_classification": "",
+        "copy_no": "",
+        "copy_total": "",
+        "issuing_headquarters": "",
+        "place_of_issue": "",
+        "date-time_group_of_signature": "",
+        "message_reference_no": "",
+        "type_and_serial_number_of_opord": "",
+        "references": {
+            "maps_charts_and_relevant_documents ": "",
+            "map_at_scale_1/50000": "",
+        },
+        "time_zone_used": "",
+        "task_organisation": ""
+    },
+    "1_situation": {
+        "enemy_forces": {
+            "current_enemy": "",
+            "enemy_possibilities": "",
+            "future_enemy": ""
+        },
+        "friendly_forces": "",
+        "attachments_and_detachments": "",
+        "commander_evaluation": "",
+        "population": ""
+    },
+    "2_mission": "",
+    "3_execution": {
+        "concept_of_operations": "",
+        "missions_to_units": {
+            "unit_1": "",
+            "unit_2": ""
+        },
+        "fires": "",
+        "engineer": "",
+        "air_defense": "",
+        "electronic_warfare": "",
+        "circulation": "",
+        "coordinating_instructions": {
+            "coordination_lines": "",
+            "boundaries_between_units": "",
+            "connections_to_ensure": "",
+            "areas_reserved_and_maneuvering_routes": "",
+            "cbrn_security_and_defense": {
+                "danger_estimation": "",
+                "protection": "",
+                "decontamination": "",
+                "miscellaneous": ""
+            },
+            "anti-aircraft_instructions": "",
+            "intelligence_need": {
+                "before_engagement_intelligence": "",
+                "in_depth_ennemy": "",
+                "future_ennemy": "",
+                "field": ""
+            },
+            "schedule": "",
+            "civil_affairs_and_press_relations": ""
+        }
+    },
+    "4_administration_and_logistic": {
+        "forces_to_support": {
+            "organic_means": "",
+            "means_received_for_reinforcement": ""
+        },
+        "support_concept": {
+            "goal_to_reach": "",
+            "stability_or_elongation_allowed": "",
+            "initial_autonomy_to_maintain": ""
+        },
+        "priorities_and_efforts": {
+            "tactical priority": "",
+            "efforts_by_function": {
+                "supplying": "",
+                "mechanics": "",
+                "health": ""
+            }
+        },
+        "logistics_deployment": {
+            "mechanism_to_establish": "",
+            "progression_over_time": ""
+        },
+        "area_boundary": {
+            "front_boundary": "",
+            "back_boundary": ""
+        },
+        "support_modality": ""
+    },
+    "5_command_and_signal": {
+        "command_post_location": {
+            "active_command_post": "",
+            "tactical_command_post": "",
+            "medical_command_post": "",
+            "logistics_office": "",
+            "command_post_shift_planned_at": ""
+        },
+        "liaison": {
+            "liaison_detachments": "",
+            "side_links" : ""
+        },
+        "transmissions": {
+            "preliminary_phase": "",
+            "first_phase": ""
+        },
+        "electronic_warfare": {
+            "enemy_threats": "",
+            "electronic_protection": "",
+            "electronic_counter_counter_measures": "",
+            "measures_for_electronic_war_training": ""
+        }
+    }
+}
