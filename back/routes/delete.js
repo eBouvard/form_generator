@@ -10,8 +10,8 @@ router.get('/table/:name', async (req, res) => {
     const query = {
         text: `DROP TABLE ${table_name}`,
     }
-    const { ret } = await db.query(query)
-    res.send(ret === undefined ? 'OK' : ret)
+    const ret = await db.query(query)
+    res.send(ret.command == 'DROP' ? 'OK' : ret)
 })
 
 //Define the JSONTable
@@ -23,6 +23,6 @@ router.get('/json/:id', async (req, res) => {
         text: `DELETE FROM ${JSON_table} WHERE ${JSON_table}.id = $1`,
         values: [req.params.id]
     }
-    const { ret } = await db.query(query)
-    res.send('OK')
+    const { rowCount } = await db.query(query)
+    res.send(rowCount == 1 ? 'OK' : 'NULL')
 })
