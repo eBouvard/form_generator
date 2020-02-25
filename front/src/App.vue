@@ -6,7 +6,9 @@
       clipped
     >
       <v-list dense>
-        <v-list-item link>
+        <v-list-item link
+        @click="app_position = 0"
+        >
           <v-list-item-action>
             <v-icon>mdi-earth</v-icon>
           </v-list-item-action>
@@ -14,7 +16,9 @@
             <v-list-item-title>Accueil</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link>
+        <v-list-item link
+        @click="app_position = 1"
+        >
           <v-list-item-action>
             <v-icon>mdi-pen</v-icon>
           </v-list-item-action>
@@ -22,7 +26,9 @@
             <v-list-item-title>Remplissage</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link>
+        <v-list-item link
+        @click="app_position = 2"
+        >
           <v-list-item-action>
             <v-icon>mdi-table</v-icon>
           </v-list-item-action>
@@ -30,7 +36,9 @@
             <v-list-item-title>Liste des ordres</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link>
+        <v-list-item link
+        @click="app_position = 3"
+        >
           <v-list-item-action>
             <v-icon>mdi-file-document</v-icon>
           </v-list-item-action>
@@ -54,7 +62,10 @@
         class="fill-height"
         fluid
       >
-      <Form/>
+      <div v-if="app_position == 0"/>
+      <Form v-if="app_position == 1"/>
+      <div v-if="app_position == 2"/>
+      <div v-if="app_position == 3"/>
       </v-container>
     </v-content>
 
@@ -66,6 +77,7 @@
 <script>
 import Form from './components/Form.vue';
 
+
 export default {
     components:{
       Form
@@ -75,9 +87,23 @@ export default {
     },
     data: () => ({
       drawer: null,
+      app_position: 0,
     }),
     created () {
       this.$vuetify.theme.dark = true
-    },
+    }/*,
+    methods: {
+      submitForm () {
+        var data = {
+          title: document.getElementById("title").value,
+          author: "",
+          date: "",
+          content: content};
+        console.log(JSON.stringify(data));
+        api().post('/create/json', data).then((ret) => {
+          console.log(ret);
+        }).catch((e) => {console.log(e)});
+      }
+    }*/
   }
 </script>
