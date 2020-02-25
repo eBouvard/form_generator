@@ -7,7 +7,7 @@ module.exports = router
 //Check DB connection
 router.get('/health', async (req, res) => {
     const { rows } = await db.query('SELECT $1::text as message', ['Hello world from Postgre!'])
-    res.send(rows[0].message)
+    res.send(rows[0].message + '\n' + tables)
   })
 
 //Define the JSONTable
@@ -15,12 +15,12 @@ const JSON_table = 'json'
 
 //Create a simple JSONTable
 router.get('/JSONtable/:name', async (req, res) => {
-    const table_name = req.params.name
+    const new_table = req.params.name
     const query = {
-        text: `CREATE TABLE ${table_name} (id SERIAL PRIMARY KEY, data JSONB)`,
+        text: `CREATE TABLE ${new_table} (id SERIAL PRIMARY KEY, data JSONB)`,
     }
-    const { ret } = await db.query(query)
-    res.send(ret === undefined ? 'OK' : ret)
+    const ret  = await db.query(query)
+    res.send(ret != undefined ? 'OK' : ret)
 })
 
 //Add a new data into the JSONTable
@@ -28,11 +28,12 @@ router.post('/json', async (req, res) => {
     const json_data = req.body
     if (json_data != undefined) {
         const query = {
-            text: `INSERT INTO ${JSON_table}(data) VALUES ($1)`,
+            text: `INSERT INTO ${JSON_table}(data) VALUES ($1) RETURNING id`,
             values: [json_data]
         }
-        const { ret } = await db.query(query)
-        res.send(ret === undefined ? 'OK' : ret)
+        const { rows } = await db.query(query)
+        const ret = rows[0].id
+        res.send(ret === undefined ? 'Error' : ret.toString())
     } else {
         res.send('Wrong request: no JSON data')
     }

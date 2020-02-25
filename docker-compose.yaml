@@ -1,8 +1,9 @@
 # Launch the API with a Posgre Server
 version: "3"
 services:
-  api:
+  back:
     image: node:12.16.1
+    container_name: api
     environment:
       NODE_ENV: development
       PORT: 3000
@@ -16,7 +17,7 @@ services:
   front:
     image: node:12.16.1
     depends_on:
-      - api
+      - back
     environment:
       NODE_ENV: development
       PORT: 8080
@@ -26,3 +27,5 @@ services:
       - ./front:/usr/app
     working_dir: /usr/app
     command: "yarn run dev"
+    links:
+      - back

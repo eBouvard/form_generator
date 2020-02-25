@@ -34,7 +34,7 @@
           author: "",
           date: "",
           content: content};
-        console.log(JSON.stringify(data));
+        console.log(JSON.stringify(data));3
         api().post('/create/json', data).then((ret) => {
           console.log("Ceci est le retour : " + JSON.stringify(ret));
         }).catch((e) => {console.log(e)});

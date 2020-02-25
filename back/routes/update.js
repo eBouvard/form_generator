@@ -13,12 +13,28 @@ router.post('/json/:id', async (req, res) => {
     const json_data = req.body
     if (json_data != undefined && !isNaN(id)) {
         const query = {
-            text: `UPDATE ${JSON_table} SET data=$1 WHERE id=$2`,
-            values: [json_data, id]
+            text: `UPDATE ${JSON_table} SET data=$2 WHERE id=$1`,
+            values: [id, json_data]
         }
-        const { ret } = await db.query(query)
-        return(res.send(ret === undefined ? 'OK' : ret))
+        const { rowCount } = await db.query(query)
+        res.send(rowCount === 1 ? 'OK' : "Invalid ID or JSON Data")
     } else {
         res.send('Wrong request: no JSON data or no ID')
     }
 })
+
+//Replace a specific part within a JSON
+router.post('/json/part/:id', async (req, res) => {
+    const id = req.params.id
+    const json_data = req.body
+    if (!isNaN(id)) {
+      const query = {
+        text: `UPDATE ${JSON_table} SET data = data || $2 WHERE id=$1`,
+        values: [id, json_data],
+      }
+      const { rowCount } = await db.query(query)
+      res.send(rowCount === 1 ? 'OK' : "Invalid ID or JSON Data")
+    } else {
+      res.send('Wrong ID')
+    }
+  })
