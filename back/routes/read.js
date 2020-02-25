@@ -13,6 +13,15 @@ router.get('/all', async (req, res) => {
     res.send(rows)
 })
 
+//Read all JSON data from a specific Table
+router.get('/all/:table', async (req, res) => {
+  const table = req.params.table
+  if (table != undefined) {
+    const { rows } = await db.query(`SELECT * FROM ${table}`)
+    res.send(rows) 
+  } else { res.send('Wrong table name')}
+})
+
 //Read a specific JSON data
 router.get('/:id', async (req, res) => {
   id = req.params.id

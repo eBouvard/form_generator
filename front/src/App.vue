@@ -38,7 +38,7 @@
         class="fill-height"
         fluid
       >
-      <Form/>
+      <Table/>
       </v-container>
     </v-content>
 
@@ -49,11 +49,11 @@
 </template>
 
 <script>
-import Form from './components/Form.vue';
+import Table from './components/Table.vue';
 
 export default {
     components:{
-      Form
+      Table
       },
     props: {
       source: String,

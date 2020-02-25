@@ -28,7 +28,6 @@
     },
     methods: {
       submitForm () {
-        //console.log(JSON.stringify(data));
         api().post('/create/json', data).then((ret) => {
           console.log(ret);
         }).catch((e) => {console.log(e)});
