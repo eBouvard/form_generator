@@ -69,7 +69,7 @@
       >
       <div v-if="app_position == 0"/>
       <Form v-if="app_position == 1"/>
-      <div v-if="app_position == 2"/>
+      <Table v-if="app_position == 2"/>
       <Viewer v-if="app_position == 3"/>
       </v-container>
     </v-content>
@@ -83,11 +83,13 @@
 
 <script>
 import Form from './components/Form.vue';
+import Table from './components/Table.vue';
 import Viewer from './components/Viewer.vue';
 
 export default {
     components:{
       Form,
+      Table,
       Viewer
       },
     props: {
