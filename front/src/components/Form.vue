@@ -3,7 +3,7 @@
       <v-form id="to_send">
         <v-text-field
           label="Titre"
-          required
+          outlined
           id="title"
         ></v-text-field>
         <v-form-base :value="myValue" :schema="mySchema" />
@@ -36,7 +36,7 @@
           content: content};
         console.log(JSON.stringify(data));
         api().post('/create/json', data).then((ret) => {
-          console.log(ret);
+          console.log("Ceci est le retour : " + JSON.stringify(ret));
         }).catch((e) => {console.log(e)});
       }
     }
@@ -44,13 +44,11 @@
 </script>
 
 <style>
-  #form-base { 
-    padding:2rem;
+  #title { 
+    width:100%; 
   }
-  
-  /* CSS Item --- set all items  */
+
   #form-base .item { 
-    padding:1rem;
     width:100%; 
   }
 </style>

@@ -1,5 +1,10 @@
 <template>
   <v-app id="inspire">
+    <v-parallax
+      dark
+      height="100%"
+      src="./assets/background.png"
+    >
     <v-navigation-drawer
       v-model="drawer"
       app
@@ -65,22 +70,25 @@
       <div v-if="app_position == 0"/>
       <Form v-if="app_position == 1"/>
       <div v-if="app_position == 2"/>
-      <div v-if="app_position == 3"/>
+      <Viewer v-if="app_position == 3"/>
       </v-container>
     </v-content>
 
     <v-footer app>
     </v-footer>
+
+    </v-parallax>
   </v-app>
 </template>
 
 <script>
 import Form from './components/Form.vue';
-
+import Viewer from './components/Viewer.vue';
 
 export default {
     components:{
-      Form
+      Form,
+      Viewer
       },
     props: {
       source: String,
@@ -91,19 +99,6 @@ export default {
     }),
     created () {
       this.$vuetify.theme.dark = true
-    }/*,
-    methods: {
-      submitForm () {
-        var data = {
-          title: document.getElementById("title").value,
-          author: "",
-          date: "",
-          content: content};
-        console.log(JSON.stringify(data));
-        api().post('/create/json', data).then((ret) => {
-          console.log(ret);
-        }).catch((e) => {console.log(e)});
-      }
-    }*/
+    }
   }
 </script>
