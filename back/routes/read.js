@@ -37,6 +37,23 @@ router.get('/:id', async (req, res) => {
   }
 })
 
+//Read a specific JSON data (specific Table)
+router.get('/:id/:table', async (req, res) => {
+  const id = req.params.id
+  const table = req.params.table
+  if (!isNaN(id) && table != undefined) {
+    const query = {
+      text: `SELECT data FROM ${table} WHERE id=$1`,
+      values: [id],
+    }
+    const { rows } = await db.query(query)
+    res.send(rows[0] === undefined ? 'Wrong ID' : rows[0].data)
+  } else {
+    res.send('Wrong ID')
+  }
+})
+
+
 //Read a specific field within a JSON
 router.get('/val/:field/:id', async (req, res) => {
   const id = req.params.id
