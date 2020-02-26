@@ -1,12 +1,12 @@
 <template>
-  <v-container fluid>
-      <v-data-table
-            :headers="headers"
-            :items="forms"
-            :items-per-page="10"
-            class="elevation-1"
-        ></v-data-table>
-  </v-container>   
+      <v-container fluid>
+          <v-data-table
+                :headers="headers"
+                :items="forms"
+                :items-per-page="10"
+                class="elevation-1"
+            ></v-data-table>
+      </v-container>   
 </template>
 
 <script>
@@ -18,10 +18,10 @@
       return {
          headers: [
             { text: 'ID', value: 'id' },
-            { text: 'Titre', value: 'data.title' },
-            { text: 'Auteur', value: 'data.author' },
-            { text: 'Date', value: 'data.date' },
-            { text: 'Data', value: 'data.content' }
+            { text: 'Titre', value: 'title' },
+            { text: 'Auteur', value: 'authors' },
+            { text: 'Date', value: 'date' },
+            { text: 'Data', value: 'content' }
         ],
         forms: []
       }
