@@ -29,7 +29,8 @@ export default {
   },
   methods: {
     loadForm() {
-      var request = "/read/" + document.getElementById("opord_id").value;
+      var request =
+        "/read/" + document.getElementById("opord_id").value + "/scan";
       api()
         .get(request)
         .then(ret => {

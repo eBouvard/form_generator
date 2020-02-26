@@ -23,7 +23,7 @@ export default {
   },
   mounted() {
     api()
-      .get("/read/all/json")
+      .get("/read/all/scan")
       .then(ret => {
         const raw = ret.data;
         const array = [];
