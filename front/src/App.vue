@@ -67,7 +67,7 @@
         class="fill-height"
         fluid
       >
-      <div v-if="app_position == 0"/>
+      <Map v-if="app_position == 0"/>
       <Form v-if="app_position == 1"/>
       <Table v-if="app_position == 2"/>
       <Viewer v-if="app_position == 3"/>
@@ -82,12 +82,14 @@
 </template>
 
 <script>
+import Map from './components/Map.vue';
 import Form from './components/Form.vue';
 import Table from './components/Table.vue';
 import Viewer from './components/Viewer.vue';
 
 export default {
     components:{
+      Map,
       Form,
       Table,
       Viewer
