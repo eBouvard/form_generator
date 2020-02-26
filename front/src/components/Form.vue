@@ -36,7 +36,7 @@
           content: content};
         console.log(JSON.stringify(data));3
         api().post('/create/json', data).then((ret) => {
-          console.log("Ceci est le retour : " + JSON.stringify(ret));
+          console.log(ret);
         }).catch((e) => {console.log(e)});
       }
     }
