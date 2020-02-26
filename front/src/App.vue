@@ -93,7 +93,7 @@ export default {
   },
   data: () => ({
     drawer: null,
-    app_position: 0
+    app_position: 1
   }),
   created() {
     this.$vuetify.theme.dark = true;

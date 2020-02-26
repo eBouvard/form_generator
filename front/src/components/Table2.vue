@@ -16,7 +16,8 @@ export default {
         { text: "Titre", value: "title" },
         { text: "Auteur", value: "authors" },
         { text: "Date", value: "date" },
-        { text: "Data", value: "content" }
+        { text: "Data", value: "content" },
+        { text: "Score", value: "score" }
       ],
       forms: []
     };
@@ -34,7 +35,8 @@ export default {
             title: element.data.Title,
             authors: element.data.Authors,
             date: element.data.Created_Date,
-            content: element.data.Content
+            content: element.data.Content,
+            score: element.data.Conformity
           };
           array.push(newline);
         });
