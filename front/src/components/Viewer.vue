@@ -9,8 +9,8 @@
           id="opord_id"
         ></v-text-field>
       </v-form>
+      <h1>Formulaire {{myTitle}}</h1>
       <v-form id="to_print">
-        <h1>Formulaire {{myTitle}}</h1>
         <v-form-base :value="myValue" :schema="mySchema" />
       </v-form>
     </v-container>   

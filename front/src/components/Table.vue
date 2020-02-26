@@ -18,19 +18,18 @@
       return {
          headers: [
             { text: 'ID', value: 'id' },
-            { text: 'Titre', value: 'Title' },
-            { text: 'Auteur', value: 'Authors' },
-            { text: 'Date', value: 'Date' },
-            { text: 'Data', value: 'Content' }
+            { text: 'Titre', value: 'data.title' },
+            { text: 'Auteur', value: 'data.author' },
+            { text: 'Date', value: 'data.date' },
+//            { text: 'Data', value: 'data.content' }
         ],
         forms: [
-            {id:1, Title: "Salut", Authors: 'Michel', Date: "01/01/2020", Content: 'blabla'},
-            {id:2, Title: "World", Authors: 'Denisot', Date: "02/02/2020", Content: 'blabla'}
+//            {id:1, data: {title: "Salut", author: 'Michel', date: "01/01/2020", content: 'blabla'}}
          ]
       }
     },
     mounted() {
-        api().get('/read/all/scan').then((ret) => {
+        api().get('/read/all/').then((ret) => {
             console.log(ret.data)
             this.forms = ret.data
         }).catch((e) => {console.log(e)});
