@@ -10,11 +10,7 @@
         ></v-text-field>
       </v-form>
       <v-form id="to_print">
-        <v-text-field
-          label="Titre"
-          outlined
-          id="viewer_title"
-        ></v-text-field>
+        <h1>Formulaire {{myTitle}}</h1>
         <v-form-base :value="myValue" :schema="mySchema" />
       </v-form>
     </v-container>   
@@ -33,7 +29,8 @@
     data () {
       return {
         myValue: empty,   
-        mySchema: template
+        mySchema: template,
+        myTitle: ""
       }
     },
     methods: {
@@ -41,7 +38,8 @@
         var request = "/read/" + document.getElementById("opord_id").value;
         api().get(request).then((ret) => {
           console.log(ret);
-          this.myValue = JSON.parse(JSON.stringify(ret.data.content));
+          this.myValue = ret.data.content;
+          this.myTitle = ret.data.title;
           console.log(this.myValue);
         }).catch((e) => {console.log(e)})
       }
