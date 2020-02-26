@@ -21,17 +21,27 @@
             { text: 'Titre', value: 'data.title' },
             { text: 'Auteur', value: 'data.author' },
             { text: 'Date', value: 'data.date' },
-//            { text: 'Data', value: 'data.content' }
+            { text: 'Data', value: 'data.content' }
         ],
-        forms: [
-//            {id:1, data: {title: "Salut", author: 'Michel', date: "01/01/2020", content: 'blabla'}}
-         ]
+        forms: []
       }
     },
     mounted() {
-        api().get('/read/all/').then((ret) => {
-            console.log(ret.data)
-            this.forms = ret.data
+        api().get('/read/all/scan').then((ret) => {
+            const raw = ret.data
+            const array = []
+            raw.forEach(element => {
+                console.log(element)
+                const newline = {
+                    id: element.id,
+                    title: element.data.Title,
+                    authors: element.data.Authors,
+                    date: element.data.Created_Date,
+                    content: element.data.Content
+                }
+                array.push(newline)
+            });
+            this.forms = array
         }).catch((e) => {console.log(e)});
     }
   }
