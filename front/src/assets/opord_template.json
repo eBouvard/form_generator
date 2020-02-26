@@ -1,12 +1,12 @@
 {
 	"1_situation": {
-		"a_area_of_interest": {"type": "text", "label": ""},
+		"a_area_of_interest": {"type": "text", "label": "area_of_interest"},
 		"b_area_of_operations": {
 			"1_terrain": {"type": "text", "label": ""},
 			"2_weather": {"type": "text", "label": ""}
 		},
 		"c_enemy_forces": {
-			"1_compositi,on,_disposition,_and_strength": {"type": "text", "label": ""},
+			"1_composition_disposition,_and_strength": {"type": "text", "label": ""},
 			"2_recent_activities": {"type": "text", "label": ""},
 			"3_locations_and_capabilities": {"type": "text", "label": ""},
 			"4_enemy_coas_courses_of_action": {"type": "text", "label": ""}

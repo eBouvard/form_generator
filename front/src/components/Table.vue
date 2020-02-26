@@ -1,6 +1,4 @@
 <template>
-  <v-app>
-    <v-content>
       <v-container fluid>
           <v-data-table
                 :headers="headers"
@@ -9,8 +7,6 @@
                 class="elevation-1"
             ></v-data-table>
       </v-container>   
-    </v-content>
-  </v-app>
 </template>
 
 <script>
@@ -22,21 +18,30 @@
       return {
          headers: [
             { text: 'ID', value: 'id' },
-            { text: 'Titre', value: 'Title' },
-            { text: 'Auteur', value: 'Authors' },
-            { text: 'Date', value: 'Date' },
-            { text: 'Data', value: 'Content' }
+            { text: 'Titre', value: 'title' },
+            { text: 'Auteur', value: 'authors' },
+            { text: 'Date', value: 'date' },
+            { text: 'Data', value: 'content' }
         ],
-        forms: [
-            {id:1, Title: "Salut", Authors: 'Michel', Date: "01/01/2020", Content: 'blabla'},
-            {id:2, Title: "World", Authors: 'Denisot', Date: "02/02/2020", Content: 'blabla'}
-         ]
+        forms: []
       }
     },
     mounted() {
         api().get('/read/all/scan').then((ret) => {
-            console.log(ret.data)
-            this.forms = ret.data
+            const raw = ret.data
+            const array = []
+            raw.forEach(element => {
+                console.log(element)
+                const newline = {
+                    id: element.id,
+                    title: element.data.Title,
+                    authors: element.data.Authors,
+                    date: element.data.Created_Date,
+                    content: element.data.Content
+                }
+                array.push(newline)
+            });
+            this.forms = array
         }).catch((e) => {console.log(e)});
     }
   }
