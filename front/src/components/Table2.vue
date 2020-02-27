@@ -24,7 +24,7 @@ export default {
   },
   mounted() {
     api()
-      .get("/read/all/scan")
+      .get("/read/all/scan2")
       .then(ret => {
         const raw = ret.data;
         const array = [];

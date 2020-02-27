@@ -25,10 +25,23 @@ export default {
   },
   methods: {
     submitForm() {
+      var d = new Date();
+      var datestring =
+        d.getFullYear() +
+        "-" +
+        (d.getMonth() + 1) +
+        "-" +
+        d.getDate() +
+        "T" +
+        d.getHours() +
+        ":" +
+        d.getMinutes() +
+        ":" +
+        d.getSeconds();
       var data = {
         title: document.getElementById("title").value,
-        author: "",
-        date: "",
+        author: "Bob",
+        date: datestring,
         content: content
       };
       console.log(JSON.stringify(data));

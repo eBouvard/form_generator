@@ -31,10 +31,10 @@ export default {
           console.log(element);
           const newline = {
             id: element.id,
-            title: element.data.Title,
-            authors: element.data.Authors,
-            date: element.data.Created_Date,
-            content: element.data.Content
+            title: element.data.title,
+            authors: element.data.author,
+            date: element.data.date,
+            content: element.data.content
           };
           array.push(newline);
         });
