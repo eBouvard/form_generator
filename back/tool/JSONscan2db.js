@@ -8,7 +8,8 @@ module.export = importToDB
 async function importToDB(file) {
     raw = fs.readFileSync(file)
     data = JSON.parse(raw)
-    for (let i = 1 ; i <= 90 ; i++) {
+    for (let i = 1 ; i <= 1000 ; i++) {
+        if (data[i] == undefined) { break }
         const table = 'scan'
         const query = {
             text: `INSERT INTO ${table}(data) VALUES ($1) RETURNING id`,
