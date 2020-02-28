@@ -33,7 +33,8 @@
           title: document.getElementById("title").value,
           author: "",
           date: "",
-          content: content};
+          content: content
+        };
         console.log(JSON.stringify(data));
         api().post('/create/json', data).then((ret) => {
           console.log(ret);
