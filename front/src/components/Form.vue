@@ -1,20 +1,21 @@
 <template>
-  <v-app>
-    <v-content>
-      <v-container fluid>
-        <v-form id="to_send">
-          <v-form-base :value="myValue" :schema="mySchema" />
-        </v-form>
-        <v-btn block color="primary" @click="submitForm" dark>Submit</v-btn>
-      </v-container>   
-    </v-content>
-  </v-app>
+    <v-container fluid>
+      <v-form id="to_send">
+        <v-text-field
+          label="Titre"
+          outlined
+          id="title"
+        ></v-text-field>
+        <v-form-base :value="myValue" :schema="mySchema" />
+      </v-form>
+      <v-btn block color="primary" @click="submitForm" dark>Submit</v-btn>
+    </v-container>   
 </template>
 
 <script>
 	import VFormBase from 'vuetify-form-base';  
 	import template from '../assets/opord_template.json';  
-  import data from '../assets/opord.json';
+  import content from '../assets/opord.json';
   import api from '@/service/api';
 
   export default {	
@@ -22,12 +23,19 @@
     components:{ VFormBase },
     data () {
       return {
-        myValue: data,   
+        myValue: content,   
         mySchema: template
       }
     },
     methods: {
       submitForm () {
+        var data = {
+          title: document.getElementById("title").value,
+          author: "",
+          date: "",
+          content: content
+        };
+        console.log(JSON.stringify(data));
         api().post('/create/json', data).then((ret) => {
           console.log(ret);
         }).catch((e) => {console.log(e)});
@@ -35,3 +43,13 @@
     }
   }
 </script>
+
+<style>
+  #title { 
+    width:100%; 
+  }
+
+  #form-base .item { 
+    width:100%; 
+  }
+</style>
