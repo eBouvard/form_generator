@@ -5,7 +5,17 @@
                 :items="forms"
                 :items-per-page="10"
                 class="elevation-1"
-            ></v-data-table>
+                loading-text="Chargement en cours..."
+            >         
+            <template v-slot:item.score="{ item }">
+              <v-progress-linear color="primary" :value="item.score" rounded></v-progress-linear>
+            </template>
+            <template v-slot:item.delete>
+                <v-btn class="ma-2" icon dark small color="primary">
+                    <v-icon dark>mdi-trash-can-outline</v-icon>
+                </v-btn>
+            </template>
+            </v-data-table>
       </v-container>   
 </template>
 
@@ -21,7 +31,9 @@
             { text: 'Titre', value: 'title' },
             { text: 'Auteur', value: 'authors' },
             { text: 'Date', value: 'date' },
-            { text: 'Data', value: 'content' }
+            { text: 'Score', value: 'score' },
+            { text: 'Objet', value: 'content' },
+            { text: 'Supprimer', value: 'delete' }
         ],
         forms: []
       }
@@ -31,12 +43,15 @@
             const raw = ret.data
             const array = []
             raw.forEach(element => {
-                console.log(element)
+                const date = new Date(element.data.Created_Date)
+                const score = Math.ceil(element.data.Conformity * 100)
+                console.log(score)
                 const newline = {
                     id: element.id,
                     title: element.data.Title,
                     authors: element.data.Authors,
-                    date: element.data.Created_Date,
+                    date: date.toLocaleDateString('fr-FR'),
+                    score: score,
                     content: element.data.Content
                 }
                 array.push(newline)
