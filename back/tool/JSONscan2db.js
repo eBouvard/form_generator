@@ -9,6 +9,7 @@ async function importToDB(file) {
     raw = fs.readFileSync(file)
     data = JSON.parse(raw)
     for (let i = 1 ; i < 28 ; i++) {
+        if (data[i] == undefined) { break }
         const table = 'scan2'
         const query = {
             text: `INSERT INTO ${table}(data) VALUES ($1) RETURNING id`,
