@@ -27,7 +27,7 @@
       }
     },
     mounted() {
-        api().get('/read/all/scan').then((ret) => {
+        api().get('/read/all/scan2').then((ret) => {
             const raw = ret.data
             const array = []
             raw.forEach(element => {
