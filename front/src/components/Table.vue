@@ -5,6 +5,7 @@
                 :items="forms"
                 :items-per-page="10"
                 class="elevation-1"
+                loading
                 loading-text="Chargement en cours..."
             >         
             <template v-slot:item.score="{ item }">
@@ -12,7 +13,7 @@
             </template>
             <template v-slot:item.delete>
                 <v-btn class="ma-2" icon dark small color="primary">
-                    <v-icon dark>mdi-trash-can-outline</v-icon>
+                    <v-icon v-on:click="console.log('foo')" dark>mdi-trash-can-outline</v-icon>
                 </v-btn>
             </template>
             </v-data-table>
@@ -37,6 +38,9 @@
         ],
         forms: []
       }
+    },
+    methods() {
+
     },
     mounted() {
         api().get('/read/all/scan2').then((ret) => {
