@@ -1,0 +1,96 @@
+{
+	"1_situation": {
+		"a_area_of_interest": {"type": "text", "label": "Lieu d'intérêt"},
+		"b_area_of_operations": {
+			"1_terrain": {"type": "text", "label": "Terrain"},
+			"2_weather": {"type": "text", "label": "Météo"}
+		},
+		"c_enemy_forces": {
+			"1_composition_disposition_and_strength": {"type": "text", "label": "Composition, disposition et forces"},
+			"2_recent_activities": {"type": "text", "label": "Activités récentes"},
+			"3_locations_and_capabilities": {"type": "text", "label": "Emplacement et capacités"},
+			"4_enemy_coas_courses_of_action": {"type": "text", "label": "Plan d'action ennemi"}
+		},
+		"d_friendly_forces": {
+			"1_higher_hq_mission_and_intent": {"type": "text", "label": "EM supérieur, mission et intention"},
+			"2_mission_of_adjacent_units": {"type": "text", "label": "Mission des unités adjacentes"}
+		},
+		"e_attachments_and_detachments": {"type": "text", "label": "Renforcement - Prélevement"}
+	},
+	"2_mission_a_concise_statement_that_includes_the_who,_what,_where,_when,_and_why_of_the_operation_to_be_conducted": {"type": "text", "label": "Mission - But"},
+	"3_execution": {
+		"a_commander's_intent": {"type": "text", "label": "Intention du chef"},
+		"b_concept_of_operations": {
+			"1_maneuver": {"type": "text", "label": "Idée de manoeuvre"},
+			"2_fires": {"type": "text", "label": "Feux"},
+			"3_reconnaissance_and_surveillance": {"type": "text", "label": "Reconnaissance et surveillance"},
+			"4_intelligence": {"type": "text", "label": "Renseignement"},
+			"5_engineer": {"type": "text", "label": "Génie"},
+			"6_air_defense": {"type": "text", "label": "ALAT"},
+			"7_information_operations": {"type": "text", "label": "Instruction de Coordination"}
+		},
+		"c_scheme_of_movement_and_maneuver": {"type": "text", "label": ""},
+		"d_scheme_of_fires": {"type": "text", "label": ""},
+		"e_casualty_evacuation": {"type": "text", "label": ""},
+		"f_tasks_to_subordinate_units": {"type": "text", "label": ""},
+		"g_tasks_to_combat_support": {
+			"1_intelligence": {"type": "text", "label": ""},
+			"2_engineer": {"type": "text", "label": ""},
+			"3_fire_support": {"type": "text", "label": ""},
+			"4_air_defense": {"type": "text", "label": ""},
+			"5_signal": {"type": "text", "label": ""},
+			"6_cbrne_chemical,_biological,_radiological,_nuclear,_and_explosive_weapons": {"type": "text", "label": ""},
+			"7_provost_marshal": {"type": "text", "label": ""},
+			"8_miso_military_information_support_operations,_formerly_psychological_operations_or_psyop": {"type": "text", "label": ""},
+			"9_civil_military": {"type": "text", "label": ""}
+		},
+		"h_coordinating_instructions": {
+			"1_time_or_condition_when_the_plan_or_order_becomes_effective": {"type": "text", "label": ""},
+			"2_ccir_commander's_critical_information_requirements": {"type": "text", "label": ""},
+			"3_eefi_essential_elements_of_friendly_information": {"type": "text", "label": ""},
+			"4_risk_reduction_control_measures": {"type": "text", "label": ""},
+			"5_rules_of_engagement": {"type": "text", "label": ""},
+			"6_environmental_considerations": {"type": "text", "label": ""},
+			"7_force_protection": {"type": "text", "label": ""}
+		}
+	},
+	"4_sustainment": {
+		"a_logistics": {
+			"1_sustainment_overlay": {"type": "text", "label": ""},
+			"2_maintenance": {"type": "text", "label": ""},
+			"3_transportation": {"type": "text", "label": ""},
+			"4_supply": {"type": "text", "label": ""},
+			"5_field_services": {"type": "text", "label": ""}
+		},
+		"b_personnel_services_support": {
+			"1_method_of_marking_and_handling_epws": {"type": "text", "label": ""},
+			"2_religious_services": {"type": "text", "label": ""}
+		},
+		"c_army_health_system_support": {
+			"1_medical_command_and_control": {"type": "text", "label": ""},
+			"2_medical_treatment": {"type": "text", "label": ""},
+			"3_medical_evacuation": {"type": "text", "label": ""},
+			"4_preventive_medicine": {"type": "text", "label": ""}
+		}
+	},
+	"5_command_and_control": {
+		"a_command": {
+			"1_location_of_commander": {"type": "text", "label": ""},
+			"2_succession_of_command": {"type": "text", "label": ""}
+		},
+		"b_control": {
+			"1_command_posts": {"type": "text", "label": ""},
+			"2_reports": {"type": "text", "label": ""}
+		},
+		"c_signal": {
+			"1_soi_index_in_effect": {"type": "text", "label": ""},
+			"2_methods_of_communication_by_priority": {"type": "text", "label": ""},
+			"3_pyrotechnics_and_signals": {"type": "text", "label": ""},
+			"4_code_words": {"type": "text", "label": ""},
+			"5_challenge_and_password": {"type": "text", "label": ""},
+			"6_number_combination": {"type": "text", "label": ""},
+			"7_running_password": {"type": "text", "label": ""},
+			"8_recognition_signals": {"type": "text", "label": ""}
+		}
+	}
+}
