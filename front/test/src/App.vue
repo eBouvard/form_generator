@@ -1,8 +1,6 @@
 <template>
   <v-app>
-    <v-navigation-drawer app mini-variant permanent>
-      <Menu></Menu>
-    </v-navigation-drawer>
+    <NavDrawer></NavDrawer>
 
     <v-app-bar app></v-app-bar>
 
@@ -17,13 +15,13 @@
 </template>
 
 <script>
-import Menu from "@/components/Menu.vue";
+import NavDrawer from "@/views/NavDrawer.vue";
 
 export default {
   name: "App",
 
   components: {
-    Menu
+    NavDrawer
   },
 
   data: () => ({
