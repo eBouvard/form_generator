@@ -1,22 +1,25 @@
 <template>
   <v-container fluid>
     <v-form id="to_send">
-      <v-text-field v-for="item in template"
+      <FormComponent v-for="item in template"
           :key="item.label"
-          :label="item.label"
-      ></v-text-field>
+          :item="item"
+      ></FormComponent>
     </v-form>
     <v-btn block color="primary" @click="submitForm" dark>Enregistrer</v-btn>
   </v-container>
 </template>
 
 <script>
-import template from "../assets/opord_template.json";
+import template from "@/assets/opord_template.json";
+import FormComponent from "@/components/FormComponents/FormComponent.vue";
 import api from "@/service/api";
 
 export default {
   name: "Form",
-  components: {},
+  components: {
+    FormComponent
+  },
   data() {
     return {
       template: template
