@@ -1,5 +1,8 @@
 <template>
-  <h2>{{item.label}}</h2>
+  <v-container fluid>
+    <h2>{{items.label}}</h2>
+    <v-text-field v-for="item in items.content" :key="item.label" :label="item.label"></v-text-field>
+  </v-container>
 </template>
 
 <script>
@@ -9,7 +12,7 @@ export default {
     return {};
   },
   props: {
-    item: Object
+    items: Object
   }
 };
 </script>

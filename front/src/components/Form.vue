@@ -1,10 +1,7 @@
 <template>
   <v-container fluid>
     <v-form id="to_send">
-      <FormComponent v-for="item in template"
-          :key="item.label"
-          :item="item"
-      ></FormComponent>
+      <FormComponent v-for="item in template" :key="item.label" :items="item"></FormComponent>
     </v-form>
     <v-btn block color="primary" @click="submitForm" dark>Enregistrer</v-btn>
   </v-container>
