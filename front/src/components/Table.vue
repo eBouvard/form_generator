@@ -40,7 +40,6 @@
       }
     },
     methods() {
-
     },
     mounted() {
         api().get('/read/all/scan2').then((ret) => {
