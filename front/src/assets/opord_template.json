@@ -39,17 +39,18 @@
                 "label": "ORDRE D’OPERATION N°"
             },
             "references": {
-        "type": "categories",
-        "content": {
-                "maps_charts_and_relevant_documents ": {
-                    "type": "text",
-                    "label": "Cartes, tableaux et documents utilisés"
+                "type": "categories",
+                "content": {
+                    "maps_charts_and_relevant_documents ": {
+                        "type": "text",
+                        "label": "Cartes, tableaux et documents utilisés"
+                    },
+                    "map_at_scale_1/50000": {
+                        "type": "text",
+                        "label": "Cartes au 1/50000"
+                    }
                 },
-                "map_at_scale_1/50000": {
-                    "type": "text",
-                    "label": "Cartes au 1/50000"
-                }},
-        "label": ""
+                "label": ""
             },
             "time_zone_used": {
                 "type": "text",
@@ -65,6 +66,10 @@
     "1_situation": {
         "type": "categories",
         "content": {
+            "free_text": {
+                "type": "text",
+                "label": ""
+            },
             "enemy_forces": {
                 "type": "categories",
                 "current_enemy": {
@@ -101,12 +106,22 @@
         "label": "1 - SITUATION"
     },
     "2_mission": {
-        "type": "text",
+        "type": "categories",
+        "content": {
+            "free_text": {
+                "type": "text",
+                "label": ""
+            }
+        },
         "label": "2 - MISSION - BUT"
     },
     "3_execution": {
         "type": "categories",
         "content": {
+            "free_text": {
+                "type": "text",
+                "label": ""
+            },
             "concept_of_operations": {
                 "type": "text",
                 "label": "Idée de manoeuvre"
@@ -221,6 +236,10 @@
     "4_administration_and_logistic": {
         "type": "categories",
         "content": {
+            "free_text": {
+                "type": "text",
+                "label": ""
+            },
             "forces_to_support": {
                 "type": "categories",
                 "organic_means": {
@@ -268,7 +287,7 @@
                         "type": "text",
                         "label": "SAN"
                     },
-                "label": "Efforts par fonction"
+                    "label": "Efforts par fonction"
                 },
                 "label": "Priorités, efforts"
             },
@@ -306,6 +325,10 @@
     "5_command_and_signal": {
         "type": "categories",
         "content": {
+            "free_text": {
+                "type": "text",
+                "label": ""
+            },
             "command_post_location": {
                 "active_command_post": {
                     "type": "text",
