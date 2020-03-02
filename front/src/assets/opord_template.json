@@ -72,17 +72,19 @@
             },
             "enemy_forces": {
                 "type": "categories",
-                "current_enemy": {
-                    "type": "text",
-                    "label": "ENI actuel"
-                },
-                "enemy_possibilities": {
-                    "type": "text",
-                    "label": "Possibilités de l'ENI"
-                },
-                "future_enemy": {
-                    "type": "text",
-                    "label": "ENI futur"
+                "content": {
+                    "current_enemy": {
+                        "type": "text",
+                        "label": "ENI actuel"
+                    },
+                    "enemy_possibilities": {
+                        "type": "text",
+                        "label": "Possibilités de l'ENI"
+                    },
+                    "future_enemy": {
+                        "type": "text",
+                        "label": "ENI futur"
+                    }
                 },
                 "label": "Forces ennemies"
             },
@@ -128,13 +130,15 @@
             },
             "missions_to_units": {
                 "type": "categories",
-                "unit_1": {
-                    "type": "text",
-                    "label": "Missions aux unités subordonnées 1"
-                },
-                "unit_2": {
-                    "type": "text",
-                    "label": "Missions aux unités subordonnées 2"
+                "content": {
+                    "unit_1": {
+                        "type": "text",
+                        "label": "Missions aux unités subordonnées 1"
+                    },
+                    "unit_2": {
+                        "type": "text",
+                        "label": "Missions aux unités subordonnées 2"
+                    }
                 },
                 "label": "Missions aux unités subordonnées"
             },
@@ -160,73 +164,79 @@
             },
             "coordinating_instructions": {
                 "type": "categories",
-                "coordination_lines": {
-                    "type": "text",
-                    "label": "Lignes de coordination"
-                },
-                "boundaries_between_units": {
-                    "type": "text",
-                    "label": "Limites entre les unités"
-                },
-                "connections_to_ensure": {
-                    "type": "text",
-                    "label": "Liaisons à assurer"
-                },
-                "areas_reserved_and_maneuvering_routes": {
-                    "type": "text",
-                    "label": "Zones réservés ou à laisser libre d’obstacles, itinéraires de manoeuvre"
-                },
-                "cbrn_security_and_defense": {
-                    "type": "categories",
-                    "danger_estimation": {
+                "content": {
+                    "coordination_lines": {
                         "type": "text",
-                        "label": "Estimation du danger NBC"
+                        "label": "Lignes de coordination"
                     },
-                    "protection": {
+                    "boundaries_between_units": {
                         "type": "text",
-                        "label": "Protection"
+                        "label": "Limites entre les unités"
                     },
-                    "decontamination": {
+                    "connections_to_ensure": {
                         "type": "text",
-                        "label": "Décontamination"
+                        "label": "Liaisons à assurer"
                     },
-                    "miscellaneous": {
+                    "areas_reserved_and_maneuvering_routes": {
                         "type": "text",
-                        "label": "Divers"
+                        "label": "Zones réservés ou à laisser libre d’obstacles, itinéraires de manoeuvre"
                     },
-                    "label": "Sécurité et défense NBC"
-                },
-                "anti-aircraft_instructions": {
-                    "type": "text",
-                    "label": "Consignes LATTA"
-                },
-                "intelligence_need": {
-                    "type": "categories",
-                    "before_engagement_intelligence": {
+                    "cbrn_security_and_defense": {
+                        "type": "categories",
+                        "content": {
+                            "danger_estimation": {
+                                "type": "text",
+                                "label": "Estimation du danger NBC"
+                            },
+                            "protection": {
+                                "type": "text",
+                                "label": "Protection"
+                            },
+                            "decontamination": {
+                                "type": "text",
+                                "label": "Décontamination"
+                            },
+                            "miscellaneous": {
+                                "type": "text",
+                                "label": "Divers"
+                            }
+                        },
+                        "label": "Sécurité et défense NBC"
+                    },
+                    "anti-aircraft_instructions": {
                         "type": "text",
-                        "label": "Renseignement avant engagement"
+                        "label": "Consignes LATTA"
                     },
-                    "in_depth_ennemy": {
+                    "intelligence_need": {
+                        "type": "categories",
+                        "content": {
+                            "before_engagement_intelligence": {
+                                "type": "text",
+                                "label": "Renseignement avant engagement"
+                            },
+                            "in_depth_ennemy": {
+                                "type": "text",
+                                "label": "ENI dans la profondeur"
+                            },
+                            "future_ennemy": {
+                                "type": "text",
+                                "label": "ENI futur"
+                            },
+                            "field": {
+                                "type": "text",
+                                "label": "Terrain"
+                            }
+                        },
+                        "label": "Besoins en renseignement"
+                    },
+                    "schedule": {
                         "type": "text",
-                        "label": "ENI dans la profondeur"
+                        "label": "Horaires"
                     },
-                    "future_ennemy": {
+                    "civil_affairs_and_press_relations": {
                         "type": "text",
-                        "label": "ENI futur"
-                    },
-                    "field": {
-                        "type": "text",
-                        "label": "Terrain"
-                    },
-                    "label": "Besoins en renseignement"
-                },
-                "schedule": {
-                    "type": "text",
-                    "label": "Horaires"
-                },
-                "civil_affairs_and_press_relations": {
-                    "type": "text",
-                    "label": "Affaires civiles - Relations avec la presse"
+                        "label": "Affaires civiles - Relations avec la presse"
+                    }
                 },
                 "label": "Instruction de coordination"
             }
@@ -242,50 +252,56 @@
             },
             "forces_to_support": {
                 "type": "categories",
-                "organic_means": {
-                    "type": "text",
-                    "label": "Moyens organiques"
-                },
-                "means_received_for_reinforcement": {
-                    "type": "text",
-                    "label": "Moyens reçus en renforcement"
+                "content": {
+                    "organic_means": {
+                        "type": "text",
+                        "label": "Moyens organiques"
+                    },
+                    "means_received_for_reinforcement": {
+                        "type": "text",
+                        "label": "Moyens reçus en renforcement"
+                    }
                 },
                 "label": "Forces à soutenir"
             },
             "support_concept": {
                 "type": "categories",
-                "goal_to_reach": {
-                    "type": "text",
-                    "label": "But à atteindre"
-                },
-                "stability_or_elongation_allowed": {
-                    "type": "text",
-                    "label": "Stabilité ou élongation consenties"
-                },
-                "initial_autonomy_to_maintain": {
-                    "type": "text",
-                    "label": "Autonomie initiale à maintenir"
+                "content": {
+                    "goal_to_reach": {
+                        "type": "text",
+                        "label": "But à atteindre"
+                    },
+                    "stability_or_elongation_allowed": {
+                        "type": "text",
+                        "label": "Stabilité ou élongation consenties"
+                    },
+                    "initial_autonomy_to_maintain": {
+                        "type": "text",
+                        "label": "Autonomie initiale à maintenir"
+                    }
                 },
                 "label": "Conception du soutien"
             },
             "priorities_and_efforts": {
                 "type": "categories",
-                "tactical priority": {
-                    "type": "text",
-                    "label": "Priorité tactique"
-                },
-                "efforts_by_function": {
-                    "supplying": {
+                "content": {
+                    "tactical priority": {
                         "type": "text",
-                        "label": "RAV"
+                        "label": "Priorité tactique"
                     },
-                    "mechanics": {
-                        "type": "text",
-                        "label": "MEC"
-                    },
-                    "health": {
-                        "type": "text",
-                        "label": "SAN"
+                    "efforts_by_function": {
+                        "supplying": {
+                            "type": "text",
+                            "label": "RAV"
+                        },
+                        "mechanics": {
+                            "type": "text",
+                            "label": "MEC"
+                        },
+                        "health": {
+                            "type": "text",
+                            "label": "SAN"
+                        }
                     },
                     "label": "Efforts par fonction"
                 },
@@ -293,25 +309,29 @@
             },
             "logistics_deployment": {
                 "type": "categories",
-                "mechanism_to_establish": {
-                    "type": "text",
-                    "label": "Dispositif à réaliser"
-                },
-                "progression_over_time": {
-                    "type": "text",
-                    "label": "Evolution dans le temps"
+                "content": {
+                    "mechanism_to_establish": {
+                        "type": "text",
+                        "label": "Dispositif à réaliser"
+                    },
+                    "progression_over_time": {
+                        "type": "text",
+                        "label": "Evolution dans le temps"
+                    }
                 },
                 "label": "Déploiement des formations logistiques"
             },
             "area_boundary": {
                 "type": "categories",
-                "front_boundary": {
-                    "type": "text",
-                    "label": "Limite avant (LIMAVZACA)"
-                },
-                "back_boundary": {
-                    "type": "text",
-                    "label": "Limite arrière (LIMARRZACA)"
+                "content": {
+                    "front_boundary": {
+                        "type": "text",
+                        "label": "Limite avant (LIMAVZACA)"
+                    },
+                    "back_boundary": {
+                        "type": "text",
+                        "label": "Limite arrière (LIMARRZACA)"
+                    }
                 },
                 "label": "Découpage de la zone"
             },
@@ -330,64 +350,80 @@
                 "label": ""
             },
             "command_post_location": {
-                "active_command_post": {
-                    "type": "text",
-                    "label": "PC ACTIF à"
+                "type": "categories",
+                "content": {
+                    "active_command_post": {
+                        "type": "text",
+                        "label": "PC ACTIF à"
+                    },
+                    "tactical_command_post": {
+                        "type": "text",
+                        "label": "PC TACTIQUE à"
+                    },
+                    "medical_command_post": {
+                        "type": "text",
+                        "label": "PC MA"
+                    },
+                    "logistics_office": {
+                        "type": "text",
+                        "label": "Antenne logistique"
+                    },
+                    "command_post_shift_planned_at": {
+                        "type": "text",
+                        "label": "Bascule de PC prévue à"
+                    }
                 },
-                "tactical_command_post": {
-                    "type": "text",
-                    "label": "PC TACTIQUE à"
-                },
-                "medical_command_post": {
-                    "type": "text",
-                    "label": "PC MA"
-                },
-                "logistics_office": {
-                    "type": "text",
-                    "label": "Antenne logistique"
-                },
-                "command_post_shift_planned_at": {
-                    "type": "text",
-                    "label": "Bascule de PC prévue à"
-                }
+                "label": "Implantation des PC"
             },
             "liaison": {
-                "liaison_detachments": {
-                    "type": "text",
-                    "label": "Détachements de liaison"
+                "type": "categories",
+                "content": {
+                    "liaison_detachments": {
+                        "type": "text",
+                        "label": "Détachements de liaison"
+                    },
+                    "side_links": {
+                        "type": "text",
+                        "label": "Liaisons latérales"
+                    }
                 },
-                "side_links": {
-                    "type": "text",
-                    "label": "Liaisons latérales"
-                }
+                "label": "Liaisons"
             },
             "transmissions": {
-                "preliminary_phase": {
-                    "type": "text",
-                    "label": "Phase préliminaire"
+                "type": "categories",
+                "content": {
+                    "preliminary_phase": {
+                        "type": "text",
+                        "label": "Phase préliminaire"
+                    },
+                    "first_phase": {
+                        "type": "text",
+                        "label": "1° phase"
+                    }
                 },
-                "first_phase": {
-                    "type": "text",
-                    "label": "1° phase"
-                }
+                "label": "Transmissions"
             },
             "electronic_warfare": {
-                "enemy_threats": {
-                    "type": "text",
-                    "label": "Menaces particulières ENI"
+                "type": "categories",
+                "content": {
+                    "enemy_threats": {
+                        "type": "text",
+                        "label": "Menaces particulières ENI"
+                    },
+                    "electronic_protection": {
+                        "type": "text",
+                        "label": "Mesures de protection électronique (MPE)"
+                    },
+                    "electronic_counter_counter_measures": {
+                        "type": "text",
+                        "label": "Contre-mesures électromagnétiques (CME)"
+                    },
+                    "measures_for_electronic_war_training": {
+                        "type": "text",
+                        "label": "Mesures d'accueil des formations de GE"
+                    }
                 },
-                "electronic_protection": {
-                    "type": "text",
-                    "label": "Mesures de protection électronique (MPE)"
-                },
-                "electronic_counter_counter_measures": {
-                    "type": "text",
-                    "label": "Contre-mesures électromagnétiques (CME)"
-                },
-                "measures_for_electronic_war_training": {
-                    "type": "text",
-                    "label": "Mesures d'accueil des formations de GE"
-                }
+                "label": "Guerre électronique"
             }
         },
         "label": "5 - COMMANDEMENTS ET TRANSMISSIONS"
