@@ -2,8 +2,8 @@
   <v-container fluid>
     <v-form id="to_send">
       <FormComponent :items="template"></FormComponent>
+      <v-btn block color="primary" @click="getUser" dark>Enregistrer</v-btn>
     </v-form>
-    <v-btn block color="primary" @click="submitForm" dark>Enregistrer</v-btn>
   </v-container>
 </template>
 
@@ -24,21 +24,25 @@ export default {
   },
   methods: {
     submitForm() {
-      var data = {
-        title: document.getElementById("title").value,
-        author: "",
-        date: "",
-        content: ""
-      };
-      console.log(JSON.stringify(data));
       api()
-        .post("/create/json", data)
+        .post("/create/json", "")
         .then(ret => {
           console.log(ret);
         })
         .catch(e => {
           console.log(e);
         });
+    },
+    getUser() {
+      var user_list = [
+        "Joachim Murat",
+        "Michel Ney",
+        "Jean Lannes",
+        "André Masséna",
+        "Louis Alexandre Berthier",
+        "Louis-Nicolas Davout"
+      ];
+      console.log(user_list[Math.floor(Math.random() * Math.floor(6))]);
     }
   }
 };
