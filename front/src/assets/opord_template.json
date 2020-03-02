@@ -39,6 +39,8 @@
                 "label": "ORDRE D’OPERATION N°"
             },
             "references": {
+        "type": "categories",
+        "content": {
                 "maps_charts_and_relevant_documents ": {
                     "type": "text",
                     "label": "Cartes, tableaux et documents utilisés"
@@ -46,7 +48,8 @@
                 "map_at_scale_1/50000": {
                     "type": "text",
                     "label": "Cartes au 1/50000"
-                }
+                }},
+        "label": ""
             },
             "time_zone_used": {
                 "type": "text",
@@ -63,6 +66,7 @@
         "type": "categories",
         "content": {
             "enemy_forces": {
+                "type": "categories",
                 "current_enemy": {
                     "type": "text",
                     "label": "ENI actuel"
@@ -74,7 +78,8 @@
                 "future_enemy": {
                     "type": "text",
                     "label": "ENI futur"
-                }
+                },
+                "label": "Forces ennemies"
             },
             "friendly_forces": {
                 "type": "text",
@@ -107,6 +112,7 @@
                 "label": "Idée de manoeuvre"
             },
             "missions_to_units": {
+                "type": "categories",
                 "unit_1": {
                     "type": "text",
                     "label": "Missions aux unités subordonnées 1"
@@ -114,7 +120,8 @@
                 "unit_2": {
                     "type": "text",
                     "label": "Missions aux unités subordonnées 2"
-                }
+                },
+                "label": "Missions aux unités subordonnées"
             },
             "fires": {
                 "type": "text",
@@ -137,6 +144,7 @@
                 "label": "Circulation"
             },
             "coordinating_instructions": {
+                "type": "categories",
                 "coordination_lines": {
                     "type": "text",
                     "label": "Lignes de coordination"
@@ -154,6 +162,7 @@
                     "label": "Zones réservés ou à laisser libre d’obstacles, itinéraires de manoeuvre"
                 },
                 "cbrn_security_and_defense": {
+                    "type": "categories",
                     "danger_estimation": {
                         "type": "text",
                         "label": "Estimation du danger NBC"
@@ -169,13 +178,15 @@
                     "miscellaneous": {
                         "type": "text",
                         "label": "Divers"
-                    }
+                    },
+                    "label": "Sécurité et défense NBC"
                 },
                 "anti-aircraft_instructions": {
                     "type": "text",
                     "label": "Consignes LATTA"
                 },
                 "intelligence_need": {
+                    "type": "categories",
                     "before_engagement_intelligence": {
                         "type": "text",
                         "label": "Renseignement avant engagement"
@@ -191,7 +202,8 @@
                     "field": {
                         "type": "text",
                         "label": "Terrain"
-                    }
+                    },
+                    "label": "Besoins en renseignement"
                 },
                 "schedule": {
                     "type": "text",
@@ -200,7 +212,8 @@
                 "civil_affairs_and_press_relations": {
                     "type": "text",
                     "label": "Affaires civiles - Relations avec la presse"
-                }
+                },
+                "label": "Instruction de coordination"
             }
         },
         "label": "3 - EXECUTION"
@@ -209,6 +222,7 @@
         "type": "categories",
         "content": {
             "forces_to_support": {
+                "type": "categories",
                 "organic_means": {
                     "type": "text",
                     "label": "Moyens organiques"
@@ -216,9 +230,11 @@
                 "means_received_for_reinforcement": {
                     "type": "text",
                     "label": "Moyens reçus en renforcement"
-                }
+                },
+                "label": "Forces à soutenir"
             },
             "support_concept": {
+                "type": "categories",
                 "goal_to_reach": {
                     "type": "text",
                     "label": "But à atteindre"
@@ -230,9 +246,11 @@
                 "initial_autonomy_to_maintain": {
                     "type": "text",
                     "label": "Autonomie initiale à maintenir"
-                }
+                },
+                "label": "Conception du soutien"
             },
             "priorities_and_efforts": {
+                "type": "categories",
                 "tactical priority": {
                     "type": "text",
                     "label": "Priorité tactique"
@@ -249,10 +267,13 @@
                     "health": {
                         "type": "text",
                         "label": "SAN"
-                    }
-                }
+                    },
+                "label": "Efforts par fonction"
+                },
+                "label": "Priorités, efforts"
             },
             "logistics_deployment": {
+                "type": "categories",
                 "mechanism_to_establish": {
                     "type": "text",
                     "label": "Dispositif à réaliser"
@@ -260,9 +281,11 @@
                 "progression_over_time": {
                     "type": "text",
                     "label": "Evolution dans le temps"
-                }
+                },
+                "label": "Déploiement des formations logistiques"
             },
             "area_boundary": {
+                "type": "categories",
                 "front_boundary": {
                     "type": "text",
                     "label": "Limite avant (LIMAVZACA)"
@@ -270,7 +293,8 @@
                 "back_boundary": {
                     "type": "text",
                     "label": "Limite arrière (LIMARRZACA)"
-                }
+                },
+                "label": "Découpage de la zone"
             },
             "support_modality": {
                 "type": "text",
