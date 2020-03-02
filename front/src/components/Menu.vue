@@ -1,7 +1,7 @@
 <template>
-  <v-navigation-drawer app mini-variant permanent>
+  <v-navigation-drawer clipper class="ma-0 pa-0" mini-variant permanent>
     <v-list-item-group>
-      <v-list nav>
+      <v-list class="ma-0 pa-0" nav>
         <v-list-item
           :ripple="false"
           v-for="item in items"

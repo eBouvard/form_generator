@@ -1,27 +1,17 @@
 <template>
   <v-app>
-    <NavDrawer></NavDrawer>
-
-    <v-app-bar app></v-app-bar>
-
-    <v-content>
-      <v-container fluid>
-        <router-view></router-view>
-      </v-container>
-    </v-content>
-
-    <v-footer app></v-footer>
+    <AppWrapper></AppWrapper>
   </v-app>
 </template>
 
 <script>
-import NavDrawer from "@/views/NavDrawer.vue";
+import AppWrapper from "@/views/AppWrapper.vue";
 
 export default {
   name: "App",
 
   components: {
-    NavDrawer
+    AppWrapper
   },
 
   data: () => ({

@@ -1,6 +1,6 @@
 <template>
-  <v-navigation-drawer app permanent right>
-    <v-list-item-group>
+  <v-container class="ma-0 pa-0">
+    <v-list-item-group >
       <v-list nav>
         <v-list-item
           :ripple="false"
@@ -17,7 +17,7 @@
         </v-list-item>
       </v-list>
     </v-list-item-group>
-  </v-navigation-drawer>
+  </v-container>
 </template>
 
 <script>
