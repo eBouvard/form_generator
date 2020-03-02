@@ -1,5 +1,7 @@
 # front_test
 
+Project initialized via Vue-CLI using Vuetify
+
 ## Project setup
 ```
 yarn install
