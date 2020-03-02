@@ -1,55 +1,49 @@
 <template>
-    <v-container fluid>
-      <v-form id="to_send">
-        <v-text-field
-          label="Titre"
-          outlined
-          id="title"
-        ></v-text-field>
-        <v-form-base :value="myValue" :schema="mySchema" />
-      </v-form>
-      <v-btn block color="primary" @click="submitForm" dark>Submit</v-btn>
-    </v-container>   
+  <v-container fluid>
+    <v-form id="to_send">
+      <FormComponent :items="template"></FormComponent>
+      <v-btn block color="primary" @click="getUser" dark>Enregistrer</v-btn>
+    </v-form>
+  </v-container>
 </template>
 
 <script>
-	import VFormBase from 'vuetify-form-base';  
-	import template from '../assets/opord_template.json';  
-  import content from '../assets/opord.json';
-  import api from '@/service/api';
+import template from "@/assets/opord_template.json";
+import FormComponent from "@/components/FormComponents/FormComponent.vue";
+import api from "@/service/api";
 
-  export default {	
-    name: 'Form',
-    components:{ VFormBase },
-    data () {
-      return {
-        myValue: content,   
-        mySchema: template
-      }
-    },
-    methods: {
-      submitForm () {
-        var data = {
-          title: document.getElementById("title").value,
-          author: "",
-          date: "",
-          content: content
-        };
-        console.log(JSON.stringify(data));
-        api().post('/create/json', data).then((ret) => {
+export default {
+  name: "Form",
+  components: {
+    FormComponent
+  },
+  data() {
+    return {
+      template: template
+    };
+  },
+  methods: {
+    submitForm() {
+      api()
+        .post("/create/json", "")
+        .then(ret => {
           console.log(ret);
-        }).catch((e) => {console.log(e)});
-      }
+        })
+        .catch(e => {
+          console.log(e);
+        });
+    },
+    getUser() {
+      var user_list = [
+        "Joachim Murat",
+        "Michel Ney",
+        "Jean Lannes",
+        "André Masséna",
+        "Louis Alexandre Berthier",
+        "Louis-Nicolas Davout"
+      ];
+      console.log(user_list[Math.floor(Math.random() * Math.floor(6))]);
     }
   }
+};
 </script>
-
-<style>
-  #title { 
-    width:100%; 
-  }
-
-  #form-base .item { 
-    width:100%; 
-  }
-</style>
