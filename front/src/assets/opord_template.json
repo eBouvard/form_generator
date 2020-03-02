@@ -1,6 +1,6 @@
 {
     "0_header": {
-        "type": "categories",
+        "type": "category",
         "content": {
             "title": {
                 "type": "text",
@@ -39,7 +39,7 @@
                 "label": "ORDRE D’OPERATION N°"
             },
             "references": {
-                "type": "categories",
+                "type": "category",
                 "content": {
                     "maps_charts_and_relevant_documents ": {
                         "type": "text",
@@ -64,14 +64,14 @@
         "label": ""
     },
     "1_situation": {
-        "type": "categories",
+        "type": "category",
         "content": {
             "free_text": {
                 "type": "text",
                 "label": ""
             },
             "enemy_forces": {
-                "type": "categories",
+                "type": "category",
                 "content": {
                     "current_enemy": {
                         "type": "text",
@@ -108,7 +108,7 @@
         "label": "1 - SITUATION"
     },
     "2_mission": {
-        "type": "categories",
+        "type": "category",
         "content": {
             "free_text": {
                 "type": "text",
@@ -118,7 +118,7 @@
         "label": "2 - MISSION - BUT"
     },
     "3_execution": {
-        "type": "categories",
+        "type": "category",
         "content": {
             "free_text": {
                 "type": "text",
@@ -129,7 +129,7 @@
                 "label": "Idée de manoeuvre"
             },
             "missions_to_units": {
-                "type": "categories",
+                "type": "category",
                 "content": {
                     "unit_1": {
                         "type": "text",
@@ -163,7 +163,7 @@
                 "label": "Circulation"
             },
             "coordinating_instructions": {
-                "type": "categories",
+                "type": "category",
                 "content": {
                     "coordination_lines": {
                         "type": "text",
@@ -182,7 +182,7 @@
                         "label": "Zones réservés ou à laisser libre d’obstacles, itinéraires de manoeuvre"
                     },
                     "cbrn_security_and_defense": {
-                        "type": "categories",
+                        "type": "category",
                         "content": {
                             "danger_estimation": {
                                 "type": "text",
@@ -208,7 +208,7 @@
                         "label": "Consignes LATTA"
                     },
                     "intelligence_need": {
-                        "type": "categories",
+                        "type": "category",
                         "content": {
                             "before_engagement_intelligence": {
                                 "type": "text",
@@ -244,14 +244,14 @@
         "label": "3 - EXECUTION"
     },
     "4_administration_and_logistic": {
-        "type": "categories",
+        "type": "category",
         "content": {
             "free_text": {
                 "type": "text",
                 "label": ""
             },
             "forces_to_support": {
-                "type": "categories",
+                "type": "category",
                 "content": {
                     "organic_means": {
                         "type": "text",
@@ -265,7 +265,7 @@
                 "label": "Forces à soutenir"
             },
             "support_concept": {
-                "type": "categories",
+                "type": "category",
                 "content": {
                     "goal_to_reach": {
                         "type": "text",
@@ -283,7 +283,7 @@
                 "label": "Conception du soutien"
             },
             "priorities_and_efforts": {
-                "type": "categories",
+                "type": "category",
                 "content": {
                     "tactical priority": {
                         "type": "text",
@@ -308,7 +308,7 @@
                 "label": "Priorités, efforts"
             },
             "logistics_deployment": {
-                "type": "categories",
+                "type": "category",
                 "content": {
                     "mechanism_to_establish": {
                         "type": "text",
@@ -322,7 +322,7 @@
                 "label": "Déploiement des formations logistiques"
             },
             "area_boundary": {
-                "type": "categories",
+                "type": "category",
                 "content": {
                     "front_boundary": {
                         "type": "text",
@@ -343,14 +343,14 @@
         "label": "4 - ADMINISTRATION ET LOGISTIQUE"
     },
     "5_command_and_signal": {
-        "type": "categories",
+        "type": "category",
         "content": {
             "free_text": {
                 "type": "text",
                 "label": ""
             },
             "command_post_location": {
-                "type": "categories",
+                "type": "category",
                 "content": {
                     "active_command_post": {
                         "type": "text",
@@ -376,7 +376,7 @@
                 "label": "Implantation des PC"
             },
             "liaison": {
-                "type": "categories",
+                "type": "category",
                 "content": {
                     "liaison_detachments": {
                         "type": "text",
@@ -390,7 +390,7 @@
                 "label": "Liaisons"
             },
             "transmissions": {
-                "type": "categories",
+                "type": "category",
                 "content": {
                     "preliminary_phase": {
                         "type": "text",
@@ -404,7 +404,7 @@
                 "label": "Transmissions"
             },
             "electronic_warfare": {
-                "type": "categories",
+                "type": "category",
                 "content": {
                     "enemy_threats": {
                         "type": "text",
