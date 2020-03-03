@@ -1,20 +1,9 @@
 <template>
   <v-container fluid>
-    <!-- 
-      <v-form id="load"
-        >
-        <v-btn block color="primary" @click="loadForm" dark>Charger formulaire numéro</v-btn>
-        <v-text-field
-          label="Identifiant"
-          outlined
-          id="opord_id"
-        ></v-text-field>
-      </v-form>
-      <h1>Formulaire {{myTitle}}</h1>
-      <v-form id="to_print">
-        <v-form-base :value="myValue" :schema="mySchema" />
+    <v-form id="load">
+      <v-btn block color="primary" @click="loadForm" dark>Charger formulaire numéro</v-btn>
+      <v-text-field label="Identifiant" outlined id="opord_id"></v-text-field>
     </v-form>
-    -->
   </v-container>
 </template>
 
@@ -24,10 +13,9 @@ import api from "@/service/api";
 
 export default {
   name: "Viewer",
-  components: {  },
+  components: {},
   data() {
-    return {
-    };
+    return {};
   },
   methods: {
     loadForm() {
