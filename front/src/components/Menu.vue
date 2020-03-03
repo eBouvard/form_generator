@@ -1,7 +1,7 @@
 <template>
-  <v-navigation-drawer clipper class="ma-0 pa-0" mini-variant permanent>
+  <v-navigation-drawer clipper class="ma-0 pa-1" mini-variant permanent>
     <v-list-item-group>
-      <v-list class="ma-0 pa-0" nav>
+      <v-list class="ma-0 pa-1" nav>
         <v-list-item
           :ripple="false"
           v-for="item in items"
@@ -23,14 +23,8 @@ export default {
   data() {
     return {
       items: [
-        { title: "", icon: "mdi-home", menu: "j0", content: [] },
-        { title: "J1", icon: "J1", menu: "j1", content: [] },
-        { title: "J2", icon: "J2", menu: "j2", content: [] },
-        {
-          title: "J3",
-          icon: "J3",
-          menu: "j3",
-          content: [
+        { title: "", icon: "mdi-home", menu: "home", content: [] },
+        { title: "form", icon: "mdi-file-document", menu: "form", content: [
             {
               title: "Carte",
               icon: "mdi-earth",
@@ -53,19 +47,17 @@ export default {
             }
           ]
         },
-        { title: "J4", icon: "J4", menu: "j4", content: [] },
-        { title: "J5", icon: "J5", menu: "j5", content: [] },
-        { title: "J6", icon: "J6", menu: "j6", content: [] },
-        { title: "J7", icon: "J7", menu: "j7", content: [] },
-        { title: "J8", icon: "J8", menu: "j8", content: [] },
-        { title: "J9", icon: "J9", menu: "j9", content: [] },
-        { title: "Je", icon: "JE", menu: "jE", content: [] }
+        { title: "", icon: "mdi-earth", menu: "home", path: "/map" },
       ]
     };
   },
   methods: {
     selectItem(item) {
-      this.$emit("item-selected", item);
+      if (item.path == undefined) {
+        this.$emit("item-selected", item);
+      } else {
+        this.$router.push({ path: item.path });
+      }
     }
   }
 };
