@@ -32,6 +32,11 @@ export default {
           menu: "j3",
           content: [
             {
+              title: "Carte",
+              icon: "mdi-earth",
+              path: "/map"
+            },
+            {
               title: "Remplissage",
               icon: "mdi-pen",
               path: "/new/order"

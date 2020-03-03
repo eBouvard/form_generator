@@ -7,7 +7,7 @@ module.exports = router
 //Check DB connection
 router.get('/health', async (req, res) => {
     const { rows } = await db.query('SELECT $1::text as message', ['Hello world from Postgre!'])
-    res.send(rows[0].message + '\n' + tables)
+    res.send(rows[0].message + '\n')
   })
 
 //Define the JSONTable
