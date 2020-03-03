@@ -6,6 +6,10 @@
                 "type": "small_text",
                 "label": "Titre du document"
             },
+            "free_text": {
+                "type": "large_text",
+                "label": ""
+            },
             "security_classification": {
                 "type": "small_text",
                 "label": "CLASSIFICATION DE SECURITE"
@@ -41,22 +45,30 @@
             "references": {
                 "type": "category",
                 "content": {
-                    "maps_charts_and_relevant_documents ": {
+                    "free_text": {
+                        "type": "large_text",
+                        "label": ""
+                    },
+                    "A": {
                         "type": "small_text",
-                        "label": "Cartes, tableaux et documents utilisés"
+                        "label": "A"
+                    },
+                    "B": {
+                        "type": "small_text",
+                        "label": "Cartes au 1/50000"
                     },
                     "map_at_scale_1/50000": {
+                        "type": "small_text",
+                        "label": "Cartes au 1/50000"
+                    },
+                    "time_zone_used": {
                         "type": "small_text",
                         "label": "Cartes au 1/50000"
                     }
                 },
                 "label": ""
             },
-            "time_zone_used": {
-                "type": "small_text",
-                "label": "Fuseau horaire utilisé"
-            },
-            "task_organisation": {
+            "articulation": {
                 "type": "small_text",
                 "label": "ARTICULATION"
             }
