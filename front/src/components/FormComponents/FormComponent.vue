@@ -1,24 +1,37 @@
 <template>
   <v-container fluid>
     <div v-for="item in items" :key="item.label">
-      <div v-if="item.type === 'category'" style="border: 0.1rem solid grey; margin: 0.5rem;">
+      <div
+        v-if="item.type === 'category'"
+        style="
+        border: lightgrey solid 0.1em;
+        margin: 0.5em;
+        "
+      >
         <CategoryComponent :item="item"></CategoryComponent>
         <FormComponent :items="item.content"></FormComponent>
       </div>
-      <TextComponent v-if="item.type === 'text'" :item="item"></TextComponent>
+      <div v-if="item.type === 'small_text'">
+        <SmallTextComponent :item="item"></SmallTextComponent>
+      </div>
+      <div v-if="item.type === 'large_text'">
+        <LargeTextComponent :item="item"></LargeTextComponent>
+      </div>
     </div>
   </v-container>
 </template>
 
 <script>
 import CategoryComponent from "@/components/FormComponents/CategoryComponent.vue";
-import TextComponent from "@/components/FormComponents/TextComponent.vue";
+import SmallTextComponent from "@/components/FormComponents/SmallTextComponent.vue";
+import LargeTextComponent from "@/components/FormComponents/LargeTextComponent.vue";
 
 export default {
   name: "FormComponent",
   components: {
     CategoryComponent,
-    TextComponent
+    SmallTextComponent,
+    LargeTextComponent
   },
   data() {
     return {};

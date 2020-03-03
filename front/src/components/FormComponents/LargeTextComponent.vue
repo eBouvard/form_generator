@@ -1,10 +1,10 @@
 <template>
-  <h2  style="padding: 0.8rem;">{{item.label}}</h2>
+  <v-textarea outlined rows="5" :label="item.label" auto-grow></v-textarea>
 </template>
 
 <script>
 export default {
-  name: "CategoryComponent",
+  name: "LargeTextComponent",
   data() {
     return {};
   },

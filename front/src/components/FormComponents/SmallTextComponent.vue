@@ -1,12 +1,10 @@
 <template>
-  <v-container>
-    <v-text-field :label="item.label"></v-text-field>
-  </v-container>
+  <v-text-field :label="item.label" ></v-text-field>
 </template>
 
 <script>
 export default {
-  name: "TextComponent",
+  name: "SmallTextComponent",
   data() {
     return {};
   },
