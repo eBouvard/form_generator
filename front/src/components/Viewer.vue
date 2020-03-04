@@ -4,20 +4,26 @@
       <v-btn block color="primary" @click="updatePath" dark>Charger formulaire numéro</v-btn>
       <v-text-field label="Identifiant" outlined id="opord_id"></v-text-field>
     </v-form>
-    <div v-for="item in template" :key="item.label">
-      <h2>{{ item.label }}</h2>
-      <!--      <p v-for="content in data.content.main" :key="content">Coucou</p> -->
+    <div v-if="data">
+<!--  New API
+      <ViewerComponent :items="template" :data="data.content.main" :level=1></ViewerComponent>
+-->
+<!--  Old API -->
+      <ViewerComponent :items="template" :data="data.data.content" :level=1></ViewerComponent>
     </div>
   </v-container>
 </template>
 
 <script>
+import ViewerComponent from "@/components/ViewerComponent.vue";
 import template from "@/assets/opord_template.json";
 import api from "@/service/api";
 
 export default {
   name: "Viewer",
-  components: {},
+  components: {
+    ViewerComponent
+  },
   data() {
     return {
       template: template,
@@ -45,10 +51,10 @@ export default {
     }
   },
   created() {
-    this.loadForm(this.$route.params.id);
+    this.loadForm(this.$route.params.form_id);
   },
   beforeRouteUpdate(to, from, next) {
-    this.loadForm(to.params.id);
+    this.loadForm(to.params.form_id);
     next();
   }
 };
