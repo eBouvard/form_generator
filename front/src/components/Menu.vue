@@ -23,7 +23,7 @@ export default {
   data() {
     return {
       items: [
-        { title: "", icon: "mdi-home", menu: "home", content: [] },
+        { title: "home", icon: "mdi-home", menu: "home", content: [] },
         { title: "form", icon: "mdi-file-document", menu: "form", content: [
             {
               title: "Carte",
@@ -43,11 +43,11 @@ export default {
             {
               title: "Visionnage",
               icon: "mdi-file-document",
-              path: "/view/order"
+              path: "/view/order/55"
             }
           ]
         },
-        { title: "", icon: "mdi-earth", menu: "home", path: "/map" },
+        { title: "map", icon: "mdi-earth", menu: "home", path: "/map" },
       ]
     };
   },

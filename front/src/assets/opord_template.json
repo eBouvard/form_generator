@@ -8,7 +8,7 @@
             },
             "free_text": {
                 "type": "large_text",
-                "label": ""
+                "label": "Texte libre"
             },
             "security_classification": {
                 "type": "small_text",
@@ -47,7 +47,7 @@
                 "content": {
                     "free_text": {
                         "type": "large_text",
-                        "label": ""
+                        "label": "Texte libre"
                     },
                     "A": {
                         "type": "small_text",
@@ -55,7 +55,7 @@
                     },
                     "B": {
                         "type": "small_text",
-                        "label": "Cartes au 1/50000"
+                        "label": "B"
                     },
                     "map_at_scale_1/50000": {
                         "type": "small_text",
@@ -63,10 +63,10 @@
                     },
                     "time_zone_used": {
                         "type": "small_text",
-                        "label": "Cartes au 1/50000"
+                        "label": "Fuseau horaire de référence"
                     }
                 },
-                "label": ""
+                "label": "Références"
             },
             "articulation": {
                 "type": "small_text",
@@ -80,7 +80,7 @@
         "content": {
             "free_text": {
                 "type": "large_text",
-                "label": ""
+                "label": "Texte libre"
             },
             "enemy_forces": {
                 "type": "category",
@@ -124,7 +124,7 @@
         "content": {
             "free_text": {
                 "type": "large_text",
-                "label": ""
+                "label": "Texte libre"
             }
         },
         "label": "2 - MISSION - BUT"
@@ -134,7 +134,7 @@
         "content": {
             "free_text": {
                 "type": "large_text",
-                "label": ""
+                "label": "Texte libre"
             },
             "concept_of_operations": {
                 "type": "small_text",
@@ -260,7 +260,7 @@
         "content": {
             "free_text": {
                 "type": "large_text",
-                "label": ""
+                "label": "Texte libre"
             },
             "forces_to_support": {
                 "type": "category",
@@ -302,20 +302,23 @@
                         "label": "Priorité tactique"
                     },
                     "efforts_by_function": {
-                        "supplying": {
-                            "type": "small_text",
-                            "label": "RAV"
+                        "type": "category",
+                        "content": {
+                            "supplying": {
+                                "type": "small_text",
+                                "label": "RAV"
+                            },
+                            "mechanics": {
+                                "type": "small_text",
+                                "label": "MEC"
+                            },
+                            "health": {
+                                "type": "small_text",
+                                "label": "SAN"
+                            }
                         },
-                        "mechanics": {
-                            "type": "small_text",
-                            "label": "MEC"
-                        },
-                        "health": {
-                            "type": "small_text",
-                            "label": "SAN"
-                        }
-                    },
-                    "label": "Efforts par fonction"
+                        "label": "Efforts par fonction"
+                    }
                 },
                 "label": "Priorités, efforts"
             },
@@ -359,7 +362,7 @@
         "content": {
             "free_text": {
                 "type": "large_text",
-                "label": ""
+                "label": "Texte libre"
             },
             "command_post_location": {
                 "type": "category",

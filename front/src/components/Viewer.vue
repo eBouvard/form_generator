@@ -1,47 +1,61 @@
 <template>
   <v-container fluid>
-    <!-- 
-      <v-form id="load"
-        >
-        <v-btn block color="primary" @click="loadForm" dark>Charger formulaire numéro</v-btn>
-        <v-text-field
-          label="Identifiant"
-          outlined
-          id="opord_id"
-        ></v-text-field>
-      </v-form>
-      <h1>Formulaire {{myTitle}}</h1>
-      <v-form id="to_print">
-        <v-form-base :value="myValue" :schema="mySchema" />
+    <v-form id="load">
+      <v-btn block color="primary" @click="updatePath" dark>Charger formulaire numéro</v-btn>
+      <v-text-field label="Identifiant" outlined id="opord_id"></v-text-field>
     </v-form>
-    -->
+    <div v-if="data">
+<!--  New API
+      <ViewerComponent :items="template" :data="data.content.main" :level=1></ViewerComponent>
+-->
+<!--  Old API -->
+      <ViewerComponent :items="template" :data="data.data.content" :level=1></ViewerComponent>
+    </div>
   </v-container>
 </template>
 
 <script>
-//import template from "../assets/opord_template.json";
+import ViewerComponent from "@/components/ViewerComponent.vue";
+import template from "@/assets/opord_template.json";
 import api from "@/service/api";
 
 export default {
   name: "Viewer",
-  components: {  },
+  components: {
+    ViewerComponent
+  },
   data() {
     return {
+      template: template,
+      data: null
     };
   },
   methods: {
-    loadForm() {
-      var request = "/read/" + document.getElementById("opord_id").value;
+    updatePath() {
+      this.$router.push({
+        path: "/view/order/" + document.getElementById("opord_id").value
+      });
+    },
+    loadForm(form_id) {
+      var request = "/read/" + form_id;
+      console.log(request);
       api()
         .get(request)
         .then(ret => {
           console.log(ret);
-          console.log(this.myValue);
+          this.data = ret;
         })
         .catch(e => {
           console.log(e);
         });
     }
+  },
+  created() {
+    this.loadForm(this.$route.params.form_id);
+  },
+  beforeRouteUpdate(to, from, next) {
+    this.loadForm(to.params.form_id);
+    next();
   }
 };
 </script>
