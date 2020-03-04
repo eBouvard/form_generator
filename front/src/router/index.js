@@ -13,7 +13,7 @@ const routes = [
 	{ path: '/', component: Home },
 	{ path: '/new/order', component: Form },
 	{ path: '/list/order', component: Table },
-	{ path: '/view/order', component: Viewer },
+	{ path: '/view/order/:id', component: Viewer },
 	{ path: '/map', component: Map }
 ]
 
