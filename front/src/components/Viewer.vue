@@ -4,11 +4,11 @@
       <v-btn block color="primary" @click="updatePath" dark>Charger formulaire numéro</v-btn>
       <v-text-field label="Identifiant" outlined id="opord_id"></v-text-field>
     </v-form>
-    <div v-if="data">
+    <div v-if="data && $route.params.form_id">
 <!--  New API
       <ViewerComponent :items="template" :data="data.content.main" :level=1></ViewerComponent>
 -->
-<!--  Old API -->
+<!--  Old API   -->
       <ViewerComponent :items="template" :data="data.data.content" :level=1></ViewerComponent>
     </div>
   </v-container>
@@ -37,6 +37,10 @@ export default {
       });
     },
     loadForm(form_id) {
+/*    New API
+      var request = "/read/" + form_id + "/scan";
+*/
+/*      Old API   */
       var request = "/read/" + form_id;
       console.log(request);
       api()
