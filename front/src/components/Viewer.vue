@@ -5,20 +5,21 @@
       <v-text-field label="Identifiant" outlined id="opord_id"></v-text-field>
     </v-form>
     <div v-if="data">
-      {{ data.data.content }}
-      <br>---<br>
-      {{ template }}
+      <ViewerComponent :items="template" :data="data.data.content" :level=2></ViewerComponent>
     </div>
   </v-container>
 </template>
 
 <script>
+import ViewerComponent from "@/components/ViewerComponent.vue";
 import template from "@/assets/opord_template.json";
 import api from "@/service/api";
 
 export default {
   name: "Viewer",
-  components: {},
+  components: {
+    ViewerComponent
+  },
   data() {
     return {
       template: template,
@@ -43,10 +44,6 @@ export default {
         .catch(e => {
           console.log(e);
         });
-    },
-    testLog(to_log) {
-      console.log(to_log);
-      return to_log;
     }
   },
   created() {
