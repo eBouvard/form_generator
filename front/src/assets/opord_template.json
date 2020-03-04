@@ -302,20 +302,23 @@
                         "label": "Priorité tactique"
                     },
                     "efforts_by_function": {
-                        "supplying": {
-                            "type": "small_text",
-                            "label": "RAV"
+                        "type": "category",
+                        "content": {
+                            "supplying": {
+                                "type": "small_text",
+                                "label": "RAV"
+                            },
+                            "mechanics": {
+                                "type": "small_text",
+                                "label": "MEC"
+                            },
+                            "health": {
+                                "type": "small_text",
+                                "label": "SAN"
+                            }
                         },
-                        "mechanics": {
-                            "type": "small_text",
-                            "label": "MEC"
-                        },
-                        "health": {
-                            "type": "small_text",
-                            "label": "SAN"
-                        }
-                    },
-                    "label": "Efforts par fonction"
+                        "label": "Efforts par fonction"
+                    }
                 },
                 "label": "Priorités, efforts"
             },
