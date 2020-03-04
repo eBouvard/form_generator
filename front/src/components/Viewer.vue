@@ -5,7 +5,11 @@
       <v-text-field label="Identifiant" outlined id="opord_id"></v-text-field>
     </v-form>
     <div v-if="data">
-      <ViewerComponent :items="template" :data="data.data.content" :level=2></ViewerComponent>
+<!--  New API
+      <ViewerComponent :items="template" :data="data.content.main" :level=1></ViewerComponent>
+-->
+<!--  Old API -->
+      <ViewerComponent :items="template" :data="data.data.content" :level=1></ViewerComponent>
     </div>
   </v-container>
 </template>

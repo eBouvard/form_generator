@@ -8,8 +8,18 @@
         margin: 0.5em;
         "
       >
-        <h2 style="padding: 0.8rem;">{{items[label].label}}</h2>
+        <h2
+          v-bind:style="{ fontSize: (0.8 +(1.2/level)).toString(10) + 'em' }"
+          style="padding: 0.8rem;"
+        >{{items[label].label}}</h2>
         <ViewerComponent :items="items[label].content" :data="data[label]" :level="level + 1"></ViewerComponent>
+      </div>
+      <div v-if="(items[label].type != 'category') && data[label]">
+        <h2
+          v-bind:style="{ fontSize: (0.8 +(1.2/level)).toString(10) + 'em' }"
+          style="padding: 0.8rem;"
+        >{{items[label].label}}</h2>
+        {{ data[label] }}
       </div>
     </div>
   </v-container>
