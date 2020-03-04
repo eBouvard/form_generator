@@ -18,5 +18,10 @@ export default new Vuetify({
           secondary: colors.lime.lighten1,
           accent: colors.lime.accent1,
         },
+        light: {
+          primary: colors.blue.darken4,
+          secondary: colors.lime.lighten1,
+          accent: colors.lime.accent1,
+        },
       },
     },})
