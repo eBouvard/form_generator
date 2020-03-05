@@ -25,7 +25,7 @@ path_opord = os.getcwd() + "20200220_CERASTES_DIV31_DB_FINAL2.pdf"
 
 from api_try4 import api_try4
 @api_try4.route('/')
-def structure_single_opord(path_opord, struct_path="api_try4/CANEVAS_STRUCT2.json"):
+def structure_single_opord(path_opord, struct_path="CANEVAS_STRUCT2.json"):
     final_struct = json.load(open(struct_path))
     list_of_titles = recursive_items(final_struct)
     dic_of_files = {}
