@@ -13,7 +13,7 @@
             </template>
             <template v-slot:item.delete>
                 <v-btn class="ma-2" icon dark small color="primary">
-                    <v-icon v-on:click="console.log('foo')" dark>mdi-trash-can-outline</v-icon>
+                    <v-icon v-on:click="deleteItem(item.delete)" dark>mdi-trash-can-outline</v-icon>
                 </v-btn>
             </template>
             </v-data-table>
@@ -39,6 +39,14 @@
         forms: []
       }
     },
+    methods: {
+      deleteItem(id) {
+        console.log(id)
+        api().get('/create/health').then((ret) => {
+          console.log(ret)
+        }).catch((e) => {console.log(e)});
+      }
+    },
     mounted() {
         api().get('/read/all/scan2').then((ret) => {
             const raw = ret.data
@@ -46,7 +54,6 @@
             raw.forEach(element => {
                 const date = new Date(element.data.Created_Date)
                 const score = Math.ceil(element.data.Conformity * 100)
-                console.log(score)
                 const newline = {
                     id: element.id,
                     title: element.data.Title,
