@@ -42,6 +42,7 @@ def decoder(element):
 
 
 def msoffice_metadata(path):
+    print('VCV' + str(path) + str(zipfile.is_zipfile(path)))
     if zipfile.is_zipfile(path):
         zfile = zipfile.ZipFile(path)
         core_xml = etree.fromstring(zfile.read('docProps/core.xml'))
@@ -99,7 +100,8 @@ def msoffice_metadata(path):
                     print("{}: {}".format(title, text))
                     if title in valid_name:
                         metadata[str(title)] = text
-
+    else:
+        metadata['Title'] = 'Error while parsing'
     return metadata
 
 
@@ -168,6 +170,7 @@ def pdf_metadata(path):
 
 def get_meta(path):
     filename = os.path.basename(path)
+    temp = {}
     if filename.endswith('.pdf'):
         try:
             temp = pdf_metadata(path)
@@ -177,5 +180,5 @@ def get_meta(path):
         try:
             temp = msoffice_metadata(path)
         except Exception as e:
-            print(e)
+            print('Michel fait le cafe' + str(e))
     return temp

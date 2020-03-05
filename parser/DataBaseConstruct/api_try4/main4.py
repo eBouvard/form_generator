@@ -16,16 +16,15 @@ from Structuring.structure import restructure
 
 
 try:
-    struct_path = os.getcwd() + "/CANEVAS_STRUCT2.json"
+    struct_path = "/Users/augustinbaudoin/Desktop/army/CANEVAS_STRUCT.json"
 except FileNotFoundError:
     print("Rename your structure to 'CANEVAS_STRUCT.json' and put at the root of the repo")
     
-    
-path_opord = os.getcwd() + "20200220_CERASTES_DIV31_DB_FINAL2.pdf"
+path_opord = "/Users/augustinbaudoin/Desktop/110419_FRAGO_01_JOC.docx"
 
 from api_try4 import api_try4
 @api_try4.route('/')
-def structure_single_opord(path_opord, struct_path="CANEVAS_STRUCT2.json"):
+def structure_single_opord(path_opord, struct_path="/Users/augustinbaudoin/Desktop/army/CANEVAS_STRUCT.json"):
     final_struct = json.load(open(struct_path))
     list_of_titles = recursive_items(final_struct)
     dic_of_files = {}
@@ -79,5 +78,3 @@ def structure_single_opord(path_opord, struct_path="CANEVAS_STRUCT2.json"):
     print("-----------------------")
     print("Restructured flat collection of texts")
     return dic_of_files
-
-print(structure_single_opord(path_opord))

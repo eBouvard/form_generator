@@ -21,7 +21,11 @@ except FileNotFoundError:
     print("Rename your structure to 'CANEVAS_STRUCT.json' and put at the root of the repo")
     
     
-path_opord = os.getcwd() + "/Data/11- PRODUITS FINALISES/20200220_CERASTES_DIV31_DB_FINAL.pdf"
+if len(sys.argv) > 1:
+    path_opord = sys.argv[1]
+else:
+    #path_opord =  "~/Desktop/20200220_CERASTES_DIV31_DB_FINAL2.pdf"
+    path_opord = "/Users/augustinbaudoin/Desktop/110419_FRAGO_01_JOC.docx"
 
 def structure_single_opord(path_opord, struct_path="CANEVAS_STRUCT.json"):
     final_struct = json.load(open(struct_path))
@@ -78,4 +82,5 @@ def structure_single_opord(path_opord, struct_path="CANEVAS_STRUCT.json"):
     print("Restructured flat collection of texts")
     return dic_of_files
 
-print(structure_single_opord(path_opord))
+if __name__ == '__main__':
+    print(structure_single_opord(path_opord))
