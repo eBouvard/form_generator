@@ -16,7 +16,7 @@ from Structuring.structure import restructure
 
 
 try:
-    struct_path = os.getcwd() + "/CANEVAS_STRUCT.json"
+    struct_path = os.getcwd() + "template/CANEVAS_STRUCT.json"
 except FileNotFoundError:
     print("Rename your structure to 'CANEVAS_STRUCT.json' and put at the root of the repo")
     
@@ -25,9 +25,9 @@ if len(sys.argv) > 1:
     path_opord = sys.argv[1]
 else:
     #path_opord =  "~/Desktop/20200220_CERASTES_DIV31_DB_FINAL2.pdf"
-    path_opord = "/Users/augustinbaudoin/Desktop/110419_FRAGO_01_JOC.docx"
+    path_opord = "template/110419_FRAGO_01_JOC.docx"
 
-def parse_doc(path_opord, struct_path="CANEVAS_STRUCT.json"):
+def parse_doc(path_opord, struct_path="template/CANEVAS_STRUCT.json"):
     final_struct = json.load(open(struct_path))
     list_of_titles = recursive_items(final_struct)
     dic_of_files = {}
@@ -81,6 +81,7 @@ def parse_doc(path_opord, struct_path="CANEVAS_STRUCT.json"):
     print("-----------------------")
     print("Restructured flat collection of texts")
     return dic_of_files
+    #return 'ok'
 
 if __name__ == '__main__':
-    print(structure_single_opord(path_opord))
+    print(parse_doc(path_opord))
