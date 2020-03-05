@@ -1,0 +1,136 @@
+{
+ "en_tete": {
+  "texte_libre": "",
+  "classification_de_securite": "",
+  "exemplaire": "",
+  "pc": "",
+  "localisation_pc_avant": "",
+  "gdh_de_signature": "",
+  "n_de_reference du message": "",
+  "ordre_doperation_nmr": "",
+  "references": {
+   "texte_libre": "",
+   "a": "",
+   "b": "",
+   "cartes_au_1_50000": "",
+   "fuseau_horaire_utilise": ""
+  },
+  "articulation": ""
+ },
+ "1_situation": {
+  "texte_libre": "",
+  "a_forces_ennemies": {
+  "texte_libre": "",
+  "1_eni_actuel": "",
+  "2_possibilites_de_eni": "",
+  "3_eni_futur": ""},
+  "b_forces_amies": "",
+  "c_renforcements_et_prelevements": "",
+  "d_evaluation de la_situation_par_le_commandement": "",
+  "e_population": ""
+ },
+ "2_mission_but": {
+    "texte_libre": ""
+ },
+ "3_execution": {
+  "texte_libre": "",
+  "a_idee de manoeuvre": "",
+  "b_missions_aux_unites_subordonnees": {
+   "subcontent": "",
+   "unite_1": "",
+   "unite_2": ""
+  },
+  "c_feux": "",
+  "d_genie": "",
+  "e_alat": "",
+  "f_guerre_electronique": "",
+  "g_circulation": "",
+  "n_instruction_de_coordination": {
+   "texte_libre": "",
+   "1_lignes_de_coordination": "",
+   "2_limites_entre_les_unites": "",
+   "3_liaisons_a_assurer": "",
+   "4_zones_reserves_ou_a_laisser_libre_obstacles_itineraires_de_manoeuvre": "",
+   "5_securite_et_defense_nbc": {
+    "texte_libre": "",
+    "a_estimation_du_danger": "",
+    "b_protection": "",
+    "c_decontamination": "",
+    "d_divers": ""
+   },
+   "6_consignes_latta": "",
+   "7_besoins_en_renseignement": {
+    "texte_libre": "",
+    "a_renseignement_avant_engagement": "",
+    "b_eni_dans_la_profondeur": "",
+    "c_eni_futur": "",
+    "d_terrain": ""
+   },
+   "8_horaires": "",
+   "9_affaires_civiles_relations_avec_la_presse": ""
+  }
+ },
+ "4_administration_et_logistique": {
+  "texte_libre": "",
+  "a_forces_a_soutenir": {
+   "texte_libre": "",
+   "1_moyens_organiques": "",
+   "2_moyens_recus_en_renforcement": ""
+  },
+  "b_conception_du_soutien": {
+   "texte_libre": "",
+   "1_but_a_atteindre": "",
+   "2 stabilite_ou_elongation_consenties": "",
+   "3_autonomie_initiale_a_maintenir": ""
+  },
+  "c_priorites_efforts": {
+   "texte_libre": "",
+   "1_priorite_tactique": "",
+   "2_efforts_par_fonction": {
+    "texte_libre": "",
+    "a_rav": "",
+    "b_mec": "",
+    "c_san": ""
+   }
+  },
+  "d_deploiement_des_formations_logistiques": {
+   "texte_libre": "",
+   "1_dispositif_a_realiser": "",
+   "2_evolution_dans_le_temps": ""
+  },
+  "e_decoupage_de_la_zone": {
+   "texte_libre": "",
+   "1_limite_avant_limavzaca": "",
+   "2_limite_arriere_limarrzaca": ""
+  },
+  "f_modalites_du_soutien": ""
+ },
+ "5_commandements_et_transmissions": {
+  "texte_libre": "",
+  "a_implantation_des_pc": {
+   "texte_libre": "",
+   "pc_actif_a": "",
+   "pc_tactique_a": "",
+   "pc_ma": "",
+   "antenne_logistique": "",
+   "bascule_de_pc_prevue_a": ""
+  },
+  "b_liaisons": {
+   "texte_libre": "",
+   "detachements_de_liaison": "",
+   "liaisons_laterales": ""
+  },
+  "c_transmissions": {
+   "texte_libre": "",
+   "phase_preliminaire": "",
+   "1_phase": ""
+  },
+  "d_guerre_electronique": {
+   "texte_libre": "",
+   "1_menaces_particulieres_eni": "",
+   "2_mesures_de_protection_electronique_mpe": "",
+   "3_contre_mesures_electromagnetiques_cme": "",
+   "4_mesures_accueil_des_formations_de_ge": ""
+  }
+ }
+}
