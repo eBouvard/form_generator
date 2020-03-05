@@ -10,6 +10,11 @@
     <v-spacer></v-spacer>
     <v-toolbar-title>Projet Arena</v-toolbar-title>
     <v-spacer></v-spacer>
+      <v-switch
+        v-model="$vuetify.theme.dark"
+        hide-details
+        label="Mode Dark"
+      ></v-switch>
     <v-btn icon>
       <v-icon>mdi-magnify</v-icon>
     </v-btn>
