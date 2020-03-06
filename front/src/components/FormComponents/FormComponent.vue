@@ -1,16 +1,10 @@
 <template>
   <v-container fluid>
     <div v-for="item in items" :key="item.label">
-      <div
-        v-if="item.type === 'category'"
-        style="
-        border: lightgrey solid 0.1em;
-        margin: 0.5em;
-        "
-      >
+      <fieldset v-if="item.type === 'category'" style="margin: 0.5em;">
         <CategoryComponent :item="item"></CategoryComponent>
         <FormComponent :items="item.content"></FormComponent>
-      </div>
+      </fieldset>
       <div v-if="item.type === 'small_text'">
         <SmallTextComponent :item="item"></SmallTextComponent>
       </div>
