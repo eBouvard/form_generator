@@ -13,6 +13,12 @@ router.get('/all', async (req, res) => {
     res.send(rows)
 })
 
+//Read all JSON data without content
+router.get('/list', async (req, res) => {
+  const { rows } = await db.query(`SELECT * FROM ${JSON_table}`)
+  res.send(rows)
+})
+
 //Read all JSON data from a specific Table
 router.get('/all/:table', async (req, res) => {
   const table = req.params.table

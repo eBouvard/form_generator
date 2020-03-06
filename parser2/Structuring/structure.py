@@ -1,14 +1,11 @@
 from __future__ import print_function
 import os
 import json
-from Matching.segmenter import recursive_items
-from Matching.segmenter import get_annexes
-from Matching.parser import make_dic
-from Matching.parser import conformity_stat
+from Matching.segmenter import recursive_items, get_annexes
+from Matching.parser import make_dic, conformity_stat
 from Extracting.metadata_extractor import get_meta
 from Extracting.text_extractor import get_text
-from Formatting.formatter import get_arbo
-from Formatting.formatter import to_json
+from Formatting.formatter import get_arbo, to_json
 
 
 def restructure(struct, parsed):
@@ -22,7 +19,7 @@ def restructure(struct, parsed):
     return struct
 
 
-def annex_walker(path, struct_path="CANEVAS_STRUCT.json", save=True, viz=False, json_name="Output/scan.json"):
+def annex_walker(path, struct_path, save=True, viz=False, json_name="Output/scan.json"):
     # Define your structure in a json and input it as a parameter
     final_struct = json.load(open(struct_path))
     list_of_titles = recursive_items(final_struct)
