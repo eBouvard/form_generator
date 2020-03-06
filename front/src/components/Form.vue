@@ -2,10 +2,7 @@
   <v-container fluid>
     <v-form id="to_send">
       <FormComponent :items="template"></FormComponent>
-      <v-btn
-        style="margin-left: 20%; width: 60%;"
-        @click="getUser"
-      >Enregistrer</v-btn>
+      <v-btn style="margin-left: 20%; width: 60%;" @click="submitForm">Enregistrer</v-btn>
     </v-form>
   </v-container>
 </template>
