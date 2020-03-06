@@ -11,13 +11,13 @@
       <template v-slot:item.score="{ item }">
         <v-progress-linear color="primary" :value="item.score" rounded></v-progress-linear>
       </template>
-      <template v-slot:item.delete>
-        <v-btn class="ma-2" icon dark small color="primary">
-          <v-icon v-on:click="deleteItem(item.delete)" dark>mdi-trash-can-outline</v-icon>
-        </v-btn>
-      </template>
       <template v-slot:item.open="{ item }">
         <v-btn class="ma-2" dark small v-on:click="openItem(item.id)" color="primary">Ouvrir</v-btn>
+      </template>
+      <template v-slot:item.delete="{ item }">
+        <v-btn class="ma-2" icon dark small color="primary">
+          <v-icon v-on:click="deleteItem(item.id)">mdi-trash-can-outline</v-icon>
+        </v-btn>
       </template>
     </v-data-table>
   </v-container>
@@ -36,7 +36,6 @@ export default {
         { text: "Auteur", value: "authors" },
         { text: "Date", value: "date" },
         { text: "Score", value: "score" },
-        { text: "Objet", value: "content" },
         { text: "Ouvrir", value: "open" },
         { text: "Supprimer", value: "delete" }
       ],
@@ -44,16 +43,43 @@ export default {
     };
   },
   methods: {
+    init() {
+      api()
+        .get("/read/all")
+        .then(ret => {
+          const raw = ret.data;
+          const array = [];
+          raw.forEach(element => {
+            const date = new Date(element.data.date);
+            const score = Math.ceil(element.data.conformity * 100);
+            const newline = {
+              id: element.id,
+              title: element.data.title,
+              authors: element.data.author,
+              date: date.toLocaleDateString("fr-FR"),
+              score: score,
+              content: element.data.content
+            };
+            array.push(newline);
+            console.log(array);
+          });
+          this.forms = array;
+        })
+        .catch(e => {
+          console.log(e);
+        });
+    },
     deleteItem(id) {
       console.log(id);
       api()
-        .get("/create/health")
+        .get("/delete/json/" + id)
         .then(ret => {
           console.log(ret);
         })
         .catch(e => {
           console.log(e);
         });
+      this.init();
     },
     openItem(id) {
       console.log(id);
@@ -63,29 +89,7 @@ export default {
     }
   },
   mounted() {
-    api()
-      .get("/read/all/scan2")
-      .then(ret => {
-        const raw = ret.data;
-        const array = [];
-        raw.forEach(element => {
-          const date = new Date(element.data.Created_Date);
-          const score = Math.ceil(element.data.Conformity * 100);
-          const newline = {
-            id: element.id,
-            title: element.data.Title,
-            authors: element.data.Authors,
-            date: date.toLocaleDateString("fr-FR"),
-            score: score,
-            content: element.data.Content
-          };
-          array.push(newline);
-        });
-        this.forms = array;
-      })
-      .catch(e => {
-        console.log(e);
-      });
+    this.init();
   }
 };
 </script>
