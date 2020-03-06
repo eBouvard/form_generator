@@ -5,12 +5,8 @@
         <CategoryComponent :item="item"></CategoryComponent>
         <FormComponent :items="item.content"></FormComponent>
       </fieldset>
-      <div v-if="item.type === 'small_text'">
-        <SmallTextComponent :item="item"></SmallTextComponent>
-      </div>
-      <div v-if="item.type === 'large_text'">
-        <LargeTextComponent :item="item"></LargeTextComponent>
-      </div>
+      <SmallTextComponent v-if="item.type === 'small_text'" :item="item"></SmallTextComponent>
+      <LargeTextComponent v-if="item.type === 'large_text'" :item="item"></LargeTextComponent>
     </div>
   </v-container>
 </template>
