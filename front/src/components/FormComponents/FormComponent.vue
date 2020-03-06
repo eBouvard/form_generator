@@ -1,22 +1,12 @@
 <template>
   <v-container fluid>
     <div v-for="item in items" :key="item.label">
-      <div
-        v-if="item.type === 'category'"
-        style="
-        border: lightgrey solid 0.1em;
-        margin: 0.5em;
-        "
-      >
+      <fieldset v-if="item.type === 'category'" style="margin: 0.5em;">
         <CategoryComponent :item="item"></CategoryComponent>
         <FormComponent :items="item.content"></FormComponent>
-      </div>
-      <div v-if="item.type === 'small_text'">
-        <SmallTextComponent :item="item"></SmallTextComponent>
-      </div>
-      <div v-if="item.type === 'large_text'">
-        <LargeTextComponent :item="item"></LargeTextComponent>
-      </div>
+      </fieldset>
+      <SmallTextComponent v-if="item.type === 'small_text'" :item="item"></SmallTextComponent>
+      <LargeTextComponent v-if="item.type === 'large_text'" :item="item"></LargeTextComponent>
     </div>
   </v-container>
 </template>
