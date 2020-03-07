@@ -15,9 +15,6 @@
         hide-details
         label="Mode Dark"
       ></v-switch>
-    <v-btn icon>
-      <v-icon>mdi-magnify</v-icon>
-    </v-btn>
     </v-app-bar>
     <v-row style="flex-wrap: nowrap; height: calc(100vh - 50px)" no-gutters>
       <Menu v-on:item-selected="menuItemSelected"></Menu>

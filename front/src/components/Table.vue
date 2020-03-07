@@ -12,10 +12,10 @@
         <v-progress-linear color="primary" :value="item.score" rounded></v-progress-linear>
       </template>
       <template v-slot:item.open="{ item }">
-        <v-btn class="ma-2" dark small v-on:click="openItem(item.id)" color="primary">Ouvrir</v-btn>
+        <v-btn class="ma-2" small v-on:click="openItem(item.id)" outlined primary>Ouvrir</v-btn>
       </template>
       <template v-slot:item.delete="{ item }">
-        <v-btn class="ma-2" icon dark small color="primary">
+        <v-btn class="ma-2" icon small>
           <v-icon v-on:click="deleteItem(item.id)">mdi-trash-can-outline</v-icon>
         </v-btn>
       </template>

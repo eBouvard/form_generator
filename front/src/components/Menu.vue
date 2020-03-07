@@ -26,11 +26,6 @@ export default {
         { title: "home", icon: "mdi-home", menu: "home", path: "/home" },
         { title: "form", icon: "mdi-file-document", menu: "form", content: [
             {
-              title: "Carte",
-              icon: "mdi-earth",
-              path: "/map"
-            },
-            {
               title: "Remplissage",
               icon: "mdi-pen",
               path: "/new/order"
@@ -39,12 +34,14 @@ export default {
               title: "Liste des ordres",
               icon: "mdi-table",
               path: "/list/order"
-            }/*,
+            }
+            /*,
             {
               title: "Visionnage",
               icon: "mdi-file-document",
               path: "/view/order/"
-            }*/
+            }
+            */
           ]
         },
         { title: "map", icon: "mdi-earth", menu: "home", path: "/map" },

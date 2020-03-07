@@ -1,12 +1,16 @@
 <template>
   <v-container fluid>
-    <div v-for="item in items" :key="item.label">
-      <fieldset v-if="item.type === 'category'" style="margin: 0.5em;">
-        <CategoryComponent :item="item"></CategoryComponent>
-        <FormComponent :items="item.content"></FormComponent>
+    <div v-for="key in Object.keys(items)" :key="key">
+      <v-stepper v-if="items[key].type === 'chapter'" :name="key" :v-model="key" style="margin: 0.5em;" vertical>
+        <CategoryComponent :item="items[key]"></CategoryComponent>
+        <FormComponent :items="items[key].content"></FormComponent>
+      </v-stepper>
+      <fieldset v-if="items[key].type === 'category'" style="margin: 0.5em;">
+        <CategoryComponent :item="items[key]"></CategoryComponent>
+        <FormComponent :items="items[key].content"></FormComponent>
       </fieldset>
-      <SmallTextComponent v-if="item.type === 'small_text'" :item="item"></SmallTextComponent>
-      <LargeTextComponent v-if="item.type === 'large_text'" :item="item"></LargeTextComponent>
+      <SmallTextComponent v-if="items[key].type === 'small_text'" :item="items[key]"></SmallTextComponent>
+      <LargeTextComponent v-if="items[key].type === 'large_text'" :item="items[key]"></LargeTextComponent>
     </div>
   </v-container>
 </template>

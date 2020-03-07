@@ -1,8 +1,8 @@
 <template>
   <v-container fluid>
-    <v-form id="to_send">
+    <v-form @submit.prevent="submitForm" id="to_send" method="post">
       <FormComponent :items="template"></FormComponent>
-      <v-btn style="margin-left: 20%; width: 60%;" @click="submitForm">Enregistrer</v-btn>
+      <v-btn type="submit" form="to_send" style="margin-left: 20%; width: 60%;">Enregistrer</v-btn>
     </v-form>
   </v-container>
 </template>
@@ -38,6 +38,7 @@ export default {
         .catch(e => {
           console.log(e);
         });
+      console.log(data);
     },
     getUser() {
       var user_list = [

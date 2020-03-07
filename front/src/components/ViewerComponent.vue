@@ -2,7 +2,7 @@
   <v-container fluid>
     <div v-for="label in Object.keys(items)" :key="label">
       <div
-        v-if="(items[label].type === 'category') && data[label]"
+        v-if="((items[label].type === 'chapter') || (items[label].type === 'category')) && data[label]"
         style="
         border: lightgrey solid 0.1em;
         margin: 0.5em;
