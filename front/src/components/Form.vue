@@ -1,7 +1,8 @@
 <template>
   <v-container fluid>
     <v-form @submit.prevent="submitForm" id="to_send" method="post">
-      <FormComponent :items="template"></FormComponent>
+      <FormComponent :items="template" :root="'form.content.main.'"></FormComponent>
+      <v-text-field label="Annexes" v-model="form.content.annex"></v-text-field>
       <v-btn type="submit" form="to_send" style="margin-left: 20%; width: 60%;">Enregistrer</v-btn>
     </v-form>
   </v-container>
@@ -11,7 +12,7 @@
 import template from "@/assets/opord_template.json";
 import form from "@/assets/opord.json";
 import FormComponent from "@/components/FormComponents/FormComponent.vue";
-import api from "@/service/api";
+//import api from "@/service/api";
 
 export default {
   name: "Form",
@@ -20,7 +21,8 @@ export default {
   },
   data() {
     return {
-      template: template
+      template: template,
+      form: form
     };
   },
   methods: {
@@ -29,15 +31,14 @@ export default {
       data.date = new Date();
       data.title = "";
       data.author = this.getUser();
-      data.content = {};
-      api()
+ /*     api()
         .post("/create/json", data)
         .then(ret => {
           console.log(ret);
         })
         .catch(e => {
           console.log(e);
-        });
+        });*/
       console.log(data);
     },
     getUser() {
