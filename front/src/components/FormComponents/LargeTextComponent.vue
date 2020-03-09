@@ -1,5 +1,5 @@
 <template>
-  <v-textarea outlined rows="5" :label="item.label" auto-grow :name="root" :v-model="root"></v-textarea>
+  <v-textarea outlined rows="5" :label="item.label" auto-grow :name="root" v-model="root[value]"></v-textarea>
 </template>
 
 <script>
@@ -10,7 +10,8 @@ export default {
   },
   props: {
     item: Object,
-    root: String
+    root: Object,
+    value: String
   }
 };
 </script>
