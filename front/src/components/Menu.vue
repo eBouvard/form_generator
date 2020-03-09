@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer clipper class="ma-0 pa-1" mini-variant permanent>
+  <v-navigation-drawer clipper class="ma-0 pa-1" mini-variant permanent color="tertiary">
     <v-list-item-group>
       <v-list class="ma-0 pa-1" nav>
         <v-list-item

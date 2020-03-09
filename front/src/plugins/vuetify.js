@@ -19,8 +19,8 @@ export default new Vuetify({
         tertiary: colors.brown.darken1,
       },
       light: {
-        primary: colors.blue.darken3,
-        secondary: colors.indigo.darken4,
+        primary: colors.indigo.darken4,
+        secondary: colors.blue.darken3,
         tertiary: colors.pink.lighten5
       }
     },
