@@ -1,6 +1,6 @@
 {
     "0_header": {
-        "type": "chapter",
+        "type": "category",
         "content": {
             "title": {
                 "type": "small_text",
@@ -76,7 +76,7 @@
         "label": ""
     },
     "1_situation": {
-        "type": "chapter",
+        "type": "category",
         "content": {
             "free_text": {
                 "type": "large_text",
@@ -120,7 +120,7 @@
         "label": "1 - SITUATION"
     },
     "2_mission": {
-        "type": "chapter",
+        "type": "category",
         "content": {
             "free_text": {
                 "type": "large_text",
@@ -130,7 +130,7 @@
         "label": "2 - MISSION - BUT"
     },
     "3_execution": {
-        "type": "chapter",
+        "type": "category",
         "content": {
             "free_text": {
                 "type": "large_text",
@@ -256,7 +256,7 @@
         "label": "3 - EXECUTION"
     },
     "4_administration_and_logistic": {
-        "type": "chapter",
+        "type": "category",
         "content": {
             "free_text": {
                 "type": "large_text",
@@ -358,7 +358,7 @@
         "label": "4 - ADMINISTRATION ET LOGISTIQUE"
     },
     "5_command_and_signal": {
-        "type": "chapter",
+        "type": "category",
         "content": {
             "free_text": {
                 "type": "large_text",
