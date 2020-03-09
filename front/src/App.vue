@@ -19,7 +19,8 @@ export default {
   }),
 
   created() {
-    this.$vuetify.theme.dark = false
+    this.$vuetify.theme.dark = true;
+    this.$vuetify.theme.light = true;
   }
 };
 </script>
