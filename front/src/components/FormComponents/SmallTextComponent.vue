@@ -1,5 +1,5 @@
 <template>
-  <v-text-field :label="item.label" ></v-text-field>
+  <v-text-field :label="item.label" :name="root" :v-model="root"></v-text-field>
 </template>
 
 <script>
@@ -9,7 +9,8 @@ export default {
     return {};
   },
   props: {
-    item: Object
+    item: Object,
+    root: String
   }
 };
 </script>

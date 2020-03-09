@@ -15,7 +15,7 @@
         <v-btn class="ma-2" small v-on:click="openItem(item.id)" outlined primary>Ouvrir</v-btn>
       </template>
       <template v-slot:item.delete="{ item }">
-        <v-btn class="ma-2" icon small>
+        <v-btn class="ma-2" icon small right>
           <v-icon v-on:click="deleteItem(item.id)">mdi-trash-can-outline</v-icon>
         </v-btn>
       </template>
