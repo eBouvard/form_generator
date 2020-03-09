@@ -1,22 +1,16 @@
 <template>
   <v-container fluid>
-    <div v-for="item in items" :key="item.label">
-      <div
-        v-if="item.type === 'category'"
-        style="
-        border: lightgrey solid 0.1em;
-        margin: 0.5em;
-        "
-      >
-        <CategoryComponent :item="item"></CategoryComponent>
-        <FormComponent :items="item.content"></FormComponent>
-      </div>
-      <div v-if="item.type === 'small_text'">
-        <SmallTextComponent :item="item"></SmallTextComponent>
-      </div>
-      <div v-if="item.type === 'large_text'">
-        <LargeTextComponent :item="item"></LargeTextComponent>
-      </div>
+    <div v-for="key in Object.keys(items)" :key="key">
+      <v-stepper v-if="items[key].type === 'chapter'" :v-model="root[key]" style="margin: 0.5em;" vertical>
+        <CategoryComponent :item="items[key]"></CategoryComponent>
+        <FormComponent :items="items[key].content" :root="root[key]"></FormComponent>
+      </v-stepper>
+      <fieldset v-if="items[key].type === 'category'" style="margin: 0.5em;">
+        <CategoryComponent :item="items[key]"></CategoryComponent>
+        <FormComponent :items="items[key].content" :root="root[key]"></FormComponent>
+      </fieldset>
+      <SmallTextComponent v-if="items[key].type === 'small_text'" :item="items[key]" :root="root" :value="key"></SmallTextComponent>
+      <LargeTextComponent v-if="items[key].type === 'large_text'" :item="items[key]" :root="root" :value="key"></LargeTextComponent>
     </div>
   </v-container>
 </template>
@@ -37,7 +31,8 @@ export default {
     return {};
   },
   props: {
-    items: Object
+    items: Object,
+    root: Object
   }
 };
 </script>
