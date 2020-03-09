@@ -6,10 +6,11 @@
     </v-form>
     <div v-if="data && $route.params.form_id">
 <!--  New API
-      <ViewerComponent :items="template" :data="data.content.main" :level=1></ViewerComponent>
 -->
-<!--  Old API   -->
+      <ViewerComponent :items="template" :data="data.data.content.main" :level=1></ViewerComponent>
+<!--  Old API
       <ViewerComponent :items="template" :data="data.data.content" :level=1></ViewerComponent>
+-->
     </div>
   </v-container>
 </template>
@@ -37,10 +38,6 @@ export default {
       });
     },
     loadForm(form_id) {
-/*    New API
-      var request = "/read/" + form_id + "/scan";
-*/
-/*      Old API   */
       var request = "/read/" + form_id;
       console.log(request);
       api()
