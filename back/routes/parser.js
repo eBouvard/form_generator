@@ -11,7 +11,7 @@ const flask = axios.create({
 
 //Parse a file
 router.get('/', async (req, res) => {
-    ret flask.get('/').then(ret => {
+    flask.get('/').then(ret => {
         const { data } = ret
         return(data)
     }).catch(e => {
