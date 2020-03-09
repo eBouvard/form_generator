@@ -31,6 +31,11 @@ export default {
               path: "/new/order"
             },
             {
+              title: "Remplissage II",
+              icon: "mdi-pen",
+              path: "/new/order2"
+            },
+            {
               title: "Liste des ordres",
               icon: "mdi-table",
               path: "/list/order"
@@ -45,6 +50,7 @@ export default {
           ]
         },
         { title: "map", icon: "mdi-earth", menu: "home", path: "/map" },
+        { title: "upload", icon: "mdi-upload", menu: "home", path: "/upload" },
       ]
     };
   },
