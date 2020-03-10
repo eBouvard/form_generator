@@ -1,15 +1,17 @@
 <template>
   <v-container fluid>
-    <v-form @submit.prevent="submitForm" id="to_send" method="post">
+    <v-form @submit.prevent="submitForm" ref="to_send">
       <FormComponent :items="template" :root="form.content.main"></FormComponent>
-      <v-btn type="submit" form="to_send" style="margin-left: 20%; width: 60%;">Enregistrer</v-btn>
     </v-form>
+    <v-btn color="secondary" large fixed right bottom fab type="submit">
+      <v-icon>mdi-content-save</v-icon>
+    </v-btn>
   </v-container>
 </template>
 
 <script>
 import template from "@/assets/opord_template.json";
-import form from "@/assets/opord.json";
+import opord_form from "@/assets/opord.json";
 import FormComponent from "@/components/FormComponents/FormComponent.vue";
 import api from "@/service/api";
 
@@ -21,14 +23,14 @@ export default {
   data() {
     return {
       template: template,
-      form: form
+      form: Object.assign({}, opord_form)
     };
   },
   methods: {
     submitForm() {
-      var data = JSON.parse(JSON.stringify(form));
+      const data = Object.assign({}, this.form);
       data.date = new Date();
-      data.title = form.content.main["0_header"].title;
+      data.title = this.form.content.main["0_header"].title;
       data.author = this.getUser();
       console.log(data);
       api()
@@ -41,7 +43,7 @@ export default {
         });
     },
     getUser() {
-      var user_list = [
+      const user_list = [
         "Joachim Murat",
         "Michel Ney",
         "Jean Lannes",
@@ -49,7 +51,7 @@ export default {
         "Louis Alexandre Berthier",
         "Louis-Nicolas Davout"
       ];
-      var user = user_list[Math.floor(Math.random() * Math.floor(6))];
+      const user = user_list[Math.floor(Math.random() * 6)];
       return user;
     }
   }
