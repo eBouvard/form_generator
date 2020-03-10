@@ -3,9 +3,11 @@
     <v-form ref="to_send">
       <FormComponent :items="template" :root="form.content.main"></FormComponent>
     </v-form>
+
     <v-btn color="secondary" large fixed right bottom fab v-on:click="submitCheck = true">
       <v-icon>mdi-content-save</v-icon>
     </v-btn>
+
     <v-dialog v-model="submitCheck">
       <v-card>
         <v-card-title class="headline">Confirmer l'envoi du formulaire ?</v-card-title>
@@ -13,7 +15,7 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn text @click="submitCheck = false">Annuler</v-btn>
-          <v-btn text @click="submitForm">Valider</v-btn>
+          <v-btn text @click="submit">Valider</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -35,11 +37,12 @@ export default {
     return {
       template: template,
       form: JSON.parse(JSON.stringify(opord_form)),
-      submitCheck: false
+      submitCheck: false,
+      submitFeedback: true
     };
   },
   methods: {
-    submitForm() {
+    submit() {
       const data = JSON.parse(JSON.stringify(this.form));
       data.date = new Date();
       data.title = this.form.content.main["0_header"].title;
@@ -56,7 +59,7 @@ export default {
       this.$refs.to_send.reset();
       this.$router.push({
         path: "/list/order/"
-      }) 
+      });
     },
     getUser() {
       const user_list = [
