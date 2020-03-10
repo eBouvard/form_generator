@@ -3,7 +3,7 @@
     <v-app-bar class="white--text" height="50px" color="primary">
     <v-avatar>
       <img
-        src="@/assets/cpoia.png"
+        src="@/assets/cpoia.jpeg"
         alt="logo"
       >
     </v-avatar>
