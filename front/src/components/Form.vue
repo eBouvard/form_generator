@@ -45,6 +45,7 @@ export default {
     submit() {
       const data = JSON.parse(JSON.stringify(this.form));
       data.date = new Date();
+      console.log(data.date)
       data.title = this.form.content.main["0_header"].title;
       data.author = this.getUser();
       console.log(data);
