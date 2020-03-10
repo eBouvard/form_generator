@@ -5,7 +5,7 @@
       :items="forms"
       :items-per-page="10"
       class="elevation-1"
-      loading
+      :loading="loading"
       loading-text="Chargement en cours..."
     >
       <template v-slot:item.score="{ item }">
@@ -20,11 +20,22 @@
         </v-btn>
       </template>
     </v-data-table>
+       <v-snackbar
+      v-model="snackbar"
+      :timeout=2000
+    >
+      {{ snackText }}
+      <v-btn text @click="snackbar = false">
+        Fermer
+      </v-btn>
+    </v-snackbar>
   </v-container>
 </template>
 
 <script>
 import api from "@/service/api";
+import moment from 'moment';
+moment.locale('fr');
 
 export default {
   name: "Table",
@@ -39,50 +50,45 @@ export default {
         { text: "Ouvrir", value: "open" },
         { text: "Supprimer", value: "delete" }
       ],
-      forms: []
+      forms: [],
+      snackbar: false,
+      snackText: "Element supprimé",
+      loading: true
     };
   },
   methods: {
     init() {
-      api()
-        .get("/read/all")
-        .then(ret => {
+      api().get("/read/all").then(ret => {
           const raw = ret.data;
           const array = [];
           raw.forEach(element => {
-            const date = new Date(element.data.date);
+            const date = moment(element.data.date).fromNow()
             const score = Math.ceil(element.data.conformity * 100);
             const newline = {
               id: element.id,
               title: element.data.title,
               authors: element.data.author,
-              date: date.toLocaleDateString("fr-FR"),
+              date: date,
               score: score,
               content: element.data.content
             };
             array.push(newline);
-            console.log(array);
           });
           this.forms = array;
+          this.loading = false
         })
-        .catch(e => {
-          console.log(e);
-        });
+        .catch(e => {console.log(e);});
     },
     deleteItem(id) {
-      console.log(id);
-      api()
-        .get("/delete/json/" + id)
-        .then(ret => {
-          console.log(ret);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-      this.init();
+      if(confirm('Etes-vous sûrs de supprimer cet ordre ?')) {
+        api().get("/delete/json/" + id).then(() => {
+            this.snackbar = true
+          }).catch(e => {console.log(e)});
+          this.forms = []
+          this.init()
+      }
     },
     openItem(id) {
-      console.log(id);
       this.$router.push({
         path: "/view/order/" + id
       });
