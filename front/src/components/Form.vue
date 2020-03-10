@@ -6,7 +6,7 @@
 
     <v-speed-dial right bottom fixed>
       <template v-slot:activator>
-        <v-btn v-model="fab" color="secondary" large fab>
+        <v-btn color="secondary" large fab v-on:click="fab = (fab ? false : true)">
           <v-icon v-if="fab">mdi-close</v-icon>
           <v-icon v-else>mdi-content-save</v-icon>
         </v-btn>
