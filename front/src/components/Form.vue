@@ -14,7 +14,7 @@
       <v-btn fab dark small color="green" v-on:click="submitCheck = true">
         <v-icon>mdi-exit-to-app</v-icon>
       </v-btn>
-      <v-btn fab dark small color="indigo" v-on:click="updateCheck = true">
+      <v-btn fab dark small color="indigo" v-on:click="saveStay">
         <v-icon>mdi-content-save-edit</v-icon>
       </v-btn>
     </v-speed-dial>
@@ -26,7 +26,7 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn text @click="submitCheck = false">Annuler</v-btn>
-          <v-btn text @click="submit">Valider</v-btn>
+          <v-btn text @click="saveExit">Valider</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -55,24 +55,18 @@ export default {
     };
   },
   methods: {
-    submit() {
+    async submit() {
       const data = JSON.parse(JSON.stringify(this.form));
       data.date = new Date();
       data.title = this.form.content.main["0_header"].title;
       data.author = this.getUser();
       console.log(data);
-      api()
+      let ret = await api()
         .post("/create/json", data)
-        .then(ret => {
-          console.log(ret);
-        })
         .catch(e => {
           console.log(e);
         });
-      this.$refs.to_send.reset();
-      this.$router.push({
-        path: "/list/order/"
-      });
+      return ret.data;
     },
     getUser() {
       const user_list = [
@@ -85,6 +79,21 @@ export default {
       ];
       const user = user_list[Math.floor(Math.random() * 6)];
       return user;
+    },
+    saveExit() {
+      this.submit();
+      this.$refs.to_send.reset();
+      this.$router.push({
+        path: "/list/order/"
+      });
+    },
+    saveStay() {
+      this.submit()
+      .then(ret => {
+        this.$router.push({
+          path: "/update/order/" + ret
+        });
+      });
     }
   }
 };
