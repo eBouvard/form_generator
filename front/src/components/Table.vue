@@ -17,8 +17,8 @@
             <v-btn class="ma-2" small outlined primary v-on="on">Options</v-btn>
           </template>
           <v-list>
-            <v-list-item v-for="(option, index) in optionsList" :key="index">
-              <v-list-item-title v-on:click="option.action(item.id)">{{ option.title }}</v-list-item-title>
+            <v-list-item v-for="(option, index) in optionsList" :key="index" v-on:click="option.action(item.id)">
+              <v-list-item-title>{{ option.title }}</v-list-item-title>
             </v-list-item>
           </v-list>
         </v-menu>
