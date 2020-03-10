@@ -30,20 +30,17 @@ export default {
           menu: "form",
           content: [
             {
-              title: "Remplissage",
+              title: "Nouvel ordre",
               icon: "mdi-pen",
               path: "/new/order"
             },
+            /*
             {
               title: "Modification",
               icon: "mdi-pen",
               path: "/update/order/0"
             },
-            {
-              title: "Remplissage II",
-              icon: "mdi-pen",
-              path: "/new/order2"
-            },
+            */
             {
               title: "Liste des ordres",
               icon: "mdi-table",
