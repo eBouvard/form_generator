@@ -3,22 +3,20 @@
     <v-form ref="to_send">
       <FormComponent :items="template" :root="form.content.main"></FormComponent>
     </v-form>
-    <v-btn color="secondary" large fixed right bottom fab v-on:click="submitForm()">
+    <v-btn color="secondary" large fixed right bottom fab v-on:click="submitCheck = true">
       <v-icon>mdi-content-save</v-icon>
     </v-btn>
-<!--
-    <v-dialog v-model="dialog" max-width="290">
+    <v-dialog v-model="submitCheck">
       <v-card>
-        <v-card-title class="headline">Use Google's location service?</v-card-title>
-        <v-card-text>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</v-card-text>
+        <v-card-title class="headline">Confirmer l'envoi du formulaire ?</v-card-title>
+        <v-card-text>Cette action enregistrera le formulaire en cours et vous renverra à la liste des ordres.</v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn text @click="dialog = false">Disagree</v-btn>
-          <v-btn text @click="dialog = false">Agree</v-btn>
+          <v-btn text @click="submitCheck = false">Annuler</v-btn>
+          <v-btn text @click="submitForm">Valider</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
--->
   </v-container>
 </template>
 
@@ -36,7 +34,8 @@ export default {
   data() {
     return {
       template: template,
-      form: JSON.parse(JSON.stringify(opord_form))
+      form: JSON.parse(JSON.stringify(opord_form)),
+      submitCheck: false
     };
   },
   methods: {
@@ -54,7 +53,10 @@ export default {
         .catch(e => {
           console.log(e);
         });
-      this.$refs.to_send.reset(); 
+      this.$refs.to_send.reset();
+      this.$router.push({
+        path: "/list/order/"
+      }) 
     },
     getUser() {
       const user_list = [
