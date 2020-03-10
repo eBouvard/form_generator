@@ -24,11 +24,20 @@ export default {
     return {
       items: [
         { title: "home", icon: "mdi-home", menu: "home", path: "/home" },
-        { title: "form", icon: "mdi-file-document", menu: "form", content: [
+        {
+          title: "form",
+          icon: "mdi-file-document",
+          menu: "form",
+          content: [
             {
               title: "Remplissage",
               icon: "mdi-pen",
               path: "/new/order"
+            },
+            {
+              title: "Modification",
+              icon: "mdi-pen",
+              path: "/update/order/0"
             },
             {
               title: "Remplissage II",
@@ -50,7 +59,7 @@ export default {
           ]
         },
         { title: "map", icon: "mdi-earth", menu: "home", path: "/map" },
-        { title: "upload", icon: "mdi-upload", menu: "home", path: "/upload" },
+        { title: "upload", icon: "mdi-upload", menu: "home", path: "/upload" }
       ]
     };
   },

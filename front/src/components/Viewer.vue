@@ -2,12 +2,12 @@
   <v-container fluid>
     <v-form id="load">
       <v-btn block color="primary" @click="updatePath" dark>Charger formulaire numéro</v-btn>
-      <v-text-field label="Identifiant" outlined id="opord_id"></v-text-field>
+      <v-text-field label="Identifiant" outlined v-model="form_id"></v-text-field>
     </v-form>
     <div v-if="data && $route.params.form_id">
 <!--  New API
 -->
-      <ViewerComponent :items="template" :data="data.data.content.main" :level=1></ViewerComponent>
+      <ViewerComponent :items="template" :data="data.content.main" :level=1></ViewerComponent>
 <!--  Old API
       <ViewerComponent :items="template" :data="data.data.content" :level=1></ViewerComponent>
 -->
@@ -28,13 +28,14 @@ export default {
   data() {
     return {
       template: template,
+      form_id: null,
       data: null
     };
   },
   methods: {
     updatePath() {
       this.$router.push({
-        path: "/view/order/" + document.getElementById("opord_id").value
+        path: "/view/order/" + this.form_id
       });
     },
     loadForm(form_id) {
@@ -44,7 +45,7 @@ export default {
         .get(request)
         .then(ret => {
           console.log(ret);
-          this.data = ret;
+          this.data = ret.data;
         })
         .catch(e => {
           console.log(e);
