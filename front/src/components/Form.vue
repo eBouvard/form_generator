@@ -4,9 +4,20 @@
       <FormComponent :items="template" :root="form.content.main"></FormComponent>
     </v-form>
 
-    <v-btn color="secondary" large fixed right bottom fab v-on:click="submitCheck = true">
-      <v-icon>mdi-content-save</v-icon>
-    </v-btn>
+    <v-speed-dial right bottom fixed>
+      <template v-slot:activator>
+        <v-btn v-model="fab" color="secondary" large fab>
+          <v-icon v-if="fab">mdi-close</v-icon>
+          <v-icon v-else>mdi-content-save</v-icon>
+        </v-btn>
+      </template>
+      <v-btn fab dark small color="green" v-on:click="submitCheck = true">
+        <v-icon>mdi-exit-to-app</v-icon>
+      </v-btn>
+      <v-btn fab dark small color="indigo" v-on:click="updateCheck = true">
+        <v-icon>mdi-content-save-edit</v-icon>
+      </v-btn>
+    </v-speed-dial>
 
     <v-dialog v-model="submitCheck">
       <v-card>
@@ -35,9 +46,11 @@ export default {
   },
   data() {
     return {
+      fab: false,
       template: template,
       form: JSON.parse(JSON.stringify(opord_form)),
       submitCheck: false,
+      updateCheck: false,
       submitFeedback: true
     };
   },
