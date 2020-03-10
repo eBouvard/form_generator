@@ -11,12 +11,24 @@
           <v-icon v-else>mdi-content-save</v-icon>
         </v-btn>
       </template>
-      <v-btn fab dark small color="green" v-on:click="submitCheck = true">
-        <v-icon>mdi-exit-to-app</v-icon>
-      </v-btn>
-      <v-btn fab dark small color="indigo" v-on:click="saveStay">
-        <v-icon>mdi-content-save-edit</v-icon>
-      </v-btn>
+
+      <v-tooltip left>
+        <template v-slot:activator="{ on }">
+          <v-btn fab dark small color="green" v-on:click="submitCheck = true" v-on="on">
+            <v-icon>mdi-exit-to-app</v-icon>
+          </v-btn>
+        </template>
+        <span>Sauver et quitter</span>
+      </v-tooltip>
+
+      <v-tooltip left>
+        <template v-slot:activator="{ on }">
+          <v-btn fab dark small color="indigo" v-on:click="saveStay" v-on="on">
+            <v-icon>mdi-content-save-edit</v-icon>
+          </v-btn>
+        </template>
+        <span>Sauver et continuer</span>
+      </v-tooltip>
     </v-speed-dial>
 
     <v-dialog v-model="submitCheck">
@@ -88,8 +100,7 @@ export default {
       });
     },
     saveStay() {
-      this.submit()
-      .then(ret => {
+      this.submit().then(ret => {
         this.$router.push({
           path: "/update/order/" + ret
         });
