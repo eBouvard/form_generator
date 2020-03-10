@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer clipper class="ma-0 pa-1" mini-variant permanent>
+  <v-navigation-drawer clipper class="ma-0 pa-1" mini-variant permanent color="tertiary">
     <v-list-item-group>
       <v-list class="ma-0 pa-1" nav>
         <v-list-item
@@ -23,31 +23,34 @@ export default {
   data() {
     return {
       items: [
-        { title: "home", icon: "mdi-home", menu: "home", content: [] },
+        { title: "home", icon: "mdi-home", menu: "home", path: "/home" },
         { title: "form", icon: "mdi-file-document", menu: "form", content: [
-            {
-              title: "Carte",
-              icon: "mdi-earth",
-              path: "/map"
-            },
             {
               title: "Remplissage",
               icon: "mdi-pen",
               path: "/new/order"
             },
             {
+              title: "Remplissage II",
+              icon: "mdi-pen",
+              path: "/new/order2"
+            },
+            {
               title: "Liste des ordres",
               icon: "mdi-table",
               path: "/list/order"
-            },
+            }
+            /*,
             {
               title: "Visionnage",
               icon: "mdi-file-document",
-              path: "/view/order/55"
+              path: "/view/order/"
             }
+            */
           ]
         },
         { title: "map", icon: "mdi-earth", menu: "home", path: "/map" },
+        { title: "upload", icon: "mdi-upload", menu: "home", path: "/upload" },
       ]
     };
   },

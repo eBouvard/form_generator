@@ -7,21 +7,22 @@ import colors from 'vuetify/lib/util/colors'
 Vue.use(Vuetify);
 
 export default new Vuetify({
-    lang: {
-      locales: { fr },
-      current: 'fr',
-    },
-    theme: {
-      themes: {
-        dark: {
-          primary: colors.lime.darken4,
-          secondary: colors.lime.lighten1,
-          accent: colors.lime.accent1,
-        },
-        light: {
-          primary: colors.blue.darken4,
-          secondary: colors.lime.lighten1,
-          accent: colors.lime.accent1,
-        },
+  lang: {
+    locales: { fr },
+    current: 'fr',
+  },
+  theme: {
+     themes: {
+      dark:  {
+        primary: colors.green.darken4,
+        secondary: colors.orange.accent1,
+        tertiary: colors.brown.darken1,
       },
-    },})
+      light: {
+        primary: colors.indigo.darken4,
+        secondary: colors.blue.darken3,
+        tertiary: colors.pink.lighten5
+      }
+    },
+  },
+})

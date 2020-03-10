@@ -1,6 +1,6 @@
 <template>
   <v-container fluid class="overflow-hidden ma-0 pa-0" >
-    <v-app-bar height="50px" dark>
+    <v-app-bar class="white--text" height="50px" color="primary">
     <v-avatar>
       <img
         src="@/assets/cpoia.jpeg"
@@ -13,11 +13,7 @@
       <v-switch
         v-model="$vuetify.theme.dark"
         hide-details
-        label="Mode Dark"
       ></v-switch>
-    <v-btn icon>
-      <v-icon>mdi-magnify</v-icon>
-    </v-btn>
     </v-app-bar>
     <v-row style="flex-wrap: nowrap; height: calc(100vh - 50px)" no-gutters>
       <Menu v-on:item-selected="menuItemSelected"></Menu>
