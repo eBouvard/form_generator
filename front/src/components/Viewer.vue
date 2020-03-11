@@ -5,12 +5,7 @@
       <v-text-field label="Identifiant" outlined v-model="form_id"></v-text-field>
     </v-form>
     <div v-if="data && $route.params.form_id">
-<!--  New API
--->
       <ViewerComponent :items="template" :data="data.content.main" :level=1></ViewerComponent>
-<!--  Old API
-      <ViewerComponent :items="template" :data="data.data.content" :level=1></ViewerComponent>
--->
     </div>
   </v-container>
 </template>
