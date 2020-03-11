@@ -1,23 +1,22 @@
 <template>
   <v-container fluid>
     <div v-for="label in Object.keys(items)" :key="label">
-      <div
+      <v-card
         v-if="((items[label].type === 'chapter') || (items[label].type === 'category')) && !isEmpty(data[label])"
-        style="
-        border: lightgrey solid 0.1em;
-        margin: 0.5em;
-        "
+       class="my-2"
       >
-        <h2>{{items[label].label}}</h2>
-        <ViewerComponent :items="items[label].content" :data="data[label]" :level="level + 1"></ViewerComponent>
-      </div>
+        <v-card-title class="headline">{{items[label].label}}</v-card-title>
+        <v-card-text style="font-size: 1.2rem;">
+          <ViewerComponent :items="items[label].content" :data="data[label]"></ViewerComponent>
+        </v-card-text>
+      </v-card>
       <div v-if="(items[label].type === 'small_text') && data[label]">
         <h3>{{items[label].label}}</h3>
-        {{ data[label] }}
+        <p class="my-2">{{ data[label] }}</p>
       </div>
       <div v-if="(items[label].type === 'large_text') && data[label]">
         <h3>{{items[label].label}}</h3>
-        {{ data[label] }}
+        <p class="my-2">{{ data[label] }}</p>
       </div>
     </div>
   </v-container>
@@ -51,8 +50,7 @@ export default {
   },
   props: {
     items: Object,
-    data: Object,
-    level: Number
+    data: Object
   }
 };
 </script>
