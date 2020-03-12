@@ -15,7 +15,7 @@
       @update:center="centerUpdate"
       @update:zoom="zoomUpdate"
     >
-      <l-tile-layer :url="url" :attribution="attribution" />
+      <l-tile-layer :url="url" />
       <l-marker :lat-lng="withPopup">
         <l-popup>
           <div @click="innerClick">
