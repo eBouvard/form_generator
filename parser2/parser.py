@@ -77,3 +77,7 @@ if __name__ == '__main__':
     else:
         path_opord = "assets/110419_FRAGO_01_JOC.docx"
     print(parse_doc(path_opord))
+    
+temp = parse_doc(path_opord)
+with open('person2.txt', 'w') as json_file:
+    json.dump(temp, json_file, indent=4, sort_keys=False, default=str)
