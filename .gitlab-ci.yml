@@ -1,4 +1,6 @@
 job:run_master:
-  script: docker-compose up -d
+  script:
+    - cp /root/enc/.env back/.env
+    - docker-compose up -d
   only:
     - master
