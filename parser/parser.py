@@ -1,34 +1,19 @@
 from __future__ import print_function
 import os
 import sys
-from Structuring.structure import annex_walker
-from Formatting.formatter import meta_to_df
 import json
-from Matching.segmenter import recursive_items
-from Matching.segmenter import get_annexes
-from Matching.parser import make_dic
-from Matching.parser import conformity_stat
+from Structuring.structure import annex_walker, restructure
+from Matching.segmenter import get_annexes, recursive_items
+from Matching.parser import make_dic, conformity_stat
 from Extracting.metadata_extractor import get_meta
 from Extracting.text_extractor import get_text
-from Formatting.formatter import get_arbo
-from Formatting.formatter import to_json
-from Structuring.structure import restructure
+from Formatting.formatter import get_arbo, to_json, meta_to_df
 
+canvas = "assets/CANEVAS_STRUCT.json"
+struct_path = os.getcwd() + canvas
 
-try:
-    struct_path = os.getcwd() + "/CANEVAS_STRUCT.json"
-except FileNotFoundError:
-    print("Rename your structure to 'CANEVAS_STRUCT.json' and put at the root of the repo")
-    
-    
-if len(sys.argv) > 1:
-    path_opord = sys.argv[1]
-else:
-    #path_opord =  "~/Desktop/20200220_CERASTES_DIV31_DB_FINAL2.pdf"
-    path_opord = "/Users/augustinbaudoin/Desktop/110419_FRAGO_01_JOC.docx"
-
-def structure_single_opord(path_opord, struct_path="CANEVAS_STRUCT.json"):
-    final_struct = json.load(open(struct_path))
+def parse_doc(path_opord, struct_path=canvas):
+    final_struct = json.load(open(canvas))
     list_of_titles = recursive_items(final_struct)
     dic_of_files = {}
     
@@ -83,4 +68,12 @@ def structure_single_opord(path_opord, struct_path="CANEVAS_STRUCT.json"):
     return dic_of_files
 
 if __name__ == '__main__':
-    print(structure_single_opord(path_opord))
+    if len(sys.argv) > 1:
+        path_opord = sys.argv[1]
+    else:
+        path_opord = "assets/110419_FRAGO_01_JOC.docx"
+    print(parse_doc(path_opord))
+    
+#temp = parse_doc(path_opord)
+#with open('person2.txt', 'w') as json_file:
+#    json.dump(temp, json_file, indent=4, sort_keys=False, default=str)
