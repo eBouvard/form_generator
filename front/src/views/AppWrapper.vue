@@ -13,6 +13,7 @@
       <v-switch
         v-model="$vuetify.theme.dark"
         hide-details
+        @change="goBlack"
       ></v-switch>
     </v-app-bar>
     <v-row style="flex-wrap: nowrap; height: calc(100vh - 50px)" no-gutters>
@@ -54,6 +55,9 @@ export default {
       } else {
         this.selectedMenuItem = item;
       }
+    },
+    goBlack() {
+      this.$store.commit("SET_BLACKTHEME", this.$vuetify.theme.dark)
     }
   }
 };
