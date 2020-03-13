@@ -25,7 +25,7 @@ router.get('/JSONtable/:name', async (req, res) => {
 
 //Add a new data into the main JSONTable
 router.post('/json', async (req, res) => {
-    const json_data = req.body
+    const json_data = req.fields
 
     if (json_data != undefined) {
         const query = {
@@ -42,9 +42,9 @@ router.post('/json', async (req, res) => {
 
 //Add a new data into the a specific JSONTable
 router.post('/json/:table', async (req, res) => {
-    const json_data = req.body
+    const json_data = req.fields
     const table = req.params.table
-    console.log(table)
+    console.log(json_data)
 
     if (json_data != undefined && table != undefined) {
         const query = {

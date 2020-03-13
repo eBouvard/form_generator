@@ -2,12 +2,12 @@
   <v-container>
     <v-card text-center wrap class="ma-1 pa-2">
         <v-file-input
-          v-model="selectedFile"
+          v-model="uploadFile"
           id="upload"
-          accept="audio/mp3"
+          accept="document/word"
           prepend-icon="mdi-file"
           label="Upload your document"
-          @change="onFileChange">
+          @change="onFileChange()">
         </v-file-input>
     </v-card>
   </v-container>
@@ -20,17 +20,18 @@ export default {
   name: 'Upload',
   data() {
     return {
-      selectedFile: null
+      uploadFile: null,
     };
   },
   methods: {
-    onFileChange(selectedFile) {
-      if (selectedFile) {
-        const fileFD = new FormData();
-        fileFD.append('file', selectedFile);
-        api().post('/upload', fileFD).then((ret) => {
-            console.log(ret)
-        }).catch((e) => { console.log(e); });
+    onFileChange(uploadFile) {
+      if (uploadFile) {
+        const FormData = new FormData();
+        FormData.append('file', uploadFile);
+        api().post('/upload', FormData).then((req, ret) => {
+            console.log(req)
+            console.log(ret.data)
+        }).catch((e) => { console.log(e);});
       } else {
         this.selectedFile = null;
       }

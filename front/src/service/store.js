@@ -6,13 +6,12 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    blackTheme: false
+    blackTheme: false,
   },
   mutations: {
     SET_BLACKTHEME: (state, val) => { state.blackTheme = val }
   },
   actions: {
-    
   },
   getters: {
     blackTheme: state => state.blackTheme
