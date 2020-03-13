@@ -1,0 +1,7 @@
+stages:
+	- run_master
+
+job:run_master:
+	script: docker-compose up -d
+	only:
+		- master
