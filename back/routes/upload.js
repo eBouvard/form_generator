@@ -44,7 +44,7 @@ router.post('/', async (req, res) => {
         if (e) console.log('ERROR: ' + e);
     });
     let json_data = await sendToParser(newPath)
-    console.log("Document:" + json_data.Title)
+    console.log(`Document:${json_data.Title}`)
     json_data = ConvertKeysToLowerCase(json_data)
     const retDB = sendJSONtoDB(json_data)
     res.sendStatus(202)

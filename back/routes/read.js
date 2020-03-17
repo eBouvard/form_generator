@@ -9,13 +9,13 @@ const JSON_table = 'json'
 
 //Read all JSON data
 router.get('/all', async (req, res) => {
-    const { rows } = await db.query(`SELECT * FROM ${JSON_table}`)
+    const { rows } = await db.query(`SELECT * FROM ${JSON_table} ORDER BY id`)
     res.send(rows)
 })
 
-//Read all JSON data without content
+//Read all JSON data without content (not finished)
 router.get('/list', async (req, res) => {
-  const { rows } = await db.query(`SELECT * FROM ${JSON_table}`)
+  const { rows } = await db.query(`SELECT * FROM ${JSON_table} ORDER BY id`)
   res.send(rows)
 })
 
@@ -23,7 +23,7 @@ router.get('/list', async (req, res) => {
 router.get('/all/:table', async (req, res) => {
   const table = req.params.table
   if (table != undefined) {
-    const { rows } = await db.query(`SELECT * FROM ${table}`)
+    const { rows } = await db.query(`SELECT * FROM ${table} ORDER BY id`)
     res.send(rows) 
   } else { res.send('Wrong table name')}
 })
