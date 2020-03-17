@@ -4,10 +4,12 @@ const fs = require('fs');
 const router = new Router()
 module.exports = router
 
-const upload_folder = process.cwd() + '/upload/'
-
 router.post('/', async (req, res) => {
-    const file = req.files
-    console.log(file)
+    const file = req.files.file
+    const oldPath = file.path
+    const newPath = oldPath.substr(0, oldPath.lastIndexOf('/') + 1) + file.name
+    fs.rename(oldPath, newPath, function(e) {
+        if ( e ) console.log('ERROR: ' + e);
+    });
     res.sendStatus(202)
 })

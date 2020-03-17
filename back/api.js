@@ -13,7 +13,7 @@ if (process.env.PORT === undefined) {
 
 //Express setup and sanity route
 const app = express()
-app.use(formidableMiddleware({ multiples: true, uploadDir: __dirname + '/upload' }));
+app.use(formidableMiddleware({ multiples: false, uploadDir: __dirname + '/upload' }));
 app.use(cors())
 mountRoutes(app)
 app.get('/check', function (req, res) {
