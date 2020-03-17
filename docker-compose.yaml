@@ -14,6 +14,7 @@ services:
       - /usr/app/node_modules
     working_dir: /usr/app
     command: "npm run dev"
+  
   front:
     image: node:12.16.1
     depends_on:
@@ -27,5 +28,12 @@ services:
       - ./front:/usr/app
     working_dir: /usr/app
     command: "yarn run dev"
+    links:
+      - back
+
+  python:
+    image: parser
+    ports:
+      - "5000:5000"
     links:
       - back
