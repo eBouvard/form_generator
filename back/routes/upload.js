@@ -43,9 +43,9 @@ router.post('/', async (req, res) => {
     fs.rename(oldPath, newPath, function (e) {
         if (e) console.log('ERROR: ' + e);
     });
-    const json_data = await sendToParser(newPath)
+    let json_data = await sendToParser(newPath)
     console.log("Document:" + json_data.Title)
-    ConvertKeysToLowerCase(json_data)
+    json_data = ConvertKeysToLowerCase(json_data)
     const retDB = sendJSONtoDB(json_data)
     res.sendStatus(202)
 })
