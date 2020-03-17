@@ -17,7 +17,7 @@ conda env create
 **Run:**
 
 ```
-python3 main.py
+python3 api.py
 ```
 
 If you want to create a table of your metadata to visualize in the shinyapp, add the following argument. The resulting output will be stored in the **Output** folder under metadata.csv
