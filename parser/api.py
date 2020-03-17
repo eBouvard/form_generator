@@ -12,6 +12,7 @@ def Hello():
 def route_single_doc():
     path = request.args.get('path', type = str)
     #path = "/Users/vincent/c2lab/parser2/template/110419_FRAGO_01_JOC.docx"
+    print(path)
     if not (os.path.exists(path)):
         return('Wrong path')
     return (parse_doc(path))

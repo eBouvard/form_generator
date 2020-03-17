@@ -16,11 +16,11 @@ def get_annex_titles(annexes):
         if not title:
             if i < 1:
                 i += 1
-                title = "MAIN"
+                title = "main"
             else:
                 title = annex[1].strip()
                 if not title:
-                    title = "OTHER"
+                    title = "other"
 
         annex_titles.append(title)
     return annex_titles

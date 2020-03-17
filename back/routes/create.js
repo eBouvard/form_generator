@@ -44,8 +44,6 @@ router.post('/json', async (req, res) => {
 router.post('/json/:table', async (req, res) => {
     const json_data = req.fields
     const table = req.params.table
-    console.log(json_data)
-
     if (json_data != undefined && table != undefined) {
         const query = {
             text: `INSERT INTO ${table}(data) VALUES ($1) RETURNING id`,

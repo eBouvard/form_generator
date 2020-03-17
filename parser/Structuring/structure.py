@@ -45,7 +45,7 @@ def annex_walker(path, struct_path, save=True, viz=False, json_name="Output/scan
             meta = get_meta(opord)
             print("-----------------------")
             print("Got metadata")
-            dic_of_files['Title'] = meta['Title']
+            dic_of_files['title'] = meta['title']
             dic_of_files['Authors'] = meta['Author(s)']
             dic_of_files['Last_Modified_By'] = meta['Last Modified By']
             dic_of_files['Created_Date'] = meta['Created Date']
@@ -85,7 +85,7 @@ def annex_walker(path, struct_path, save=True, viz=False, json_name="Output/scan
             for annex in flat_dic.keys():
                 final_struct = json.load(open(struct_path))
                 dic_of_annexes[str(annex)] = restructure(final_struct, flat_dic[str(annex)])
-            dic_of_files["Content"] = dic_of_annexes
+            dic_of_files["content"] = dic_of_annexes
             print("-----------------------")
             print("Restructured flat collection of texts")
 
