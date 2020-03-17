@@ -19,8 +19,7 @@ export default {
   }),
 
   created() {
-    this.$vuetify.theme.dark = true;
-    this.$vuetify.theme.light = true;
+    this.$vuetify.theme.dark = this.$store.getters.blackTheme
   }
 };
 </script>

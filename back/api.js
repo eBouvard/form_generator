@@ -1,5 +1,5 @@
 const express = require('express')
-const bodyParser = require('body-parser')
+const formidableMiddleware = require('express-formidable');
 const cors = require('cors')
 const mountRoutes = require('./routes')
 
@@ -13,8 +13,7 @@ if (process.env.PORT === undefined) {
 
 //Express setup and sanity route
 const app = express()
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(formidableMiddleware({ multiples: false, uploadDir: __dirname + '/upload' }));
 app.use(cors())
 mountRoutes(app)
 app.get('/check', function (req, res) {

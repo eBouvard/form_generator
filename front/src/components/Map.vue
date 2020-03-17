@@ -15,7 +15,7 @@
       @update:center="centerUpdate"
       @update:zoom="zoomUpdate"
     >
-      <l-tile-layer :url="url" :attribution="attribution" />
+      <l-tile-layer :url="url" />
       <l-marker :lat-lng="withPopup">
         <l-popup>
           <div @click="innerClick">
@@ -60,12 +60,12 @@ export default {
   data() {
     return {
       zoom: 13,
-      center: latLng(47.41322, -1.219482),
-      url: "     https://tile.thunderforest.com/spinal-map/{z}/{x}/{y}.png?apikey=fbfa5071d3d442f0806a7d5eafa3741b ",
+      center: latLng(48.8514965, 2.3021654),
+      url: "     https://tile.thunderforest.com/mobile-atlas/{z}/{x}/{y}.png?apikey=fbfa5071d3d442f0806a7d5eafa3741b ",
       withPopup: latLng(47.41322, -1.219482),
       withTooltip: latLng(47.41422, -1.250482),
       currentZoom: 11.5,
-      currentCenter: latLng(47.41322, -1.219482),
+      currentCenter: latLng(48.8514965, 2.3021654),
       showParagraph: false,
       mapOptions: {
         zoomSnap: 0.5

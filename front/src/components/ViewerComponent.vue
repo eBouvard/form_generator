@@ -1,25 +1,22 @@
 <template>
   <v-container fluid>
     <div v-for="label in Object.keys(items)" :key="label">
-      <div
-        v-if="(items[label].type === 'category') && data[label]"
-        style="
-        border: lightgrey solid 0.1em;
-        margin: 0.5em;
-        "
+      <v-card
+        v-if="((items[label].type === 'chapter') || (items[label].type === 'category')) && !isEmpty(data[label])"
+       class="my-2"
       >
-        <h2
-          v-bind:style="{ fontSize: (0.8 +(1.2/level)).toString(10) + 'em' }"
-          style="padding: 0.8rem;"
-        >{{items[label].label}}</h2>
-        <ViewerComponent :items="items[label].content" :data="data[label]" :level="level + 1"></ViewerComponent>
+        <v-card-title class="headline">{{items[label].label}}</v-card-title>
+        <v-card-text style="font-size: 1.2rem;">
+          <ViewerComponent :items="items[label].content" :data="data[label]"></ViewerComponent>
+        </v-card-text>
+      </v-card>
+      <div v-if="(items[label].type === 'small_text') && data[label]">
+        <h3>{{items[label].label}}</h3>
+        <p class="my-2">{{ data[label] }}</p>
       </div>
-      <div v-if="(items[label].type != 'category') && data[label]">
-        <h2
-          v-bind:style="{ fontSize: (0.8 +(1.2/level)).toString(10) + 'em' }"
-          style="padding: 0.8rem;"
-        >{{items[label].label}}</h2>
-        {{ data[label] }}
+      <div v-if="(items[label].type === 'large_text') && data[label]">
+        <h3>{{items[label].label}}</h3>
+        <p class="my-2">{{ data[label] }}</p>
       </div>
     </div>
   </v-container>
@@ -32,10 +29,28 @@ export default {
   data() {
     return {};
   },
+  methods: {
+    isEmpty(obj) {
+      if (obj == null) return true;
+      if (obj == "") return true;
+      if (typeof obj == "object") {
+        if (obj.length === 0) {
+          return true;
+        } else {
+          let emptyFlag = true;
+          for (const item in obj) {
+            emptyFlag = emptyFlag && this.isEmpty(obj[item]);
+          }
+          return emptyFlag;
+        }
+      } else {
+        return false;
+      }
+    }
+  },
   props: {
     items: Object,
-    data: Object,
-    level: Number
+    data: Object
   }
 };
 </script>
