@@ -8,7 +8,7 @@ module.exports = router
 
 //Connection to Python API to parse the file
 const flask = axios.create({
-    baseURL: 'http://localhost:5000',
+    baseURL: 'http://parser:5000',
     headers: { 'Access-Control-Allow-Origin': '*' },
 });
 

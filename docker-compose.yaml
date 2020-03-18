@@ -1,7 +1,7 @@
 # Launch the API with a Posgre Server
 version: "3"
 services:
-  back:
+  api:
     image: node:12.16.1
     container_name: api
     environment:
@@ -17,8 +17,9 @@ services:
   
   front:
     image: node:12.16.1
+    container_name: vue
     depends_on:
-      - back
+      - api
     environment:
       NODE_ENV: development
       PORT: 8080
@@ -29,11 +30,14 @@ services:
     working_dir: /usr/app
     command: "yarn run dev"
     links:
-      - back
+      - api
 
   python:
     build: parser
+    container_name: parser
+    volumes:
+      - ./back/upload:/usr/app/upload
     ports:
       - "5000:5000"
     links:
-      - back
+      - api
