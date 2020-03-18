@@ -32,7 +32,7 @@ services:
       - back
 
   python:
-    image: parser
+    build: parser
     ports:
       - "5000:5000"
     links:
