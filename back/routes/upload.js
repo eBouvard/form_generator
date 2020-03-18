@@ -7,12 +7,19 @@ const router = new Router()
 module.exports = router
 
 //Connection to Python API to parse the file
+let parserURL = 'http://localhost:5000'
+
+if (process.env.DOCKER != undefined) {
+    parserURL = 'http://parser:5000'
+}
+
 const flask = axios.create({
-    baseURL: 'http://parser:5000',
+    baseURL: parserURL,
     headers: { 'Access-Control-Allow-Origin': '*' },
 });
 
 async function sendToParser(path) {
+    console.log(process.env.DOCKER)
     return new Promise(resolve => {
         flask.get('/file?path=' + path ).then(ret => {
             const { data } = ret
