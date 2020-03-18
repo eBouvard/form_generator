@@ -19,7 +19,6 @@ const flask = axios.create({
 });
 
 async function sendToParser(path) {
-    console.log(process.env.DOCKER)
     return new Promise(resolve => {
         flask.get('/file?path=' + path ).then(ret => {
             const { data } = ret
