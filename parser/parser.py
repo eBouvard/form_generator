@@ -8,7 +8,6 @@ from Matching.parser import make_dic, conformity_stat
 from Extracting.metadata_extractor import get_meta
 from Extracting.text_extractor import get_text
 from Formatting.formatter import get_arbo, to_json, meta_to_df
-
 canvas = "assets/CANEVAS_STRUCT.json"
 struct_path = os.getcwd() + canvas
 
@@ -22,12 +21,15 @@ def parse_doc(path_opord, struct_path=canvas):
     meta = get_meta(opord)
     print("-----------------------")
     print("Got metadata")
-    dic_of_files['Title'] = meta['Title']
-    dic_of_files['Authors'] = meta['Author(s)']
-    dic_of_files['Last_Modified_By'] = meta['Last Modified By']
-    dic_of_files['Created_Date'] = meta['Created Date']
-    dic_of_files['Modified_Date'] = meta['Modified Date']
-    dic_of_files['Location'] = opord
+    if meta['Title']:
+        dic_of_files['title'] = meta['Title']
+    else:
+        dic_of_files['title'] = os.path.basename(path_opord)
+    dic_of_files['authors'] = meta['Author(s)']
+    dic_of_files['last_Modified_By'] = meta['Last Modified By']
+    dic_of_files['created_Date'] = meta['Created Date']
+    dic_of_files['modified_Date'] = meta['Modified Date']
+    dic_of_files['location'] = opord
 
     # Extract text from opo
     flat_text = get_text(opord)
@@ -48,11 +50,11 @@ def parse_doc(path_opord, struct_path=canvas):
 
     if conform1 > conform2:
         flat_dic = flat_dic1
-        dic_of_files['Conformity'] = conform1
+        dic_of_files['conformity'] = conform1
     else:
         #counter1 += 1
         flat_dic = flat_dic2
-        dic_of_files['Conformity'] = conform2
+        dic_of_files['conformity'] = conform2
 
     print("-----------------------")
     print("Made flat collection of texts")
@@ -62,7 +64,7 @@ def parse_doc(path_opord, struct_path=canvas):
     for annex in flat_dic.keys():
         final_struct = json.load(open(struct_path))
         dic_of_annexes[str(annex)] = restructure(final_struct, flat_dic[str(annex)])
-    dic_of_files["Content"] = dic_of_annexes
+    dic_of_files["content"] = dic_of_annexes
     print("-----------------------")
     print("Restructured flat collection of texts")
     return dic_of_files
@@ -74,6 +76,6 @@ if __name__ == '__main__':
         path_opord = "assets/110419_FRAGO_01_JOC.docx"
     print(parse_doc(path_opord))
     
-#temp = parse_doc(path_opord)
-#with open('person2.txt', 'w') as json_file:
-#    json.dump(temp, json_file, indent=4, sort_keys=False, default=str)
+temp = parse_doc(path_opord)
+with open('person2.txt', 'w') as json_file:
+    json.dump(temp, json_file, indent=4, sort_keys=False, default=str)
