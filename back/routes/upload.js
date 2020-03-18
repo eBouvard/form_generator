@@ -51,24 +51,7 @@ router.post('/', async (req, res) => {
     });
     let json_data = await sendToParser(newPath)
     console.log(`Document:${json_data.Title}`)
-    json_data = ConvertKeysToLowerCase(json_data)
+    console.log(json_data.title)
     const retDB = sendJSONtoDB(json_data)
-    res.sendStatus(202)
+    res.send(json_data)
 })
-
-
-//Convert JSON keys to lowercase
-function ConvertKeysToLowerCase(obj) {
-    let output = {};
-    for (i in obj) {
-        if (Object.prototype.toString.apply(obj[i]) === '[object Object]') {
-           output[i.toLowerCase()] = ConvertKeysToLowerCase(obj[i]);
-        }else if(Object.prototype.toString.apply(obj[i]) === '[object Array]'){
-            output[i.toLowerCase()]=[];
-             output[i.toLowerCase()].push(ConvertKeysToLowerCase(obj[i][0]));
-        } else {
-            output[i.toLowerCase()] = obj[i];
-        }
-    }
-    return output;
-};
