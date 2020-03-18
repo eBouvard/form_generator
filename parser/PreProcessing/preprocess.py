@@ -1,9 +1,9 @@
-from __future__ import print_function
+# -*- coding: utf-8 -*-
 import string
 import unidecode
 from ftfy import fix_encoding
 
-special_characters = ["@", "/", "#", ".", ",", "!", "?", "(", ")", "-", "_", "’", "'", "\"", ":", "=", "+", "&",
+special_characters = ["@", "/", "#", ".", ",", "!", "?", "(", ")", "-", "_", "’", "'", ":", "=", "+", "&",
                           "`", "*", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "'", '.', '‘', ';']
 transformation_sc_dict = {initial: " " for initial in special_characters}
 

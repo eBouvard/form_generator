@@ -18,7 +18,7 @@ def get_annex_titles(annexes):
                 i += 1
                 title = "main"
             else:
-                title = annex[1].strip()
+                title = annex[1].strip().lower()
                 if not title:
                     title = "other"
 
