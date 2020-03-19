@@ -1,6 +1,6 @@
 job:run_master:
   script:
     - cp /root/env/.env back/.env
-    - docker-compose up -d --remove-orphans
+    - docker-compose up --remove-orphans
   only:
     - master
