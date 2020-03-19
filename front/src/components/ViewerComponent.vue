@@ -12,11 +12,11 @@
       </v-card>
       <div v-if="(items[label].type === 'small_text') && data[label]">
         <h3>{{items[label].label}}</h3>
-        <p class="my-2">{{ data[label] }}</p>
+        <p style="white-space: pre;" class="my-2">{{ data[label] }}</p>
       </div>
       <div v-if="(items[label].type === 'large_text') && data[label]">
         <h3>{{items[label].label}}</h3>
-        <p class="my-2">{{ data[label] }}</p>
+        <p style="white-space: pre;" class="my-2">{{ data[label] }}</p>
       </div>
     </div>
   </v-container>
