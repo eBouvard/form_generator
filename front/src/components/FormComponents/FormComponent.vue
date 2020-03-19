@@ -3,7 +3,8 @@
     <div v-for="key in Object.keys(items)" :key="key">
       <v-stepper v-if="items[key].type === 'chapter'" :v-model="root[key]" class="mb-2" vertical>
         <v-card-title class="headline">
-          <h3 style="font-weight: 400;">{{ items[key].label }}</h3>
+          <h3 v-if="(root[key].security_classification) && (root[key].security_classification != '')" style="font-weight: 400;text-align:center;border: 0.1em solid red;color: red;font-size: 1.3em;padding: 3%;width: 90%;margin-right: 5%;margin-left: 5%;">{{ root[key].security_classification }}</h3>
+          <h3 v-else style="font-weight: 400;">{{ items[key].label }}</h3>
         </v-card-title>
         <FormComponent :items="items[key].content" :root="root[key]"></FormComponent>
       </v-stepper>
