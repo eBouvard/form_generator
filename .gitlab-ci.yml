@@ -1,6 +1,8 @@
 job:run_master:
   script:
     - cp /root/env/.env back/.env
+    - docker-compose kill
+    - docker container prune
     - docker-compose up -d --remove-orphans
   only:
     - master
