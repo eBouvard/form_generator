@@ -21,6 +21,12 @@
         :root="root"
         :value="key"
       ></SmallTextComponent>
+      <AutoCompleteComponent
+        v-if="items[key].type === 'autocomplete'"
+        :item="items[key]"
+        :root="root"
+        :value="key"
+      ></AutoCompleteComponent>
       <LargeTextComponent
         v-if="items[key].type === 'large_text'"
         :item="items[key]"
@@ -33,12 +39,14 @@
 
 <script>
 import SmallTextComponent from "@/components/FormComponents/SmallTextComponent.vue";
+import AutoCompleteComponent from "@/components/FormComponents/AutoCompleteComponent.vue";
 import LargeTextComponent from "@/components/FormComponents/LargeTextComponent.vue";
 
 export default {
   name: "FormComponent",
   components: {
     SmallTextComponent,
+    AutoCompleteComponent,
     LargeTextComponent
   },
   data() {
