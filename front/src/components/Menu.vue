@@ -23,7 +23,7 @@ export default {
   data() {
     return {
       items: [
-        { title: "home", icon: "mdi-home", menu: "home", path: "/home" },
+        { title: "home", icon: "mdi-home", menu: "home", path: "/" },
         {
           title: "form",
           icon: "mdi-file-document",
