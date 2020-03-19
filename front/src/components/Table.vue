@@ -92,8 +92,7 @@ export default {
               title: element.data.title,
               authors: element.data.author,
               date: date,
-              score: score,
-              content: element.data.content
+              score: score
             };
             array.push(newline);
           });

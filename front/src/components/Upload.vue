@@ -37,7 +37,6 @@ export default {
           .post("/upload", formData)
           .then(ret => {
             const id = ret.data.id;
-            console.log(!isNaN(id));
             this.loading = false;
             if (!isNaN(id)) {
               this.$router.push({

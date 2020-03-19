@@ -5,19 +5,19 @@
               <Table></Table>
             </v-flex>
             <v-flex xs6>
-              <Table></Table>
+              <LastOrders></LastOrders>
             </v-flex>
       </v-layout>
   </v-container>
 </template>
 <script>
-import Table from "@/components/Table.vue";
+import LastOrders from "@/components/Hub/Last10.vue";
 
 export default {
   name: "Hub",
 
   components: {
-      Table,
+      LastOrders,
   },
   data() {
     return {
