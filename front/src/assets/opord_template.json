@@ -11,7 +11,7 @@
                 "label": "Texte libre"
             },
             "security_classification": {
-                "type": "small_text",
+                "type": "autocomplete",
                 "label": "CLASSIFICATION DE SECURITE"
             },
             "copy_no": {
