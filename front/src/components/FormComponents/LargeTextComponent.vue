@@ -1,5 +1,5 @@
 <template>
-  <v-textarea outlined rows="5" :label="item.label" auto-grow :name="root" v-model="root[value]"></v-textarea>
+  <v-textarea outlined rows="5" :label="item.label" auto-grow :name="root" v-model.lazy="root[value]"></v-textarea>
 </template>
 
 <script>
