@@ -4,7 +4,7 @@
       :headers="headers"
       :items="forms"
       :items-per-page="10"
-      class="elevation-1 mx-4"
+      class="elevation-1 d-inline-block text-truncate "
       :loading="loading"
       loading-text="Chargement en cours..."
       dense
@@ -30,7 +30,7 @@ export default {
     return {
       headers: [
         { text: "Titre", value: "title" },
-        { text: "Auteur", value: "authors" },
+        { text: "Auteur", value: "author" },
         { text: "Date", value: "date" },
         { text: "", value: "open" }
       ],
@@ -48,8 +48,9 @@ export default {
           raw.forEach(element => {
             const date = moment(element.data.date).fromNow();
             const newline = {
+              id: element.id,
               title: element.data.title,
-              authors: element.data.author,
+              author: element.data.author,
               date: date,
             };
             array.push(newline);

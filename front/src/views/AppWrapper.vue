@@ -3,7 +3,7 @@
     <v-app-bar class="white--text" height="50px" color="primary">
     <v-avatar>
       <img
-        src="@/assets/cpoia.jpeg"
+        src="@/assets/cpoia.png"
         alt="logo"
       >
     </v-avatar>
@@ -40,18 +40,19 @@ export default {
   },
   data() {
     return {
-      selectedMenuItem: 0
+      selectedMenuItem: false
     };
   },
   methods: {
     menuItemSelected(item) {
-      if (item.menu === "j0") {
-        this.selectedMenuItem = 0;
-        this.$router.push({ path: "/" });
+      console.log(this.selectedMenuItem)
+      if (item.path != undefined) {
+        this.selectedMenuItem = false
+        this.$router.push({ path: item.path })
       } else if (item === this.selectedMenuItem) {
-        this.selectedMenuItem = 0;
-      } else if (item.content.length === 0) {
-        this.selectedMenuItem = 0;
+        this.selectedMenuItem = false;
+      } else if (item.content.length === false) {
+        this.selectedMenuItem = false;
       } else {
         this.selectedMenuItem = item;
       }

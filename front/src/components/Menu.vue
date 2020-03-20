@@ -62,11 +62,7 @@ export default {
   },
   methods: {
     selectItem(item) {
-      if (item.path == undefined) {
-        this.$emit("item-selected", item);
-      } else {
-        this.$router.push({ path: item.path });
-      }
+      this.$emit("item-selected", item);
     }
   }
 };

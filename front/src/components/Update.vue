@@ -1,9 +1,5 @@
 <template>
   <v-container fluid>
-    <v-form id="load">
-      <v-btn block color="primary" @click="updatePath" dark>Charger formulaire numéro</v-btn>
-      <v-text-field label="Identifiant" outlined v-model="form_id"></v-text-field>
-    </v-form>
     <div v-if="form">
       <v-form ref="to_send">
         <FormComponent :items="template" :root="form.content.main"></FormComponent>
@@ -47,11 +43,6 @@ export default {
     };
   },
   methods: {
-    updatePath() {
-      this.$router.push({
-        path: "/update/order/" + this.form_id
-      });
-    },
     submit() {
       const data = JSON.parse(JSON.stringify(this.form));
       data.date = new Date();
