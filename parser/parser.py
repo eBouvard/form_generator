@@ -26,9 +26,9 @@ def parse_doc(path_opord, struct_path=canvas):
     else:
         dic_of_files['title'] = os.path.basename(path_opord)
     dic_of_files['authors'] = meta['Author(s)']
-    dic_of_files['last_Modified_By'] = meta['Last Modified By']
-    dic_of_files['created_Date'] = meta['Created Date']
-    dic_of_files['modified_Date'] = meta['Modified Date']
+    dic_of_files['last_modified_by'] = meta['Last Modified By']
+    dic_of_files['created_date'] = meta['Created Date']
+    dic_of_files['modified_date'] = meta['Modified Date']
     dic_of_files['location'] = opord
 
     # Extract text from opo
@@ -45,16 +45,16 @@ def parse_doc(path_opord, struct_path=canvas):
     flat_dic1 = make_dic(list_of_lists, annex_titles, list_of_titles, fuzzy=False)
     conform1 = conformity_stat(flat_dic1)
 
-    flat_dic2 = make_dic(list_of_lists, annex_titles, list_of_titles, fuzzy=True)
-    conform2 = conformity_stat(flat_dic2)
+    #flat_dic2 = make_dic(list_of_lists, annex_titles, list_of_titles, fuzzy=True)
+    #conform2 = conformity_stat(flat_dic2)
 
-    if conform1 > conform2:
-        flat_dic = flat_dic1
-        dic_of_files['conformity'] = conform1
-    else:
-        #counter1 += 1
-        flat_dic = flat_dic2
-        dic_of_files['conformity'] = conform2
+    #if conform1 > conform2:
+    flat_dic = flat_dic1
+    dic_of_files['conformity'] = conform1
+    #else:
+    #    #counter1 += 1
+    #    flat_dic = flat_dic2
+    #    dic_of_files['conformity'] = conform2
 
     print("-----------------------")
     print("Made flat collection of texts")
