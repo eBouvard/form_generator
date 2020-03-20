@@ -1,12 +1,12 @@
 <template>
   <v-container grid-list-md text-xs-center>
     <v-layout row wrap>
-      <v-flex xs4>
+      <v-flex xs3>
         <FilterList></FilterList>
         <v-divider></v-divider>
         <MapHub></MapHub>
       </v-flex>
-      <v-flex xs8>
+      <v-flex xs9>
         <LastOrders></LastOrders>
       </v-flex>
     </v-layout>

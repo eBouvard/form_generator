@@ -1,10 +1,10 @@
 <template>
-  <v-container fluid>
+  <v-container fluid >
     <v-data-table
       :headers="headers"
       :items="forms"
       :items-per-page="10"
-      class="elevation-1 d-inline-block text-truncate "
+      class="elevation-1  text-truncate "
       :loading="loading"
       loading-text="Chargement en cours..."
       dense
