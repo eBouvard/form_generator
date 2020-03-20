@@ -10,7 +10,7 @@
         @change="onFileChange(uploadFile)"
         rounded
         :loading="loading"
-        hint=".doc ou .docx seulement. L'import peux prendre plusieurs minutes."
+        hint=".doc ou .docx seulement. L'import peut prendre plusieurs minutes."
       ></v-file-input>
     </v-card>
   </v-container>

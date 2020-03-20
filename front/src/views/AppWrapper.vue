@@ -45,8 +45,7 @@ export default {
   },
   methods: {
     menuItemSelected(item) {
-      console.log(item)
-      if (item.path != undefined) {
+      if (item.path != undefined && item.path != this.$router.currentRoute.path) {
         this.selectedMenuItem = false
         this.$router.push({ path: item.path })
       } else if (item === this.selectedMenuItem) {
