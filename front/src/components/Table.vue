@@ -11,21 +11,15 @@
       <template v-slot:item.score="{ item }">
         <v-progress-linear color="primary" :value="item.score" rounded></v-progress-linear>
       </template>
-      <template v-slot:item.options="{ item }">
-        <v-menu offset-y>
-          <template v-slot:activator="{ on }">
-            <v-btn class="ma-2" small outlined primary v-on="on">Options</v-btn>
-          </template>
-          <v-list>
-            <v-list-item
-              v-for="(option, index) in optionsList"
-              :key="index"
-              v-on:click="option.action(item.id)"
-            >
-              <v-list-item-title>{{ option.title }}</v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-menu>
+      <template v-slot:item.open="{ item }">
+        <v-btn class="ma-2" icon small right>
+          <v-icon v-on:click="openItem(item.id)">mdi-eye-outline</v-icon>
+        </v-btn>
+      </template>
+      <template v-slot:item.modify="{ item }">
+        <v-btn class="ma-2" icon small right>
+          <v-icon v-on:click="updateItem(item.id)">mdi-pencil-plus</v-icon>
+        </v-btn>
       </template>
       <template v-slot:item.delete="{ item }">
         <v-btn class="ma-2" icon small right>
@@ -68,8 +62,9 @@ export default {
         { text: "Auteur", value: "authors" },
         { text: "Date", value: "date" },
         { text: "Score", value: "score" },
-        { text: "Options", value: "options" },
-        { text: "Supprimer", value: "delete" }
+        { text: "", value: "open" },
+        { text: "", value: "modify" },
+        { text: "", value: "delete" }
       ],
       optionsList: [
         { title: "Ouvrir", action: this.openItem },
@@ -97,8 +92,7 @@ export default {
               title: element.data.title,
               authors: element.data.author,
               date: date,
-              score: score,
-              content: element.data.content
+              score: score
             };
             array.push(newline);
           });
