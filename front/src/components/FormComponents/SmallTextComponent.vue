@@ -1,5 +1,5 @@
 <template>
-  <v-text-field :label="item.label" :name="root" v-model="root[value]"></v-text-field>
+  <v-text-field :label="item.label" :name="root" v-model.lazy="root[value]"></v-text-field>
 </template>
 
 <script>

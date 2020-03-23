@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Home from '@/components/Home.vue'
+import Hub from '@/views/Hub.vue'
 import Form from '@/components/Form.vue'
 import Table from '@/components/Table.vue'
 import Update from '@/components/Update.vue'
@@ -12,7 +12,7 @@ import Upload from '@/components/Upload.vue'
 Vue.use(VueRouter)
 
 const routes = [
-	{ path: '/', component: Home },
+	{ path: '/', component: Hub },
 	{ path: '/new/order', component: Form },
 	{ path: '/update/order/:form_id', component: Update },
 	{ path: '/list/order', component: Table },
