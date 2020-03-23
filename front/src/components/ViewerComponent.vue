@@ -1,9 +1,23 @@
 <template>
   <v-container fluid>
     <div v-for="label in Object.keys(items)" :key="label">
+      <v-card v-if="(items[label].type === 'chapter' && !isEmpty(data[label]))" class="my-2">
+        <v-card-title
+          v-if="(data[label].security_classification) && (data[label].security_classification != '')"
+        >
+          <h3
+            style="font-weight: 400;text-align:center;border: 0.1em solid red;color: red;font-size: 1.3em;padding: 3%;width: 90%;margin-right: 5%;margin-left: 5%;"
+          >{{ data[label].security_classification }}</h3>
+        </v-card-title>
+        <v-card-title v-else class="headline">{{items[label].label}}</v-card-title>
+        <v-card-text style="font-size: 1.2rem;">
+          <ViewerComponent :items="items[label].content" :data="data[label]"></ViewerComponent>
+        </v-card-text>
+      </v-card>
       <v-card
-        v-if="((items[label].type === 'chapter') || (items[label].type === 'category')) && !isEmpty(data[label])"
-       class="my-2"
+        v-if="(items[label].type === 'category' && !isEmpty(data[label]))"
+        outlined
+        class="my-2"
       >
         <v-card-title class="headline">{{items[label].label}}</v-card-title>
         <v-card-text style="font-size: 1.2rem;">
