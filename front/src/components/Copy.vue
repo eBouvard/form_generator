@@ -1,5 +1,3 @@
-<!-- TODO Merge Update and Form -- Add "from" props to create from and "isUpdate"
-to make a diff between "Create from this" and "Update this"-->
 <template>
   <v-container fluid>
     <v-form ref="to_send">
@@ -62,7 +60,9 @@ export default {
     return {
       fab: false,
       template: template,
-      form: JSON.parse(JSON.stringify(opord_form)),
+      form: JSON.parse(this.$route.params.is_copy)
+        ? this.loadForm(this.$route.params.origin_id)
+        : JSON.parse(JSON.stringify(opord_form)),
       submitCheck: false,
       updateCheck: false,
       submitFeedback: true
@@ -72,7 +72,7 @@ export default {
     async submit() {
       const data = JSON.parse(JSON.stringify(this.form));
       data.date = new Date();
-      console.log(data.date)
+      console.log(data.date);
       data.title = this.form.content.main["0_header"].title;
       data.author = this.getUser();
       console.log(data);
@@ -108,6 +108,19 @@ export default {
           path: "/update/order/" + ret
         });
       });
+    },
+    loadForm(form_id) {
+      var request = "/read/" + form_id;
+      console.log(request);
+      api()
+        .get(request)
+        .then(ret => {
+          console.log(ret);
+          this.form = ret.data;
+        })
+        .catch(e => {
+          console.log(e);
+        });
     }
   }
 };
