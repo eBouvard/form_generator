@@ -1,7 +1,7 @@
 FROM node:12.16.1
 
 # installe un simple serveur http pour servir un contenu statique
-RUN npm install -g http-server yarn
+RUN npm install -g --force http-server yarn
 
 # définit le dossier 'app' comme dossier de travail
 WORKDIR /app
