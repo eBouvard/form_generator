@@ -4,9 +4,7 @@ const cors = require('cors')
 const mountRoutes = require('./routes')
 
 //Load the .env file for credentials and configure the port
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
-}
+require('dotenv').config();
 if (process.env.PORT === undefined) {
   process.env.PORT = 3000;
 }

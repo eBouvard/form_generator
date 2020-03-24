@@ -7,10 +7,17 @@ module.exports = router
 //Define the JSON table
 const JSON_table = 'json'
 
+
 //Read all JSON data
 router.get('/all', async (req, res) => {
-    const { rows } = await db.query(`SELECT * FROM ${JSON_table} ORDER BY id`)
-    res.send(rows)
+  const { rows } = await db.query(`SELECT * FROM ${JSON_table} ORDER BY id DESC`)
+  res.send(rows)
+})
+
+//Get last 10 orders
+router.get('/last', async (req, res) => {
+  const { rows } = await db.query(`SELECT * FROM ${JSON_table} ORDER BY id DESC LIMIT 10`)
+  res.send(rows)
 })
 
 //Read all JSON data without content (not finished)

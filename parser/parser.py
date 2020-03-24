@@ -26,6 +26,7 @@ def parse_doc(path_opord, struct_path=canvas):
     else:
         dic_of_files['title'] = os.path.basename(path_opord)
 <<<<<<< HEAD
+<<<<<<< HEAD
     dic_of_files['authors'] = meta['Author(s)']
     dic_of_files['last_modified_by'] = meta['Last Modified By']
     dic_of_files['created_date'] = meta['Created Date']
@@ -36,6 +37,12 @@ def parse_doc(path_opord, struct_path=canvas):
     dic_of_files['created_Date'] = meta['Created Date']
     dic_of_files['modified_Date'] = meta['Modified Date']
 >>>>>>> a3e41b4e79b5b30e1a980d335bdd4d0ace80ac2f
+=======
+    dic_of_files['author'] = meta['Author(s)']
+    dic_of_files['last_Modified_By'] = meta['Last Modified By']
+    dic_of_files['date'] = meta['Created Date']
+    dic_of_files['modified_date'] = meta['Modified Date']
+>>>>>>> ea4eece0cfd0ded35ca67cb50e8871e2dd6c488e
     dic_of_files['location'] = opord
 
     # Extract text from opo

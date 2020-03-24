@@ -20,7 +20,7 @@ const flask = axios.create({
 
 async function sendToParser(path) {
     return new Promise(resolve => {
-        flask.get('/file?path=' + path ).then(ret => {
+        flask.get('/file?path=' + path).then(ret => {
             const { data } = ret
             resolve(data)
         }).catch(e => {
@@ -38,7 +38,7 @@ async function sendJSONtoDB(json_data) {
         values: [json_data]
     }
     const { rows } = await db.query(query)
-    return(rows[0].id)
+    return (rows[0].id)
 }
 
 //Upload a file, parse it and send it to DB 
@@ -50,8 +50,11 @@ router.post('/', async (req, res) => {
         if (e) console.log('ERROR: ' + e);
     });
     let json_data = await sendToParser(newPath)
-    console.log(`Document:${json_data.Title}`)
-    console.log(json_data.title)
-    const retDB = sendJSONtoDB(json_data)
-    res.send(json_data)
+    console.log(`Document:${json_data.title}`)
+    sendJSONtoDB(json_data).then(retDB => {
+        const data = {
+            id: retDB
+        }
+        res.send(data)
+    })
 })

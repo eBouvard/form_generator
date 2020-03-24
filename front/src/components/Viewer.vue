@@ -1,9 +1,5 @@
 <template>
   <v-container fluid>
-    <v-form id="load">
-      <v-btn block color="primary" @click="updatePath" dark>Charger formulaire numéro</v-btn>
-      <v-text-field label="Identifiant" outlined v-model="form_id"></v-text-field>
-    </v-form>
     <div v-if="data && $route.params.form_id">
       <ViewerComponent :items="template" :data="data.content.main" :level=1></ViewerComponent>
     </div>
@@ -28,11 +24,6 @@ export default {
     };
   },
   methods: {
-    updatePath() {
-      this.$router.push({
-        path: "/view/order/" + this.form_id
-      });
-    },
     loadForm(form_id) {
       var request = "/read/" + form_id;
       console.log(request);
