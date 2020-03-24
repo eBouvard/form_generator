@@ -3,8 +3,7 @@ job:run_master:
     - cp /root/env/.env back/.env
     - docker-compose kill
     - docker container prune -f
-    - docker build front
-    - docker build parser
+    - docker image prune -f
     - docker-compose up -d --remove-orphans
   only:
     - master
