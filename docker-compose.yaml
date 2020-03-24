@@ -1,7 +1,7 @@
 # Launch the API with a Posgre Server
 version: "3"
 services:
-  api:
+  back:
     image: node:12.16.1
     container_name: api
     environment:
@@ -14,7 +14,7 @@ services:
       - ./back:/usr/app
       - /usr/app/node_modules
     working_dir: /usr/app
-    command: "npm start"
+    command: "npm run prod"
   
   front:
     build: front
@@ -22,11 +22,11 @@ services:
     environment:
       NODE_ENV: production
     depends_on:
-      - api
+      - back
     ports:
       - "8080:8080"
     links:
-      - api
+      - back
 
   python:
     build: parser
@@ -36,4 +36,4 @@ services:
     ports:
       - "5000:5000"
     links:
-      - api
+      - back
