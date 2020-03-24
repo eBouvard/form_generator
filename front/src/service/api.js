@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-const apiServer = process.env.DOCKER == 'true' ? 'api' : 'localhost'
+let apiServer =  'localhost'
+if (process.env.NODE_ENV == 'production') {
+  apiServer =  'api'
+}
 
 export default () => axios.create({
   baseURL: 'http://' + apiServer + ':3000',
