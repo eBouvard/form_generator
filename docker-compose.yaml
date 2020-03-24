@@ -19,6 +19,8 @@ services:
   front:
     build: front
     container_name: vue
+    environment:
+      NODE_ENV: production
     depends_on:
       - api
     ports:
