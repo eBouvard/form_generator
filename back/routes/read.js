@@ -68,7 +68,7 @@ router.get('/:id/:table', async (req, res) => {
 
 
 //Read a specific field within a JSON
-router.get('/val/:field/:id', async (req, res) => {
+router.get('/:id/:field', async (req, res) => {
   const id = req.params.id
   const field = req.params.field
   if (!isNaN(id)) {
