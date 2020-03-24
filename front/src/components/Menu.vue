@@ -34,29 +34,16 @@ export default {
               icon: "mdi-pen",
               path: "/new/order"
             },
-            /*
-            {
-              title: "Modification",
-              icon: "mdi-pen",
-              path: "/update/order/0"
-            },
-            */
             {
               title: "Liste des ordres",
               icon: "mdi-table",
               path: "/list/order"
             }
-            /*,
-            {
-              title: "Visionnage",
-              icon: "mdi-file-document",
-              path: "/view/order/"
-            }
-            */
           ]
         },
-        { title: "map", icon: "mdi-earth", menu: "home", path: "/map" },
-        { title: "upload", icon: "mdi-upload", menu: "home", path: "/upload" }
+        { title: "map", icon: "mdi-earth", menu: "map", path: "/map" },
+        { title: "upload", icon: "mdi-upload", menu: "upload", path: "/upload" },
+        { title: "editor", icon: "mdi-tune", menu: "editor", path: "/formEditor" }
       ]
     };
   },

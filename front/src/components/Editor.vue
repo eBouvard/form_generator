@@ -1,0 +1,103 @@
+<template>
+  <v-container fluid ma-0 pa-0 style="max-width: 700px" >
+    <JsonEditor
+      :options="{
+            confirmText: 'confirm',
+            cancelText: 'cancel',
+        }"
+      :objData="jsonData"
+      v-model="jsonData"
+    ></JsonEditor>
+  </v-container>
+</template>
+<script>
+export default {
+    name: "formEditor",
+    data() {
+        return {
+            jsonData: {
+    "0_header": {
+        "type": "chapter",
+        "content": {
+            "title": {
+                "type": "small_text",
+                "label": "Titre du document"
+            },
+            "free_text": {
+                "type": "large_text",
+                "label": "Texte libre"
+            },
+            "security_classification": {
+                "type": "autocomplete",
+                "list":[
+                  { "name": "Non Protégé", "abbr": "NP", "id": 0 },
+                  { "name": "Diffusion Restreinte", "abbr": "DR", "id": 1 },
+                  { "name": "Confidentiel-Défense", "abbr": "CD", "id": 2 },
+                  { "name": "Confidentiel-Défense Spécial France", "abbr": "CD-SF", "id": 3 },
+                  { "name": "Secret-Défense", "abbr": "SD", "id": 4 },
+                  { "name": "Secret-Défense Spécial France", "abbr": "SD-SF", "id": 5 }
+                ],
+                "label": "CLASSIFICATION DE SECURITE"
+            },
+            "copy_no": {
+                "type": "small_text",
+                "label": "Exemplaire N°"
+            }
+        }
+    },
+    "1_situation": {
+        "type": "chapter",
+        "content": {
+            "free_text": {
+                "type": "large_text",
+                "label": "Texte libre"
+            },
+            "enemy_forces": {
+                "type": "category",
+                "content": {
+                    "current_enemy": {
+                        "type": "small_text",
+                        "label": "ENI actuel"
+                    },
+                    "enemy_possibilities": {
+                        "type": "small_text",
+                        "label": "Possibilités de l'ENI"
+                    },
+                    "future_enemy": {
+                        "type": "small_text",
+                        "label": "ENI futur"
+                    }
+                },
+                "label": "Forces ennemies"
+            },
+            "friendly_forces": {
+                "type": "small_text",
+                "label": "Forces amies"
+            },
+            "attachments_and_detachments": {
+                "type": "small_text",
+                "label": "Renforcements et prélèvements"
+            },
+            "commander_evaluation": {
+                "type": "small_text",
+                "label": "Evaluation de la situation par le commandement"
+            },
+            "population": {
+                "type": "small_text",
+                "label": "Population"
+            }
+        },
+        "label": "1 - SITUATION"
+    }
+}
+        }
+    },
+    methods: {
+        init() {
+        }
+    },
+    mounted() {
+        this.init();
+    }
+}
+</script> 
