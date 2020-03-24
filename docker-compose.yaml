@@ -17,20 +17,10 @@ services:
     command: "npm run dev"
   
   front:
-<<<<<<< HEAD
-    image: node:12.16.1
-    container_name: vue
-    depends_on:
-      - api
-    environment:
-      NODE_ENV: development
-      PORT: 8080
-=======
     build: front
     container_name: vue
     depends_on:
       - api
->>>>>>> ea4eece0cfd0ded35ca67cb50e8871e2dd6c488e
     ports:
       - "8080:8080"
     links:
