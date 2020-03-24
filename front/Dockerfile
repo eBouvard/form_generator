@@ -1,7 +1,7 @@
 FROM node:12.16.1
 
 # installe un simple serveur http pour servir un contenu statique
-RUN npm install -g http-server
+RUN npm install -g http-server yarn
 
 # définit le dossier 'app' comme dossier de travail
 WORKDIR /app
@@ -10,13 +10,13 @@ WORKDIR /app
 COPY package*.json ./
 
 # installe les dépendances du projet
-RUN npm install
+RUN yarn install
 
 # copie les fichiers et dossiers du projet dans le dossier de travail (par exemple : le dossier 'app')
 COPY . .
 
 # construit l'app pour la production en la minifiant
-RUN npm run build
+RUN yarn build
 
 EXPOSE 8080
 CMD [ "http-server", "dist" ]
