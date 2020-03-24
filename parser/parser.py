@@ -25,10 +25,17 @@ def parse_doc(path_opord, struct_path=canvas):
         dic_of_files['title'] = meta['Title']
     else:
         dic_of_files['title'] = os.path.basename(path_opord)
+<<<<<<< HEAD
     dic_of_files['authors'] = meta['Author(s)']
     dic_of_files['last_modified_by'] = meta['Last Modified By']
     dic_of_files['created_date'] = meta['Created Date']
     dic_of_files['modified_date'] = meta['Modified Date']
+=======
+    dic_of_files['author'] = meta['Author(s)']
+    dic_of_files['last_Modified_By'] = meta['Last Modified By']
+    dic_of_files['created_Date'] = meta['Created Date']
+    dic_of_files['modified_Date'] = meta['Modified Date']
+>>>>>>> a3e41b4e79b5b30e1a980d335bdd4d0ace80ac2f
     dic_of_files['location'] = opord
 
     # Extract text from opo
@@ -76,6 +83,6 @@ if __name__ == '__main__':
         path_opord = "assets/110419_FRAGO_01_JOC.docx"
     print(parse_doc(path_opord))
     
-temp = parse_doc(path_opord)
+""" temp = parse_doc(path_opord)
 with open('person2.txt', 'w') as json_file:
-    json.dump(temp, json_file, indent=4, sort_keys=False, default=str)
+    json.dump(temp, json_file, indent=4, sort_keys=False, default=str) """
