@@ -14,7 +14,7 @@ services:
       - ./back:/usr/app
       - /usr/app/node_modules
     working_dir: /usr/app
-    command: "npm run dev"
+    command: "npm start"
   
   front:
     build: front
