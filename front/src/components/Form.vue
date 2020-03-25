@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-form ref="to_send">
-      <FormComponent :items="template" :root="form.content.main"></FormComponent>
+      <FormComponent v-if="form != false" :items="template" :root="form" :old="old_form"></FormComponent>
     </v-form>
 
     <v-speed-dial right bottom fixed>
@@ -60,14 +60,35 @@ export default {
     return {
       fab: false,
       template: template,
-      form:
-        this.$route.params.is_copy == 1
-          ? this.loadForm(this.$route.params.origin_id)
-          : JSON.parse(JSON.stringify(opord_form)),
+      form: false,
+      old_form: undefined,
       submitCheck: false,
       updateCheck: false,
       submitFeedback: true
     };
+  },
+  mounted() {
+    if (this.$route.params.is_copy == 0) {
+      this.form = opord_form;
+    } else {
+      const request = "/read/" + this.$route.params.origin_id;
+      console.log(request);
+      api()
+        .get(request)
+        .then(ret => {
+          console.log(ret);
+          if (this.$route.params.is_copy == 1) {
+            this.form = ret.data.content.main;
+          }
+          if (this.$route.params.is_copy == 2) {
+            this.form = opord_form.content.main;
+            this.old_form = ret.data.content.main;
+          }
+        })
+        .catch(e => {
+          console.log(e);
+        });
+    }
   },
   methods: {
     async submit() {
@@ -96,6 +117,9 @@ export default {
       const user = user_list[Math.floor(Math.random() * 6)];
       return user;
     },
+    getOriginID() {
+      return this.$route.params.origin_id;
+    },
     saveExit() {
       this.submit();
       this.$refs.to_send.reset();
@@ -109,19 +133,6 @@ export default {
           path: "/update/order/" + ret
         });
       });
-    },
-    loadForm(form_id) {
-      var request = "/read/" + form_id;
-      console.log(request);
-      api()
-        .get(request)
-        .then(ret => {
-          console.log(ret);
-          this.form = ret.data;
-        })
-        .catch(e => {
-          console.log(e);
-        });
     }
   }
 };
