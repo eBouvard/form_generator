@@ -1,3 +1,5 @@
+<!-- TODO Merge Update and Form -- Add "from" props to create from and "isUpdate"
+to make a diff between "Create from this" and "Update this"-->
 <template>
   <v-container fluid>
     <v-form ref="to_send">

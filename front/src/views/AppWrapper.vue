@@ -33,18 +33,18 @@ export default {
   },
   data() {
     return {
-      selectedMenuItem: 0
+      selectedMenuItem: false
     };
   },
   methods: {
     menuItemSelected(item) {
-      if (item.menu === "j0") {
-        this.selectedMenuItem = 0;
-        this.$router.push({ path: "/" });
+      if (item.path != undefined && item.path != this.$router.currentRoute.path) {
+        this.selectedMenuItem = false
+        this.$router.push({ path: item.path })
       } else if (item === this.selectedMenuItem) {
-        this.selectedMenuItem = 0;
-      } else if (item.content.length === 0) {
-        this.selectedMenuItem = 0;
+        this.selectedMenuItem = false;
+      } else if (item.content.length === false) {
+        this.selectedMenuItem = false;
       } else {
         this.selectedMenuItem = item;
       }

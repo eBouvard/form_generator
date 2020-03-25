@@ -2,7 +2,7 @@
   <v-autocomplete
     :label="item.label"
     :name="root"
-    v-model="root[value]"
+    v-model.lazy="root[value]"
     :items="item.list"
     item-text="name"
   ></v-autocomplete>

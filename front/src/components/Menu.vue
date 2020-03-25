@@ -23,7 +23,7 @@ export default {
   data() {
     return {
       items: [
-        { title: "home", icon: "mdi-home", menu: "home", path: "/home" },
+        { title: "home", icon: "mdi-home", menu: "home", path: "/" },
         {
           title: "form",
           icon: "mdi-file-document",
@@ -32,7 +32,7 @@ export default {
             {
               title: "Nouvel ordre",
               icon: "mdi-pen",
-              path: "/new/order"
+              path: "/new/order/false/0"
             },
             /*
             {
@@ -62,11 +62,7 @@ export default {
   },
   methods: {
     selectItem(item) {
-      if (item.path == undefined) {
-        this.$emit("item-selected", item);
-      } else {
-        this.$router.push({ path: item.path });
-      }
+      this.$emit("item-selected", item);
     }
   }
 };
