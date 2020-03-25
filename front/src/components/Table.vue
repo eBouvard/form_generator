@@ -133,7 +133,7 @@ export default {
     },
     copyItem(id) {
       this.$router.push({
-        path: "/new/order/true/" + id
+        path: "/new/order/1/" + id
       });
     }
   },
