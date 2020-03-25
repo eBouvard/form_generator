@@ -20,6 +20,11 @@
           <v-icon v-on:click="updateItem(item.id)">mdi-pencil-plus</v-icon>
         </v-btn>
       </template>
+      <template v-slot:item.new_from="{ item }">
+        <v-btn class="ma-2" icon small right>
+          <v-icon v-on:click="newFromItem(item.id)">mdi-arrow-right-bold</v-icon>
+        </v-btn>
+      </template>
       <template v-slot:item.copy="{ item }">
         <v-btn class="ma-2" icon small right>
           <v-icon v-on:click="copyItem(item.id)">mdi-content-copy</v-icon>
@@ -68,6 +73,7 @@ export default {
         { text: "Score", value: "score" },
         { text: "", value: "open" },
         { text: "", value: "modify" },
+        { text: "", value: "new_from" },
         { text: "", value: "copy" },
         { text: "", value: "delete" }
       ],
@@ -129,6 +135,11 @@ export default {
     updateItem(id) {
       this.$router.push({
         path: "/update/order/" + id
+      });
+    },
+    newFromItem(id) {
+      this.$router.push({
+        path: "/new/order/2/" + id
       });
     },
     copyItem(id) {
