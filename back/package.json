@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "dev": "npm install && nodemon api.js",
+    "prod": "npm install && node api.js",
     "start": "node api.js"
   },
   "author": "C2LAB",

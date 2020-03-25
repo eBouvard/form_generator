@@ -25,9 +25,9 @@ def parse_doc(path_opord, struct_path=canvas):
         dic_of_files['title'] = meta['Title']
     else:
         dic_of_files['title'] = os.path.basename(path_opord)
-    dic_of_files['author'] = meta['Author(s)']
-    dic_of_files['last_Modified_By'] = meta['Last Modified By']
-    dic_of_files['date'] = meta['Created Date']
+    dic_of_files['authors'] = meta['Author(s)']
+    dic_of_files['last_modified_by'] = meta['Last Modified By']
+    dic_of_files['created_date'] = meta['Created Date']
     dic_of_files['modified_date'] = meta['Modified Date']
     dic_of_files['location'] = opord
 
@@ -45,21 +45,21 @@ def parse_doc(path_opord, struct_path=canvas):
     flat_dic1 = make_dic(list_of_lists, annex_titles, list_of_titles, fuzzy=False)
     conform1 = conformity_stat(flat_dic1)
 
-    flat_dic2 = make_dic(list_of_lists, annex_titles, list_of_titles, fuzzy=True)
-    conform2 = conformity_stat(flat_dic2)
+    #flat_dic2 = make_dic(list_of_lists, annex_titles, list_of_titles, fuzzy=True)
+    #conform2 = conformity_stat(flat_dic2)
 
-    if conform1 > conform2:
-        flat_dic = flat_dic1
-        dic_of_files['conformity'] = conform1
-    else:
-        #counter1 += 1
-        flat_dic = flat_dic2
-        dic_of_files['conformity'] = conform2
+    #if conform1 > conform2:
+    flat_dic = flat_dic1
+    dic_of_files['conformity'] = conform1
+    #else:
+    #    #counter1 += 1
+    #    flat_dic = flat_dic2
+    #    dic_of_files['conformity'] = conform2
 
     print("-----------------------")
     print("Made flat collection of texts")
 
-    # Then restructure it from your definiton, respecting hierarchy and assign it to a field of our sub dic
+    # Then restructure it from your definiton, respecting hieraàrchy and assign it to a field of our sub dic
     dic_of_annexes = {}
     for annex in flat_dic.keys():
         final_struct = json.load(open(struct_path))
@@ -76,6 +76,3 @@ if __name__ == '__main__':
         path_opord = "assets/110419_FRAGO_01_JOC.docx"
     print(parse_doc(path_opord))
     
-""" temp = parse_doc(path_opord)
-with open('person2.txt', 'w') as json_file:
-    json.dump(temp, json_file, indent=4, sort_keys=False, default=str) """
