@@ -2,7 +2,7 @@
   <v-container fluid class="overflow-hidden ma-0 pa-0">
     <v-app-bar class="white--text" height="50px" color="primary">
       <v-avatar>
-        <img src="@/assets/cpoia.jpeg" alt="logo" />
+        <img src="@/assets/cpoia.png" alt="logo" />
       </v-avatar>
       <v-spacer></v-spacer>
       <v-toolbar-title>Projet Arena</v-toolbar-title>
