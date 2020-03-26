@@ -50,9 +50,6 @@ import FormComponent from "@/components/FormComponents/FormComponent.vue";
 import api from "@/service/api";
 import generate from "@/service/generate";
 
-import opord_form from "@/assets/opord.json";
-
-
 export default {
   name: "Form",
   components: {
@@ -61,8 +58,8 @@ export default {
   data() {
     return {
       fab: false,
-      template: this.G(this.$store.getters.templateSelected),
-      form: JSON.parse(JSON.stringify(opord_form)),
+      template: this.$store.getters.templateSelected,
+      form: generate(this.$store.getters.templateSelected),
       submitCheck: false,
       updateCheck: false,
       submitFeedback: true
@@ -109,9 +106,6 @@ export default {
         });
       });
     },
-    G(foo) {
-      return generate(foo);
-    }
   }
 };
 </script>
