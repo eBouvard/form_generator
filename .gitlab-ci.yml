@@ -2,8 +2,7 @@ job:run_master:
   script:
     - cp /root/env/.env back/.env
     - docker-compose kill
-    - docker container prune -f
-    - docker image prune -f
+    - docker system prune -a
     - docker build front
     - docker build parser
     - docker-compose up -d --remove-orphans
