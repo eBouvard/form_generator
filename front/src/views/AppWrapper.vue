@@ -2,10 +2,10 @@
   <v-container fluid class="overflow-hidden ma-0 pa-0">
     <v-app-bar class="white--text" height="50px" color="primary">
       <v-avatar>
-        <img src="@/assets/cpoia.png" alt="logo" />
+        <img src="@/assets/logo.png" alt="logo" />
       </v-avatar>
       <v-spacer></v-spacer>
-      <v-toolbar-title>Projet Arena</v-toolbar-title>
+      <v-toolbar-title>BlueTeam - Projet Arena</v-toolbar-title>
       <v-spacer></v-spacer>
       <div class="text-xs-center pa-3">
         <v-menu offset-y>
@@ -16,7 +16,7 @@
             <v-list-item
               v-for="(item, index) in templateList"
               :key="index"
-              @click="templateSelected(item.name)"
+              @click="templateSelected(item.value)"
             >
               <v-list-item-title>{{ item.name }}</v-list-item-title>
             </v-list-item>
@@ -50,7 +50,10 @@ export default {
   data() {
     return {
       selectedMenuItem: false,
-      templateList: [{ name: "OPORD" }, { name: "COVID Report" }]
+      templateList: [
+        { name: "OPORD", value: "opord" },
+        { name: "COVID Report", value: "covid" }
+      ]
     };
   },
   methods: {
@@ -73,7 +76,8 @@ export default {
       this.$store.commit("SET_BLACKTHEME", this.$vuetify.theme.dark);
     },
     templateSelected(item) {
-      console.log(item);
+      const newTemplate = require(`@/assets/formTemplate/${item}.json`);
+      this.$store.commit("SET_TEMPLATE", newTemplate);
     }
   }
 };
