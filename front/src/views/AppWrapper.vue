@@ -16,7 +16,7 @@
             <v-list-item
               v-for="(item, index) in templateList"
               :key="index"
-              @click="templateSelected(item.name)"
+              @click="templateSelected(item.value)"
             >
               <v-list-item-title>{{ item.name }}</v-list-item-title>
             </v-list-item>
@@ -50,7 +50,10 @@ export default {
   data() {
     return {
       selectedMenuItem: false,
-      templateList: [{ name: "OPORD" }, { name: "COVID Report" }]
+      templateList: [
+        { name: "OPORD", value: "opord" },
+        { name: "COVID Report", value: "covid" }
+      ]
     };
   },
   methods: {
@@ -74,6 +77,8 @@ export default {
     },
     templateSelected(item) {
       console.log(item);
+      const newTemplate = require(`@/assets/formTemplate/${item}.json`);
+      this.$store.commit("SET_TEMPLATE", newTemplate);
     }
   }
 };
