@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-form ref="to_send">
-      <FormComponent v-if="form != false" :items="template" :root="form" :old="old_form"></FormComponent>
+      <FormComponent v-if="form != null" :items="template" :root="form" :old="old_form"></FormComponent>
     </v-form>
 
     <v-speed-dial right bottom fixed>
@@ -46,10 +46,9 @@
 </template>
 
 <script>
-import template from "@/assets/opord_template.json";
-import opord_form from "@/assets/opord.json";
 import FormComponent from "@/components/FormComponents/FormComponent.vue";
 import api from "@/service/api";
+import generate from "@/service/generate";
 
 export default {
   name: "Form",
@@ -59,8 +58,8 @@ export default {
   data() {
     return {
       fab: false,
-      template: template,
-      form: false,
+      template: this.$store.getters.templateSelected,
+      form: null,
       old_form: undefined,
       submitCheck: false,
       updateCheck: false,
@@ -69,7 +68,7 @@ export default {
   },
   mounted() {
     if (this.$route.params.is_copy == 0) {
-      this.form = opord_form;
+      this.form = generate(this.$store.getters.templateSelected).content.main;
     } else {
       const request = "/read/" + this.$route.params.origin_id;
       console.log(request);
@@ -81,7 +80,7 @@ export default {
             this.form = ret.data.content.main;
           }
           if (this.$route.params.is_copy == 2) {
-            this.form = opord_form.content.main;
+            this.form = generate(this.$store.getters.templateSelected).content.main;
             this.old_form = ret.data.content.main;
           }
         })
@@ -133,7 +132,7 @@ export default {
           path: "/update/order/" + ret
         });
       });
-    }
+    },
   }
 };
 </script>

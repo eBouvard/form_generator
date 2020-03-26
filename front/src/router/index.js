@@ -8,6 +8,7 @@ import Update from '@/components/Update.vue'
 import Viewer from '@/components/Viewer.vue'
 import Map from '@/components/Map.vue'
 import Upload from '@/components/Upload.vue'
+import Editor from '@/components/Editor.vue' 
 
 Vue.use(VueRouter)
 
@@ -18,7 +19,8 @@ const routes = [
 	{ path: '/list/order', component: Table },
 	{ path: '/view/order/:form_id', component: Viewer },
 	{ path: '/map', component: Map },
-	{ path: '/upload', component: Upload }
+	{ path: '/upload', component: Upload },
+	{ path: '/formEditor', component: Editor },
 ]
 
 const router = new VueRouter({

@@ -1,4 +1,3 @@
-# Launch the API with a Posgre Server
 version: "3"
 services:
   back:

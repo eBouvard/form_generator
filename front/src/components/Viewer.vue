@@ -8,7 +8,6 @@
 
 <script>
 import ViewerComponent from "@/components/ViewerComponent.vue";
-import template from "@/assets/opord_template.json";
 import api from "@/service/api";
 
 export default {
@@ -18,7 +17,7 @@ export default {
   },
   data() {
     return {
-      template: template,
+      template: this.$store.getters.templateSelected,
       form_id: null,
       data: null
     };

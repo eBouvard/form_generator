@@ -7,6 +7,18 @@
       <v-spacer></v-spacer>
       <v-toolbar-title>Projet Arena</v-toolbar-title>
       <v-spacer></v-spacer>
+      <div class="text-xs-center pa-3">
+        <v-menu offset-y >
+          <template v-slot:activator="{ on }">
+            <v-btn dark color="secondary" v-on="on">Scope</v-btn>
+          </template>
+          <v-list>
+            <v-list-item v-for="(item, index) in templateList" :key="index" @click="templateSelected(item.name)">
+              <v-list-item-title>{{ item.name }}</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+      </div>
       <v-switch color="#500000" v-model="$vuetify.theme.dark" hide-details @change="goBlack"></v-switch>
     </v-app-bar>
     <v-row style="flex-wrap: nowrap; height: calc(100vh - 50px)" no-gutters>
@@ -33,14 +45,21 @@ export default {
   },
   data() {
     return {
-      selectedMenuItem: false
+      selectedMenuItem: false,
+      templateList: [
+        { name: 'OPORD' },
+        { name: 'COVID Report' }
+      ]
     };
   },
   methods: {
     menuItemSelected(item) {
-      if (item.path != undefined && item.path != this.$router.currentRoute.path) {
-        this.selectedMenuItem = false
-        this.$router.push({ path: item.path })
+      if (
+        item.path != undefined &&
+        item.path != this.$router.currentRoute.path
+      ) {
+        this.selectedMenuItem = false;
+        this.$router.push({ path: item.path });
       } else if (item === this.selectedMenuItem) {
         this.selectedMenuItem = false;
       } else if (item.content.length === false) {
@@ -51,6 +70,9 @@ export default {
     },
     goBlack() {
       this.$store.commit("SET_BLACKTHEME", this.$vuetify.theme.dark);
+    },
+    templateSelected(item) {
+      console.log(item)
     }
   }
 };

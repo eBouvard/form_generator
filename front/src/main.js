@@ -10,8 +10,10 @@ import '@mdi/font/css/materialdesignicons.css'
 import '@/style/style.css'
 import Vue2TouchEvents from 'vue2-touch-events';
 import 'leaflet/dist/leaflet.css';
+import JsonEditor from 'vue-json-edit'
 
 Vue.use(Vue2TouchEvents);
+Vue.use(JsonEditor)
 
 Vue.config.productionTip = false
 
