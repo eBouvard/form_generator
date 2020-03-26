@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-form ref="to_send">
-      <FormComponent :items="template" :root="form.content.main"></FormComponent>
+      <FormComponent v-if="form != false" :items="template" :root="form" :old="old_form"></FormComponent>
     </v-form>
 
     <v-speed-dial right bottom fixed>
@@ -60,17 +60,41 @@ export default {
     return {
       fab: false,
       template: template,
-      form: JSON.parse(JSON.stringify(opord_form)),
+      form: false,
+      old_form: undefined,
       submitCheck: false,
       updateCheck: false,
       submitFeedback: true
     };
   },
+  mounted() {
+    if (this.$route.params.is_copy == 0) {
+      this.form = opord_form;
+    } else {
+      const request = "/read/" + this.$route.params.origin_id;
+      console.log(request);
+      api()
+        .get(request)
+        .then(ret => {
+          console.log(ret);
+          if (this.$route.params.is_copy == 1) {
+            this.form = ret.data.content.main;
+          }
+          if (this.$route.params.is_copy == 2) {
+            this.form = opord_form.content.main;
+            this.old_form = ret.data.content.main;
+          }
+        })
+        .catch(e => {
+          console.log(e);
+        });
+    }
+  },
   methods: {
     async submit() {
       const data = JSON.parse(JSON.stringify(this.form));
       data.date = new Date();
-      console.log(data.date)
+      console.log(data.date);
       data.title = this.form.content.main["0_header"].title;
       data.author = this.getUser();
       console.log(data);
@@ -92,6 +116,9 @@ export default {
       ];
       const user = user_list[Math.floor(Math.random() * 6)];
       return user;
+    },
+    getOriginID() {
+      return this.$route.params.origin_id;
     },
     saveExit() {
       this.submit();

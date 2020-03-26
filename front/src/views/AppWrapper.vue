@@ -1,20 +1,13 @@
 <template>
-  <v-container fluid class="overflow-hidden ma-0 pa-0" >
+  <v-container fluid class="overflow-hidden ma-0 pa-0">
     <v-app-bar class="white--text" height="50px" color="primary">
-    <v-avatar>
-      <img
-        src="@/assets/cpoia.png"
-        alt="logo"
-      >
-    </v-avatar>
-    <v-spacer></v-spacer>
-    <v-toolbar-title>Projet Arena</v-toolbar-title>
-    <v-spacer></v-spacer>
-      <v-switch
-        v-model="$vuetify.theme.dark"
-        hide-details
-        @change="goBlack"
-      ></v-switch>
+      <v-avatar>
+        <img src="@/assets/cpoia.png" alt="logo" />
+      </v-avatar>
+      <v-spacer></v-spacer>
+      <v-toolbar-title>Projet Arena</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-switch color="#500000" v-model="$vuetify.theme.dark" hide-details @change="goBlack"></v-switch>
     </v-app-bar>
     <v-row style="flex-wrap: nowrap; height: calc(100vh - 50px)" no-gutters>
       <Menu v-on:item-selected="menuItemSelected"></Menu>
@@ -57,7 +50,7 @@ export default {
       }
     },
     goBlack() {
-      this.$store.commit("SET_BLACKTHEME", this.$vuetify.theme.dark)
+      this.$store.commit("SET_BLACKTHEME", this.$vuetify.theme.dark);
     }
   }
 };

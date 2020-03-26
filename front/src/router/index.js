@@ -13,7 +13,7 @@ Vue.use(VueRouter)
 
 const routes = [
 	{ path: '/', component: Hub },
-	{ path: '/new/order', component: Form },
+	{ path: '/new/order/:is_copy/:origin_id', component: Form },
 	{ path: '/update/order/:form_id', component: Update },
 	{ path: '/list/order', component: Table },
 	{ path: '/view/order/:form_id', component: Viewer },

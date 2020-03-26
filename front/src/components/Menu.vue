@@ -32,7 +32,7 @@ export default {
             {
               title: "Nouvel ordre",
               icon: "mdi-pen",
-              path: "/new/order"
+              path: "/new/order/0/0"
             },
             /*
             {
