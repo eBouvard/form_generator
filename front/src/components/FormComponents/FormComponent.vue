@@ -9,14 +9,14 @@
           >{{ root[key].security_classification }}</h3>
           <h3 v-else style="font-weight: 400;">{{ items[key].label }}</h3>
         </v-card-title>
-        <FormComponent :items="items[key].content" :root="root[key]" :old="(old == undefined) ? (undefined) : print(old[key])"></FormComponent>
+        <FormComponent :items="items[key].content" :root="root[key]" :old="(old == undefined) ? (undefined) : old[key]"></FormComponent>
       </v-stepper>
       <v-card v-if="items[key].type === 'category'" class="mt-2">
         <v-card-title class="headline">
           <h4 style="font-weight: 400;">{{ items[key].label }}</h4>
         </v-card-title>
         <v-card-actions>
-          <FormComponent :items="items[key].content" :root="root[key]" :old="(old == undefined) ? (undefined) : print(old[key])"></FormComponent>
+          <FormComponent :items="items[key].content" :root="root[key]" :old="(old == undefined) ? (undefined) : old[key]"></FormComponent>
         </v-card-actions>
       </v-card>
 <v-row justify="center" no-gutters>
@@ -63,9 +63,6 @@ export default {
     items: Object,
     root: Object,
     old: Object
-  },
-  methods: {
-    print(thing) {console.log(thing); return thing;}
   }
 };
 </script>
