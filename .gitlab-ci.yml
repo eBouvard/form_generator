@@ -4,7 +4,6 @@ job:run_master:
     - docker-compose kill
     - docker system prune -a -f
     - docker build front
-    - docker build parser
     - docker-compose up -d --remove-orphans
   only:
     - master
