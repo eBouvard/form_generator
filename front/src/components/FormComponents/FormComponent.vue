@@ -26,6 +26,12 @@
         :root="root"
         :value="key"
       ></SmallTextComponent>
+      <DateComponent
+        v-if="items[key].type === 'date'"
+        :item="items[key]"
+        :root="root"
+        :value="key"
+      ></DateComponent>
       <AutoCompleteComponent
         v-if="items[key].type === 'autocomplete'"
         :item="items[key]"
@@ -46,6 +52,7 @@
 
 <script>
 import SmallTextComponent from "@/components/FormComponents/SmallTextComponent.vue";
+import DateComponent from "@/components/FormComponents/DateComponent.vue";
 import AutoCompleteComponent from "@/components/FormComponents/AutoCompleteComponent.vue";
 import LargeTextComponent from "@/components/FormComponents/LargeTextComponent.vue";
 
@@ -53,6 +60,7 @@ export default {
   name: "FormComponent",
   components: {
     SmallTextComponent,
+    DateComponent,
     AutoCompleteComponent,
     LargeTextComponent
   },

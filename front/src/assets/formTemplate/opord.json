@@ -39,7 +39,7 @@
                 "label": "Localisation P.C. avant"
             },
             "date-time_group_of_signature": {
-                "type": "small_text",
+                "type": "date",
                 "label": "GDH de signature"
             },
             "message_reference_no": {
