@@ -48,9 +48,7 @@
 <script>
 import FormComponent from "@/components/FormComponents/FormComponent.vue";
 import api from "@/service/api";
-
-import opord_form from "@/assets/opord.json";
-
+import generate from "@/service/generate";
 
 export default {
   name: "Form",
@@ -61,7 +59,7 @@ export default {
     return {
       fab: false,
       template: this.$store.getters.templateSelected,
-      form: JSON.parse(JSON.stringify(opord_form)),
+      form: generate(this.$store.getters.templateSelected),
       submitCheck: false,
       updateCheck: false,
       submitFeedback: true
@@ -107,7 +105,7 @@ export default {
           path: "/update/order/" + ret
         });
       });
-    }
+    },
   }
 };
 </script>
