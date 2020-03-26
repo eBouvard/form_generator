@@ -46,10 +46,11 @@
 </template>
 
 <script>
-import template from "@/assets/opord_template.json";
-import opord_form from "@/assets/opord.json";
 import FormComponent from "@/components/FormComponents/FormComponent.vue";
 import api from "@/service/api";
+
+import opord_form from "@/assets/opord.json";
+
 
 export default {
   name: "Form",
@@ -59,7 +60,7 @@ export default {
   data() {
     return {
       fab: false,
-      template: template,
+      template: '',
       form: JSON.parse(JSON.stringify(opord_form)),
       submitCheck: false,
       updateCheck: false,
@@ -107,6 +108,11 @@ export default {
         });
       });
     }
+  },
+  mounted() {
+    const templateSelected = this.$store.getters.templateSelected
+    console.log(templateSelected)
+    this.template = require(`@/assets/formTemplate/${templateSelected}.json`);
   }
 };
 </script>

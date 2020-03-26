@@ -8,8 +8,10 @@
 
 <script>
 import ViewerComponent from "@/components/ViewerComponent.vue";
-import template from "@/assets/opord_template.json";
 import api from "@/service/api";
+
+let templateName = 'opord'
+let template = require(`@/assets/formTemplate/${templateName}.json`);
 
 export default {
   name: "Viewer",

@@ -24,9 +24,11 @@
 </template>
 
 <script>
-import template from "@/assets/opord_template.json";
 import FormComponent from "@/components/FormComponents/FormComponent.vue";
 import api from "@/service/api";
+
+let templateName = 'opord'
+let template = require(`@/assets/formTemplate/${templateName}.json`);
 
 export default {
   name: "Update",
