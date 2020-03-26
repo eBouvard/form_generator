@@ -8,12 +8,16 @@
       <v-toolbar-title>Projet Arena</v-toolbar-title>
       <v-spacer></v-spacer>
       <div class="text-xs-center pa-3">
-        <v-menu offset-y >
+        <v-menu offset-y>
           <template v-slot:activator="{ on }">
             <v-btn dark color="secondary" v-on="on">Scope</v-btn>
           </template>
           <v-list>
-            <v-list-item v-for="(item, index) in templateList" :key="index" @click="templateSelected(item.name)">
+            <v-list-item
+              v-for="(item, index) in templateList"
+              :key="index"
+              @click="templateSelected(item.name)"
+            >
               <v-list-item-title>{{ item.name }}</v-list-item-title>
             </v-list-item>
           </v-list>
@@ -46,10 +50,7 @@ export default {
   data() {
     return {
       selectedMenuItem: false,
-      templateList: [
-        { name: 'OPORD' },
-        { name: 'COVID Report' }
-      ]
+      templateList: [{ name: "OPORD" }, { name: "COVID Report" }]
     };
   },
   methods: {
@@ -62,7 +63,7 @@ export default {
         this.$router.push({ path: item.path });
       } else if (item === this.selectedMenuItem) {
         this.selectedMenuItem = false;
-      } else if (item.content.length === false) {
+      } else if (item.content != undefined && item.content.length === false) {
         this.selectedMenuItem = false;
       } else {
         this.selectedMenuItem = item;
@@ -72,7 +73,7 @@ export default {
       this.$store.commit("SET_BLACKTHEME", this.$vuetify.theme.dark);
     },
     templateSelected(item) {
-      console.log(item)
+      console.log(item);
     }
   }
 };
