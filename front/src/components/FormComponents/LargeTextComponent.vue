@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-col cols="12">
     <v-btn-toggle v-if="isSubOrder()" rounded class="pb-2" multiple>
       <v-btn icon v-model="show_old" small>
         <v-icon v-if="show_old">mdi-eye-off</v-icon>
@@ -27,7 +27,7 @@
       :name="root"
       v-model.lazy="root[value]"
     ></v-textarea>
-  </div>
+  </v-col>
 </template>
 
 <script>

@@ -1,11 +1,13 @@
 <template>
-  <v-autocomplete
-    :label="item.label"
-    :name="root"
-    v-model.lazy="root[value]"
-    :items="item.list"
-    item-text="name"
-  ></v-autocomplete>
+  <v-col cols="6">
+    <v-autocomplete
+      :label="item.label"
+      :name="root"
+      v-model.lazy="root[value]"
+      :items="item.list"
+      item-text="name"
+    ></v-autocomplete>
+  </v-col>
 </template>
 
 <script>
