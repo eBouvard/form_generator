@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid>
+  <v-container  style="max-width: 1000px">
     <div v-for="key in Object.keys(items)" :key="key">
       <v-stepper v-if="items[key].type === 'chapter'" :v-model="root[key]" class="mb-2" vertical>
         <v-card-title class="headline">
@@ -16,24 +16,26 @@
           <FormComponent :items="items[key].content" :root="root[key]"></FormComponent>
         </v-card-actions>
       </v-card>
-      <SmallTextComponent
-        v-if="items[key].type === 'small_text'"
-        :item="items[key]"
-        :root="root"
-        :value="key"
-      ></SmallTextComponent>
-      <AutoCompleteComponent
-        v-if="items[key].type === 'autocomplete'"
-        :item="items[key]"
-        :root="root"
-        :value="key"
-      ></AutoCompleteComponent>
-      <LargeTextComponent
-        v-if="items[key].type === 'large_text'"
-        :item="items[key]"
-        :root="root"
-        :value="key"
-      ></LargeTextComponent>
+      <v-row justify="center" no-gutters>
+        <SmallTextComponent
+          v-if="items[key].type === 'small_text'"
+          :item="items[key]"
+          :root="root"
+          :value="key"
+        ></SmallTextComponent>
+        <AutoCompleteComponent
+          v-if="items[key].type === 'autocomplete'"
+          :item="items[key]"
+          :root="root"
+          :value="key"
+        ></AutoCompleteComponent>
+      </v-row>
+        <LargeTextComponent
+          v-if="items[key].type === 'large_text'"
+          :item="items[key]"
+          :root="root"
+          :value="key"
+        ></LargeTextComponent>
     </div>
   </v-container>
 </template>
