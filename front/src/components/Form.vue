@@ -60,7 +60,7 @@ export default {
   data() {
     return {
       fab: false,
-      template: '',
+      template: this.$store.getters.templateSelected,
       form: JSON.parse(JSON.stringify(opord_form)),
       submitCheck: false,
       updateCheck: false,
@@ -108,11 +108,6 @@ export default {
         });
       });
     }
-  },
-  mounted() {
-    const templateSelected = this.$store.getters.templateSelected
-    console.log(templateSelected)
-    this.template = require(`@/assets/formTemplate/${templateSelected}.json`);
   }
 };
 </script>

@@ -27,9 +27,6 @@
 import FormComponent from "@/components/FormComponents/FormComponent.vue";
 import api from "@/service/api";
 
-let templateName = 'opord'
-let template = require(`@/assets/formTemplate/${templateName}.json`);
-
 export default {
   name: "Update",
   components: {
@@ -37,7 +34,7 @@ export default {
   },
   data() {
     return {
-      template: template,
+      template: this.$store.getters.templateSelected,
       form_id: null,
       form: null,
       submitCheck: false,

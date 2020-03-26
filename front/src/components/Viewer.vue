@@ -10,9 +10,6 @@
 import ViewerComponent from "@/components/ViewerComponent.vue";
 import api from "@/service/api";
 
-let templateName = 'opord'
-let template = require(`@/assets/formTemplate/${templateName}.json`);
-
 export default {
   name: "Viewer",
   components: {
@@ -20,7 +17,7 @@ export default {
   },
   data() {
     return {
-      template: template,
+      template: this.$store.getters.templateSelected,
       form_id: null,
       data: null
     };
