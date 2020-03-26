@@ -23,7 +23,7 @@
           </v-list>
         </v-menu>
       </div>
-      <v-switch v-model="$vuetify.theme.dark" hide-details @change="goBlack"></v-switch>
+      <v-switch color="#500000" v-model="$vuetify.theme.dark" hide-details @change="goBlack"></v-switch>
     </v-app-bar>
     <v-row style="flex-wrap: nowrap; height: calc(100vh - 50px)" no-gutters>
       <Menu v-on:item-selected="menuItemSelected"></Menu>

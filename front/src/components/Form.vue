@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-form ref="to_send">
-      <FormComponent :items="template" :root="form.content.main"></FormComponent>
+      <FormComponent v-if="form != null" :items="template" :root="form" :old="old_form"></FormComponent>
     </v-form>
 
     <v-speed-dial right bottom fixed>
@@ -48,9 +48,7 @@
 <script>
 import FormComponent from "@/components/FormComponents/FormComponent.vue";
 import api from "@/service/api";
-
-import opord_form from "@/assets/opord.json";
-
+import generate from "@/service/generate";
 
 export default {
   name: "Form",
@@ -61,17 +59,41 @@ export default {
     return {
       fab: false,
       template: this.$store.getters.templateSelected,
-      form: JSON.parse(JSON.stringify(opord_form)),
+      form: null,
+      old_form: undefined,
       submitCheck: false,
       updateCheck: false,
       submitFeedback: true
     };
   },
+  mounted() {
+    if (this.$route.params.is_copy == 0) {
+      this.form = generate(this.$store.getters.templateSelected).content.main;
+    } else {
+      const request = "/read/" + this.$route.params.origin_id;
+      console.log(request);
+      api()
+        .get(request)
+        .then(ret => {
+          console.log(ret);
+          if (this.$route.params.is_copy == 1) {
+            this.form = ret.data.content.main;
+          }
+          if (this.$route.params.is_copy == 2) {
+            this.form = generate(this.$store.getters.templateSelected).content.main;
+            this.old_form = ret.data.content.main;
+          }
+        })
+        .catch(e => {
+          console.log(e);
+        });
+    }
+  },
   methods: {
     async submit() {
       const data = JSON.parse(JSON.stringify(this.form));
       data.date = new Date();
-      console.log(data.date)
+      console.log(data.date);
       data.title = this.form.content.main["0_header"].title;
       data.author = this.getUser();
       console.log(data);
@@ -94,6 +116,9 @@ export default {
       const user = user_list[Math.floor(Math.random() * 6)];
       return user;
     },
+    getOriginID() {
+      return this.$route.params.origin_id;
+    },
     saveExit() {
       this.submit();
       this.$refs.to_send.reset();
@@ -107,7 +132,7 @@ export default {
           path: "/update/order/" + ret
         });
       });
-    }
+    },
   }
 };
 </script>

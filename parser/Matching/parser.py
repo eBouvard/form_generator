@@ -37,7 +37,7 @@ def create_dict(which_list, list_stopwords, fuzzy=True, thresh=50):
             if elem:
                 dict_stopwords[list_stopwords[i]] = elem
             else:
-                dict_stopwords[list_stopwords[i]] = "title not found"
+                dict_stopwords[list_stopwords[i]] = ""
             i = i + 1
         except Exception:
             dict_stopwords[list_stopwords[i]] = print_words_between(which_list, list_stopwords[i], list_stopwords[i + 1], False, fuzzy=fuzzy, thresh=thresh)
@@ -48,7 +48,7 @@ def create_dict(which_list, list_stopwords, fuzzy=True, thresh=50):
         if last_elem:
             dict_stopwords[list_stopwords[length - 1]] = last_elem
         else:
-            dict_stopwords[list_stopwords[length - 1]] = "title not found"
+            dict_stopwords[list_stopwords[length - 1]] = ""
     except Exception:
         dict_stopwords[list_stopwords[length - 1]] = print_words_between(which_list, list_stopwords[length - 2],
                                         list_stopwords[length - 1], True, fuzzy=fuzzy, thresh=thresh)
@@ -73,7 +73,6 @@ def conformity_stat(flat_dic):
     list_total = []
     for title in list(flat_dic.keys()):
         list_title_empty.append(len(list(i for i in list(flat_dic[title].values()) if i == '')))
-        list_content_empty.append(len(list(i for i in list(flat_dic[title].values()) if i == 'title not found')))
         list_total.append(len(list(flat_dic[title].values())))
-    part_empty = (sum(list_content_empty)/2 + sum(list_title_empty))/sum(list_total)
+    part_empty = sum(list_title_empty)/sum(list_total)
     return 1-part_empty
