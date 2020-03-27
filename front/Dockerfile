@@ -1,7 +1,7 @@
 FROM node:12.16.1
 
 # installe un simple serveur http pour servir un contenu statique
-RUN npm install -g --force http-server yarn
+RUN npm install -g --force serve yarn
 
 # définit le dossier 'app' comme dossier de travail
 WORKDIR /app
@@ -16,7 +16,7 @@ RUN yarn install
 COPY . .
 
 # construit l'app pour la production en la minifiant
-RUN yarn build
+RUN ./node_modules/.bin/vue-cli-service build
 
-EXPOSE 8080
-CMD [ "http-server", "dist" ]
+EXPOSE 5000
+CMD [ "serve", "-s", "dist" ]
