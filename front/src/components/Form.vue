@@ -68,7 +68,7 @@ export default {
   },
   mounted() {
     if (this.$route.params.is_copy == 0) {
-      this.form = generate(this.$store.getters.templateSelected);
+      this.form = generate(this.template);
     } else {
       const request = "/read/" + this.$route.params.origin_id;
       console.log(request);
@@ -80,7 +80,7 @@ export default {
             this.form = ret.data;
           }
           if (this.$route.params.is_copy == 2) {
-            this.form = generate(this.$store.getters.templateSelected);
+            this.form = generate(this.template);
             this.old_form = ret.data;
           }
         })
