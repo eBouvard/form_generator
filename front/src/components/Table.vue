@@ -91,7 +91,7 @@ export default {
   methods: {
     init() {
       api()
-        .get("/read/all")
+        .get("/read/all/" + this.$store.getters.template)
         .then(ret => {
           const raw = ret.data;
           const array = [];
