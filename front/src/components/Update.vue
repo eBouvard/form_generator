@@ -49,7 +49,7 @@ export default {
       data.author = this.getUser();
       console.log(data);
       api()
-        .post("/update/json/" + this.$store.getters.template + "/" + this.form_id, data)
+        .post("/update/" + this.$store.getters.template + "/" + this.form_id, data)
         .then(ret => {
           console.log(ret);
         })
