@@ -76,7 +76,8 @@ export default {
       this.$store.commit("SET_BLACKTHEME", this.$vuetify.theme.dark);
     },
     templateChange(name) {
-      this.$store.commit("SET_TEMPLATE", name);
+      this.$store.commit("SET_TEMPLATE", name)
+      this.$forceUpdate()
     }
   }
 };
