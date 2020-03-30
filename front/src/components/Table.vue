@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid>
+  <v-container>
     <v-data-table
       :headers="headers"
       :items="forms"
@@ -91,7 +91,7 @@ export default {
   methods: {
     init() {
       api()
-        .get("/read/all")
+        .get("/read/all/" + this.$store.getters.template)
         .then(ret => {
           const raw = ret.data;
           const array = [];
@@ -116,7 +116,7 @@ export default {
     },
     deleteItem(id) {
       api()
-        .get("/delete/json/" + id)
+        .get("/delete/json" + this.$store.getters.template + "/" + id)
         .then(() => {
           this.snackbar = true;
         })

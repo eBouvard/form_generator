@@ -34,7 +34,7 @@ export default {
   },
   data() {
     return {
-      template: this.$store.getters.templateSelected,
+      template: this.$store.state.templateList[this.$store.state.template],
       form_id: null,
       form: null,
       submitCheck: false,
@@ -49,7 +49,7 @@ export default {
       data.author = this.getUser();
       console.log(data);
       api()
-        .post("/update/json/" + this.form_id, data)
+        .post("/update/" + this.$store.getters.template + "/" + this.form_id, data)
         .then(ret => {
           console.log(ret);
         })
@@ -74,7 +74,7 @@ export default {
       return user;
     },
     loadForm(form_id) {
-      var request = "/read/" + form_id;
+      var request = "/read/" + this.$store.getters.template + "/" + form_id;
       console.log(request);
       api()
         .get(request)
