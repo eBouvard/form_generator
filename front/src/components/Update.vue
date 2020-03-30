@@ -49,7 +49,7 @@ export default {
       data.author = this.getUser();
       console.log(data);
       api()
-        .post("/update/json/" + this.form_id, data)
+        .post("/update/json/" + this.$store.getters.template + "/" + this.form_id, data)
         .then(ret => {
           console.log(ret);
         })
@@ -74,7 +74,7 @@ export default {
       return user;
     },
     loadForm(form_id) {
-      var request = "/read/" + form_id;
+      var request = "/read/" + form_id + "/" + this.$store.getters.template;
       console.log(request);
       api()
         .get(request)
