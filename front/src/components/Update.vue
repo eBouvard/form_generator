@@ -74,7 +74,7 @@ export default {
       return user;
     },
     loadForm(form_id) {
-      var request = "/read/" + form_id + "/" + this.$store.getters.template;
+      var request = "/read/" + this.$store.getters.template + "/" + form_id;
       console.log(request);
       api()
         .get(request)
