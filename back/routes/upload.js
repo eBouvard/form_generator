@@ -31,10 +31,9 @@ async function sendToParser(path) {
 }
 
 //Query to send a JSON
-async function sendJSONtoDB(json_data) {
-    const JSON_table = 'json'
+async function sendJSONtoDB(table, json_data) {
     const query = {
-        text: `INSERT INTO ${JSON_table}(data) VALUES ($1) RETURNING id`,
+        text: `INSERT INTO ${table}(data) VALUES ($1) RETURNING id`,
         values: [json_data]
     }
     const { rows } = await db.query(query)
@@ -42,8 +41,9 @@ async function sendJSONtoDB(json_data) {
 }
 
 //Upload a file, parse it and send it to DB 
-router.post('/', async (req, res) => {
+router.post('/:table', async (req, res) => {
     const file = req.files.file
+    const table = req.params.table
     const oldPath = file.path
     const newPath = oldPath.substr(0, oldPath.lastIndexOf('/') + 1) + file.name
     fs.rename(oldPath, newPath, function (e) {
@@ -51,10 +51,10 @@ router.post('/', async (req, res) => {
     });
     let json_data = await sendToParser(newPath)
     console.log(`Document:${json_data.title}`)
-    sendJSONtoDB(json_data).then(retDB => {
-        const data = {
+    sendJSONtoDB(table, json_data).then(retDB => {
+        const data = { 
             id: retDB
-        }
+        } 
         res.send(data)
     })
 })
