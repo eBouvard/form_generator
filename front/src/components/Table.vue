@@ -116,7 +116,7 @@ export default {
     },
     deleteItem(id) {
       api()
-        .get("/delete/json/" + id)
+        .get("/delete/json" + this.$store.getters.template + "/" + id)
         .then(() => {
           this.snackbar = true;
         })

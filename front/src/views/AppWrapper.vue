@@ -10,7 +10,7 @@
       <div class="text-xs-center pa-3">
         <v-menu offset-y>
           <template v-slot:activator="{ on }">
-            <v-btn dark color="secondary" v-on="on">Scope</v-btn>
+            <v-btn dark color="secondary" v-on="on">{{ $store.getters.template }}</v-btn>
           </template>
           <v-list>
             <v-list-item
