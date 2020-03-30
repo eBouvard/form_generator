@@ -9,7 +9,7 @@
         <v-icon>mdi-content-save</v-icon>
       </v-btn>
     </div>
-    <v-dialog v-model="submitCheck">
+    <v-dialog v-model="submitCheck" max-width=900>
       <v-card>
         <v-card-title class="headline">Confirmer la modification du formulaire ?</v-card-title>
         <v-card-text>Cette action enregistrera les modifications apportées au formulaire en cours et vous renverra à la liste des ordres.</v-card-text>

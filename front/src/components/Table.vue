@@ -37,7 +37,7 @@
       </template>
     </v-data-table>
 
-    <v-dialog v-model="deleteCheck.check">
+    <v-dialog v-model="deleteCheck.check" max-width=900>
       <v-card>
         <v-card-title class="headline">Confirmer la supression de l'ordre</v-card-title>
         <v-card-text>Cette action supprimera l'ordre de façon définitive.</v-card-text>
