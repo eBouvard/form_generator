@@ -28,6 +28,14 @@
         <h3>{{items[label].label}}</h3>
         <p style="white-space: pre-wrap;" class="my-2">{{ data[label] }}</p>
       </div>
+      <div v-if="(items[label].type === 'autocomplete') && data[label]">
+        <h3>{{items[label].label}}</h3>
+        <p style="white-space: pre-wrap;" class="my-2">{{ data[label] }}</p>
+      </div>
+      <div v-if="(items[label].type === 'date') && data[label]">
+        <h3>{{items[label].label}}</h3>
+        <p style="white-space: pre-wrap;" class="my-2">{{ ((data[label] == '') ? '' : moment(data[label]).format('dddd Do MMMM YYYY')) }}</p>
+      </div>
       <div v-if="(items[label].type === 'large_text') && data[label]">
         <h3>{{items[label].label}}</h3>
         <p style="white-space: pre-wrap;" class="my-2">{{ data[label] }}</p>
@@ -37,11 +45,15 @@
 </template>
 
 <script>
+import moment from 'moment'
+
 export default {
   name: "ViewerComponent",
   components: {},
   data() {
-    return {};
+    return {
+      moment: moment
+    };
   },
   methods: {
     isEmpty(obj) {

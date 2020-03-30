@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-form ref="to_send">
-      <FormComponent v-if="form != null" :items="template" :root="form" :old="old_form"></FormComponent>
+      <FormComponent v-if="form != null" :items="template" :root="form.content.main" :old="old_form == undefined ? undefined : old_form.content.main"></FormComponent>
     </v-form>
 
     <v-speed-dial right bottom fixed>
@@ -68,7 +68,7 @@ export default {
   },
   mounted() {
     if (this.$route.params.is_copy == 0) {
-      this.form = generate(this.template).content.main;
+      this.form = generate(this.$store.getters.templateSelected);
     } else {
       const request = "/read/" + this.$route.params.origin_id;
       console.log(request);
@@ -77,11 +77,11 @@ export default {
         .then(ret => {
           console.log(ret);
           if (this.$route.params.is_copy == 1) {
-            this.form = ret.data.content.main;
+            this.form = ret.data;
           }
           if (this.$route.params.is_copy == 2) {
-            this.form = generate(this.$store.getters.templateSelected).content.main;
-            this.old_form = ret.data.content.main;
+            this.form = generate(this.$store.getters.templateSelected);
+            this.old_form = ret.data;
           }
         })
         .catch(e => {
