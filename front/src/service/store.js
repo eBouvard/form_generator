@@ -8,12 +8,13 @@ export default new Vuex.Store({
   state: {
     blackTheme: false,
     template: 'opord',
-    templateList: ''
+    templateList: []
   },
   mutations: {
     SET_BLACKTHEME: (state, val) => { state.blackTheme = val },
     SET_TEMPLATE: (state, val) => { state.template = val },
-    SET_TEMPLATELIST: (state, array) => { state.templateList = array }
+    SET_TEMPLATELIST: (state, array) => { state.templateList = array },
+    UPDATE_TEMPLATE: (state, object) => { state.templateList[state.template] = object }
   },
   actions: {
   },
