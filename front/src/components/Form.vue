@@ -70,7 +70,7 @@ export default {
     if (this.$route.params.is_copy == 0) {
       this.form = generate(this.template);
     } else {
-      const request = "/read/" + this.$route.params.origin_id + "/" + this.$store.getters.template;
+      const request = "/read/" + this.$store.getters.template + "/" + this.$route.params.origin_id;
       console.log(request);
       api()
         .get(request)
