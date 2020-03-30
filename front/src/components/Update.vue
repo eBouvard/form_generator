@@ -34,7 +34,7 @@ export default {
   },
   data() {
     return {
-      template: this.$store.getters.templateSelected,
+      template: this.$store.state.templateList[this.$store.state.template],
       form_id: null,
       form: null,
       submitCheck: false,

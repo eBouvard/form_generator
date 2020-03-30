@@ -4,9 +4,15 @@ const db = require('../service/db')
 const router = new Router()
 module.exports = router
 
-//Define the JSON table
+//Define the JSONTable and Template table
 const JSON_table = 'json'
+const TEMPLATE_table = 'template'
 
+//Check DB connection
+router.get('/health', async (req, res) => {
+  const { rows } = await db.query('SELECT $1::text as message', ['Hello world from Postgre!'])
+  res.send(rows[0].message + '\n')
+})
 
 //Read all JSON data
 router.get('/all', async (req, res) => {

@@ -58,7 +58,7 @@ export default {
   data() {
     return {
       fab: false,
-      template: this.$store.getters.templateSelected,
+      template: this.$store.state.templateList[this.$store.state.template],
       form: null,
       old_form: undefined,
       submitCheck: false,
@@ -68,7 +68,7 @@ export default {
   },
   mounted() {
     if (this.$route.params.is_copy == 0) {
-      this.form = generate(this.$store.getters.templateSelected).content.main;
+      this.form = generate(this.template).content.main;
     } else {
       const request = "/read/" + this.$route.params.origin_id;
       console.log(request);

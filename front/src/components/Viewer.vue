@@ -17,7 +17,7 @@ export default {
   },
   data() {
     return {
-      template: this.$store.getters.templateSelected,
+      template: this.$store.state.templateList[this.$store.state.template],
       form_id: null,
       data: null
     };
@@ -25,11 +25,9 @@ export default {
   methods: {
     loadForm(form_id) {
       var request = "/read/" + form_id;
-      console.log(request);
       api()
         .get(request)
         .then(ret => {
-          console.log(ret);
           this.data = ret.data;
         })
         .catch(e => {
