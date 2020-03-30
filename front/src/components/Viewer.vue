@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     loadForm(form_id) {
-      var request = "/read/" + form_id + "/" + this.$store.getters.template;
+      var request = "/read/" + this.$store.getters.template + "/" + form_id;
       api()
         .get(request)
         .then(ret => {
