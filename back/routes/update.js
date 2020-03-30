@@ -45,7 +45,6 @@ router.post('/json/part/:id', async (req, res) => {
 //Update a template 
 router.post('/template/:name', async (req, res) => {
   const json_data = req.fields
-  console.log(json_data)
   const name = req.params.name
   if (name != undefined && json_data != undefined) {
     const query = {
@@ -53,7 +52,8 @@ router.post('/template/:name', async (req, res) => {
       values: [name, json_data],
     }
     const { rowCount } = await db.query(query)
-    res.send(rowCount === 1 ? 'OK' : "Invalid ID or JSON Data")
+    const ret = rowCount === 1 ? 'OK' : "Invalid ID or JSON Data"
+    res.send(ret)
   } else {
     res.send('Wrong ID')
   }

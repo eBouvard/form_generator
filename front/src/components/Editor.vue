@@ -11,6 +11,7 @@
   </v-container>
 </template>
 <script>
+import api from "@/service/api";
 
 export default {
   name: "formEditor",
@@ -20,9 +21,15 @@ export default {
     };
   },
   watch: {
-    jsonData: function saveJSON() {
-      console.log(this.jsonData);
-      this.$store.commit("SET_TEMPLATE", this.jsonData);
+    template: function saveJSON() {
+      const name = this.$store.state.template
+      const newTemplate = this.template
+      this.$store.commit("UPDATE_TEMPLATE", newTemplate);
+      api()
+        .post("/update/template/" + name, newTemplate)
+        .catch(e => {
+          console.log(e);
+        });
     }
   }
 };
