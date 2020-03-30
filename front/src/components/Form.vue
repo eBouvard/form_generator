@@ -58,7 +58,7 @@ export default {
   data() {
     return {
       fab: false,
-      template: this.$store.getters.templateSelected,
+      template: this.$store.state.templateList[this.$store.state.template],
       form: null,
       old_form: undefined,
       submitCheck: false,
@@ -68,9 +68,9 @@ export default {
   },
   mounted() {
     if (this.$route.params.is_copy == 0) {
-      this.form = generate(this.$store.getters.templateSelected);
+      this.form = generate(this.template);
     } else {
-      const request = "/read/" + this.$route.params.origin_id;
+      const request = "/read/" + this.$store.getters.template + "/" + this.$route.params.origin_id;
       console.log(request);
       api()
         .get(request)
@@ -80,7 +80,7 @@ export default {
             this.form = ret.data;
           }
           if (this.$route.params.is_copy == 2) {
-            this.form = generate(this.$store.getters.templateSelected);
+            this.form = generate(this.template);
             this.old_form = ret.data;
           }
         })
@@ -98,7 +98,7 @@ export default {
       data.author = this.getUser();
       console.log(data);
       let ret = await api()
-        .post("/create/json", data)
+        .post("/create/" + this.$store.getters.template, data)
         .catch(e => {
           console.log(e);
         });

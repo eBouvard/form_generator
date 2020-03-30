@@ -41,7 +41,7 @@ export default {
   methods: {
     init() {
       api()
-        .get("/read/last")
+        .get("/read/all/" + this.$store.state.template)
         .then(ret => {
           const raw = ret.data;
           const array = [];

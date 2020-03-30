@@ -10,13 +10,13 @@
       <div class="text-xs-center pa-3">
         <v-menu offset-y>
           <template v-slot:activator="{ on }">
-            <v-btn dark color="secondary" v-on="on">Scope</v-btn>
+            <v-btn dark color="secondary" v-on="on">{{ $store.getters.template }}</v-btn>
           </template>
           <v-list>
             <v-list-item
               v-for="(item, index) in templateList"
               :key="index"
-              @click="templateSelected(item.value)"
+              @click="templateChange(item.value)"
             >
               <v-list-item-title>{{ item.name }}</v-list-item-title>
             </v-list-item>
@@ -75,9 +75,8 @@ export default {
     goBlack() {
       this.$store.commit("SET_BLACKTHEME", this.$vuetify.theme.dark);
     },
-    templateSelected(item) {
-      const newTemplate = require(`@/assets/formTemplate/${item}.json`);
-      this.$store.commit("SET_TEMPLATE", newTemplate);
+    templateChange(name) {
+      this.$store.commit("SET_TEMPLATE", name);
     }
   }
 };
