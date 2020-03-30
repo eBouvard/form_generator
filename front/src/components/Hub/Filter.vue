@@ -41,9 +41,8 @@ export default {
     };
   },
   methods: {
-    templateSelected(item) {
-      const newTemplate = require(`@/assets/formTemplate/${item}.json`);
-      this.$store.commit("SET_TEMPLATE", newTemplate);
+    templateSelected(name) {
+      this.$store.commit("SET_TEMPLATE", name);
     }
   }
 };

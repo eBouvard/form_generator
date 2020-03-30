@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-    <div v-if="data && $route.params.form_id">
+    <div v-if="template && data && $route.params.form_id">
       <ViewerComponent :items="template" :data="data.content.main" :level=1></ViewerComponent>
     </div>
   </v-container>
