@@ -70,7 +70,7 @@ export default {
     if (this.$route.params.is_copy == 0) {
       this.form = generate(this.template);
     } else {
-      const request = "/read/" + this.$route.params.origin_id;
+      const request = "/read/" + this.$route.params.origin_id + "/" + this.$store.getters.template;
       console.log(request);
       api()
         .get(request)
@@ -98,7 +98,7 @@ export default {
       data.author = this.getUser();
       console.log(data);
       let ret = await api()
-        .post("/create/json", data)
+        .post("/create/json/" + this.$store.getters.template, data)
         .catch(e => {
           console.log(e);
         });

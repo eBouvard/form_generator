@@ -24,10 +24,11 @@ export default {
   },
   methods: {
     loadForm(form_id) {
-      var request = "/read/" + form_id;
+      var request = "/read/" + form_id + "/" + this.$store.getters.template;
       api()
         .get(request)
         .then(ret => {
+          console.log(ret)
           this.data = ret.data;
         })
         .catch(e => {
