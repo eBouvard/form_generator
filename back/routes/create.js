@@ -5,7 +5,6 @@ const router = new Router()
 module.exports = router
 
 //Define the JSONTable and Template table
-const JSON_table = 'json'
 const TEMPLATE_table = 'template'
 
 //Create a simple JSONTable
@@ -44,25 +43,9 @@ router.post('/template/:name', async (req, res) => {
         res.send('Wrong request: no JSON data or template name')
     }
 })
-//Add a new data into the main JSONTable
-router.post('/json', async (req, res) => {
-    const json_data = req.fields
-
-    if (json_data != undefined) {
-        const query = {
-            text: `INSERT INTO ${JSON_table}(data) VALUES ($1) RETURNING id`,
-            values: [json_data]
-        }
-        const { rows } = await db.query(query)
-        const ret = rows[0].id
-        res.send(ret === undefined ? 'Error' : ret.toString())
-    } else {
-        res.send('Wrong request: no JSON data')
-    }
-})
 
 //Add a new data into the a specific JSONTable
-router.post('/json/:table', async (req, res) => {
+router.post('/:table', async (req, res) => {
     const json_data = req.fields
     const table = req.params.table
     if (json_data != undefined && table != undefined) {
