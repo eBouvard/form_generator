@@ -58,7 +58,7 @@ export default {
   data() {
     return {
       fab: false,
-      template: this.$store.getters.templateSelected,
+      template: this.$store.state.templateList[this.$store.state.template],
       form: null,
       old_form: undefined,
       submitCheck: false,

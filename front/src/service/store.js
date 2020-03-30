@@ -1,24 +1,26 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import createPersistedState from 'vuex-persistedstate'
-import opordTemplate from "@/assets/formTemplate/opord.json";
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
     blackTheme: false,
-    templateSelected: opordTemplate
+    template: 'opord',
+    templateList: ''
   },
   mutations: {
     SET_BLACKTHEME: (state, val) => { state.blackTheme = val },
-    SET_TEMPLATE: (state, val) => { state.templateSelected = val }
+    SET_TEMPLATE: (state, val) => { state.template = val },
+    SET_TEMPLATELIST: (state, array) => { state.templateList = array }
   },
   actions: {
   },
   getters: {
     blackTheme: state => state.blackTheme,
-    templateSelected: state => state.templateSelected
+    template: state => state.template,
+    templateList: state => state.templateList
   },
   plugins: [createPersistedState()]
 })
