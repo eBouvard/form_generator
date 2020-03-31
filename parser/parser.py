@@ -25,7 +25,7 @@ def parse_doc(path_opord, struct_path=canvas):
         dic_of_files['title'] = meta['Title']
     else:
         dic_of_files['title'] = os.path.basename(path_opord)
-    dic_of_files['authors'] = meta['Author(s)']
+    dic_of_files['author'] = meta['Author(s)']
     dic_of_files['last_modified_by'] = meta['Last Modified By']
     dic_of_files['created_date'] = meta['Created Date']
     dic_of_files['modified_date'] = meta['Modified Date']
