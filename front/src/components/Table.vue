@@ -6,7 +6,8 @@
       :items-per-page="10"
       class="elevation-1"
       :loading="loading"
-      loading-text="Chargement en cours...">
+      loading-text="Chargement en cours..."
+    >
       <template v-slot:item.score="{ item }">
         <v-progress-linear v-if="item.score" color="primary" :value="item.score" rounded></v-progress-linear>
       </template>

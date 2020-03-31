@@ -7,7 +7,7 @@
         <MapHub></MapHub>
       </v-flex>
       <v-flex xs9>
-        <LastOrders></LastOrders>
+        <LastOrders :key="$store.getters.template"></LastOrders>
       </v-flex>
     </v-layout>
   </v-container>
