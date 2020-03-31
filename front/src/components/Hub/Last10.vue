@@ -1,10 +1,10 @@
 <template>
-  <v-container fluid >
+  <v-container fluid>
     <v-data-table
       :headers="headers"
       :items="forms"
       :items-per-page="10"
-      class="elevation-1  text-truncate "
+      class="elevation-1 text-truncate last-orders"
       :loading="loading"
       loading-text="Chargement en cours..."
       dense
@@ -12,7 +12,7 @@
     >
       <template v-slot:item.open="{ item }">
         <v-btn class="ma-2" icon x-small right>
-          <v-icon  v-on:click="openItem(item.id)">mdi-eye-outline</v-icon>
+          <v-icon v-on:click="openItem(item.id)">mdi-eye-outline</v-icon>
         </v-btn>
       </template>
     </v-data-table>
@@ -51,7 +51,7 @@ export default {
               id: element.id,
               title: element.data.title,
               author: element.data.author,
-              date: date,
+              date: date
             };
             array.push(newline);
           });
@@ -73,3 +73,12 @@ export default {
   }
 };
 </script>
+
+<style>
+.last-orders td {
+  max-width: 15vw;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+</style>

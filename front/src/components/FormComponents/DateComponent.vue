@@ -22,8 +22,8 @@
 
       <v-date-picker v-model.lazy="root[value]" no-title scrollable>
         <v-spacer></v-spacer>
-        <v-btn flat color="primary" @click="menu = false">Annuler</v-btn>
-        <v-btn flat color="primary" @click="$refs.menu.save(date)">Valider</v-btn>
+        <v-btn text color="primary" @click="menu = false">Annuler</v-btn>
+        <v-btn text color="primary" @click="$refs.menu.save(date)">Valider</v-btn>
       </v-date-picker>
     </v-menu>
   </v-col>
@@ -36,6 +36,7 @@ export default {
   name: "DateComponent",
   data() {
     return {
+      date: null,
       menu: false,
       moment: moment
     };

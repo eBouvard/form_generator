@@ -27,7 +27,7 @@ def docx_extractor(path, vectors=False):
     s = ""
     for paragraph in tree.getiterator(PARA):
         for node in paragraph.getiterator(TEXT):
-            s += str("new" + node.text)
+            s += (str("new" + node.text) + "\n")
 
     return s
 
@@ -39,7 +39,7 @@ def ppt_extractor(path):
     for slide in prs.slides:
         for shape in slide.shapes:
             if hasattr(shape, "text") and shape.text.strip():
-                s += str("new" + shape.text)
+                s += (str("new" + shape.text) + "\n")
 
     return s
 
@@ -51,7 +51,7 @@ def txt_extractor(path):
 
     texts = lines.strip().split("/n/n")
     for text in texts:
-        s += str("new" + text)
+        s += (str("new" + text) + "\n")
 
     return s
 
@@ -77,7 +77,7 @@ def pdf_extractor(path):
         text = retstr.getvalue()
         retstr.truncate(0)
         text = re.sub(u'(\u0000)', "", text)
-        s += str("new" + text)
+        s += (str("new" + text) + "\n")
 
     fp.close()
     device.close()
@@ -92,7 +92,7 @@ def excel_extractor(path):
     s = ""
     for k, v in Dic.items():
         if v:
-            s += str("new" + v)
+            s += (str("new" + v) + "\n")
         else:
             pass
 
@@ -105,7 +105,7 @@ def scan_extractor(path):
 
     for page in pages:
         text = image_to_string(page)
-        s += str("new" + text)
+        s += (str("new" + text) + "\n")
 
     return s
 
