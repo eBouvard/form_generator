@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-form ref="to_send">
       <FormComponent
-        v-if="form != null"
+        v-if="form"
         :items="template"
         :root="form.content.main"
         :old="old_form == undefined ? undefined : old_form.content.main"
