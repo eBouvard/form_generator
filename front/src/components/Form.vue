@@ -102,6 +102,7 @@ export default {
       data.date = new Date();
       data.title = this.form.content.main["0_header"].title;
       data.author = this.getUser();
+      console.log(data);
       let ret = await api()
         .post("/create/" + this.$store.getters.template, data)
         .catch(e => {
