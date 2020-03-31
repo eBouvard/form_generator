@@ -11,7 +11,7 @@
           <v-list-item-title v-text="item.title"></v-list-item-title>
         </v-list-item-content>
         <v-list-item-icon>
-          <v-icon :color="item.active ? 'primary' : 'secondary'">mdi-plus</v-icon>
+          <v-icon :color="item.active ? (($store.state.blackTheme) ? 'white' : 'black') : 'grey'">mdi-plus</v-icon>
         </v-list-item-icon>
       </v-list-item>
     </v-list>

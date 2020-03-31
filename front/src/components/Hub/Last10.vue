@@ -11,7 +11,7 @@
       hide-default-footer
     >
       <template v-slot:item.open="{ item }">
-        <v-btn class="ma-2" color="primary" icon x-small right>
+        <v-btn class="ma-2" icon x-small right>
           <v-icon  v-on:click="openItem(item.id)">mdi-eye-outline</v-icon>
         </v-btn>
       </template>
