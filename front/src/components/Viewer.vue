@@ -28,7 +28,6 @@ export default {
       api()
         .get(request)
         .then(ret => {
-          console.log(ret)
           this.data = ret.data;
         })
         .catch(e => {

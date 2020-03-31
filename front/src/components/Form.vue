@@ -1,7 +1,12 @@
 <template>
   <v-container fluid>
     <v-form ref="to_send">
-      <FormComponent v-if="form != null" :items="template" :root="form.content.main" :old="old_form == undefined ? undefined : old_form.content.main"></FormComponent>
+      <FormComponent
+        v-if="form != null"
+        :items="template"
+        :root="form.content.main"
+        :old="old_form == undefined ? undefined : old_form.content.main"
+      ></FormComponent>
     </v-form>
 
     <v-speed-dial right bottom fixed>
@@ -31,7 +36,7 @@
       </v-tooltip>
     </v-speed-dial>
 
-    <v-dialog v-model="submitCheck">
+    <v-dialog v-model="submitCheck" max-width=900>
       <v-card>
         <v-card-title class="headline">Confirmer l'envoi du formulaire ?</v-card-title>
         <v-card-text>Cette action enregistrera le formulaire en cours et vous renverra à la liste des ordres.</v-card-text>
@@ -70,12 +75,14 @@ export default {
     if (this.$route.params.is_copy == 0) {
       this.form = generate(this.template);
     } else {
-      const request = "/read/" + this.$store.getters.template + "/" + this.$route.params.origin_id;
-      console.log(request);
+      const request =
+        "/read/" +
+        this.$store.getters.template +
+        "/" +
+        this.$route.params.origin_id;
       api()
         .get(request)
         .then(ret => {
-          console.log(ret);
           if (this.$route.params.is_copy == 1) {
             this.form = ret.data;
           }
@@ -93,10 +100,8 @@ export default {
     async submit() {
       const data = JSON.parse(JSON.stringify(this.form));
       data.date = new Date();
-      console.log(data.date);
       data.title = this.form.content.main["0_header"].title;
       data.author = this.getUser();
-      console.log(data);
       let ret = await api()
         .post("/create/" + this.$store.getters.template, data)
         .catch(e => {
@@ -132,7 +137,7 @@ export default {
           path: "/update/order/" + ret
         });
       });
-    },
+    }
   }
 };
 </script>
