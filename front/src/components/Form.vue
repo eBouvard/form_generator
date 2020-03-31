@@ -1,7 +1,12 @@
 <template>
   <v-container fluid>
     <v-form ref="to_send">
-      <FormComponent v-if="form != null" :items="template" :root="form.content.main" :old="old_form == undefined ? undefined : old_form.content.main"></FormComponent>
+      <FormComponent
+        v-if="form != null"
+        :items="template"
+        :root="form.content.main"
+        :old="old_form == undefined ? undefined : old_form.content.main"
+      ></FormComponent>
     </v-form>
 
     <v-speed-dial right bottom fixed>
@@ -31,7 +36,7 @@
       </v-tooltip>
     </v-speed-dial>
 
-    <v-dialog v-model="submitCheck">
+    <v-dialog v-model="submitCheck" max-width=900>
       <v-card>
         <v-card-title class="headline">Confirmer l'envoi du formulaire ?</v-card-title>
         <v-card-text>Cette action enregistrera le formulaire en cours et vous renverra à la liste des ordres.</v-card-text>
@@ -70,7 +75,11 @@ export default {
     if (this.$route.params.is_copy == 0) {
       this.form = generate(this.template);
     } else {
-      const request = "/read/" + this.$store.getters.template + "/" + this.$route.params.origin_id;
+      const request =
+        "/read/" +
+        this.$store.getters.template +
+        "/" +
+        this.$route.params.origin_id;
       console.log(request);
       api()
         .get(request)
@@ -132,7 +141,7 @@ export default {
           path: "/update/order/" + ret
         });
       });
-    },
+    }
   }
 };
 </script>
