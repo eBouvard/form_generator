@@ -78,7 +78,7 @@ export default {
     },
     templateChange(name) {
       this.$store.commit("SET_TEMPLATE", name)
-      this.componentKey += 1;  
+      this.componentKey += 1;
     }
   }
 };
