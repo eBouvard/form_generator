@@ -31,7 +31,7 @@
         <SubMenu :items="selectedMenuItem.content"></SubMenu>
       </v-col>
       <v-col style="overflow-y: auto;" class="flex-grow-1 flex-shrink-0">
-        <router-view></router-view>
+        <router-view :key="componentKey" ></router-view>
       </v-col>
     </v-row>
   </v-container>
@@ -49,6 +49,7 @@ export default {
   },
   data() {
     return {
+      componentKey: 0,
       selectedMenuItem: false,
       templateList: [
         { name: "OPORD", value: "opord" },
@@ -77,7 +78,7 @@ export default {
     },
     templateChange(name) {
       this.$store.commit("SET_TEMPLATE", name)
-      this.$forceUpdate()
+      this.componentKey += 1;  
     }
   }
 };
