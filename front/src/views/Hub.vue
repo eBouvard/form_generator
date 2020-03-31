@@ -2,9 +2,8 @@
   <v-container grid-list-md text-xs-center>
     <v-layout row wrap>
       <v-flex xs3>
-        <FilterList></FilterList>
+        <KPI></KPI>
         <v-divider></v-divider>
-        <MapHub></MapHub>
       </v-flex>
       <v-flex xs9>
         <LastOrders></LastOrders>
@@ -14,16 +13,14 @@
 </template>
 <script>
 import LastOrders from "@/components/Hub/Last10.vue";
-import MapHub from "@/components/Hub/Map.vue";
-import FilterList from "@/components/Hub/Filter.vue";
+import KPI from "@/components/Hub/KPI.vue";
 
 export default {
   name: "Hub",
 
   components: {
-    FilterList,
     LastOrders,
-    MapHub
+    KPI
   },
   data() {
     return {};
