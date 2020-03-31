@@ -7,6 +7,8 @@
       <button @click="showMap = !showMap">Toggle map</button>
     </div>-->
     <l-map
+      :key="$store.state.blackTheme"
+      :class="{'darkMap': $store.state.blackTheme}"
       v-if="showMap"
       :zoom="zoom"
       :center="center"
@@ -22,7 +24,7 @@
 
 <script>
 import { latLng } from "leaflet";
-import { LMap, LTileLayer} from "vue2-leaflet";
+import { LMap, LTileLayer } from "vue2-leaflet";
 
 export default {
   name: "ExampleMap",
@@ -34,7 +36,8 @@ export default {
     return {
       zoom: 13,
       center: latLng(48.8514965, 2.3021654),
-      url: "     https://tile.thunderforest.com/mobile-atlas/{z}/{x}/{y}.png?apikey=fbfa5071d3d442f0806a7d5eafa3741b ",
+      url:
+        "https://tile.thunderforest.com/mobile-atlas/{z}/{x}/{y}.png?apikey=fbfa5071d3d442f0806a7d5eafa3741b",
       withPopup: latLng(47.41322, -1.219482),
       withTooltip: latLng(47.41422, -1.250482),
       currentZoom: 11.5,
@@ -55,7 +58,14 @@ export default {
     },
     showLongText() {
       this.showParagraph = !this.showParagraph;
-    },
+    }
   }
 };
 </script>
+
+<style scoped>
+.darkMap {
+  filter: invert(100%) brightness(60%) contrast(80%) hue-rotate(180deg)
+    saturate(130%);
+}
+</style>
