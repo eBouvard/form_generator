@@ -50,7 +50,6 @@ router.post('/:table', async (req, res) => {
         if (e) console.log('ERROR: ' + e);
     });
     let json_data = await sendToParser(newPath)
-    console.log(`Document:${json_data.title}`)
     sendJSONtoDB(table, json_data).then(retDB => {
         const data = { 
             id: retDB

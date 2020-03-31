@@ -47,12 +47,8 @@ export default {
       data.date = new Date();
       data.title = this.form.content.main["0_header"].title;
       data.author = this.getUser();
-      console.log(data);
       api()
         .post("/update/" + this.$store.getters.template + "/" + this.form_id, data)
-        .then(ret => {
-          console.log(ret);
-        })
         .catch(e => {
           console.log(e);
         });
@@ -75,7 +71,6 @@ export default {
     },
     loadForm(form_id) {
       var request = "/read/" + this.$store.getters.template + "/" + form_id;
-      console.log(request);
       api()
         .get(request)
         .then(ret => {
