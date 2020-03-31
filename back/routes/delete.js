@@ -16,9 +16,9 @@ router.get('/table/:name', async (req, res) => {
 
 //Delete a specific JSONobject
 router.get('/:table/:id', async (req, res) => {
-    const table_name = req.params.table
+    const table = req.params.table
     const query = {
-        text: `DELETE FROM ${table} WHERE ${JSON_table}.id = $1`,
+        text: `DELETE FROM ${table} WHERE id = $1`,
         values: [req.params.id]
     }
     const { rowCount } = await db.query(query)

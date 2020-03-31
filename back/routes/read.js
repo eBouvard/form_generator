@@ -29,6 +29,15 @@ router.get('/all/:table', async (req, res) => {
   } else { res.send('Wrong table name')}
 })
 
+//Gat stat for a table
+router.get('/stat/:table', async (req, res) => {
+  const table = req.params.table
+  if (table != undefined) {
+    const { rows } = await db.query(`SELECT count(*) FROM ${table}`)
+    res.send(rows[0]) 
+  } else { res.send('Wrong table name')}
+})
+
 //Read a specific JSON data (specific Table)
 router.get('/:table/:id', async (req, res) => {
   const id = req.params.id
@@ -44,7 +53,6 @@ router.get('/:table/:id', async (req, res) => {
     res.send('Wrong ID')
   }
 })
-
 
 //Read a specific field within a JSON
 router.get('/:table/:id/:field', async (req, res) => {
@@ -62,3 +70,4 @@ router.get('/:table/:id/:field', async (req, res) => {
     res.send('Wrong ID')
   }
 })
+
