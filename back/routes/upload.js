@@ -50,6 +50,9 @@ router.post('/:table', async (req, res) => {
         if (e) console.log('ERROR: ' + e);
     });
     let json_data = await sendToParser(newPath)
+    //Mise a jour de la date et auteur
+    json_data.date = new Date
+    json_data.author = "Parser"
     sendJSONtoDB(table, json_data).then(retDB => {
         const data = { 
             id: retDB
