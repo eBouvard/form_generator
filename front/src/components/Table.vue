@@ -1,6 +1,7 @@
 <template>
   <v-container>
     <v-data-table
+      :key="componentKey"
       :headers="headers"
       :items="forms"
       :items-per-page="10"
@@ -65,6 +66,7 @@ export default {
   name: "Table",
   data() {
     return {
+      componentKey: 0,
       headers: [
         { text: "ID", value: "id" },
         { text: "Titre", value: "title" },
@@ -116,7 +118,7 @@ export default {
     },
     deleteItem(id) {
       api()
-        .get("/delete/json" + this.$store.getters.template + "/" + id)
+        .get("/delete/" + this.$store.getters.template + "/" + id)
         .then(() => {
           this.snackbar = true;
         })
@@ -124,8 +126,8 @@ export default {
           console.log(e);
         });
       this.deleteCheck = { check: false, id: null };
-      this.forms = [];
-      this.init();
+      this.init()
+      this.componentKey += 1
     },
     openItem(id) {
       this.$router.push({
