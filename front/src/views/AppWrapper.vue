@@ -18,7 +18,11 @@
       <div :key="Object.keys($store.getters.templateList).length" class="text-xs-center pa-3">
         <v-menu offset-y>
           <template v-slot:activator="{ on }">
-            <v-btn dark color="secondary" v-on="on">{{ $store.getters.template }}</v-btn>
+            <v-btn dark color="secondary" v-on="on" class="px-3">
+              {{ $store.getters.template }}
+              <v-divider class="mx-2" vertical></v-divider>
+              <v-icon>mdi-menu-down</v-icon>
+            </v-btn>
           </template>
           <v-list>
             <v-list-item
@@ -38,9 +42,7 @@
     <v-row style="flex-wrap: nowrap; height: calc(100vh - 50px)" no-gutters>
       <Menu v-on:item-selected="menuItemSelected"></Menu>
       <v-col v-if="selectedMenuItem.content" height="100%" class="flex-grow-0 flex-shrink-1">
-        <SubMenu
-        v-on:leave-menu="clearItemSelected"
-         :items="selectedMenuItem.content"></SubMenu>
+        <SubMenu v-on:leave-menu="clearItemSelected" :items="selectedMenuItem.content"></SubMenu>
       </v-col>
       <v-col
         style="overflow-y: auto;"
