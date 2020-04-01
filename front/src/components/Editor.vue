@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid>
+  <v-container style="max-width: 90vh" fluid>
     <div v-if="template">
       <v-card>
         <v-card v-if="this.$store.state.template != 'opord'">
