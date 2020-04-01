@@ -2,7 +2,7 @@
   <v-container fill-height>
     <v-row no-gutter>
       <v-col cols="6">
-        <ScopeSelector :key="$store.getters.templateList"></ScopeSelector>
+        <ScopeSelector :key="Object.keys($store.getters.templateList).length"></ScopeSelector>
       </v-col>
       <v-col cols="6">
         <KPI :key="$store.getters.template"></KPI>
