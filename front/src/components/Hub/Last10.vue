@@ -3,7 +3,7 @@
     :headers="headers"
     :items="forms"
     :items-per-page="10"
-    class="elevation-1 text-truncate last-orders"
+    class="elevation-1"
     :loading="loading"
     loading-text="Chargement en cours..."
     dense
