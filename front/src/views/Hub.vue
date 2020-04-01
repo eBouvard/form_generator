@@ -1,13 +1,28 @@
 <template>
   <v-container fill-height>
     <v-row no-gutter>
-      <v-col cols="3">
+      <v-col
+      sm="6"
+      md="3"
+      order-sm="1"
+      order-md="1"
+      >
         <ScopeSelector :key="$store.getters.templateList"></ScopeSelector>
       </v-col>
-      <v-col cols="6">
+      <v-col
+      sm="12"
+      md="6"
+      order-sm="3"
+      order-md="2"
+      >
         <LastOrders :key="$store.getters.template"></LastOrders>
       </v-col>
-      <v-col cols="3">
+      <v-col
+      sm="6"
+      md="3"
+      order-sm="2"
+      order-md="3"
+      >
         <KPI :key="$store.getters.template"></KPI>
       </v-col>
     </v-row>
