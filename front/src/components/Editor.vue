@@ -1,23 +1,32 @@
 <template>
-  <v-container v-if="template" fluid ma-0 pa-0 style="max-width: 700px">
-    <v-card v-if="this.$store.state.template != 'opord'">
-      <v-row class="ma-2" align="center">
-        <v-col cols="6">
-          <v-subheader>Supprimer le contexte</v-subheader>
-        </v-col>
-        <v-col cols="6" align="right">
-          <v-icon class="ma-4" v-on:click="deleteCheck = true" color="error">mdi-trash-can-outline</v-icon>
-        </v-col>
-      </v-row>
-    </v-card>
-    <JsonEditor
-      :options="{
+  <v-container fluid>
+    <div v-if="template">
+      <v-card>
+        <v-card v-if="this.$store.state.template != 'opord'">
+          <v-row class="ma-2" align="center">
+            <v-col cols="6">
+              <v-subheader>Supprimer le contexte</v-subheader>
+            </v-col>
+            <v-col cols="6" align="right">
+              <v-icon
+                class="ma-4"
+                v-on:click="deleteCheck = true"
+                color="error"
+              >mdi-trash-can-outline</v-icon>
+            </v-col>
+          </v-row>
+        </v-card>
+        <JsonEditor
+          :options="{
             confirmText: 'Valider',
             cancelText: 'Annuler',
         }"
-      :objData="template"
-      v-model="template"
-    ></JsonEditor>
+          :objData="template"
+          v-model="template"
+        ></JsonEditor>
+      </v-card>
+    </div>
+    
     <v-dialog v-model="deleteCheck" max-width="900">
       <v-card>
         <v-card-title
@@ -35,7 +44,7 @@
 </template>
 <script>
 import api from "@/service/api";
-import refresh from  "@/service/refresh"
+import refresh from "@/service/refresh";
 
 export default {
   name: "formEditor",
@@ -65,7 +74,7 @@ export default {
         .then(ret => {
           console.log(ret);
           this.deleteCheck = false;
-          refresh('opord')
+          refresh("opord");
           this.$router.push({
             path: "/"
           });
