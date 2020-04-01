@@ -15,7 +15,7 @@
           :old="(old == undefined) ? (undefined) : old[key]"
         ></FormComponent>
       </v-stepper>
-      <v-card v-if="items[key].type === 'category'" class="mt-2">
+      <v-card v-if="items[key].type === 'category'" class="mt-2" outlined>
         <v-card-title class="headline">
           <h4 style="font-weight: 400;">{{ items[key].label }}</h4>
         </v-card-title>

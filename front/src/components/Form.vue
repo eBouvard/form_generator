@@ -9,9 +9,11 @@
       ></FormComponent>
     </v-form>
 
-    <v-speed-dial right bottom fixed>
+    <v-speed-dial right bottom fixed
+        style="margin-right: 2vw; margin-bottom: 2vw;"
+    >
       <template v-slot:activator>
-        <v-btn color="secondary" large fab v-on:click="fab = (fab ? false : true)">
+        <v-btn color="secondary" x-large fab v-on:click="fab = (fab ? false : true)">
           <v-icon v-if="fab">mdi-close</v-icon>
           <v-icon v-else>mdi-content-save</v-icon>
         </v-btn>
@@ -19,7 +21,7 @@
 
       <v-tooltip left>
         <template v-slot:activator="{ on }">
-          <v-btn fab dark small color="green" v-on:click="submitCheck = true" v-on="on">
+          <v-btn fab dark color="green" v-on:click="submitCheck = true" v-on="on">
             <v-icon>mdi-exit-to-app</v-icon>
           </v-btn>
         </template>
@@ -28,7 +30,7 @@
 
       <v-tooltip left>
         <template v-slot:activator="{ on }">
-          <v-btn fab dark small color="indigo" v-on:click="saveStay" v-on="on">
+          <v-btn fab dark color="indigo" v-on:click="saveStay" v-on="on">
             <v-icon>mdi-content-save-edit</v-icon>
           </v-btn>
         </template>
@@ -36,7 +38,7 @@
       </v-tooltip>
     </v-speed-dial>
 
-    <v-dialog v-model="submitCheck" max-width=900>
+    <v-dialog v-model="submitCheck" max-width="900">
       <v-card>
         <v-card-title class="headline">Confirmer l'envoi du formulaire ?</v-card-title>
         <v-card-text>Cette action enregistrera le formulaire en cours et vous renverra à la liste des ordres.</v-card-text>
