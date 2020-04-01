@@ -2,19 +2,18 @@
 <template>
   <v-card height="100%">
     <v-list subheader>
-      <v-subheader>Formulaires</v-subheader>
+      <v-row align="center">
+        <v-col cols="6">
+          <v-subheader>Contextes disponibles</v-subheader>
+        </v-col>
+        <v-col cols="6" align="right">
+          <v-icon
+            class="ma-4"
+            @click="addContext"
+          >mdi-pen</v-icon>
+        </v-col>
+      </v-row>
       <v-list-item v-for="(item, index) in items" :key="index" @click="templateSelected(item)">
-        <v-list-item-avatar>
-          <img
-            v-if="{}.hasOwnProperty.call(avatars, item)"
-            :src="avatars[item]"
-            alt="avatar"
-          />
-          <v-icon v-else>mdi-book</v-icon>
-        </v-list-item-avatar>
-        <v-list-item-content>
-          <v-list-item-title v-text="item.toUpperCase()"></v-list-item-title>
-        </v-list-item-content>
         <v-list-item-icon>
           <v-icon
             v-if="item == $store.getters.template"
@@ -22,6 +21,13 @@
           >mdi-checkbox-blank-circle</v-icon>
           <v-icon v-else :color="'grey'">mdi-checkbox-blank-circle-outline</v-icon>
         </v-list-item-icon>
+        <v-list-item-content class="ml-4">
+          <v-list-item-title v-text="item.toUpperCase()"></v-list-item-title>
+        </v-list-item-content>
+        <v-list-item-avatar>
+          <img v-if="{}.hasOwnProperty.call(avatars, item)" :src="avatars[item]" alt="avatar" />
+          <v-icon v-else>mdi-book</v-icon>
+        </v-list-item-avatar>
       </v-list-item>
     </v-list>
   </v-card>
@@ -44,6 +50,11 @@ export default {
   methods: {
     templateSelected(name) {
       this.$store.commit("SET_TEMPLATE", name);
+    },
+    addContext() {
+      this.$router.push({
+        path: "newTemplate"
+      });
     }
   },
   mounted() {

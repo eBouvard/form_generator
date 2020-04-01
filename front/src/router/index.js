@@ -9,6 +9,7 @@ import Viewer from '@/components/Viewer.vue'
 import Map from '@/components/Map.vue'
 import Upload from '@/components/Upload.vue'
 import Editor from '@/components/Editor.vue' 
+import NewTemplate from '@/components/NewTemplate.vue' 
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,7 @@ const routes = [
 	{ path: '/map', component: Map },
 	{ path: '/upload', component: Upload },
 	{ path: '/formEditor', component: Editor },
+	{ path: '/newTemplate', component: NewTemplate },
 ]
 
 const router = new VueRouter({
