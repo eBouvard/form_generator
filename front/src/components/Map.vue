@@ -69,6 +69,11 @@ export default {
     saturate(130%);
 }
 
+.darkMap >>> .leaflet-bar {
+  box-shadow: 0 1px 5px rgba(255,255,255,0.8);
+  border: black;
+}
+
 .darkMap >>> a {
   color: black;
 }
