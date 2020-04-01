@@ -60,4 +60,8 @@ export default {
   filter: invert(100%) brightness(60%) contrast(80%) hue-rotate(180deg)
     saturate(130%);
 }
+
+.darkMap >>> a {
+  color: black;
+}
 </style>
