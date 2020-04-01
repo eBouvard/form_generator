@@ -37,10 +37,16 @@
 
     <v-row style="flex-wrap: nowrap; height: calc(100vh - 50px)" no-gutters>
       <Menu v-on:item-selected="menuItemSelected"></Menu>
-      <v-col v-if="selectedMenuItem" height="100%" class="flex-grow-0 flex-shrink-1">
-        <SubMenu :items="selectedMenuItem.content"></SubMenu>
+      <v-col v-if="selectedMenuItem.content" height="100%" class="flex-grow-0 flex-shrink-1">
+        <SubMenu
+        v-on:leave-menu="clearItemSelected"
+         :items="selectedMenuItem.content"></SubMenu>
       </v-col>
-      <v-col style="overflow-y: auto;" class="flex-grow-1 flex-shrink-0">
+      <v-col
+        style="overflow-y: auto;"
+        class="flex-grow-1 flex-shrink-0"
+        v-on:click="selectedMenuItem = false"
+      >
         <router-view :key="componentKey"></router-view>
       </v-col>
     </v-row>
@@ -79,6 +85,9 @@ export default {
       } else {
         this.selectedMenuItem = item;
       }
+    },
+    clearItemSelected() {
+      this.selectedMenuItem = false;
     },
     goBlack() {
       this.$store.commit("SET_BLACKTHEME", this.$vuetify.theme.dark);
