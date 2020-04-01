@@ -26,7 +26,7 @@
           </template>
           <v-list>
             <v-list-item
-              v-for="(item, index) in templateList"
+              v-for="(item, index) in Object.keys(this.$store.state.templateList)"
               :key="index"
               @click="templateChange(item)"
             >
@@ -54,7 +54,7 @@
     <v-dialog v-model="settings" max-width="900">
       <v-card>
         <v-card-title class="headline">Paramètres d'Arena</v-card-title>
-        <v-card-text class="mx-2">
+        <v-card-text>
               <v-divider></v-divider>
           <div class="mx-4">
               <v-switch v-model="$vuetify.theme.dark" hide-details @change="goBlack"></v-switch>
@@ -85,8 +85,7 @@ export default {
     return {
       settings: false,
       componentKey: 0,
-      selectedMenuItem: false,
-      templateList: Object.keys(this.$store.state.templateList)
+      selectedMenuItem: false
     };
   },
   methods: {
