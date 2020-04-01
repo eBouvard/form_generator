@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-data-table
-      :key="componentKey"
+      :key="loading"
       :headers="headers"
       :items="forms"
       :items-per-page="10"
@@ -39,7 +39,7 @@
       </template>
     </v-data-table>
 
-    <v-dialog v-model="deleteCheck.check" max-width=900>
+    <v-dialog v-model="deleteCheck.check" max-width="900">
       <v-card>
         <v-card-title class="headline">Confirmer la supression de l'ordre</v-card-title>
         <v-card-text>Cette action supprimera l'ordre de façon définitive.</v-card-text>
@@ -67,7 +67,6 @@ export default {
   name: "Table",
   data() {
     return {
-      componentKey: 0,
       headers: [
         { text: "ID", value: "id" },
         { text: "Titre", value: "title" },
@@ -93,6 +92,8 @@ export default {
   },
   methods: {
     init() {
+      this.forms = [];
+      this.loading = true;
       api()
         .get("/read/all/" + this.$store.getters.template)
         .then(ret => {
@@ -122,13 +123,12 @@ export default {
         .get("/delete/" + this.$store.getters.template + "/" + id)
         .then(() => {
           this.snackbar = true;
+          this.deleteCheck = { check: false, id: null };
+          this.init();
         })
         .catch(e => {
           console.log(e);
         });
-      this.deleteCheck = { check: false, id: null };
-      this.init()
-      this.componentKey += 1
     },
     openItem(id) {
       this.$router.push({

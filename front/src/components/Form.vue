@@ -127,10 +127,11 @@ export default {
       return this.$route.params.origin_id;
     },
     saveExit() {
-      this.submit();
-      this.$refs.to_send.reset();
-      this.$router.push({
-        path: "/list/order/"
+      this.submit().then(() => {
+        this.$refs.to_send.reset();
+        this.$router.push({
+          path: "/list/order"
+        });
       });
     },
     saveStay() {
