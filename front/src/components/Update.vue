@@ -25,7 +25,7 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn text @click="submitCheck = false">Annuler</v-btn>
-          <v-btn text @click="submit">Valider</v-btn>
+          <v-btn text @click="saveExit">Valider</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -51,7 +51,7 @@ export default {
     };
   },
   methods: {
-    submit() {
+    async submit() {
       const data = JSON.parse(JSON.stringify(this.form));
       data.date = new Date();
       data.title = this.form.content.main["0_header"].title;
@@ -64,10 +64,6 @@ export default {
         .catch(e => {
           console.log(e);
         });
-      this.$refs.to_send.reset();
-      this.$router.push({
-        path: "/list/order/"
-      });
     },
     getUser() {
       const user_list = [
@@ -93,6 +89,14 @@ export default {
         .catch(e => {
           console.log(e);
         });
+    },
+    saveExit() {
+      this.submit().then(() => {
+        this.$refs.to_send.reset();
+        this.$router.push({
+          path: "/list/order"
+        });
+      });
     }
   },
   created() {

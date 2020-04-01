@@ -13,7 +13,7 @@
           <v-icon v-else>mdi-book</v-icon>
         </v-list-item-avatar>
         <v-list-item-content>
-          <v-list-item-title v-text="item.toUpperCase()"></v-list-item-title>
+          <v-list-item-title v-text="item.toUpperCase().replace(/_/g, ' ')"></v-list-item-title>
         </v-list-item-content>
         <v-list-item-icon>
           <v-icon
