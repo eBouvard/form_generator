@@ -5,11 +5,20 @@
         <FormComponent :items="template" :root="form.content.main"></FormComponent>
       </v-form>
 
-      <v-btn color="secondary" large fixed right bottom fab v-on:click="submitCheck = true">
+      <v-btn
+        color="secondary"
+        large
+        fixed
+        right
+        bottom
+        fab
+        v-on:click="submitCheck = true"
+        style="margin-right: 3vw; margin-bottom: 2vw;"
+      >
         <v-icon>mdi-content-save</v-icon>
       </v-btn>
     </div>
-    <v-dialog v-model="submitCheck" max-width=900>
+    <v-dialog v-model="submitCheck" max-width="900">
       <v-card>
         <v-card-title class="headline">Confirmer la modification du formulaire ?</v-card-title>
         <v-card-text>Cette action enregistrera les modifications apportées au formulaire en cours et vous renverra à la liste des ordres.</v-card-text>
@@ -48,7 +57,10 @@ export default {
       data.title = this.form.content.main["0_header"].title;
       data.author = this.getUser();
       api()
-        .post("/update/" + this.$store.getters.template + "/" + this.form_id, data)
+        .post(
+          "/update/" + this.$store.getters.template + "/" + this.form_id,
+          data
+        )
         .catch(e => {
           console.log(e);
         });

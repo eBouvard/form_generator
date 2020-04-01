@@ -9,7 +9,9 @@
       ></FormComponent>
     </v-form>
 
-    <v-speed-dial right bottom fixed>
+    <v-speed-dial right bottom fixed
+    style="margin-right: 3vw; margin-bottom: 2vw;"
+    >
       <template v-slot:activator>
         <v-btn color="secondary" large fab v-on:click="fab = (fab ? false : true)">
           <v-icon v-if="fab">mdi-close</v-icon>
@@ -36,7 +38,7 @@
       </v-tooltip>
     </v-speed-dial>
 
-    <v-dialog v-model="submitCheck" max-width=900>
+    <v-dialog v-model="submitCheck" max-width="900">
       <v-card>
         <v-card-title class="headline">Confirmer l'envoi du formulaire ?</v-card-title>
         <v-card-text>Cette action enregistrera le formulaire en cours et vous renverra à la liste des ordres.</v-card-text>
