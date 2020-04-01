@@ -1,14 +1,14 @@
 <template>
   <v-container fill-height>
     <v-row no-gutter>
-      <v-col>
-        <ScopeSelector></ScopeSelector>
+      <v-col cols="3">
+        <ScopeSelector :key="$store.getters.templateList"></ScopeSelector>
       </v-col>
-      <v-col>
+      <v-col cols="6">
         <LastOrders :key="$store.getters.template"></LastOrders>
       </v-col>
-      <v-col>
-        <KPI></KPI>
+      <v-col cols="3">
+        <KPI :key="$store.getters.template"></KPI>
       </v-col>
     </v-row>
     <v-row>
