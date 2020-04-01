@@ -2,6 +2,7 @@
   <v-container fluid>
     <v-form ref="to_send">
       <FormComponent
+        :key="$store.getters.template"
         v-if="form"
         :items="template"
         :root="form.content.main"
@@ -9,9 +10,7 @@
       ></FormComponent>
     </v-form>
 
-    <v-speed-dial right bottom fixed
-        style="margin-right: 2vw; margin-bottom: 2vw;"
-    >
+    <v-speed-dial right bottom fixed style="margin-right: 2vw; margin-bottom: 2vw;">
       <template v-slot:activator>
         <v-btn color="secondary" x-large fab v-on:click="fab = (fab ? false : true)">
           <v-icon v-if="fab">mdi-close</v-icon>
