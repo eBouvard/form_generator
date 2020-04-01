@@ -18,7 +18,11 @@
       <div :key="Object.keys($store.getters.templateList).length" class="text-xs-center pa-3">
         <v-menu offset-y>
           <template v-slot:activator="{ on }">
-            <v-btn dark color="secondary" v-on="on">{{ $store.getters.template }}</v-btn>
+            <v-btn dark color="secondary" v-on="on" class="px-3">
+              {{ $store.getters.template }}
+              <v-divider class="mx-2" vertical></v-divider>
+              <v-icon>mdi-menu-down</v-icon>
+            </v-btn>
           </template>
           <v-list>
             <v-list-item
@@ -31,16 +35,12 @@
           </v-list>
         </v-menu>
       </div>
-
-      <v-switch v-model="$vuetify.theme.dark" hide-details @change="goBlack"></v-switch>
     </v-app-bar>
 
     <v-row style="flex-wrap: nowrap; height: calc(100vh - 50px)" no-gutters>
-      <Menu v-on:item-selected="menuItemSelected"></Menu>
+      <Menu v-on:open-settings="settings = true" v-on:item-selected="menuItemSelected"></Menu>
       <v-col v-if="selectedMenuItem.content" height="100%" class="flex-grow-0 flex-shrink-1">
-        <SubMenu
-        v-on:leave-menu="clearItemSelected"
-         :items="selectedMenuItem.content"></SubMenu>
+        <SubMenu v-on:leave-menu="clearItemSelected" :items="selectedMenuItem.content"></SubMenu>
       </v-col>
       <v-col
         style="overflow-y: auto;"
@@ -50,6 +50,24 @@
         <router-view :key="componentKey"></router-view>
       </v-col>
     </v-row>
+
+    <v-dialog v-model="settings" max-width="900">
+      <v-card>
+        <v-card-title class="headline">Paramètres d'Arena</v-card-title>
+        <v-card-text class="mx-2">
+              <v-divider></v-divider>
+          <div class="mx-4">
+              <v-switch v-model="$vuetify.theme.dark" hide-details @change="goBlack"></v-switch>
+              <p class="mt-3">Thème sombre : {{ ($store.state.blackTheme) ? "activé" : "desactivé" }}</p>
+          </div>
+              <v-divider></v-divider>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn text @click="settings = false">Valider</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </v-container>
 </template>
 <script>
@@ -65,6 +83,7 @@ export default {
   },
   data() {
     return {
+      settings: false,
       componentKey: 0,
       selectedMenuItem: false,
       templateList: Object.keys(this.$store.state.templateList)
