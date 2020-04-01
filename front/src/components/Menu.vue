@@ -50,12 +50,6 @@ export default {
           ]
         },
         {
-          title: "map",
-          icon: "mdi-earth",
-          menu: "map",
-          path: "/map"
-        },
-        {
           title: "upload",
           icon: "mdi-upload",
           menu: "upload",
@@ -66,6 +60,12 @@ export default {
           icon: "mdi-tune",
           menu: "editor",
           path: "/formEditor"
+        },
+        {
+          title: "map",
+          icon: "mdi-earth",
+          menu: "map",
+          path: "/map"
         }
       ]
     };

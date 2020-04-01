@@ -64,7 +64,7 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn text @click="settings = false">Valider</v-btn>
+          <v-btn class="ma-2" text @click="settings = false" color="primary">Valider</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
