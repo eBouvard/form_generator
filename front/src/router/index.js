@@ -20,7 +20,7 @@ const routes = [
 	{ path: '/view/order/:form_id', component: Viewer },
 	{ path: '/map', component: Map },
 	{ path: '/upload', component: Upload },
-	{ path: '/editor', component: Editor },
+	{ path: '/formEditor', component: Editor },
 ]
 
 const router = new VueRouter({
