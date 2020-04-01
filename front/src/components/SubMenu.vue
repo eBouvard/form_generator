@@ -1,6 +1,6 @@
 <template>
-  <v-container class="ma-0 pa-0">
-    <v-list-item-group >
+  <div @focusout="handleFocusOut" tabindex="0">
+    <v-list-item-group v-if="(items) && (items.length > 0)">
       <v-list nav>
         <v-list-item
           :ripple="false"
@@ -17,7 +17,7 @@
         </v-list-item>
       </v-list>
     </v-list-item-group>
-  </v-container>
+  </div>
 </template>
 
 <script>
@@ -31,7 +31,12 @@ export default {
   },
   methods: {
     selectPath(item) {
-      this.$router.push({ path: item.path });
+      const path = item.path;
+      this.$emit("leave-menu");
+      this.$router.push({ path: path });
+    },
+    handleFocusOut() {
+      this.$emit("leave-menu");
     }
   }
 };
