@@ -43,7 +43,7 @@ export default {
         },
         { title: "map", icon: "mdi-earth", menu: "map", path: "/map" },
         { title: "upload", icon: "mdi-upload", menu: "upload", path: "/upload" },
-        { title: "editor", icon: "mdi-tune", menu: "editor", path: "/editor" }
+        { title: "editor", icon: "mdi-tune", menu: "editor", path: "/formEditor" }
       ]
     };
   },

@@ -26,7 +26,7 @@
               :key="index"
               @click="templateChange(item)"
             >
-              <v-list-item-title>{{ item.toUpperCase().replace(/_/g, ' ') }}</v-list-item-title>
+              <v-list-item-title>{{ item.toUpperCase() }}</v-list-item-title>
             </v-list-item>
           </v-list>
         </v-menu>
