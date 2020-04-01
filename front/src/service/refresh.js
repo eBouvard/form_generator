@@ -1,6 +1,7 @@
 import api from '@/service/api'
+import store from '@/service/store'
 
-export default function () {
+export default function (templateName) {
     api()
         .get("/read/all/template")
         .then(ret => {
@@ -9,7 +10,8 @@ export default function () {
             raw.forEach(element => {
                 list[element.name] = element.data;
             });
-            this.$store.commit("SET_TEMPLATELIST", list);
+            store.commit("SET_TEMPLATELIST", list);
+            store.commit("SET_TEMPLATE", templateName);
         })
         .catch(e => {
             console.log(e);

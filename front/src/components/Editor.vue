@@ -1,6 +1,6 @@
 <template>
   <v-container v-if="template" fluid ma-0 pa-0 style="max-width: 700px">
-    <v-card>
+    <v-card v-if="this.$store.state.template != 'opord'">
       <v-row class="ma-2" align="center">
         <v-col cols="6">
           <v-subheader>Supprimer le contexte</v-subheader>
@@ -65,7 +65,7 @@ export default {
         .then(ret => {
           console.log(ret);
           this.deleteCheck = false;
-          refresh()
+          refresh('opord')
           this.$router.push({
             path: "/"
           });

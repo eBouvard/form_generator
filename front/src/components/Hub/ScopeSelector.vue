@@ -10,7 +10,7 @@
           <v-icon
             class="ma-4"
             @click="addContext"
-          >mdi-pen</v-icon>
+          >shape-square-plus</v-icon>
         </v-col>
       </v-row>
       <v-list-item v-for="(item, index) in items" :key="index" @click="templateSelected(item)">

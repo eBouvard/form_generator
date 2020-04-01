@@ -38,13 +38,11 @@ export default {
   methods: {
     validate() {
       this.$refs.form.validate();
-      console.log(this.form)
-      console.log(this.name)
       const name = this.name;
       const newTemplate = this.newTemplate;
       api()
         .post("/create/template/" + name, newTemplate).then(() => {
-          refresh()
+          refresh(name)
           this.$router.push({
             path: "/"
           });
