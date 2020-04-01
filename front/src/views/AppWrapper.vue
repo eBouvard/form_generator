@@ -1,6 +1,6 @@
 <template>
   <v-container fluid class="overflow-hidden ma-0 pa-0">
-    <v-app-bar class="white--text" height="50px" color="primary">
+    <v-app-bar class="white--text" height="50px" :color="($store.state.blackTheme) ? '#300000' : 'primary'">
       <v-avatar>
         <img src="@/assets/logo.png" alt="logo" />
       </v-avatar>
@@ -23,7 +23,7 @@
           </v-list>
         </v-menu>
       </div>
-      <v-switch color="#500000" v-model="$vuetify.theme.dark" hide-details @change="goBlack"></v-switch>
+      <v-switch v-model="$vuetify.theme.dark" hide-details @change="goBlack"></v-switch>
     </v-app-bar>
     <v-row style="flex-wrap: nowrap; height: calc(100vh - 50px)" no-gutters>
       <Menu v-on:item-selected="menuItemSelected"></Menu>
