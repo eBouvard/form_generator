@@ -12,30 +12,13 @@
       <template v-slot:item.score="{ item }">
         <v-progress-linear v-if="item.score" color="primary" :value="item.score" rounded></v-progress-linear>
       </template>
-      <template v-slot:item.open="{ item }">
-        <v-btn class="ma-2" icon small right>
-          <v-icon v-on:click="openItem(item.id)">mdi-eye-outline</v-icon>
-        </v-btn>
-      </template>
-      <template v-slot:item.modify="{ item }">
-        <v-btn class="ma-2" icon small right>
-          <v-icon v-on:click="updateItem(item.id)">mdi-pencil-plus</v-icon>
-        </v-btn>
-      </template>
-      <template v-slot:item.new_from="{ item }">
-        <v-btn class="ma-2" icon small right>
-          <v-icon v-on:click="newFromItem(item.id)">mdi-arrow-right-bold</v-icon>
-        </v-btn>
-      </template>
-      <template v-slot:item.copy="{ item }">
-        <v-btn class="ma-2" icon small right>
-          <v-icon v-on:click="copyItem(item.id)">mdi-content-copy</v-icon>
-        </v-btn>
-      </template>
-      <template v-slot:item.delete="{ item }">
-        <v-btn class="ma-2" icon small right>
-          <v-icon v-on:click="deleteCheck = { check: true, id: item.id }">mdi-trash-can-outline</v-icon>
-        </v-btn>
+
+      <template v-slot:item.actions="{ item }">
+        <v-icon small class="mr-2" v-on:click="openItem(item.id)">mdi-eye-outline</v-icon>
+        <v-icon small class="mr-2" v-on:click="updateItem(item.id)">mdi-pencil</v-icon>
+        <v-icon small class="mr-2" v-on:click="newFromItem(item.id)">mdi-arrow-right-bold</v-icon>
+        <v-icon small class="mr-2" v-on:click="copyItem(item.id)">mdi-content-copy</v-icon>
+        <v-icon small v-on:click="deleteCheck = { check: true, id: item.id }">mdi-trash-can-outline</v-icon>
       </template>
     </v-data-table>
 
@@ -73,11 +56,7 @@ export default {
         { text: "Auteur", value: "authors" },
         { text: "Date", value: "date" },
         { text: "Score", value: "score" },
-        { text: "", value: "open" },
-        { text: "", value: "modify" },
-        { text: "", value: "new_from" },
-        { text: "", value: "copy" },
-        { text: "", value: "delete" }
+        { text: "Actions", value: "actions", sortable: false }
       ],
       optionsList: [
         { title: "Ouvrir", action: this.openItem },
