@@ -1,0 +1,47 @@
+{
+    "chapter": {
+        "type": "chapter",
+        "label": "Exemple de chapitre",
+        "content": {
+            "cate": {
+                "type": "category",
+                "label": "Exemple de catégorie",
+                "content": {
+                    "small_text": {
+                        "type": "small_text",
+                        "label": "Exemple de champ de texte court"
+                    },
+                    "large_text": {
+                        "type": "large_text",
+                        "label": "Exemple de champ de texte long"
+                    },
+                    "date": {
+                        "type": "date",
+                        "label": "Exemple de champ de date"
+                    },
+                    "autocomplete": {
+                        "type": "autocomplete",
+                        "list": [
+                            {
+                                "name": "Proposition 1",
+                                "abbr": "Abreviation de la proposition 1",
+                                "id": 0
+                            },
+                            {
+                                "name": "Proposition 2",
+                                "abbr": "Abreviation de la proposition 2",
+                                "id": 1
+                            },
+                            {
+                                "name": "Proposition 3",
+                                "abbr": "Abreviation de la proposition 3",
+                                "id": 2
+                            }
+                        ],
+                        "label": "Exemple de champ de texte avec auto-completion"
+                    }
+                }
+            }
+        }
+    }
+}

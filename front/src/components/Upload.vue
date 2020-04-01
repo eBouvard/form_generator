@@ -2,6 +2,7 @@
   <v-container>
     <v-card text-center wrap class="ma-1 pa-2">
       <v-file-input
+        :disabled="$store.getters.template != 'opord'"
         v-model="uploadFile"
         id="upload"
         prepend-icon="mdi-file"
@@ -13,6 +14,12 @@
         hint="doc/docx et pdf seulement. L'import peut prendre plusieurs minutes."
       ></v-file-input>
     </v-card>
+    <v-alert
+      type="warning"
+      dismissible
+      class="mt-5"
+      v-if="$store.getters.template != 'opord'"
+    >Le template {{ $store.getters.template.toUpperCase() }} n'est pas compatible avec le parser.</v-alert>
   </v-container>
 </template>
 

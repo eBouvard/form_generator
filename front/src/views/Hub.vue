@@ -1,18 +1,18 @@
 <template>
   <v-container fill-height>
     <v-row no-gutter>
-      <v-col>
-        <ScopeSelector></ScopeSelector>
+      <v-col cols="6">
+        <ScopeSelector :key="Object.keys($store.getters.templateList).length"></ScopeSelector>
       </v-col>
-      <v-col>
+      <v-col cols="6">
+        <KPI :key="$store.getters.template"></KPI>
+      </v-col>
+      <v-col cols="12">
         <LastOrders :key="$store.getters.template"></LastOrders>
-      </v-col>
-      <v-col>
-        <KPI></KPI>
       </v-col>
     </v-row>
     <v-row>
-      <v-col align-self="center">
+      <v-col align-self="center" cols="12">
         <MiniMap></MiniMap>
       </v-col>
     </v-row>

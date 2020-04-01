@@ -37,8 +37,12 @@ router.post('/template/:name', async (req, res) => {
             values: [name, json_data]
         }
         const { rows } = await db.query(query)
-        const ret = rows[0].id
-        res.send(ret === undefined ? 'Error' : ret.toString())
+        const ret1 = rows[0].id
+        const queryJSONTable = {
+            text: `CREATE TABLE ${name} (id SERIAL PRIMARY KEY, data JSONB)`,
+        }
+        const ret2  = await db.query(queryJSONTable)
+        res.send(ret1 != undefined && ret2 != undefined? 'OK' : ret)
     } else {
         res.send('Wrong request: no JSON data or template name')
     }

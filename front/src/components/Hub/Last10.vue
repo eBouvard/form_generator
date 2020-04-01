@@ -1,22 +1,20 @@
 <template>
-  <v-container fluid>
-    <v-data-table
-      :headers="headers"
-      :items="forms"
-      :items-per-page="10"
-      class="elevation-1 text-truncate last-orders"
-      :loading="loading"
-      loading-text="Chargement en cours..."
-      dense
-      hide-default-footer
-    >
-      <template v-slot:item.open="{ item }">
-        <v-btn class="ma-2" icon x-small right>
-          <v-icon v-on:click="openItem(item.id)">mdi-eye-outline</v-icon>
-        </v-btn>
-      </template>
-    </v-data-table>
-  </v-container>
+  <v-data-table
+    :headers="headers"
+    :items="forms"
+    :items-per-page="10"
+    class="elevation-1"
+    :loading="loading"
+    loading-text="Chargement en cours..."
+    dense
+    hide-default-footer
+  >
+    <template v-slot:item.open="{ item }">
+      <v-btn class="ma-2" icon x-small right>
+        <v-icon v-on:click="openItem(item.id)">mdi-eye-outline</v-icon>
+      </v-btn>
+    </template>
+  </v-data-table>
 </template>
 
 <script>

@@ -1,40 +1,44 @@
 
 <template>
-  <v-card max-width="500" class="mx-auto">
+  <v-card height="100%">
     <v-list subheader>
-      <v-subheader>Formulaires</v-subheader>
-      <v-list-item v-for="item in items" :key="item.title" @click="templateSelected(item.name)">
-        <v-list-item-avatar>
-          <img
-            v-if="{}.hasOwnProperty.call(avatars, item.name)"
-            :src="avatars[item.name]"
-            alt="avatar"
-          />
-          <v-icon v-else>mdi-book</v-icon>
-        </v-list-item-avatar>
-        <v-list-item-content>
-          <v-list-item-title v-text="item.name.toUpperCase()"></v-list-item-title>
-        </v-list-item-content>
+      <v-row align="center">
+        <v-col cols="6">
+          <v-subheader>Contextes disponibles</v-subheader>
+        </v-col>
+        <v-col cols="6" align="right">
+          <v-icon
+            class="ma-4"
+            @click="addContext"
+          >mdi-shape-square-plus</v-icon>
+        </v-col>
+      </v-row>
+      <v-list-item v-for="(item, index) in items" :key="index" @click="templateSelected(item)">
         <v-list-item-icon>
           <v-icon
-            v-if="item.name == $store.getters.template"
-            :color="($store.state.blackTheme) ? 'white' : 'primary'"
+            v-if="item == $store.getters.template"
+            :color="'primary'"
           >mdi-checkbox-blank-circle</v-icon>
           <v-icon v-else :color="'grey'">mdi-checkbox-blank-circle-outline</v-icon>
         </v-list-item-icon>
+        <v-list-item-content class="ml-4">
+          <v-list-item-title v-text="item.toUpperCase()"></v-list-item-title>
+        </v-list-item-content>
+        <v-list-item-avatar>
+          <img v-if="{}.hasOwnProperty.call(avatars, item)" :src="avatars[item]" alt="avatar" />
+          <v-icon v-else>mdi-book</v-icon>
+        </v-list-item-avatar>
       </v-list-item>
     </v-list>
   </v-card>
 </template>
 
 <script>
-import api from "@/service/api";
-
 export default {
   name: "FilterList",
   data() {
     return {
-      items: [],
+      items: {},
       avatars: {
         opord:
           "https://ecoledeguerre.paris/wp-content/uploads/2018/07/Logo_Ecole_de_guerre_def-accueil.png",
@@ -47,21 +51,14 @@ export default {
     templateSelected(name) {
       this.$store.commit("SET_TEMPLATE", name);
     },
-    loadForm() {
-      var request = "/read/all/template";
-      api()
-        .get(request)
-        .then(ret => {
-          this.items = ret.data;
-          console.log(ret);
-        })
-        .catch(e => {
-          console.log(e);
-        });
+    addContext() {
+      this.$router.push({
+        path: "newTemplate"
+      });
     }
   },
   mounted() {
-    this.loadForm();
+    this.items = Object.keys(this.$store.state.templateList);
   }
 };
 </script>

@@ -1,39 +1,73 @@
 <template>
   <v-container fluid class="overflow-hidden ma-0 pa-0">
-    <v-app-bar class="white--text" height="50px" color="primary">
+    <v-app-bar
+      class="white--text"
+      height="50px"
+      :color="($store.state.blackTheme) ? '#300000' : 'primary'"
+    >
       <v-avatar>
         <img src="@/assets/logo.png" alt="logo" />
       </v-avatar>
+
       <v-spacer></v-spacer>
+
       <v-toolbar-title>BlueTeam - Projet Arena</v-toolbar-title>
+
       <v-spacer></v-spacer>
-      <div class="text-xs-center pa-3">
+
+      <div :key="Object.keys($store.getters.templateList).length" class="text-xs-center pa-3">
         <v-menu offset-y>
           <template v-slot:activator="{ on }">
-            <v-btn dark color="secondary" v-on="on">{{ $store.getters.template }}</v-btn>
+            <v-btn dark color="secondary" v-on="on" class="px-3">
+              {{ $store.getters.template }}
+              <v-divider class="mx-2" vertical></v-divider>
+              <v-icon>mdi-menu-down</v-icon>
+            </v-btn>
           </template>
           <v-list>
             <v-list-item
-              v-for="(item, index) in templateList"
+              v-for="(item, index) in Object.keys(this.$store.state.templateList)"
               :key="index"
-              @click="templateChange(item.value)"
+              @click="templateChange(item)"
             >
-              <v-list-item-title>{{ item.name }}</v-list-item-title>
+              <v-list-item-title>{{ item.toUpperCase() }}</v-list-item-title>
             </v-list-item>
           </v-list>
         </v-menu>
       </div>
-      <v-switch color="#500000" v-model="$vuetify.theme.dark" hide-details @change="goBlack"></v-switch>
     </v-app-bar>
+
     <v-row style="flex-wrap: nowrap; height: calc(100vh - 50px)" no-gutters>
-      <Menu v-on:item-selected="menuItemSelected"></Menu>
-      <v-col v-if="selectedMenuItem" height="100%" class="flex-grow-0 flex-shrink-1">
-        <SubMenu :items="selectedMenuItem.content"></SubMenu>
+      <Menu v-on:open-settings="settings = true" v-on:item-selected="menuItemSelected"></Menu>
+      <v-col v-if="selectedMenuItem.content" height="100%" class="flex-grow-0 flex-shrink-1">
+        <SubMenu v-on:leave-menu="clearItemSelected" :items="selectedMenuItem.content"></SubMenu>
       </v-col>
-      <v-col style="overflow-y: auto;" class="flex-grow-1 flex-shrink-0">
-        <router-view :key="componentKey" ></router-view>
+      <v-col
+        style="overflow-y: auto;"
+        class="flex-grow-1 flex-shrink-0"
+        v-on:click="selectedMenuItem = false"
+      >
+        <router-view :key="componentKey"></router-view>
       </v-col>
     </v-row>
+
+    <v-dialog v-model="settings" max-width="900">
+      <v-card>
+        <v-card-title class="headline">Paramètres d'Arena</v-card-title>
+        <v-card-text>
+              <v-divider></v-divider>
+          <div class="mx-4">
+              <v-switch v-model="$vuetify.theme.dark" hide-details @change="goBlack"></v-switch>
+              <p class="mt-3">Thème sombre : {{ ($store.state.blackTheme) ? "activé" : "desactivé" }}</p>
+          </div>
+              <v-divider></v-divider>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn class="ma-2" text @click="settings = false" color="primary">Valider</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </v-container>
 </template>
 <script>
@@ -49,12 +83,9 @@ export default {
   },
   data() {
     return {
+      settings: false,
       componentKey: 0,
-      selectedMenuItem: false,
-      templateList: [
-        { name: "OPORD", value: "opord" },
-        { name: "COVID Report", value: "covid" }
-      ]
+      selectedMenuItem: false
     };
   },
   methods: {
@@ -73,11 +104,14 @@ export default {
         this.selectedMenuItem = item;
       }
     },
+    clearItemSelected() {
+      this.selectedMenuItem = false;
+    },
     goBlack() {
       this.$store.commit("SET_BLACKTHEME", this.$vuetify.theme.dark);
     },
     templateChange(name) {
-      this.$store.commit("SET_TEMPLATE", name)
+      this.$store.commit("SET_TEMPLATE", name);
       this.componentKey += 1;
     }
   }

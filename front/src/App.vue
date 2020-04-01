@@ -24,7 +24,7 @@ export default {
       .get("/read/all/template")
       .then(ret => {
         const raw = ret.data;
-        const list = [];
+        const list = {};
         raw.forEach(element => {
           list[element.name] = element.data;
         });

@@ -1,13 +1,15 @@
 <template>
   <v-card height="100%" width="100%">
     <l-map
+      :key="$store.state.blackTheme"
+      :class="{'darkMap': $store.state.blackTheme}"
       v-if="showMap"
       :zoom="zoom"
       :center="center"
       :options="mapOptions"
       @update:center="centerUpdate"
       @update:zoom="zoomUpdate"
-  style="z-index: 0; height: 50vh;"
+      style="z-index: 0; height: 50vh;"
     >
       <l-tile-layer :url="url" />
     </l-map>
@@ -52,3 +54,19 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.darkMap {
+  filter: invert(100%) brightness(60%) contrast(80%) hue-rotate(180deg)
+    saturate(130%);
+}
+
+.darkMap >>> .leaflet-bar {
+  box-shadow: 0 1px 5px rgba(255,255,255,0.8);
+  border: black 1px solid;
+}
+
+.darkMap >>> a {
+  color: black;
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <v-container style="max-width: 1000px">
+  <v-container style="max-width: 90vh">
     <div v-for="key in Object.keys(items)" :key="key">
       <v-stepper v-if="items[key].type === 'chapter'" :v-model="root[key]" class="mb-2" vertical>
         <v-card-title class="headline">
@@ -15,7 +15,7 @@
           :old="(old == undefined) ? (undefined) : old[key]"
         ></FormComponent>
       </v-stepper>
-      <v-card v-if="items[key].type === 'category'" class="mt-2">
+      <v-card v-if="items[key].type === 'category'" class="mt-2" outlined>
         <v-card-title class="headline">
           <h4 style="font-weight: 400;">{{ items[key].label }}</h4>
         </v-card-title>

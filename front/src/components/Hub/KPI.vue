@@ -1,12 +1,12 @@
 
 <template>
-  <v-card max-width="500" class="mx-auto">
+  <v-card height="100%">
     <v-card-text>
       <v-row align="center">
-        <v-col class="subtitle" cols="6"># total de formulaires</v-col>
+        <v-col class="subtitle">Total de formulaires</v-col>
       </v-row>
       <v-row align="center">
-        <v-col class="display-3" cols="6">{{totalForms}}</v-col>
+        <v-col class="display-3">{{totalForms}}</v-col>
       </v-row>
     </v-card-text>
   </v-card>

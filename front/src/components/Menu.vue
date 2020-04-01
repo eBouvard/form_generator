@@ -12,6 +12,9 @@
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
         </v-list-item>
+        <v-list-item :ripple="false" @click="openSettings()">
+          <v-icon>mdi-cogs</v-icon>
+        </v-list-item>
       </v-list>
     </v-list-item-group>
   </v-navigation-drawer>
@@ -23,7 +26,12 @@ export default {
   data() {
     return {
       items: [
-        { title: "home", icon: "mdi-home", menu: "home", path: "/" },
+        {
+          title: "home",
+          icon: "mdi-home",
+          menu: "home",
+          path: "/"
+        },
         {
           title: "form",
           icon: "mdi-file-document",
@@ -41,15 +49,33 @@ export default {
             }
           ]
         },
-        { title: "map", icon: "mdi-earth", menu: "map", path: "/map" },
-        { title: "upload", icon: "mdi-upload", menu: "upload", path: "/upload" },
-        { title: "editor", icon: "mdi-tune", menu: "editor", path: "/formEditor" }
+        {
+          title: "upload",
+          icon: "mdi-upload",
+          menu: "upload",
+          path: "/upload"
+        },
+        {
+          title: "editor",
+          icon: "mdi-tune",
+          menu: "editor",
+          path: "/formEditor"
+        },
+        {
+          title: "map",
+          icon: "mdi-earth",
+          menu: "map",
+          path: "/map"
+        }
       ]
     };
   },
   methods: {
     selectItem(item) {
       this.$emit("item-selected", item);
+    },
+    openSettings() {
+      this.$emit("open-settings");
     }
   }
 };
