@@ -31,9 +31,13 @@ export default {
   },
   methods: {
     selectPath(item) {
-      const path = item.path;
+      if (
+        item.path != undefined &&
+        item.path != this.$router.currentRoute.path
+      ) {
+        this.$router.push({ path: item.path });
+      }
       this.$emit("leave-menu");
-      this.$router.push({ path: path });
     },
     handleFocusOut() {
       this.$emit("leave-menu");
