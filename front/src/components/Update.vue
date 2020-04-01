@@ -7,13 +7,13 @@
 
       <v-btn
         color="secondary"
-        large
+        x-large
         fixed
         right
         bottom
         fab
         v-on:click="submitCheck = true"
-        style="margin-right: 3vw; margin-bottom: 2vw;"
+        style="margin-right: 2vw; margin-bottom: 2vw;"
       >
         <v-icon>mdi-content-save</v-icon>
       </v-btn>
