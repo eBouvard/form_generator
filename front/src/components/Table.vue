@@ -118,7 +118,9 @@ export default {
           const array = [];
           raw.forEach(element => {
             const date = moment(element.data.date).fromNow();
-            const score = Math.ceil(element.data.conformity * 100);
+            console.log(element.data.conformity)
+            //Supprimer le x4
+            const score = Math.ceil(element.data.conformity * 100) * 4;
             const newline = {
               id: element.id,
               title: element.data.title,
