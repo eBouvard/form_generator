@@ -69,7 +69,6 @@ def make_dic(parsed_text, annexes, list_of_titles, fuzzy=True, thresh=50):
 
 def conformity_stat(flat_dic):
     list_title_empty = []
-    list_content_empty = []
     list_total = []
     for title in list(flat_dic.keys()):
         list_title_empty.append(len(list(i for i in list(flat_dic[title].values()) if i == '')))
