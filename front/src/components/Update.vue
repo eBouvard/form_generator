@@ -66,7 +66,7 @@ export default {
         });
       this.$refs.to_send.reset();
       this.$router.push({
-        path: "/list/order/"
+        path: "/list/order"
       });
     },
     getUser() {

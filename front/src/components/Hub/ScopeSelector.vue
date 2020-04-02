@@ -17,7 +17,7 @@
         <v-list-item-icon>
           <v-icon
             v-if="item == $store.getters.template"
-            :color="'primary'"
+            :color="($store.state.blackTheme) ? 'white' : 'primary'"
           >mdi-checkbox-blank-circle</v-icon>
           <v-icon v-else :color="'grey'">mdi-checkbox-blank-circle-outline</v-icon>
         </v-list-item-icon>
