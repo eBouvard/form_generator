@@ -16,7 +16,7 @@
       <template v-slot:item.actions="{ item }">
         <v-tooltip bottom>
           <template v-slot:activator="{ on }">
-            <v-btn class="mr-2" v-on="on" v-on:click="openItem(item.id)" icon>
+            <v-btn class="pa-1 small" v-on="on" v-on:click="openItem(item.id)" icon>
               <v-icon small>mdi-eye-outline</v-icon>
             </v-btn>
           </template>
@@ -24,7 +24,7 @@
         </v-tooltip>
         <v-tooltip bottom>
           <template v-slot:activator="{ on }">
-            <v-btn class="mr-2" v-on="on" v-on:click="updateItem(item.id)" icon>
+            <v-btn class="pa-1 small" v-on="on" v-on:click="updateItem(item.id)" icon>
               <v-icon small>mdi-pencil</v-icon>
             </v-btn>
           </template>
@@ -32,7 +32,7 @@
         </v-tooltip>
         <v-tooltip bottom>
           <template v-slot:activator="{ on }">
-            <v-btn class="mr-2" v-on="on" v-on:click="newFromItem(item.id)" icon>
+            <v-btn class="pa-1 small" v-on="on" v-on:click="newFromItem(item.id)" icon>
               <v-icon small>mdi-arrow-right-bold</v-icon>
             </v-btn>
           </template>
@@ -40,7 +40,7 @@
         </v-tooltip>
         <v-tooltip bottom>
           <template v-slot:activator="{ on }">
-            <v-btn class="mr-2" v-on="on" v-on:click="copyItem(item.id)" icon>
+            <v-btn class="pa-1 small" v-on="on" v-on:click="copyItem(item.id)" icon>
               <v-icon small>mdi-content-copy</v-icon>
             </v-btn>
           </template>
@@ -49,7 +49,7 @@
         <v-tooltip bottom>
           <template v-slot:activator="{ on }">
             <v-btn
-              class="mr-2"
+              class="pa-1 small"
               v-on="on"
               v-on:click="deleteCheck = { check: true, id: item.id }"
               icon
@@ -61,7 +61,6 @@
         </v-tooltip>
       </template>
     </v-data-table>
-
     <v-dialog v-model="deleteCheck.check" max-width="900">
       <v-card>
         <v-card-title class="headline">Confirmer la supression de l'ordre</v-card-title>
@@ -91,7 +90,6 @@ export default {
   data() {
     return {
       headers: [
-        { text: "ID", value: "id" },
         { text: "Titre", value: "title" },
         { text: "Auteur", value: "authors" },
         { text: "Date", value: "date" },

@@ -23,7 +23,7 @@
     </template>
 
     <template v-slot:item.open="{ item }">
-      <v-btn class="ma-2" v-on:click="openItem(item.id)" icon>
+      <v-btn class="ma-1" v-on:click="openItem(item.id)" icon>
         <v-icon small>mdi-eye-outline</v-icon>
       </v-btn>
     </template>
