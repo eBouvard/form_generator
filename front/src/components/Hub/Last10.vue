@@ -9,9 +9,22 @@
     dense
     hide-default-footer
   >
+    <template v-slot:top>
+      <v-toolbar flat>
+        <v-toolbar-title>10 dernières entrées</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-btn
+          color="primary"
+          dark
+          class="mb-2"
+          v-on:click="$router.push({path: '/list/order'})"
+        >Tout voir</v-btn>
+      </v-toolbar>
+    </template>
+
     <template v-slot:item.open="{ item }">
-      <v-btn class="ma-2" icon x-small right>
-        <v-icon v-on:click="openItem(item.id)">mdi-eye-outline</v-icon>
+      <v-btn class="ma-1" v-on:click="openItem(item.id)" icon>
+        <v-icon small>mdi-eye-outline</v-icon>
       </v-btn>
     </template>
   </v-data-table>
@@ -30,7 +43,7 @@ export default {
         { text: "Titre", value: "title" },
         { text: "Auteur", value: "author" },
         { text: "Date", value: "date" },
-        { text: "", value: "open" }
+        { text: "", value: "open", sortable: false }
       ],
       forms: [],
       loading: true

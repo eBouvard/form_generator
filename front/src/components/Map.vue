@@ -1,5 +1,5 @@
 <template>
-  <div style="height: 100%; width: 100%">
+  <div style="height: 100%; width: 100%;">
     <!-- <div style="height: 50px overflow: auto;">
       <p>First marker is placed at {{ withPopup.lat }}, {{ withPopup.lng }}</p>
       <p>Center is at {{ currentCenter }} and the zoom is: {{ currentZoom }}</p>
@@ -13,7 +13,7 @@
       :zoom="zoom"
       :center="center"
       :options="mapOptions"
-      style="height: 100%"
+      style="height: 100%; z-index: 0;"
       @update:center="centerUpdate"
       @update:zoom="zoomUpdate"
     >
