@@ -11,11 +11,17 @@
         <LastOrders :key="$store.getters.template"></LastOrders>
       </v-col>
     </v-row>
+    <v-row no-gutter>
+      <v-col align-self="center" cols="12">
+        <MiniMap></MiniMap>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 <script>
 import ScopeSelector from "@/components/Hub/ScopeSelector.vue";
 import LastOrders from "@/components/Hub/Last10.vue";
+import MiniMap from "@/components/Hub/MiniMap.vue";
 import KPI from "@/components/Hub/KPI.vue";
 
 export default {
@@ -24,6 +30,7 @@ export default {
   components: {
     ScopeSelector,
     LastOrders,
+    MiniMap,
     KPI
   },
   data() {
