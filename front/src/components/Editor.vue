@@ -1,47 +1,52 @@
 <template>
-  <v-container style="max-width: 90vh" fluid>
-    <div v-if="template">
-      <v-card>
-        <v-card v-if="this.$store.state.template != 'opord'">
-          <v-row class="ma-2" align="center">
-            <v-col cols="6">
-              <v-subheader>Supprimer le contexte</v-subheader>
-            </v-col>
-            <v-col cols="6" align="right">
-              <v-icon
-                class="ma-4"
-                v-on:click="deleteCheck = true"
-                color="error"
-              >mdi-trash-can-outline</v-icon>
-            </v-col>
-          </v-row>
-        </v-card>
-        <JsonEditor
-          :options="{
+  <v-container style="max-width: 110vh" fluid>
+    <v-row no-gutter>
+      <v-col cols="12">
+        <div v-if="template">
+          <v-card>
+            <v-card v-if="this.$store.state.template != 'opord'">
+              <v-row class="ma-2" align="center">
+                <v-col cols="6">
+                  <v-subheader>Supprimer le contexte</v-subheader>
+                </v-col>
+                <v-col cols="6" align="right">
+                  <v-icon
+                    class="ma-4"
+                    v-on:click="deleteCheck = true"
+                    color="error"
+                  >mdi-trash-can-outline</v-icon>
+                </v-col>
+              </v-row>
+            </v-card>
+            <JsonEditor
+              :options="{
             confirmText: 'Valider',
             cancelText: 'Annuler',
         }"
-          :objData="template"
-          v-model="template"
-        ></JsonEditor>
-      </v-card>
-    </div>
+              :objData="template"
+              v-model="template"
+            ></JsonEditor>
+          </v-card>
+        </div>
 
-    <v-dialog v-model="deleteCheck" max-width="900">
-      <v-card>
-        <v-card-title
-          class="headline"
-        >Confirmer la supression du contexte {{this.$store.state.template}} ?</v-card-title>
-        <v-card-text>Cette action supprimera le template de formulaire de façon définitive.</v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn text @click="deleteCheck = false">Annuler</v-btn>
-          <v-btn text @click="removeTemplate()">Valider</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
+        <v-dialog v-model="deleteCheck" max-width="900">
+          <v-card>
+            <v-card-title
+              class="headline"
+            >Confirmer la supression du contexte {{this.$store.state.template}} ?</v-card-title>
+            <v-card-text>Cette action supprimera le template de formulaire de façon définitive.</v-card-text>
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn text @click="deleteCheck = false">Annuler</v-btn>
+              <v-btn text @click="removeTemplate()">Valider</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
+
 <script>
 import api from "@/service/api";
 import refresh from "@/service/refresh";
@@ -99,5 +104,4 @@ export default {
 div >>> .val-input {
   width: 50%;
 }
-
 </style>
