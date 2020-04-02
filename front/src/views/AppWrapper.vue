@@ -3,7 +3,7 @@
     <v-app-bar
       class="white--text"
       height="50px"
-      :color="($store.state.blackTheme) ? '#300000' : 'primary'"
+      color='primary'
     >
       <v-avatar>
         <img src="@/assets/logo.png" alt="logo" />

@@ -26,7 +26,7 @@
         ></JsonEditor>
       </v-card>
     </div>
-    
+
     <v-dialog v-model="deleteCheck" max-width="900">
       <v-card>
         <v-card-title
@@ -85,4 +85,19 @@ export default {
     }
   }
 };
-</script> 
+</script>
+
+<style scoped>
+.theme--dark >>> .collapse-down {
+  color: white;
+}
+
+.theme--dark >>> .pure-form select {
+  background-color: black;
+}
+
+div >>> .val-input {
+  width: 50%;
+}
+
+</style>

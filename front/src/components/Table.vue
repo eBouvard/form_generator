@@ -16,40 +16,46 @@
       <template v-slot:item.actions="{ item }">
         <v-tooltip bottom>
           <template v-slot:activator="{ on }">
-            <v-icon small class="mr-2" v-on="on" v-on:click="openItem(item.id)">mdi-eye-outline</v-icon>
+            <v-btn class="mr-2" v-on="on" v-on:click="openItem(item.id)" icon>
+              <v-icon small>mdi-eye-outline</v-icon>
+            </v-btn>
           </template>
           <span>Afficher</span>
         </v-tooltip>
         <v-tooltip bottom>
           <template v-slot:activator="{ on }">
-            <v-icon small class="mr-2" v-on="on" v-on:click="updateItem(item.id)">mdi-pencil</v-icon>
+            <v-btn class="mr-2" v-on="on" v-on:click="updateItem(item.id)" icon>
+              <v-icon small>mdi-pencil</v-icon>
+            </v-btn>
           </template>
           <span>Modifier</span>
         </v-tooltip>
         <v-tooltip bottom>
           <template v-slot:activator="{ on }">
-            <v-icon
-              small
-              class="mr-2"
-              v-on="on"
-              v-on:click="newFromItem(item.id)"
-            >mdi-arrow-right-bold</v-icon>
+            <v-btn class="mr-2" v-on="on" v-on:click="newFromItem(item.id)" icon>
+              <v-icon small>mdi-arrow-right-bold</v-icon>
+            </v-btn>
           </template>
           <span>Créer à partir de</span>
         </v-tooltip>
         <v-tooltip bottom>
           <template v-slot:activator="{ on }">
-            <v-icon small class="mr-2" v-on="on" v-on:click="copyItem(item.id)">mdi-content-copy</v-icon>
+            <v-btn class="mr-2" v-on="on" v-on:click="copyItem(item.id)" icon>
+              <v-icon small>mdi-content-copy</v-icon>
+            </v-btn>
           </template>
-          <span>Afficher</span>
+          <span>Créer une copie de</span>
         </v-tooltip>
         <v-tooltip bottom>
           <template v-slot:activator="{ on }">
-            <v-icon
-              small
+            <v-btn
+              class="mr-2"
               v-on="on"
               v-on:click="deleteCheck = { check: true, id: item.id }"
-            >mdi-trash-can-outline</v-icon>
+              icon
+            >
+              <v-icon small>mdi-trash-can-outline</v-icon>
+            </v-btn>
           </template>
           <span>Supprimer</span>
         </v-tooltip>
