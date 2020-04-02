@@ -13,7 +13,12 @@
       <v-toolbar flat>
         <v-toolbar-title>10 dernières entrées</v-toolbar-title>
         <v-spacer></v-spacer>
-        <v-btn color="primary" dark class="mb-2" v-on="on">Tout voir</v-btn>
+        <v-btn
+          color="primary"
+          dark
+          class="mb-2"
+          v-on:click="$router.push({path: '/list/order'})"
+        >Tout voir</v-btn>
       </v-toolbar>
     </template>
 
