@@ -7,8 +7,6 @@ services:
       NODE_ENV: production
       PORT: 3000
       DOCKER: "true"
-    ports:
-      - "3000:3000"
     volumes:
       - ./back:/usr/app
       - /usr/app/node_modules
@@ -24,15 +22,9 @@ services:
       - back
     ports:
       - "80:5000"
-    links:
-      - back
 
   python:
     build: parser
     container_name: parser
     volumes:
       - ./back/upload:/usr/app/upload
-    ports:
-      - "5000:5000"
-    links:
-      - back

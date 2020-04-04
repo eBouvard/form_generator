@@ -15,13 +15,12 @@ export default {
     AppWrapper
   },
 
-  data: () => ({
-  }),
+  data: () => ({}),
 
   created() {
     this.$vuetify.theme.dark = this.$store.getters.blackTheme;
     api()
-      .get("/read/all/template")
+      .post("/api/get/read/all/template")
       .then(ret => {
         const raw = ret.data;
         const list = {};

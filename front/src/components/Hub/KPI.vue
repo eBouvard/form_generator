@@ -25,7 +25,7 @@ export default {
   methods: {
     init() {
       api()
-        .get("/read/stat/" + this.$store.state.template)
+        .post("/api/get/read/stat/" + this.$store.state.template)
         .then(ret => {
           this.totalForms = ret.data.count
         })

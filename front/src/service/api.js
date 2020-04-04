@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-//Connection to Python API to parse the file
-let apiURL = 'http://' + window.location.host.split(":")[0] + ':3000';
+let apiURL = 'http://' + window.location.host;
 
 export default () => axios.create({
   baseURL: apiURL,

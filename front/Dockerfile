@@ -19,4 +19,4 @@ COPY . .
 RUN ./node_modules/.bin/vue-cli-service build
 
 EXPOSE 5000
-CMD [ "serve", "-s", "dist" ]
+CMD [ "node", "server.js" ]
