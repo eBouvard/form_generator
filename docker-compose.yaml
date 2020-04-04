@@ -12,8 +12,6 @@ services:
       - /usr/app/node_modules
     working_dir: /usr/app
     command: "npm run prod"
-    ports:
-      - "3000:3000"
   
   front:
     build: front

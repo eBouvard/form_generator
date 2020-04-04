@@ -54,7 +54,7 @@ export default {
       api()
         .post("/api/get/read/last/" + this.$store.state.template, {})
         .then(ret => {
-          const raw = JSON.parse(ret.data);
+          const raw = ret.data;
           const array = [];
           raw.forEach(element => {
             const date = moment(element.data.date).fromNow();
