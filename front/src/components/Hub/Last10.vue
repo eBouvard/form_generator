@@ -51,10 +51,13 @@ export default {
   },
   methods: {
     init() {
+      console.log("INIT...\n\n");
       api()
-        .get("/read/last/" + this.$store.state.template)
+        .post("/api/get/read/last/" + this.$store.state.template, {})
+ //       .get("/read/last/" + this.$store.state.template)
         .then(ret => {
-          const raw = ret.data;
+          console.log(ret);
+          const raw = JSON.parse(ret.data);
           const array = [];
           raw.forEach(element => {
             const date = moment(element.data.date).fromNow();
