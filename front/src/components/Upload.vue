@@ -71,7 +71,7 @@ export default {
         const formData = new FormData();
         formData.append("file", uploadFile);
         api()
-          .post("/upload/" + this.$store.state.template, formData)
+          .post("/api/post/upload/" + this.$store.state.template, formData)
           .then(ret => {
             const id = ret.data.id;
             this.loading = false;

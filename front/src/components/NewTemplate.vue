@@ -41,7 +41,7 @@ export default {
       const name = this.name;
       const newTemplate = this.newTemplate;
       api()
-        .post("/create/template/" + name, newTemplate).then(() => {
+        .post("/api/post/create/template/" + name, newTemplate).then(() => {
           refresh(name)
           this.$router.push({
             path: "/"

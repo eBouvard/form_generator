@@ -82,7 +82,7 @@ export default {
         "/" +
         this.$route.params.origin_id;
       api()
-        .get(request)
+        .post("/api/get" + request)
         .then(ret => {
           if (this.$route.params.is_copy == 1) {
             this.form = ret.data;
@@ -106,7 +106,6 @@ export default {
       console.log(data);
       let ret = await api()
         .post("/api/post/create/" + this.$store.getters.template, data)
-//        .post("/create/" + this.$store.getters.template, data)
         .catch(e => {
           console.log(e);
         });

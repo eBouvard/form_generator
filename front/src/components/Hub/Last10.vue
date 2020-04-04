@@ -51,12 +51,9 @@ export default {
   },
   methods: {
     init() {
-      console.log("INIT...\n\n");
       api()
         .post("/api/get/read/last/" + this.$store.state.template, {})
- //       .get("/read/last/" + this.$store.state.template)
         .then(ret => {
-          console.log(ret);
           const raw = JSON.parse(ret.data);
           const array = [];
           raw.forEach(element => {

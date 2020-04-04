@@ -58,7 +58,7 @@ export default {
       data.author = this.getUser();
       api()
         .post(
-          "/update/" + this.$store.getters.template + "/" + this.form_id,
+          "/api/post/update/" + this.$store.getters.template + "/" + this.form_id,
           data
         )
         .catch(e => {
@@ -84,7 +84,7 @@ export default {
     loadForm(form_id) {
       var request = "/read/" + this.$store.getters.template + "/" + form_id;
       api()
-        .get(request)
+        .post("/api/get" + request)
         .then(ret => {
           console.log(ret);
           this.form = ret.data;

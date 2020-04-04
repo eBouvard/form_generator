@@ -65,7 +65,7 @@ export default {
       const newTemplate = this.template;
       this.$store.commit("UPDATE_TEMPLATE", newTemplate);
       api()
-        .post("/update/template/" + name, newTemplate)
+        .post("/api/post/update/template/" + name, newTemplate)
         .catch(e => {
           console.log(e);
         });
@@ -75,7 +75,7 @@ export default {
     removeTemplate() {
       const name = this.$store.state.template;
       api()
-        .get("/delete/template/" + name)
+        .post("/api/get/delete/template/" + name)
         .then(ret => {
           console.log(ret);
           this.deleteCheck = false;
