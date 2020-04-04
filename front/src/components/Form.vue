@@ -105,7 +105,8 @@ export default {
       data.author = this.getUser();
       console.log(data);
       let ret = await api()
-        .post("/create/" + this.$store.getters.template, data)
+        .post("/api/post/create/" + this.$store.getters.template, data)
+//        .post("/create/" + this.$store.getters.template, data)
         .catch(e => {
           console.log(e);
         });
