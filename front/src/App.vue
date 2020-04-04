@@ -1,22 +1,28 @@
 <template>
   <v-app>
-    <AppWrapper></AppWrapper>
+    <AppWrapper v-if="auth"></AppWrapper>
+    <Auth v-else v-on:authentified="testAuth"></Auth>
   </v-app>
 </template>
 
 <script>
 import AppWrapper from "@/views/AppWrapper.vue";
+import Auth from "@/views/Auth.vue";
 import api from "@/service/api.js";
 
 export default {
   name: "App",
 
   components: {
-    AppWrapper
+    AppWrapper,
+    Auth
   },
 
-  data: () => ({}),
-
+  data() {
+    return {
+      auth: false
+    };
+  },
   created() {
     this.$vuetify.theme.dark = this.$store.getters.blackTheme;
     api()
@@ -32,6 +38,11 @@ export default {
       .catch(e => {
         console.log(e);
       });
+  },
+  methods: {
+    testAuth(val) {
+      this.auth = val;
+    }
   }
 };
 </script>
