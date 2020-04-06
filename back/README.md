@@ -20,6 +20,10 @@ PGPASSWORD=
 ```
 npm start
 ```
+To create all tables required to use this application, send a GET request to the API:
+```
+GET API_URL/create/appDB
+```
 
 ### Hot-reloads for development (using nodemon)
 ```
