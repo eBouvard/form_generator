@@ -1,0 +1,1175 @@
+{
+	"info": {
+		"_postman_id": "73119535-55b3-4b3c-b5de-e3e97aeded5d",
+		"name": "C2LAB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create",
+			"item": [
+				{
+					"name": "Send a JSON",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"situation\": {\n        \"c_enemy_forces\": {\n            \"2_recent_activities\": {},\n            \"3_locations_and_capabilities\": {},\n            \"4_enemy_coas_courses_of_action\": {},\n            \"1_compositi,on,_disposition,_and_strength\": {}\n        },\n        \"d_friendly_forces\": {\n            \"2_mission_of_adjacent_units\": {},\n            \"1_higher_hq_mission_and_intent\": {}\n        },\n        \"a_area_of_interest\": {},\n        \"b_area_of_operations\": {\n            \"1_terrain\": {},\n            \"2_weather\": {}\n        },\n        \"e_attachments_and_detachments\": {}\n    },\n    \"3_execution\": {\n        \"d_scheme_of_fires\": {},\n        \"a_commanders_intent\": {},\n        \"e_casualty_evacuation\": {},\n        \"b_concept_of_operations\": {\n            \"2_fires\": {},\n            \"1_maneuver\": {},\n            \"5_engineer\": {},\n            \"6_air_defense\": {},\n            \"4_intelligence\": {},\n            \"7_information_operations\": {},\n            \"3_reconnaissance_and_surveillance\": {}\n        },\n        \"g_tasks_to_combat_support\": {\n            \"5_signal\": {},\n            \"2_engineer\": {},\n            \"4_air_defense\": {},\n            \"1_intelligence\": {},\n            \"3_fire_support\": {},\n            \"9_civil_military\": {},\n            \"7_provost_marshal\": {},\n            \"6_cbrne_chemical,_biological,_radiological,_nuclear,_and_explosive_weapons\": {},\n            \"8_miso_military_information_support_operations,_formerly_psychological_operations_or_psyop\": {}\n        },\n        \"h_coordinating_instructions\": {\n            \"7_force_protection\": {},\n            \"5_rules_of_engagement\": {},\n            \"6_environmental_considerations\": {},\n            \"4_risk_reduction_control_measures\": {},\n            \"3_eefi_essential_elements_of_friendly_information\": {},\n            \"2_ccir_commanders_critical_information_requirements\": {},\n            \"1_time_or_condition_when_the_plan_or_order_becomes_effective\": {}\n        },\n        \"f_tasks_to_subordinate_units\": {},\n        \"c_scheme_of_movement_and_maneuver\": {}\n    },\n    \"4_sustainment\": {\n        \"a_logistics\": {\n            \"4_supply\": {},\n            \"2_maintenance\": {},\n            \"3_transportation\": {},\n            \"5_field_services\": {},\n            \"1_sustainment_overlay\": {}\n        },\n        \"b_personnel_services_support\": {\n            \"2_religious_services\": {},\n            \"1_method_of_marking_and_handling_epws\": {}\n        },\n        \"c_army_health_system_support\": {\n            \"2_medical_treatment\": {},\n            \"3_medical_evacuation\": {},\n            \"4_preventive_medicine\": {},\n            \"1_medical_command_and_control\": {}\n        }\n    },\n    \"5_command_and_control\": {\n        \"c_signal\": {\n            \"4_code_words\": {},\n            \"7_running_password\": {},\n            \"6_number_combination\": {},\n            \"1_soi_index_in_effect\": {},\n            \"8_recognition_signals\": {},\n            \"5_challenge_and_password\": {},\n            \"3_pyrotechnics_and_signals\": {},\n            \"2_methods_of_communication_by_priority\": {}\n        },\n        \"a_command\": {\n            \"1_location_of_commander\": {},\n            \"2_succession_of_command\": {}\n        },\n        \"b_control\": {\n            \"2_reports\": {},\n            \"1_command_posts\": {}\n        }\n    },\n    \"2_mission_a_concise_statement_that_includes_the_who,_what,_where,_when,_and_why_of_the_operation_to_be_conducted\": \"new json\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/create/json",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"create",
+								"json"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Insert a new JSON object",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"situation\": {\n        \"c_enemy_forces\": {\n            \"2_recent_activities\": {},\n            \"3_locations_and_capabilities\": {},\n            \"4_enemy_coas_courses_of_action\": {},\n            \"1_compositi,on,_disposition,_and_strength\": {}\n        },\n        \"d_friendly_forces\": {\n            \"2_mission_of_adjacent_units\": {},\n            \"1_higher_hq_mission_and_intent\": {}\n        },\n        \"a_area_of_interest\": {},\n        \"b_area_of_operations\": {\n            \"1_terrain\": {},\n            \"2_weather\": {}\n        },\n        \"e_attachments_and_detachments\": {}\n    },\n    \"3_execution\": {\n        \"d_scheme_of_fires\": {},\n        \"a_commanders_intent\": {},\n        \"e_casualty_evacuation\": {},\n        \"b_concept_of_operations\": {\n            \"2_fires\": {},\n            \"1_maneuver\": {},\n            \"5_engineer\": {},\n            \"6_air_defense\": {},\n            \"4_intelligence\": {},\n            \"7_information_operations\": {},\n            \"3_reconnaissance_and_surveillance\": {}\n        },\n        \"g_tasks_to_combat_support\": {\n            \"5_signal\": {},\n            \"2_engineer\": {},\n            \"4_air_defense\": {},\n            \"1_intelligence\": {},\n            \"3_fire_support\": {},\n            \"9_civil_military\": {},\n            \"7_provost_marshal\": {},\n            \"6_cbrne_chemical,_biological,_radiological,_nuclear,_and_explosive_weapons\": {},\n            \"8_miso_military_information_support_operations,_formerly_psychological_operations_or_psyop\": {}\n        },\n        \"h_coordinating_instructions\": {\n            \"7_force_protection\": {},\n            \"5_rules_of_engagement\": {},\n            \"6_environmental_considerations\": {},\n            \"4_risk_reduction_control_measures\": {},\n            \"3_eefi_essential_elements_of_friendly_information\": {},\n            \"2_ccir_commanders_critical_information_requirements\": {},\n            \"1_time_or_condition_when_the_plan_or_order_becomes_effective\": {}\n        },\n        \"f_tasks_to_subordinate_units\": {},\n        \"c_scheme_of_movement_and_maneuver\": {}\n    },\n    \"4_sustainment\": {\n        \"a_logistics\": {\n            \"4_supply\": {},\n            \"2_maintenance\": {},\n            \"3_transportation\": {},\n            \"5_field_services\": {},\n            \"1_sustainment_overlay\": {}\n        },\n        \"b_personnel_services_support\": {\n            \"2_religious_services\": {},\n            \"1_method_of_marking_and_handling_epws\": {}\n        },\n        \"c_army_health_system_support\": {\n            \"2_medical_treatment\": {},\n            \"3_medical_evacuation\": {},\n            \"4_preventive_medicine\": {},\n            \"1_medical_command_and_control\": {}\n        }\n    },\n    \"5_command_and_control\": {\n        \"c_signal\": {\n            \"4_code_words\": {},\n            \"7_running_password\": {},\n            \"6_number_combination\": {},\n            \"1_soi_index_in_effect\": {},\n            \"8_recognition_signals\": {},\n            \"5_challenge_and_password\": {},\n            \"3_pyrotechnics_and_signals\": {},\n            \"2_methods_of_communication_by_priority\": {}\n        },\n        \"a_command\": {\n            \"1_location_of_commander\": {},\n            \"2_succession_of_command\": {}\n        },\n        \"b_control\": {\n            \"2_reports\": {},\n            \"1_command_posts\": {}\n        }\n    },\n    \"2_mission_a_concise_statement_that_includes_the_who,_what,_where,_when,_and_why_of_the_operation_to_be_conducted\": \"new json\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/create/json",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"create",
+										"json"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2-nOO9QiTIwXgNtWtBJezz8kv3SLc\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 21 Feb 2020 16:28:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "OK"
+						}
+					]
+				},
+				{
+					"name": "Send a new template",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"0_header\": {\n        \"type\": \"chapter\",\n        \"label\": \"\",\n        \"content\": {\n            \"title\": {\n                \"type\": \"small_text\",\n                \"label\": \"Date de la situation COVID\"\n            },\n            \"free_text\": {\n                \"type\": \"large_text\",\n                \"label\": \"Commentaire\"\n            },\n            \"security_classification\": {\n                \"type\": \"autocomplete\",\n                \"list\":[\n                  { \"name\": \"Non Protégé\", \"abbr\": \"NP\", \"id\": 0 },\n                  { \"name\": \"Diffusion Restreinte\", \"abbr\": \"DR\", \"id\": 1 },\n                  { \"name\": \"Confidentiel-Défense\", \"abbr\": \"CD\", \"id\": 2 },\n                  { \"name\": \"Confidentiel-Défense Spécial France\", \"abbr\": \"CD-SF\", \"id\": 3 },\n                  { \"name\": \"Secret-Défense\", \"abbr\": \"SD\", \"id\": 4 },\n                  { \"name\": \"Secret-Défense Spécial France\", \"abbr\": \"SD-SF\", \"id\": 5 }\n                ],\n                \"label\": \"CLASSIFICATION DE SECURITE\"\n            },\n            \"copy_no\": {\n                \"type\": \"small_text\",\n                \"label\": \"Nombre de nouveaux cas\"\n            },\n            \"copy_total\": {\n                \"type\": \"small_text\",\n                \"label\": \"Nombre total de cas\"\n            },\n            \"issuing_headquarters\": {\n                \"type\": \"small_text\",\n                \"label\": \"Cas retablis\"\n            },\n            \"place_of_issue\": {\n                \"type\": \"small_text\",\n                \"label\": \"Cas Retabli\"\n            },\n            \"date-time_group_of_signature\": {\n                \"type\": \"small_text\",\n                \"label\": \"Base\"\n            }\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/create/template/test",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"create",
+								"template",
+								"test"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Insert a new JSON object",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"situation\": {\n        \"c_enemy_forces\": {\n            \"2_recent_activities\": {},\n            \"3_locations_and_capabilities\": {},\n            \"4_enemy_coas_courses_of_action\": {},\n            \"1_compositi,on,_disposition,_and_strength\": {}\n        },\n        \"d_friendly_forces\": {\n            \"2_mission_of_adjacent_units\": {},\n            \"1_higher_hq_mission_and_intent\": {}\n        },\n        \"a_area_of_interest\": {},\n        \"b_area_of_operations\": {\n            \"1_terrain\": {},\n            \"2_weather\": {}\n        },\n        \"e_attachments_and_detachments\": {}\n    },\n    \"3_execution\": {\n        \"d_scheme_of_fires\": {},\n        \"a_commanders_intent\": {},\n        \"e_casualty_evacuation\": {},\n        \"b_concept_of_operations\": {\n            \"2_fires\": {},\n            \"1_maneuver\": {},\n            \"5_engineer\": {},\n            \"6_air_defense\": {},\n            \"4_intelligence\": {},\n            \"7_information_operations\": {},\n            \"3_reconnaissance_and_surveillance\": {}\n        },\n        \"g_tasks_to_combat_support\": {\n            \"5_signal\": {},\n            \"2_engineer\": {},\n            \"4_air_defense\": {},\n            \"1_intelligence\": {},\n            \"3_fire_support\": {},\n            \"9_civil_military\": {},\n            \"7_provost_marshal\": {},\n            \"6_cbrne_chemical,_biological,_radiological,_nuclear,_and_explosive_weapons\": {},\n            \"8_miso_military_information_support_operations,_formerly_psychological_operations_or_psyop\": {}\n        },\n        \"h_coordinating_instructions\": {\n            \"7_force_protection\": {},\n            \"5_rules_of_engagement\": {},\n            \"6_environmental_considerations\": {},\n            \"4_risk_reduction_control_measures\": {},\n            \"3_eefi_essential_elements_of_friendly_information\": {},\n            \"2_ccir_commanders_critical_information_requirements\": {},\n            \"1_time_or_condition_when_the_plan_or_order_becomes_effective\": {}\n        },\n        \"f_tasks_to_subordinate_units\": {},\n        \"c_scheme_of_movement_and_maneuver\": {}\n    },\n    \"4_sustainment\": {\n        \"a_logistics\": {\n            \"4_supply\": {},\n            \"2_maintenance\": {},\n            \"3_transportation\": {},\n            \"5_field_services\": {},\n            \"1_sustainment_overlay\": {}\n        },\n        \"b_personnel_services_support\": {\n            \"2_religious_services\": {},\n            \"1_method_of_marking_and_handling_epws\": {}\n        },\n        \"c_army_health_system_support\": {\n            \"2_medical_treatment\": {},\n            \"3_medical_evacuation\": {},\n            \"4_preventive_medicine\": {},\n            \"1_medical_command_and_control\": {}\n        }\n    },\n    \"5_command_and_control\": {\n        \"c_signal\": {\n            \"4_code_words\": {},\n            \"7_running_password\": {},\n            \"6_number_combination\": {},\n            \"1_soi_index_in_effect\": {},\n            \"8_recognition_signals\": {},\n            \"5_challenge_and_password\": {},\n            \"3_pyrotechnics_and_signals\": {},\n            \"2_methods_of_communication_by_priority\": {}\n        },\n        \"a_command\": {\n            \"1_location_of_commander\": {},\n            \"2_succession_of_command\": {}\n        },\n        \"b_control\": {\n            \"2_reports\": {},\n            \"1_command_posts\": {}\n        }\n    },\n    \"2_mission_a_concise_statement_that_includes_the_who,_what,_where,_when,_and_why_of_the_operation_to_be_conducted\": \"new json\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/create/json",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"create",
+										"json"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2-nOO9QiTIwXgNtWtBJezz8kv3SLc\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 21 Feb 2020 16:28:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "OK"
+						}
+					]
+				},
+				{
+					"name": "Send a JSON (specific table)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"0_header\": {\n        \"type\": \"chapter\",\n        \"label\": \"\",\n        \"content\": {\n            \"title\": {\n                \"type\": \"small_text\",\n                \"label\": \"Date de la situation COVID\"\n            },\n            \"free_text\": {\n                \"type\": \"large_text\",\n                \"label\": \"Commentaire\"\n            },\n            \"security_classification\": {\n                \"type\": \"autocomplete\",\n                \"list\":[\n                  { \"name\": \"Non Protégé\", \"abbr\": \"NP\", \"id\": 0 },\n                  { \"name\": \"Diffusion Restreinte\", \"abbr\": \"DR\", \"id\": 1 },\n                  { \"name\": \"Confidentiel-Défense\", \"abbr\": \"CD\", \"id\": 2 },\n                  { \"name\": \"Confidentiel-Défense Spécial France\", \"abbr\": \"CD-SF\", \"id\": 3 },\n                  { \"name\": \"Secret-Défense\", \"abbr\": \"SD\", \"id\": 4 },\n                  { \"name\": \"Secret-Défense Spécial France\", \"abbr\": \"SD-SF\", \"id\": 5 }\n                ],\n                \"label\": \"CLASSIFICATION DE SECURITE\"\n            },\n            \"copy_no\": {\n                \"type\": \"small_text\",\n                \"label\": \"Nombre de nouveaux cas\"\n            },\n            \"copy_total\": {\n                \"type\": \"small_text\",\n                \"label\": \"Nombre total de cas\"\n            },\n            \"issuing_headquarters\": {\n                \"type\": \"small_text\",\n                \"label\": \"Cas retablis\"\n            },\n            \"place_of_issue\": {\n                \"type\": \"small_text\",\n                \"label\": \"Cas Retabli\"\n            },\n            \"date-time_group_of_signature\": {\n                \"type\": \"small_text\",\n                \"label\": \"Base\"\n            }\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/create/json/name",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"create",
+								"json",
+								"name"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Insert a new JSON object",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"situation\": {\n        \"c_enemy_forces\": {\n            \"2_recent_activities\": {},\n            \"3_locations_and_capabilities\": {},\n            \"4_enemy_coas_courses_of_action\": {},\n            \"1_compositi,on,_disposition,_and_strength\": {}\n        },\n        \"d_friendly_forces\": {\n            \"2_mission_of_adjacent_units\": {},\n            \"1_higher_hq_mission_and_intent\": {}\n        },\n        \"a_area_of_interest\": {},\n        \"b_area_of_operations\": {\n            \"1_terrain\": {},\n            \"2_weather\": {}\n        },\n        \"e_attachments_and_detachments\": {}\n    },\n    \"3_execution\": {\n        \"d_scheme_of_fires\": {},\n        \"a_commanders_intent\": {},\n        \"e_casualty_evacuation\": {},\n        \"b_concept_of_operations\": {\n            \"2_fires\": {},\n            \"1_maneuver\": {},\n            \"5_engineer\": {},\n            \"6_air_defense\": {},\n            \"4_intelligence\": {},\n            \"7_information_operations\": {},\n            \"3_reconnaissance_and_surveillance\": {}\n        },\n        \"g_tasks_to_combat_support\": {\n            \"5_signal\": {},\n            \"2_engineer\": {},\n            \"4_air_defense\": {},\n            \"1_intelligence\": {},\n            \"3_fire_support\": {},\n            \"9_civil_military\": {},\n            \"7_provost_marshal\": {},\n            \"6_cbrne_chemical,_biological,_radiological,_nuclear,_and_explosive_weapons\": {},\n            \"8_miso_military_information_support_operations,_formerly_psychological_operations_or_psyop\": {}\n        },\n        \"h_coordinating_instructions\": {\n            \"7_force_protection\": {},\n            \"5_rules_of_engagement\": {},\n            \"6_environmental_considerations\": {},\n            \"4_risk_reduction_control_measures\": {},\n            \"3_eefi_essential_elements_of_friendly_information\": {},\n            \"2_ccir_commanders_critical_information_requirements\": {},\n            \"1_time_or_condition_when_the_plan_or_order_becomes_effective\": {}\n        },\n        \"f_tasks_to_subordinate_units\": {},\n        \"c_scheme_of_movement_and_maneuver\": {}\n    },\n    \"4_sustainment\": {\n        \"a_logistics\": {\n            \"4_supply\": {},\n            \"2_maintenance\": {},\n            \"3_transportation\": {},\n            \"5_field_services\": {},\n            \"1_sustainment_overlay\": {}\n        },\n        \"b_personnel_services_support\": {\n            \"2_religious_services\": {},\n            \"1_method_of_marking_and_handling_epws\": {}\n        },\n        \"c_army_health_system_support\": {\n            \"2_medical_treatment\": {},\n            \"3_medical_evacuation\": {},\n            \"4_preventive_medicine\": {},\n            \"1_medical_command_and_control\": {}\n        }\n    },\n    \"5_command_and_control\": {\n        \"c_signal\": {\n            \"4_code_words\": {},\n            \"7_running_password\": {},\n            \"6_number_combination\": {},\n            \"1_soi_index_in_effect\": {},\n            \"8_recognition_signals\": {},\n            \"5_challenge_and_password\": {},\n            \"3_pyrotechnics_and_signals\": {},\n            \"2_methods_of_communication_by_priority\": {}\n        },\n        \"a_command\": {\n            \"1_location_of_commander\": {},\n            \"2_succession_of_command\": {}\n        },\n        \"b_control\": {\n            \"2_reports\": {},\n            \"1_command_posts\": {}\n        }\n    },\n    \"2_mission_a_concise_statement_that_includes_the_who,_what,_where,_when,_and_why_of_the_operation_to_be_conducted\": \"new json\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/create/json",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"create",
+										"json"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2-nOO9QiTIwXgNtWtBJezz8kv3SLc\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 21 Feb 2020 16:28:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "OK"
+						}
+					]
+				},
+				{
+					"name": "Create JSON Table",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/create/JSONtable/template",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"create",
+								"JSONtable",
+								"template"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Master Template Table",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/create/TEMPLATEtable",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"create",
+								"TEMPLATEtable"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Init the app DB",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/create/appDB",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"create",
+								"appDB"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Delete",
+			"item": [
+				{
+					"name": "Delete Table",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/delete/table/template",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"delete",
+								"table",
+								"template"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete JSON object",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/delete/table/4",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"delete",
+								"table",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete template",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/delete/template/test",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"delete",
+								"template",
+								"test"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Read",
+			"item": [
+				{
+					"name": "Get all data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/read/all/table",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"read",
+								"all",
+								"table"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get last 10 orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/read/last/opord",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"read",
+								"last",
+								"opord"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all data (specific table)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/read/all/template",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"read",
+								"all",
+								"template"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all template data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/read/all/template",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"read",
+								"all",
+								"template"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a specific JSON (id & table)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/read/opord/3",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"read",
+								"opord",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get a specific JSON (id & table)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/read/54/scan",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"read",
+										"54",
+										"scan"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "9795"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2643-M33voQwkYsTW3yDzMWkEANxdT1c\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Feb 2020 13:01:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Title\": \"ALL_FHQ_20190416_017_FRAGO012_Maintenance Effort.docx\",\n    \"Authors\": \"ASCIONE Thibault CBA\",\n    \"Content\": {\n        \"MAIN\": {\n            \"en_tete\": {\n                \"PC\": \"\",\n                \"Exemplaire\": \"\",\n                \"References\": {\n                    \"A\": \"LCC daily attrition report SITUATION.     Due to ground offensive in Sequenian peninsula, LCC units have suffered a tough  attrition. In order to prepare the incoming “Le Havre Conquest”, combat effectiveness need to be as high as possible. MISSION.   Increase CSS units work rates.EXECUTIONThe NSEs ICCW LCC will increase CSS units work rates.LCC units are asked to express their class II urgent requests.SERVICE  SUPPORTNTR5.  COMMAND AND SIGNAL. No changeDrafting Officer: CDT FONTReleasing Officer: CDT FONTFHQ COS: CC EIDESHEIMDOS APPROVALANNEX: None\",\n                    \"B\": \"\",\n                    \"texte_libre\": \"A.  LCC daily attrition report SITUATION.     Due to ground offensive in Sequenian peninsula, LCC units have suffered a tough  attrition. In order to prepare the incoming “Le Havre Conquest”, combat effectiveness need to be as high as possible. MISSION.   Increase CSS units work rates.EXECUTIONThe NSEs ICCW LCC will increase CSS units work rates.LCC units are asked to express their class II urgent requests.SERVICE  SUPPORTNTR5.  COMMAND AND SIGNAL. No changeDrafting Officer: CDT FONTReleasing Officer: CDT FONTFHQ COS: CC EIDESHEIMDOS APPROVALANNEX: None\",\n                    \"Cartes au 1/50000\": \"\",\n                    \"Fuseau_horaire_utilise\": \"\"\n                },\n                \"texte_libre\": \"\",\n                \"ARTICULATION\": \"\",\n                \"GDH_de_signature\": \"\",\n                \"ORDRE_DOPERATION_NMR\": \"\",\n                \"Localisation_PC_avant\": \"\",\n                \"N_de_reference du message\": \"A.  LCC daily attrition report SITUATION.     Due to ground offensive in Sequenian peninsula, LCC units have suffered a tough  attrition. In order to prepare the incoming “Le Havre Conquest”, combat effectiveness need to be as high as possible. MISSION.   Increase CSS units work rates.EXECUTIONThe NSEs ICCW LCC will increase CSS units work rates.LCC units are asked to express their class II urgent requests.SERVICE  SUPPORTNTR5.  COMMAND AND SIGNAL. No changeDrafting Officer: CDT FONTReleasing Officer: CDT FONTFHQ COS: CC EIDESHEIMDOS APPROVALANNEX: None\",\n                \"CLASSIFICATION_DE_SECURITE\": \"\"\n            },\n            \"1_SITUATION\": {\n                \"3_ENI_futur\": \"\",\n                \"texte_libre\": \"IMMEDIATE REFERENCES:    A.  LCC daily attrition report SITUATION.     Due to ground offensive in Sequenian peninsula, LCC units have suffered a tough  attrition. In order to prepare the incoming “Le Havre Conquest”, combat effectiveness need to be as high as possible. MISSION.   Increase CSS units work rates.EXECUTIONThe NSEs ICCW LCC will increase CSS units work rates.LCC units are asked to express their class II urgent requests.SERVICE  SUPPORTNTR5.  COMMAND AND SIGNAL. No changeDrafting Officer: CDT FONTReleasing Officer: CDT FONTFHQ COS: CC EIDESHEIMDOS APPROVALANNEX: None\",\n                \"1_ENI_actuel\": \"\",\n                \"E_POPULATION\": \"IMMEDIATE REFERENCES:    A.  LCC daily attrition report SITUATION.     Due to ground offensive in Sequenian peninsula, LCC units have suffered a tough  attrition. In order to prepare the incoming “Le Havre Conquest”, combat effectiveness need to be as high as possible. \",\n                \"B_FORCES_AMIES\": \"\",\n                \"A_FORCES_ENNEMIES\": \"\",\n                \"2_Possibilites_de_ENI\": \"\",\n                \"C_RENFORCEMENTS_ET_PRELEVEMENTS\": \"\",\n                \"D_EVALUATION DE LA_SITUATION_PAR_LE_COMMANDEMENT\": \"\"\n            },\n            \"3_EXECUTION\": {\n                \"C_FEUX\": \"\",\n                \"E_ALAT\": \"\",\n                \"D_GENIE\": \"\",\n                \"texte_libre\": \"IMMEDIATE REFERENCES:    A.  LCC daily attrition report SITUATION.     Due to ground offensive in Sequenian peninsula, LCC units have suffered a tough  attrition. In order to prepare the incoming “Le Havre Conquest”, combat effectiveness need to be as high as possible. MISSION.   Increase CSS units work rates.EXECUTIONThe NSEs ICCW LCC will increase CSS units work rates.LCC units are asked to express their class II urgent requests.SERVICE  SUPPORTNTR5.  COMMAND AND SIGNAL. No changeDrafting Officer: CDT FONTReleasing Officer: CDT FONTFHQ COS: CC EIDESHEIMDOS APPROVALANNEX: None\",\n                \"G_CIRCULATION\": \"IMMEDIATE REFERENCES:    A.  LCC daily attrition report SITUATION.     Due to ground offensive in Sequenian peninsula, LCC units have suffered a tough  attrition. In order to prepare the incoming “Le Havre Conquest”, combat effectiveness need to be as high as possible. MISSION.   Increase CSS units work rates.EXECUTIONThe NSEs ICCW LCC will increase CSS units work rates.LCC units are asked to express their class II urgent requests.SERVICE  SUPPORTNTR5.  COMMAND AND SIGNAL. No changeDrafting Officer: CDT FONTReleasing Officer: CDT FONTFHQ COS: CC EIDESHEIMDOS APPROVALANNEX: None\",\n                \"A_IDEE DE MANOEUVRE\": \"\",\n                \"F_GUERRE_ELECTRONIQUE\": \"\",\n                \"N_INSTRUCTION_DE_COORDINATION\": {\n                    \"8_Horaires\": \"\",\n                    \"texte_libre\": \"\",\n                    \"6_Consignes_LATTA\": \"\",\n                    \"3_Liaisons_a_assurer\": \"\",\n                    \"1_Lignes_de_coordination\": \"\",\n                    \"5_Securite_et_defense_NBC\": {\n                        \"d_Divers\": \"\",\n                        \"texte_libre\": \"\",\n                        \"b_Protection\": \"IMMEDIATE REFERENCES:    A.  LCC daily attrition report SITUATION.     Due to ground offensive in Sequenian peninsula, LCC units have suffered a tough  attrition. In order to prepare the incoming “Le Havre Conquest”, combat effectiveness need to be as high as possible. MISSION.   Increase CSS units work rates.EXECUTIONThe NSEs ICCW LCC will increase CSS units work rates.LCC units are asked to express their class II urgent requests.SERVICE  SUPPORTNTR5.  COMMAND AND SIGNAL. No changeDrafting Officer: CDT FONTReleasing Officer: CDT FONTFHQ COS: CC EIDESHEIMDOS APPROVALANNEX: None\",\n                        \"c_Decontamination\": \"\",\n                        \"a_Estimation_du_danger\": \"\"\n                    },\n                    \"2_Limites_entre_les_unites\": \"\",\n                    \"7_Besoins_en_renseignement\": {\n                        \"d_Terrain\": \"\",\n                        \"c_ENI_futur\": \"\",\n                        \"texte_libre\": \"\",\n                        \"b_ENI_dans_la_profondeur\": \"\",\n                        \"a_Renseignement_avant_engagement\": \"\"\n                    },\n                    \"9_Affaires_civiles_Relations_avec_la_presse\": \"\",\n                    \"4_Zones_reserves_ou_a_laisser_libre_obstacles_itineraires_de_manoeuvre\": \"\"\n                },\n                \"B_MISSIONS_AUX_UNITES_SUBORDONNEES\": {\n                    \"UNITE_1\": \"\",\n                    \"UNITE_2\": \"\",\n                    \"subcontent\": \"\",\n                    \"texte_libre\": \"\"\n                }\n            },\n            \"2_MISSION_BUT\": \"\",\n            \"4_ADMINISTRATION_ET_LOGISTIQUE\": {\n                \"texte_libre\": \". In order to prepare the incoming “Le Havre Conquest”, combat effectiveness need to be as high as possible. MISSION.   Increase CSS units work rates.EXECUTIONThe NSEs ICCW LCC will increase CSS units work rates.LCC units are asked to express their class II urgent requests.SERVICE  SUPPORTNTR5.  COMMAND AND SIGNAL. No changeDrafting Officer: CDT FONTReleasing Officer: CDT FONTFHQ COS: CC EIDESHEIMDOS APPROVALANNEX: None\",\n                \"A_FORCES_A_SOUTENIR\": {\n                    \"texte_libre\": \"\",\n                    \"1_Moyens_organiques\": \"\",\n                    \"2_Moyens_recus_en_renforcement\": \"\"\n                },\n                \"C_PRIORITES_EFFORTS\": {\n                    \"texte_libre\": \"FRAGMENTARY ORDER (FRAGO) FHQ AJFLYON161900LAPR19 ACTION: IMMEDIATE REFERENCES:    A.  LCC daily attrition report SITUATION.     Due to ground offensive in Sequenian peninsula, LCC units have suffered a tough  attrition. In order to prepare the incoming “Le Havre Conquest”, combat effectiveness need to be as high as possible. MISSION.   Increase CSS units work rates.EXECUTIONThe NSEs ICCW LCC will increase CSS units work rates.LCC units are asked to express their class II urgent requests.SERVICE  SUPPORTNTR5.  COMMAND AND SIGNAL. No changeDrafting Officer: CDT FONTReleasing Officer: CDT FONTFHQ COS: CC EIDESHEIMDOS APPROVALANNEX: None\",\n                    \"1_Priorite_tactique\": \"\",\n                    \"2_Efforts_par_fonction\": {\n                        \"a_RAV\": \"\",\n                        \"b_MEC\": \"\",\n                        \"c_SAN\": \"\",\n                        \"texte_libre\": \"\"\n                    }\n                },\n                \"E_DECOUPAGE_DE_LA_ZONE\": {\n                    \"texte_libre\": \"\",\n                    \"1_Limite_avant_LIMAVZACA\": \"\",\n                    \"2_Limite_arriere_LIMARRZACA\": \"\"\n                },\n                \"F_MODALITES_DU_SOUTIEN\": \"\",\n                \"B_CONCEPTION_DU_SOUTIEN\": {\n                    \"texte_libre\": \"\",\n                    \"1_But_a_atteindre\": \"\",\n                    \"3_Autonomie_initiale_a_maintenir\": \"\",\n                    \"2 Stabilite_ou_elongation_consenties\": \"\"\n                },\n                \"D_DEPLOIEMENT_DES_FORMATIONS_LOGISTIQUES\": {\n                    \"texte_libre\": \"\",\n                    \"1_Dispositif_a_realiser\": \"\",\n                    \"2_Evolution_dans_le_temps\": \"\"\n                }\n            },\n            \"5_COMMANDEMENTS_ET_TRANSMISSIONS\": {\n                \"B_LIAISONS\": {\n                    \"texte_libre\": \".     Due to ground offensive in Sequenian peninsula, LCC units have suffered a tough  attrition. In order to prepare the incoming “Le Havre Conquest”, combat effectiveness need to be as high as possible. MISSION.   Increase CSS units work rates.EXECUTIONThe NSEs ICCW LCC will increase CSS units work rates.LCC units are asked to express their class II urgent requests.SERVICE  SUPPORTNTR5.  COMMAND AND SIGNAL. No changeDrafting Officer: CDT FONTReleasing Officer: CDT FONTFHQ COS: CC EIDESHEIMDOS APPROVALANNEX: None\",\n                    \"Liaisons_laterales\": \"\",\n                    \"Detachements_de_liaison\": \"\"\n                },\n                \"texte_libre\": \"\",\n                \"C_TRANSMISSIONS\": {\n                    \"1_phase\": \"\",\n                    \"texte_libre\": \"   Increase CSS units work rates.EXECUTIONThe NSEs ICCW LCC will increase CSS units work rates.LCC units are asked to express their class II urgent requests.SERVICE  SUPPORTNTR5.  COMMAND AND SIGNAL. No changeDrafting Officer: CDT FONTReleasing Officer: CDT FONTFHQ COS: CC EIDESHEIMDOS APPROVALANNEX: None\",\n                    \"Phase_preliminaire\": \"\"\n                },\n                \"A_IMPLANTATION_DES_PC\": {\n                    \"PC_MA\": \"\",\n                    \"PC_ACTIF_a\": \"\",\n                    \"texte_libre\": \".     Due to ground offensive in Sequenian peninsula, LCC units have suffered a tough  attrition. In order to prepare the incoming “Le Havre Conquest”, combat effectiveness need to be as high as possible. MISSION.   Increase CSS units work rates.EXECUTIONThe NSEs ICCW LCC will increase CSS units work rates.LCC units are asked to express their class II urgent requests.SERVICE  SUPPORTNTR5.  COMMAND AND SIGNAL. No changeDrafting Officer: CDT FONTReleasing Officer: CDT FONTFHQ COS: CC EIDESHEIMDOS APPROVALANNEX: None\",\n                    \"PC_TACTIQUE_a\": \"\",\n                    \"Antenne_logistique\": \"\",\n                    \"Bascule_de_PC_prevue_a\": \"\"\n                },\n                \"D_GUERRE_ELECTRONIQUE\": {\n                    \"texte_libre\": \"\",\n                    \"1_Menaces_particulieres_ENI\": \"\",\n                    \"4_Mesures_accueil_des_formations_de_GE\": \"\",\n                    \"3_Contre_mesures_electromagnetiques_CME\": \"\",\n                    \"2_Mesures_de_protection_electronique_MPE\": \"\"\n                }\n            }\n        }\n    },\n    \"Location\": \"/Users/laks/Desktop/HEC Paris/Cours/DataBaseConstruct/Data/ALL_FHQ_20190416_017_FRAGO012_Maintenance Effort.docx\",\n    \"Conformity\": 0.13978494623655913,\n    \"Created_Date\": \"2019-04-16T16:41:00\",\n    \"Modified_Date\": \"2019-04-17T07:42:00\",\n    \"Last_Modified_By\": \"LONCHAMPT Philippe IC2ETA\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get a specific field JSON (with id)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/read/table/id/field",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"read",
+								"table",
+								"id",
+								"field"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get a specific field JSON (with id)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/read/val/3_execution/57",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"read",
+										"val",
+										"3_execution",
+										"57"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1066"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"42a-ItT2Er3lEZcEYkuO6eA9tlx0JTU\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Feb 2020 15:31:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"d_scheme_of_fires\": \"\",\n    \"a_commander's_intent\": \"\",\n    \"e_casualty_evacuation\": \"\",\n    \"b_concept_of_operations\": {\n        \"2_fires\": \"\",\n        \"1_maneuver\": \"\",\n        \"5_engineer\": \"\",\n        \"6_air_defense\": \"\",\n        \"4_intelligence\": \"\",\n        \"7_information_operations\": \"\",\n        \"3_reconnaissance_and_surveillance\": \"\"\n    },\n    \"g_tasks_to_combat_support\": {\n        \"5_signal\": \"\",\n        \"2_engineer\": \"\",\n        \"4_air_defense\": \"\",\n        \"1_intelligence\": \"\",\n        \"3_fire_support\": \"\",\n        \"9_civil_military\": \"\",\n        \"7_provost_marshal\": \"\",\n        \"6_cbrne_chemical,_biological,_radiological,_nuclear,_and_explosive_weapons\": \"\",\n        \"8_miso_military_information_support_operations,_formerly_psychological_operations_or_psyop\": \"\"\n    },\n    \"h_coordinating_instructions\": {\n        \"7_force_protection\": \"\",\n        \"5_rules_of_engagement\": \"\",\n        \"6_environmental_considerations\": \"\",\n        \"4_risk_reduction_control_measures\": \"\",\n        \"3_eefi_essential_elements_of_friendly_information\": \"\",\n        \"2_ccir_commander's_critical_information_requirements\": \"\",\n        \"1_time_or_condition_when_the_plan_or_order_becomes_effective\": \"\"\n    },\n    \"f_tasks_to_subordinate_units\": \"\",\n    \"c_scheme_of_movement_and_maneuver\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Health route",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/create/health",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"create",
+								"health"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Test DB Connection",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/create/health",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"create",
+										"health"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "25"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19-rw5z4JKSf+DboU6uUW38BH5kd84\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Feb 2020 10:08:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Hello world from Postgre!"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Update",
+			"item": [
+				{
+					"name": "Update a JSON with id",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"situation\": {\n            \"c_enemy_forces\": {\n                \"2_recent_activities\": \"michel michel\",\n                \"3_locations_and_capabilities\": {},\n                \"4_enemy_coas_courses_of_action\": {},\n                \"1_compositi,on,_disposition,_and_strength\": {}\n            },\n            \"d_friendly_forces\": {\n                \"2_mission_of_adjacent_units\": {},\n                \"1_higher_hq_mission_and_intent\": {}\n            },\n            \"a_area_of_interest\": {},\n            \"b_area_of_operations\": {\n                \"1_terrain\": {},\n                \"2_weather\": {}\n            },\n            \"e_attachments_and_detachments\": {}\n        },\n        \"3_execution\": {\n            \"d_scheme_of_fires\": {},\n            \"a_commanders_intent\": {},\n            \"e_casualty_evacuation\": {},\n            \"b_concept_of_operations\": {\n                \"2_fires\": {},\n                \"1_maneuver\": {},\n                \"5_engineer\": {},\n                \"6_air_defense\": {},\n                \"4_intelligence\": {},\n                \"7_information_operations\": {},\n                \"3_reconnaissance_and_surveillance\": {}\n            },\n            \"g_tasks_to_combat_support\": {\n                \"5_signal\": {},\n                \"2_engineer\": {},\n                \"4_air_defense\": {},\n                \"1_intelligence\": {},\n                \"3_fire_support\": {},\n                \"9_civil_military\": {},\n                \"7_provost_marshal\": {},\n                \"6_cbrne_chemical,_biological,_radiological,_nuclear,_and_explosive_weapons\": {},\n                \"8_miso_military_information_support_operations,_formerly_psychological_operations_or_psyop\": {}\n            },\n            \"h_coordinating_instructions\": {\n                \"7_force_protection\": {},\n                \"5_rules_of_engagement\": {},\n                \"6_environmental_considerations\": {},\n                \"4_risk_reduction_control_measures\": {},\n                \"3_eefi_essential_elements_of_friendly_information\": {},\n                \"2_ccir_commanders_critical_information_requirements\": {},\n                \"1_time_or_condition_when_the_plan_or_order_becomes_effective\": {}\n            },\n            \"f_tasks_to_subordinate_units\": {},\n            \"c_scheme_of_movement_and_maneuver\": {}\n        },\n        \"4_sustainment\": {\n            \"a_logistics\": {\n                \"4_supply\": {},\n                \"2_maintenance\": {},\n                \"3_transportation\": {},\n                \"5_field_services\": {},\n                \"1_sustainment_overlay\": {}\n            },\n            \"b_personnel_services_support\": {\n                \"2_religious_services\": {},\n                \"1_method_of_marking_and_handling_epws\": {}\n            },\n            \"c_army_health_system_support\": {\n                \"2_medical_treatment\": {},\n                \"3_medical_evacuation\": {},\n                \"4_preventive_medicine\": {},\n                \"1_medical_command_and_control\": {}\n            }\n        },\n        \"5_command_and_control\": {\n            \"c_signal\": {\n                \"4_code_words\": {},\n                \"7_running_password\": {},\n                \"6_number_combination\": {},\n                \"1_soi_index_in_effect\": {},\n                \"8_recognition_signals\": {},\n                \"5_challenge_and_password\": {},\n                \"3_pyrotechnics_and_signals\": {},\n                \"2_methods_of_communication_by_priority\": {}\n            },\n            \"a_command\": {\n                \"1_location_of_commander\": {},\n                \"2_succession_of_command\": {}\n            },\n            \"b_control\": {\n                \"2_reports\": {},\n                \"1_command_posts\": {}\n            }\n        },\n        \"2_mission_a_concise_statement_that_includes_the_who,_what,_where,_when,_and_why_of_the_operation_to_be_conducted\": \"new json\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/update/table/id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"update",
+								"table",
+								"id"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update a JSON with id",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"situation\": {\n            \"c_enemy_forces\": {\n                \"2_recent_activities\": \"michel michel\",\n                \"3_locations_and_capabilities\": {},\n                \"4_enemy_coas_courses_of_action\": {},\n                \"1_compositi,on,_disposition,_and_strength\": {}\n            },\n            \"d_friendly_forces\": {\n                \"2_mission_of_adjacent_units\": {},\n                \"1_higher_hq_mission_and_intent\": {}\n            },\n            \"a_area_of_interest\": {},\n            \"b_area_of_operations\": {\n                \"1_terrain\": {},\n                \"2_weather\": {}\n            },\n            \"e_attachments_and_detachments\": {}\n        },\n        \"3_execution\": {\n            \"d_scheme_of_fires\": {},\n            \"a_commanders_intent\": {},\n            \"e_casualty_evacuation\": {},\n            \"b_concept_of_operations\": {\n                \"2_fires\": {},\n                \"1_maneuver\": {},\n                \"5_engineer\": {},\n                \"6_air_defense\": {},\n                \"4_intelligence\": {},\n                \"7_information_operations\": {},\n                \"3_reconnaissance_and_surveillance\": {}\n            },\n            \"g_tasks_to_combat_support\": {\n                \"5_signal\": {},\n                \"2_engineer\": {},\n                \"4_air_defense\": {},\n                \"1_intelligence\": {},\n                \"3_fire_support\": {},\n                \"9_civil_military\": {},\n                \"7_provost_marshal\": {},\n                \"6_cbrne_chemical,_biological,_radiological,_nuclear,_and_explosive_weapons\": {},\n                \"8_miso_military_information_support_operations,_formerly_psychological_operations_or_psyop\": {}\n            },\n            \"h_coordinating_instructions\": {\n                \"7_force_protection\": {},\n                \"5_rules_of_engagement\": {},\n                \"6_environmental_considerations\": {},\n                \"4_risk_reduction_control_measures\": {},\n                \"3_eefi_essential_elements_of_friendly_information\": {},\n                \"2_ccir_commanders_critical_information_requirements\": {},\n                \"1_time_or_condition_when_the_plan_or_order_becomes_effective\": {}\n            },\n            \"f_tasks_to_subordinate_units\": {},\n            \"c_scheme_of_movement_and_maneuver\": {}\n        },\n        \"4_sustainment\": {\n            \"a_logistics\": {\n                \"4_supply\": {},\n                \"2_maintenance\": {},\n                \"3_transportation\": {},\n                \"5_field_services\": {},\n                \"1_sustainment_overlay\": {}\n            },\n            \"b_personnel_services_support\": {\n                \"2_religious_services\": {},\n                \"1_method_of_marking_and_handling_epws\": {}\n            },\n            \"c_army_health_system_support\": {\n                \"2_medical_treatment\": {},\n                \"3_medical_evacuation\": {},\n                \"4_preventive_medicine\": {},\n                \"1_medical_command_and_control\": {}\n            }\n        },\n        \"5_command_and_control\": {\n            \"c_signal\": {\n                \"4_code_words\": {},\n                \"7_running_password\": {},\n                \"6_number_combination\": {},\n                \"1_soi_index_in_effect\": {},\n                \"8_recognition_signals\": {},\n                \"5_challenge_and_password\": {},\n                \"3_pyrotechnics_and_signals\": {},\n                \"2_methods_of_communication_by_priority\": {}\n            },\n            \"a_command\": {\n                \"1_location_of_commander\": {},\n                \"2_succession_of_command\": {}\n            },\n            \"b_control\": {\n                \"2_reports\": {},\n                \"1_command_posts\": {}\n            }\n        },\n        \"2_mission_a_concise_statement_that_includes_the_who,_what,_where,_when,_and_why_of_the_operation_to_be_conducted\": \"new json\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/update/json/2",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"update",
+										"json",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2-nOO9QiTIwXgNtWtBJezz8kv3SLc\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 21 Feb 2020 16:13:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "OK"
+						}
+					]
+				},
+				{
+					"name": "Update a template with name",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"0_header\": {\n        \"type\": \"chapter\",\n        \"content\": {\n            \"title\": {\n                \"type\": \"small_text\",\n                \"label\": \"Titre du document\"\n            },\n            \"free_text\": {\n                \"type\": \"large_text\",\n                \"label\": \"Texte libre\"\n            },\n            \"security_classification\": {\n                \"type\": \"autocomplete\",\n                \"list\":[\n                  { \"name\": \"Non Protégé\", \"abbr\": \"NP\", \"id\": 0 },\n                  { \"name\": \"Diffusion Restreinte\", \"abbr\": \"DR\", \"id\": 1 },\n                  { \"name\": \"Confidentiel-Défense\", \"abbr\": \"CD\", \"id\": 2 },\n                  { \"name\": \"Confidentiel-Défense Spécial France\", \"abbr\": \"CD-SF\", \"id\": 3 },\n                  { \"name\": \"Secret-Défense\", \"abbr\": \"SD\", \"id\": 4 },\n                  { \"name\": \"Secret-Défense Spécial France\", \"abbr\": \"SD-SF\", \"id\": 5 }\n                ],\n                \"label\": \"CLASSIFICATION DE SECURITE\"\n            },\n            \"copy_no\": {\n                \"type\": \"small_text\",\n                \"label\": \"Exemplaire N°\"\n            },\n            \"copy_total\": {\n                \"type\": \"small_text\",\n                \"label\": \"Nombre total d'exemplaires\"\n            },\n            \"issuing_headquarters\": {\n                \"type\": \"small_text\",\n                \"label\": \"P.C. (CA, DIV, FAR, ...)\"\n            },\n            \"place_of_issue\": {\n                \"type\": \"small_text\",\n                \"label\": \"Localisation P.C. avant\"\n            },\n            \"date-time_group_of_signature\": {\n                \"type\": \"small_text\",\n                \"label\": \"GDH de signature\"\n            },\n            \"message_reference_no\": {\n                \"type\": \"small_text\",\n                \"label\": \"N° de référence du message\"\n            },\n            \"type_and_serial_number_of_opord\": {\n                \"type\": \"small_text\",\n                \"label\": \"ORDRE D’OPERATION N°\"\n            },\n            \"references\": {\n                \"type\": \"category\",\n                \"content\": {\n                    \"free_text\": {\n                        \"type\": \"large_text\",\n                        \"label\": \"Texte libre\"\n                    },\n                    \"A\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"A\"\n                    },\n                    \"B\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"B\"\n                    },\n                    \"map_at_scale_1/50000\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Cartes au 1/50000\"\n                    },\n                    \"time_zone_used\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Fuseau horaire de référence\"\n                    }\n                },\n                \"label\": \"Références\"\n            },\n            \"articulation\": {\n                \"type\": \"small_text\",\n                \"label\": \"ARTICULATION\"\n            }\n        },\n        \"label\": \"\"\n    },\n    \"1_situation\": {\n        \"type\": \"chapter\",\n        \"content\": {\n            \"free_text\": {\n                \"type\": \"large_text\",\n                \"label\": \"Texte libre\"\n            },\n            \"enemy_forces\": {\n                \"type\": \"category\",\n                \"content\": {\n                    \"current_enemy\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"ENI actuel\"\n                    },\n                    \"enemy_possibilities\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Possibilités de l'ENI\"\n                    },\n                    \"future_enemy\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"ENI futur\"\n                    }\n                },\n                \"label\": \"Forces ennemies\"\n            },\n            \"friendly_forces\": {\n                \"type\": \"small_text\",\n                \"label\": \"Forces amies\"\n            },\n            \"attachments_and_detachments\": {\n                \"type\": \"small_text\",\n                \"label\": \"Renforcements et prélèvements\"\n            },\n            \"commander_evaluation\": {\n                \"type\": \"small_text\",\n                \"label\": \"Evaluation de la situation par le commandement\"\n            },\n            \"population\": {\n                \"type\": \"small_text\",\n                \"label\": \"Population\"\n            }\n        },\n        \"label\": \"1 - SITUATION\"\n    },\n    \"2_mission\": {\n        \"type\": \"chapter\",\n        \"content\": {\n            \"free_text\": {\n                \"type\": \"large_text\",\n                \"label\": \"Texte libre\"\n            }\n        },\n        \"label\": \"2 - MISSION - BUT\"\n    },\n    \"3_execution\": {\n        \"type\": \"chapter\",\n        \"content\": {\n            \"free_text\": {\n                \"type\": \"large_text\",\n                \"label\": \"Texte libre\"\n            },\n            \"concept_of_operations\": {\n                \"type\": \"small_text\",\n                \"label\": \"Idée de manoeuvre\"\n            },\n            \"missions_to_units\": {\n                \"type\": \"category\",\n                \"content\": {\n                    \"unit_1\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Missions aux unités subordonnées 1\"\n                    },\n                    \"unit_2\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Missions aux unités subordonnées 2\"\n                    }\n                },\n                \"label\": \"Missions aux unités subordonnées\"\n            },\n            \"fires\": {\n                \"type\": \"small_text\",\n                \"label\": \"Feux\"\n            },\n            \"engineer\": {\n                \"type\": \"small_text\",\n                \"label\": \"Génie\"\n            },\n            \"air_defense\": {\n                \"type\": \"small_text\",\n                \"label\": \"ALAT\"\n            },\n            \"electronic_warfare\": {\n                \"type\": \"small_text\",\n                \"label\": \"GUERRE ELECTRONIQUE\"\n            },\n            \"circulation\": {\n                \"type\": \"small_text\",\n                \"label\": \"Circulation\"\n            },\n            \"coordinating_instructions\": {\n                \"type\": \"category\",\n                \"content\": {\n                    \"coordination_lines\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Lignes de coordination\"\n                    },\n                    \"boundaries_between_units\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Limites entre les unités\"\n                    },\n                    \"connections_to_ensure\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Liaisons à assurer\"\n                    },\n                    \"areas_reserved_and_maneuvering_routes\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Zones réservés ou à laisser libre d’obstacles, itinéraires de manoeuvre\"\n                    },\n                    \"cbrn_security_and_defense\": {\n                        \"type\": \"category\",\n                        \"content\": {\n                            \"danger_estimation\": {\n                                \"type\": \"small_text\",\n                                \"label\": \"Estimation du danger NBC\"\n                            },\n                            \"protection\": {\n                                \"type\": \"small_text\",\n                                \"label\": \"Protection\"\n                            },\n                            \"decontamination\": {\n                                \"type\": \"small_text\",\n                                \"label\": \"Décontamination\"\n                            },\n                            \"miscellaneous\": {\n                                \"type\": \"small_text\",\n                                \"label\": \"Divers\"\n                            }\n                        },\n                        \"label\": \"Sécurité et défense NBC\"\n                    },\n                    \"anti-aircraft_instructions\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Consignes LATTA\"\n                    },\n                    \"intelligence_need\": {\n                        \"type\": \"category\",\n                        \"content\": {\n                            \"before_engagement_intelligence\": {\n                                \"type\": \"small_text\",\n                                \"label\": \"Renseignement avant engagement\"\n                            },\n                            \"in_depth_ennemy\": {\n                                \"type\": \"small_text\",\n                                \"label\": \"ENI dans la profondeur\"\n                            },\n                            \"future_ennemy\": {\n                                \"type\": \"small_text\",\n                                \"label\": \"ENI futur\"\n                            },\n                            \"field\": {\n                                \"type\": \"small_text\",\n                                \"label\": \"Terrain\"\n                            }\n                        },\n                        \"label\": \"Besoins en renseignement\"\n                    },\n                    \"schedule\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Horaires\"\n                    },\n                    \"civil_affairs_and_press_relations\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Affaires civiles - Relations avec la presse\"\n                    }\n                },\n                \"label\": \"Instruction de coordination\"\n            }\n        },\n        \"label\": \"3 - EXECUTION\"\n    },\n    \"4_administration_and_logistic\": {\n        \"type\": \"chapter\",\n        \"content\": {\n            \"free_text\": {\n                \"type\": \"large_text\",\n                \"label\": \"Texte libre\"\n            },\n            \"forces_to_support\": {\n                \"type\": \"category\",\n                \"content\": {\n                    \"organic_means\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Moyens organiques\"\n                    },\n                    \"means_received_for_reinforcement\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Moyens reçus en renforcement\"\n                    }\n                },\n                \"label\": \"Forces à soutenir\"\n            },\n            \"support_concept\": {\n                \"type\": \"category\",\n                \"content\": {\n                    \"goal_to_reach\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"But à atteindre\"\n                    },\n                    \"stability_or_elongation_allowed\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Stabilité ou élongation consenties\"\n                    },\n                    \"initial_autonomy_to_maintain\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Autonomie initiale à maintenir\"\n                    }\n                },\n                \"label\": \"Conception du soutien\"\n            },\n            \"priorities_and_efforts\": {\n                \"type\": \"category\",\n                \"content\": {\n                    \"tactical priority\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Priorité tactique\"\n                    },\n                    \"efforts_by_function\": {\n                        \"type\": \"category\",\n                        \"content\": {\n                            \"supplying\": {\n                                \"type\": \"small_text\",\n                                \"label\": \"RAV\"\n                            },\n                            \"mechanics\": {\n                                \"type\": \"small_text\",\n                                \"label\": \"MEC\"\n                            },\n                            \"health\": {\n                                \"type\": \"small_text\",\n                                \"label\": \"SAN\"\n                            }\n                        },\n                        \"label\": \"Efforts par fonction\"\n                    }\n                },\n                \"label\": \"Priorités, efforts\"\n            },\n            \"logistics_deployment\": {\n                \"type\": \"category\",\n                \"content\": {\n                    \"mechanism_to_establish\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Dispositif à réaliser\"\n                    },\n                    \"progression_over_time\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Evolution dans le temps\"\n                    }\n                },\n                \"label\": \"Déploiement des formations logistiques\"\n            },\n            \"area_boundary\": {\n                \"type\": \"category\",\n                \"content\": {\n                    \"front_boundary\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Limite avant (LIMAVZACA)\"\n                    },\n                    \"back_boundary\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Limite arrière (LIMARRZACA)\"\n                    }\n                },\n                \"label\": \"Découpage de la zone\"\n            },\n            \"support_modality\": {\n                \"type\": \"small_text\",\n                \"label\": \"Modalités du soutien\"\n            }\n        },\n        \"label\": \"4 - ADMINISTRATION ET LOGISTIQUE\"\n    },\n    \"5_command_and_signal\": {\n        \"type\": \"chapter\",\n        \"content\": {\n            \"free_text\": {\n                \"type\": \"large_text\",\n                \"label\": \"Texte libre\"\n            },\n            \"command_post_location\": {\n                \"type\": \"category\",\n                \"content\": {\n                    \"active_command_post\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"PC ACTIF à\"\n                    },\n                    \"tactical_command_post\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"PC TACTIQUE à\"\n                    },\n                    \"medical_command_post\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"PC MA\"\n                    },\n                    \"logistics_office\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Antenne logistique\"\n                    },\n                    \"command_post_shift_planned_at\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Bascule de PC prévue à\"\n                    }\n                },\n                \"label\": \"Implantation des PC\"\n            },\n            \"liaison\": {\n                \"type\": \"category\",\n                \"content\": {\n                    \"liaison_detachments\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Détachements de liaison\"\n                    },\n                    \"side_links\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Liaisons latérales\"\n                    }\n                },\n                \"label\": \"Liaisons\"\n            },\n            \"transmissions\": {\n                \"type\": \"category\",\n                \"content\": {\n                    \"preliminary_phase\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Phase préliminaire\"\n                    },\n                    \"first_phase\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"1° phase\"\n                    }\n                },\n                \"label\": \"Transmissions\"\n            },\n            \"electronic_warfare\": {\n                \"type\": \"category\",\n                \"content\": {\n                    \"enemy_threats\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Menaces particulières ENI\"\n                    },\n                    \"electronic_protection\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Mesures de protection électronique (MPE)\"\n                    },\n                    \"electronic_counter_counter_measures\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Contre-mesures électromagnétiques (CME)\"\n                    },\n                    \"measures_for_electronic_war_training\": {\n                        \"type\": \"small_text\",\n                        \"label\": \"Mesures d'accueil des formations de GE\"\n                    }\n                },\n                \"label\": \"Guerre électronique\"\n            }\n        },\n        \"label\": \"5 - COMMANDEMENTS ET TRANSMISSIONS\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/update/template/opord",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"update",
+								"template",
+								"opord"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update a JSON with id",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"data\": {\n        \"situation\": {\n            \"c_enemy_forces\": {\n                \"2_recent_activities\": \"michel michel\",\n                \"3_locations_and_capabilities\": {},\n                \"4_enemy_coas_courses_of_action\": {},\n                \"1_compositi,on,_disposition,_and_strength\": {}\n            },\n            \"d_friendly_forces\": {\n                \"2_mission_of_adjacent_units\": {},\n                \"1_higher_hq_mission_and_intent\": {}\n            },\n            \"a_area_of_interest\": {},\n            \"b_area_of_operations\": {\n                \"1_terrain\": {},\n                \"2_weather\": {}\n            },\n            \"e_attachments_and_detachments\": {}\n        },\n        \"3_execution\": {\n            \"d_scheme_of_fires\": {},\n            \"a_commanders_intent\": {},\n            \"e_casualty_evacuation\": {},\n            \"b_concept_of_operations\": {\n                \"2_fires\": {},\n                \"1_maneuver\": {},\n                \"5_engineer\": {},\n                \"6_air_defense\": {},\n                \"4_intelligence\": {},\n                \"7_information_operations\": {},\n                \"3_reconnaissance_and_surveillance\": {}\n            },\n            \"g_tasks_to_combat_support\": {\n                \"5_signal\": {},\n                \"2_engineer\": {},\n                \"4_air_defense\": {},\n                \"1_intelligence\": {},\n                \"3_fire_support\": {},\n                \"9_civil_military\": {},\n                \"7_provost_marshal\": {},\n                \"6_cbrne_chemical,_biological,_radiological,_nuclear,_and_explosive_weapons\": {},\n                \"8_miso_military_information_support_operations,_formerly_psychological_operations_or_psyop\": {}\n            },\n            \"h_coordinating_instructions\": {\n                \"7_force_protection\": {},\n                \"5_rules_of_engagement\": {},\n                \"6_environmental_considerations\": {},\n                \"4_risk_reduction_control_measures\": {},\n                \"3_eefi_essential_elements_of_friendly_information\": {},\n                \"2_ccir_commanders_critical_information_requirements\": {},\n                \"1_time_or_condition_when_the_plan_or_order_becomes_effective\": {}\n            },\n            \"f_tasks_to_subordinate_units\": {},\n            \"c_scheme_of_movement_and_maneuver\": {}\n        },\n        \"4_sustainment\": {\n            \"a_logistics\": {\n                \"4_supply\": {},\n                \"2_maintenance\": {},\n                \"3_transportation\": {},\n                \"5_field_services\": {},\n                \"1_sustainment_overlay\": {}\n            },\n            \"b_personnel_services_support\": {\n                \"2_religious_services\": {},\n                \"1_method_of_marking_and_handling_epws\": {}\n            },\n            \"c_army_health_system_support\": {\n                \"2_medical_treatment\": {},\n                \"3_medical_evacuation\": {},\n                \"4_preventive_medicine\": {},\n                \"1_medical_command_and_control\": {}\n            }\n        },\n        \"5_command_and_control\": {\n            \"c_signal\": {\n                \"4_code_words\": {},\n                \"7_running_password\": {},\n                \"6_number_combination\": {},\n                \"1_soi_index_in_effect\": {},\n                \"8_recognition_signals\": {},\n                \"5_challenge_and_password\": {},\n                \"3_pyrotechnics_and_signals\": {},\n                \"2_methods_of_communication_by_priority\": {}\n            },\n            \"a_command\": {\n                \"1_location_of_commander\": {},\n                \"2_succession_of_command\": {}\n            },\n            \"b_control\": {\n                \"2_reports\": {},\n                \"1_command_posts\": {}\n            }\n        },\n        \"2_mission_a_concise_statement_that_includes_the_who,_what,_where,_when,_and_why_of_the_operation_to_be_conducted\": \"new json\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/update/json/2",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"update",
+										"json",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2-nOO9QiTIwXgNtWtBJezz8kv3SLc\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 21 Feb 2020 16:13:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "OK"
+						}
+					]
+				},
+				{
+					"name": "Update a part of a JSON (id)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"3_execution\": {\n\t    \"d_scheme_of_fires\": \"Hello\",\n\t    \"a_commander's_intent\": \"\",\n\t    \"e_casualty_evacuation\": \"oui oui oui\",\n\t    \"b_concept_of_operations\": {\n\t        \"2_fires\": \"Miuchel a la batterie\",\n\t        \"1_maneuver\": \"\",\n\t        \"5_engineer\": \"oup la wooo\",\n\t        \"6_air_defense\": \"\",\n\t        \"4_intelligence\": \"\",\n\t        \"7_information_operations\": \"\",\n\t        \"3_reconnaissance_and_surveillance\": \"\"\n\t    },\n\t    \"g_tasks_to_combat_support\": {\n\t        \"5_signal\": \"\",\n\t        \"2_engineer\": \"tik tok tik tok\",\n\t        \"4_air_defense\": \"\",\n\t        \"1_intelligence\": \"\",\n\t        \"3_fire_support\": \"\",\n\t        \"9_civil_military\": \"\",\n\t        \"7_provost_marshal\": \"\",\n\t        \"6_cbrne_chemical,_biological,_radiological,_nuclear,_and_explosive_weapons\": \"\",\n\t        \"8_miso_military_information_support_operations,_formerly_psychological_operations_or_psyop\": \"\"\n\t    },\n\t    \"h_coordinating_instructions\": {\n\t        \"7_force_protection\": \"\",\n\t        \"5_rules_of_engagement\": \"\",\n\t        \"6_environmental_considerations\": \"\",\n\t        \"4_risk_reduction_control_measures\": \"\",\n\t        \"3_eefi_essential_elements_of_friendly_information\": \"\",\n\t        \"2_ccir_commander's_critical_information_requirements\": \"\",\n\t        \"1_time_or_condition_when_the_plan_or_order_becomes_effective\": \"\"\n\t    },\n\t    \"f_tasks_to_subordinate_units\": \"\",\n\t    \"c_scheme_of_movement_and_maneuver\": \"\"\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/update/table/part/99",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"update",
+								"table",
+								"part",
+								"99"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Replace a part of a JSON object",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"3_execution\": {\n\t    \"d_scheme_of_fires\": \"Hello\",\n\t    \"a_commander's_intent\": \"\",\n\t    \"e_casualty_evacuation\": \"oui oui oui\",\n\t    \"b_concept_of_operations\": {\n\t        \"2_fires\": \"Miuchel a la batterie\",\n\t        \"1_maneuver\": \"\",\n\t        \"5_engineer\": \"oup la wooo\",\n\t        \"6_air_defense\": \"\",\n\t        \"4_intelligence\": \"\",\n\t        \"7_information_operations\": \"\",\n\t        \"3_reconnaissance_and_surveillance\": \"\"\n\t    },\n\t    \"g_tasks_to_combat_support\": {\n\t        \"5_signal\": \"\",\n\t        \"2_engineer\": \"tik tok tik tok\",\n\t        \"4_air_defense\": \"\",\n\t        \"1_intelligence\": \"\",\n\t        \"3_fire_support\": \"\",\n\t        \"9_civil_military\": \"\",\n\t        \"7_provost_marshal\": \"\",\n\t        \"6_cbrne_chemical,_biological,_radiological,_nuclear,_and_explosive_weapons\": \"\",\n\t        \"8_miso_military_information_support_operations,_formerly_psychological_operations_or_psyop\": \"\"\n\t    },\n\t    \"h_coordinating_instructions\": {\n\t        \"7_force_protection\": \"\",\n\t        \"5_rules_of_engagement\": \"\",\n\t        \"6_environmental_considerations\": \"\",\n\t        \"4_risk_reduction_control_measures\": \"\",\n\t        \"3_eefi_essential_elements_of_friendly_information\": \"\",\n\t        \"2_ccir_commander's_critical_information_requirements\": \"\",\n\t        \"1_time_or_condition_when_the_plan_or_order_becomes_effective\": \"\"\n\t    },\n\t    \"f_tasks_to_subordinate_units\": \"\",\n\t    \"c_scheme_of_movement_and_maneuver\": \"\"\n\t}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/update/json/part/54",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"update",
+										"json",
+										"part",
+										"54"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2-nOO9QiTIwXgNtWtBJezz8kv3SLc\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Feb 2020 15:46:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "OK"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Parser",
+			"item": [
+				{
+					"name": "Parsing - Python API",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/file?path=/Users/vincent/c2lab/back/upload/parser_assets_110419_FRAGO_01_JOC.docx",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"file"
+							],
+							"query": [
+								{
+									"key": "path",
+									"value": "/Users/vincent/c2lab/back/upload/parser_assets_110419_FRAGO_01_JOC.docx"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Health Route - Python API",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload & Parse",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/vincent/Documents/Document Perso/Certificat.docx"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/upload/table",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"upload",
+								"table"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
