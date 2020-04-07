@@ -1,4 +1,4 @@
-name: c2lab
+name: ArenaParser
 channels:
     - defaults
 dependencies:
