@@ -26,7 +26,7 @@
 <script>
 import api from "@/service/api";
 import refresh from "@/service/refresh";
-import defaultTemplate from "@/assets/formTemplate/default_demo.json";
+import defaultTemplate from "@/assets/formTemplate/defaultjson";
 
 export default {
   data: () => ({
@@ -41,7 +41,7 @@ export default {
       const name = this.name;
       const newTemplate = this.newTemplate;
       api()
-        .post("/create/template/" + name, newTemplate).then(() => {
+        .post("/api/post/create/template/" + name, newTemplate).then(() => {
           refresh(name)
           this.$router.push({
             path: "/"

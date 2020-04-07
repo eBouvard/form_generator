@@ -1,10 +1,9 @@
-# DataBaseConstruct
+# Parser for Arena
 
-Repo to format unstructured infromation saved in a variety of file formats based on a pre-defined structure saved in a JSON under the name CANEVAS_STRUCT.json
+Parse unstructured information saved in a variety of file formats based on a pre-defined structure saved in a JSON under the name ***CANEVAS_STRUCT.json*** in the Assets folder.
 
-**You need the structure saved in JSON format at the root of the repo**
-
-Save your data in the /Data folder with any type of structure you like, the repo will walk through all nested directories
+- Python 3.7
+- API with Flask
 
 **Create the Conda environment:**
 
@@ -14,14 +13,14 @@ Conda will use the yml file to install all dependencies
 conda env create
 ```
 
-**Run:**
+**Run in API:**
 
 ```
 python3 api.py
 ```
 
-If you want to create a table of your metadata to visualize in the shinyapp, add the following argument. The resulting output will be stored in the **Output** folder under metadata.csv
+**Run in local mode:**
 
 ```
-python3 main.py df
+python3 parser.py [file]
 ```

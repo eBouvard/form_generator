@@ -112,7 +112,7 @@ export default {
       this.forms = [];
       this.loading = true;
       api()
-        .get("/read/all/" + this.$store.getters.template)
+        .post("/api/get/read/all/" + this.$store.getters.template)
         .then(ret => {
           const raw = ret.data;
           const array = [];
@@ -139,7 +139,7 @@ export default {
     },
     deleteItem(id) {
       api()
-        .get("/delete/" + this.$store.getters.template + "/" + id)
+        .post("/api/get/delete/" + this.$store.getters.template + "/" + id)
         .then(() => {
           this.snackbar = true;
           this.deleteCheck = { check: false, id: null };

@@ -3,7 +3,7 @@ import store from '@/service/store'
 
 export default function (templateName) {
     api()
-        .get("/read/all/template")
+    .post("/api/get/read/all/template")
         .then(ret => {
             const raw = ret.data;
             const list = {};
