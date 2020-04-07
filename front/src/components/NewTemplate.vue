@@ -26,7 +26,7 @@
 <script>
 import api from "@/service/api";
 import refresh from "@/service/refresh";
-import defaultTemplate from "@/assets/formTemplate/defaultjson";
+import defaultTemplate from "@/assets/formTemplate/default.json";
 
 export default {
   data: () => ({
