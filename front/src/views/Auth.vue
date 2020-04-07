@@ -1,6 +1,39 @@
 <template>
-  <v-container style="position: relative;top: 13%;" class="text-xs-center">
-    <v-card>
+  <v-container>
+    <v-app-bar class="white--text" height="50px" color="primary">
+      <v-avatar>
+        <img src="@/assets/logo.png" alt="logo" />
+      </v-avatar>
+
+      <v-spacer></v-spacer>
+
+      <v-toolbar-title>BlueTeam - Projet Arena</v-toolbar-title>
+
+      <v-spacer></v-spacer>
+
+      <div :key="Object.keys($store.getters.templateList).length" class="text-xs-center pa-3">
+        <v-menu offset-y>
+          <template v-slot:activator="{ on }">
+            <v-btn dark color="secondary" v-on="on" class="px-3">
+              {{ $store.getters.template }}
+              <v-divider class="mx-2" vertical></v-divider>
+              <v-icon>mdi-menu-down</v-icon>
+            </v-btn>
+          </template>
+          <v-list>
+            <v-list-item
+              v-for="(item, index) in Object.keys(this.$store.state.templateList)"
+              :key="index"
+              @click="templateChange(item)"
+            >
+              <v-list-item-title>{{ item.toUpperCase() }}</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+      </div>
+    </v-app-bar>
+    
+    <v-card style="position: relative;top: 13%;" class="text-xs-center">
       <v-card-title primary-title>
         <h4>Connexion</h4>
       </v-card-title>
@@ -32,9 +65,7 @@ export default {
   },
   methods: {
     authentificateMe() {
-      if (this.authPass === "Aren@Emile2020") {
-        this.$emit("authentified", true);
-      } else this.$emit("authentified", false);
+      this.$emit("authentified", this.authPass);
     }
   }
 };
