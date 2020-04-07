@@ -72,7 +72,5 @@ def parse_doc(path_opord, struct_path=canvas):
 if __name__ == '__main__':
     if len(sys.argv) > 1:
         path_opord = sys.argv[1]
-    else:
-        path_opord = "assets/110419_FRAGO_01_JOC.docx"
     print(parse_doc(path_opord))
     
