@@ -9,6 +9,7 @@ Pre-requisites:
 
 - Docker for Desktop and a Postgres DB
 - A .env file in the 'back' folder with the connection info to Postgres db
+- A .env file in the 'front' folder with password for the Vue app
 
 Then, run `docker-compose up` in the root of the project.
 
