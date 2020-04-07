@@ -1,6 +1,6 @@
 job:run_master:
   script:
-    - cp /root/env/.env back/.env
+    - cp -R env/* .
     - docker-compose kill
     - docker system prune -a -f
     - docker build front
