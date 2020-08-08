@@ -5,13 +5,9 @@
       height="50px"
       color='primary'
     >
-      <v-avatar>
-        <img src="@/assets/logo.png" alt="logo" />
-      </v-avatar>
-
       <v-spacer></v-spacer>
 
-      <v-toolbar-title>BlueTeam - Projet Arena</v-toolbar-title>
+      <v-toolbar-title>Form Generator</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
