@@ -1,10 +1,8 @@
 const axios = require('axios')
-const sha1 = require('sha1');
 const express = require('express');
 const bodyParser = require('body-parser')
 const path = require('path');
 const history = require('connect-history-api-fallback');
-require('dotenv').config();
 
 const api_path = "http://" + ((process.env.NODE_ENV == "production") ? 'api' : 'localhost') + ":3000/";
 
@@ -41,10 +39,6 @@ app.post('/api/:method/*', function (req, res) {
         console.log(e);
       })
   }
-});
-
-app.post('/auth', function (req, res) {
-  res.send(req.body.hashed_pass == sha1(process.env.VUEPASSWORD));
 });
 
 app.listen(5000, function () {

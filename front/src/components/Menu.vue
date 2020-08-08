@@ -50,12 +50,6 @@ export default {
           ]
         },
         {
-          title: "upload",
-          icon: "mdi-upload",
-          menu: "upload",
-          path: "/upload"
-        },
-        {
           title: "editor",
           icon: "mdi-tune",
           menu: "editor",

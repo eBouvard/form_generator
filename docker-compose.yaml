@@ -22,9 +22,3 @@ services:
       - back
     ports:
       - "80:5000"
-
-  python:
-    build: parser
-    container_name: parser
-    volumes:
-      - ./back/upload:/usr/app/upload
